@@ -4,16 +4,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Nuestra Aventura de Vida ♡</title>
 
 <style>
+
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    font-family: Georgia, 'Times New Roman', serif;
+    font-family: Georgia, "Times New Roman", serif;
     background: #eef7f0;
     color: #30483a;
 }
@@ -51,7 +53,6 @@ body {
     color: white;
     font-size: 1rem;
     cursor: pointer;
-    text-decoration: none;
     transition: 0.3s;
 }
 
@@ -74,7 +75,7 @@ body {
 }
 
 .carta {
-    background: rgba(255,255,255,0.75);
+    background: rgba(255,255,255,0.8);
     padding: 35px;
     border-radius: 25px;
     box-shadow: 0 10px 30px rgba(50,80,60,0.10);
@@ -114,7 +115,7 @@ body {
 }
 
 .voucher h3 {
-    margin-top: 0;
+    margin-top: 10px;
     color: #41634d;
 }
 
@@ -214,6 +215,7 @@ iframe {
 }
 
 @media (max-width: 600px) {
+
     .hero h1 {
         font-size: 2.2rem;
     }
@@ -225,13 +227,18 @@ iframe {
     .galeria img {
         height: 200px;
     }
+
 }
+
 </style>
 </head>
 
 <body>
 
+<!-- PORTADA -->
+
 <section class="hero">
+
     <h1>Para ti, Tewi ❤️</h1>
 
     <p>
@@ -246,8 +253,11 @@ iframe {
     <div class="contador" id="contador">
         ✨ Calculando nuestros días... ✨
     </div>
+
 </section>
 
+
+<!-- CARTA -->
 
 <section class="seccion" id="carta">
 
@@ -301,6 +311,8 @@ iframe {
 </section>
 
 
+<!-- VALES -->
+
 <section class="seccion">
 
     <h2>Pequeños detalles para nosotros ✨</h2>
@@ -342,6 +354,8 @@ iframe {
 </section>
 
 
+<!-- LADO SECRETO -->
+
 <section class="seccion secreto">
 
     <h2>🔐 Nuestro lado secreto</h2>
@@ -354,17 +368,19 @@ iframe {
 
     <div class="galeria">
 
-        <img src="fotos/foto 1.jpg" onclick="abrirFoto(this.src)">
-        <img src="fotos/foto 2.jpg" onclick="abrirFoto(this.src)">
-        <img src="fotos/foto 3.jpg" onclick="abrirFoto(this.src)">
-        <img src="fotos/foto 4.jpg" onclick="abrirFoto(this.src)">
-        <img src="fotos/foto 5.jpg" onclick="abrirFoto(this.src)">
-        <img src="fotos/foto 6.jpg" onclick="abrirFoto(this.src)">
+        <img src="foto 1.jpg" onclick="abrirFoto(this.src)">
+        <img src="foto 2.jpg" onclick="abrirFoto(this.src)">
+        <img src="foto 3.jpg" onclick="abrirFoto(this.src)">
+        <img src="foto 4.jpg" onclick="abrirFoto(this.src)">
+        <img src="foto 5.jpg" onclick="abrirFoto(this.src)">
+        <img src="foto 6.jpg" onclick="abrirFoto(this.src)">
 
     </div>
 
 </section>
 
+
+<!-- MUSICA -->
 
 <section class="seccion">
 
@@ -389,6 +405,8 @@ iframe {
 </section>
 
 
+<!-- RECUERDOS -->
+
 <section class="seccion">
 
     <h2>📸 Nuestros recuerdos</h2>
@@ -399,25 +417,29 @@ iframe {
 
     <div class="galeria">
 
-        <img src="fotos/foto 7.jpg" onclick="abrirFoto(this.src)">
-        <img src="fotos/foto 8.jpg" onclick="abrirFoto(this.src)">
-        <img src="fotos/foto 9.jpg" onclick="abrirFoto(this.src)">
-        <img src="fotos/foto 10.jpg" onclick="abrirFoto(this.src)">
-        <img src="fotos/foto 11.jpg" onclick="abrirFoto(this.src)">
-        <img src="fotos/foto 12.jpg" onclick="abrirFoto(this.src)">
-        <img src="fotos/foto 13.jpg" onclick="abrirFoto(this.src)">
-        <img src="fotos/foto 14.jpg" onclick="abrirFoto(this.src)">
-        <img src="fotos/foto 15.jpg" onclick="abrirFoto(this.src)">
-        <img src="fotos/foto 16.jpg" onclick="abrirFoto(this.src)">
+        <img src="foto 7.jpg" onclick="abrirFoto(this.src)">
+        <img src="foto 8.jpg" onclick="abrirFoto(this.src)">
+        <img src="foto 9.jpg" onclick="abrirFoto(this.src)">
+        <img src="foto 10.jpg" onclick="abrirFoto(this.src)">
+        <img src="foto 11.jpg" onclick="abrirFoto(this.src)">
+        <img src="foto 12.jpg" onclick="abrirFoto(this.src)">
+        <img src="foto 13.jpg" onclick="abrirFoto(this.src)">
+        <img src="foto 14.jpg" onclick="abrirFoto(this.src)">
+        <img src="foto 15.jpg" onclick="abrirFoto(this.src)">
+        <img src="foto 16.jpg" onclick="abrirFoto(this.src)">
 
     </div>
 
 </section>
 
 
+<!-- FINAL -->
+
 <section class="final">
 
-    <h2>Por todas las aventuras que nos quedan... ♾️</h2>
+    <h2>
+        Por todas las aventuras que nos quedan... ♾️
+    </h2>
 
     <p>
         Esto es solamente el comienzo de nuestra historia.
@@ -430,16 +452,24 @@ iframe {
 </section>
 
 
+<!-- VISOR DE FOTOS -->
+
 <div class="modal" id="modal" onclick="cerrarFoto()">
 
     <span class="cerrar">&times;</span>
 
-    <img id="fotoGrande" src="" onclick="event.stopPropagation()">
+    <img
+        id="fotoGrande"
+        src=""
+        onclick="event.stopPropagation()"
+    >
 
 </div>
 
 
 <script>
+
+/* CONTADOR */
 
 function actualizarContador() {
 
@@ -459,6 +489,8 @@ function actualizarContador() {
 actualizarContador();
 
 
+/* ABRIR CARTA */
+
 function abrirCarta() {
 
     document.getElementById("carta").scrollIntoView({
@@ -468,6 +500,8 @@ function abrirCarta() {
     iniciarMusica();
 }
 
+
+/* VALES */
 
 function canjear(elemento) {
 
@@ -479,6 +513,8 @@ function canjear(elemento) {
 }
 
 
+/* ABRIR FOTO */
+
 function abrirFoto(src) {
 
     document.getElementById("fotoGrande").src = src;
@@ -487,6 +523,8 @@ function abrirFoto(src) {
 
 }
 
+
+/* CERRAR FOTO */
 
 function cerrarFoto() {
 
@@ -497,9 +535,12 @@ function cerrarFoto() {
 }
 
 
+/* MUSICA */
+
 function iniciarMusica() {
 
-    const player = document.getElementById("youtubePlayer");
+    const player =
+        document.getElementById("youtubePlayer");
 
     player.contentWindow.postMessage(
         '{"event":"command","func":"playVideo","args":""}',
