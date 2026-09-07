@@ -25,8 +25,6 @@ body {
     line-height: 1.7;
 }
 
-/* CORAZONES */
-
 .heart {
     position: fixed;
     color: #91b79d;
@@ -37,33 +35,13 @@ body {
     z-index: 0;
 }
 
-.heart:nth-child(1) {
-    left: 10%;
-    animation-delay: 0s;
-}
-
-.heart:nth-child(2) {
-    left: 30%;
-    animation-delay: 2s;
-}
-
-.heart:nth-child(3) {
-    left: 55%;
-    animation-delay: 4s;
-}
-
-.heart:nth-child(4) {
-    left: 75%;
-    animation-delay: 1s;
-}
-
-.heart:nth-child(5) {
-    left: 90%;
-    animation-delay: 3s;
-}
+.heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+.heart:nth-child(2) { left: 30%; animation-delay: 2s; }
+.heart:nth-child(3) { left: 55%; animation-delay: 4s; }
+.heart:nth-child(4) { left: 75%; animation-delay: 1s; }
+.heart:nth-child(5) { left: 90%; animation-delay: 3s; }
 
 @keyframes float {
-
     0% {
         bottom: -30px;
         transform: translateX(0);
@@ -77,33 +55,25 @@ body {
         bottom: 110%;
         transform: translateX(-20px);
     }
-
 }
-
 
 /* PORTADA */
 
 .hero {
     min-height: 100vh;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     text-align: center;
     padding: 30px;
 
     background:
         radial-gradient(circle at top, #ffffff, transparent 60%),
         linear-gradient(135deg, #eef8f1, #dbeee0);
-
-    position: relative;
 }
 
 .hero-content {
     max-width: 700px;
-    position: relative;
-    z-index: 2;
 }
 
 .small-title {
@@ -118,7 +88,6 @@ h1 {
     font-size: clamp(55px, 12vw, 110px);
     font-weight: normal;
     color: #345441;
-    margin-bottom: 5px;
 }
 
 .date {
@@ -136,16 +105,12 @@ h1 {
 
 .button {
     display: inline-block;
-
     margin-top: 35px;
     padding: 14px 30px;
-
     border: 1px solid #779783;
     border-radius: 50px;
-
     color: #466653;
     text-decoration: none;
-
     transition: .3s;
 }
 
@@ -153,7 +118,6 @@ h1 {
     background: #466653;
     color: white;
 }
-
 
 /* SECCIONES */
 
@@ -183,6 +147,51 @@ h2 {
     margin-bottom: 18px;
 }
 
+/* CONTADOR */
+
+.counter-card {
+    margin-top: 40px;
+    padding: 35px 25px;
+    background: white;
+    border: 1px solid #d5e4d9;
+    border-radius: 22px;
+    box-shadow: 0 15px 40px rgba(65, 91, 73, .08);
+    text-align: center;
+}
+
+.counter-title {
+    color: #6f927a;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.counter {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.counter-box {
+    padding: 10px;
+}
+
+.counter-number {
+    display: block;
+    font-size: 32px;
+    color: #345441;
+}
+
+.counter-label {
+    font-size: 12px;
+    color: #82988a;
+    letter-spacing: 1px;
+}
+
+.counter-love {
+    margin-top: 25px;
+    color: #789683;
+    font-style: italic;
+}
 
 /* CARTA */
 
@@ -193,20 +202,13 @@ h2 {
 
 .letter-button {
     border: 1px solid #779783;
-
     background: transparent;
-
     color: #466653;
-
     padding: 15px 28px;
-
     border-radius: 50px;
-
     font-family: inherit;
     font-size: 16px;
-
     cursor: pointer;
-
     transition: .3s;
 }
 
@@ -217,56 +219,40 @@ h2 {
 
 .letter {
     display: none;
-
     margin-top: 30px;
     padding: 35px;
-
-    background: #ffffff;
-
+    background: white;
     border: 1px solid #d5e4d9;
-
     border-radius: 18px;
-
-    box-shadow:
-        0 15px 40px rgba(65, 91, 73, .10);
-
+    box-shadow: 0 15px 40px rgba(65, 91, 73, .10);
     text-align: left;
-
-    animation: openLetter .7s ease;
 }
 
 .letter.show {
     display: block;
+    animation: openLetter .7s ease;
 }
 
 .letter h3 {
     color: #345441;
-
     font-size: 27px;
-
     font-weight: normal;
-
     margin-bottom: 20px;
 }
 
 .letter p {
     margin-bottom: 18px;
-
     color: #53695b;
 }
 
 .signature {
     text-align: right;
-
     margin-top: 30px;
-
     font-style: italic;
-
     color: #6c8b77;
 }
 
 @keyframes openLetter {
-
     from {
         opacity: 0;
         transform: translateY(-15px) scale(.97);
@@ -276,19 +262,14 @@ h2 {
         opacity: 1;
         transform: translateY(0) scale(1);
     }
-
 }
-
 
 /* SECCIÓN SECRETA */
 
 .secret {
     background: #30483a;
-
     color: #eef7f0;
-
     max-width: none;
-
     padding-left: max(25px, calc((100% - 850px) / 2));
     padding-right: max(25px, calc((100% - 850px) / 2));
 }
@@ -305,6 +286,67 @@ h2 {
     color: #d8e6dc;
 }
 
+/* VALES */
+
+.vouchers {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.voucher {
+    background: white;
+    border: 1px solid #d5e4d9;
+    border-radius: 18px;
+    padding: 28px 22px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(65, 91, 73, .07);
+    transition: .3s;
+}
+
+.voucher:hover {
+    transform: translateY(-4px);
+}
+
+.voucher-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.voucher h3 {
+    color: #345441;
+    font-weight: normal;
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.voucher p {
+    color: #789683;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.redeem {
+    border: 1px solid #779783;
+    background: transparent;
+    color: #466653;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.redeem:hover {
+    background: #466653;
+    color: white;
+}
+
+.redeemed {
+    color: #5f806b;
+    font-style: italic;
+}
 
 /* CANCIÓN */
 
@@ -314,37 +356,25 @@ h2 {
 
 .song-card {
     margin-top: 35px;
-
     padding: 35px;
-
     border: 1px solid #d5e4d9;
-
     border-radius: 20px;
-
-    background: #ffffff;
-
-    box-shadow:
-        0 15px 40px rgba(65, 91, 73, .06);
+    background: white;
 }
 
 .music-symbol {
     font-size: 35px;
-
     margin-bottom: 15px;
 }
 
 .song-title {
     font-size: 27px;
-
     color: #345441;
 }
 
 .artist {
     color: #7a9582;
-
-    margin-top: 5px;
 }
-
 
 /* FINAL */
 
@@ -356,21 +386,12 @@ h2 {
     font-size: 45px;
 }
 
-
-/* FOOTER */
-
 footer {
     text-align: center;
-
     padding: 50px 20px;
-
     color: #82988a;
-
     font-size: 14px;
 }
-
-
-/* MÓVIL */
 
 @media (max-width: 600px) {
 
@@ -386,16 +407,20 @@ footer {
         padding: 25px;
     }
 
+    .counter {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .vouchers {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 </style>
 </head>
 
-
 <body>
-
-
-<!-- CORAZONES -->
 
 <div class="heart">♡</div>
 <div class="heart">♡</div>
@@ -434,17 +459,13 @@ footer {
 </header>
 
 
-<!-- NUESTRA HISTORIA -->
+<!-- HISTORIA + CONTADOR -->
 
 <section id="historia">
 
-    <div class="number">
-        01
-    </div>
+    <div class="number">01</div>
 
-    <h2>
-        Nuestra historia
-    </h2>
+    <h2>Nuestra historia</h2>
 
     <p class="text">
         <strong>23 de mayo de 2026</strong>
@@ -460,9 +481,41 @@ footer {
         seguir construyendo contigo.
     </p>
 
-    <p class="text">
-        Esta página irá guardando poco a poco nuestra historia.
-    </p>
+    <div class="counter-card">
+
+        <div class="counter-title">
+            Nuestra historia lleva...
+        </div>
+
+        <div class="counter">
+
+            <div class="counter-box">
+                <span class="counter-number" id="dias">0</span>
+                <span class="counter-label">DÍAS</span>
+            </div>
+
+            <div class="counter-box">
+                <span class="counter-number" id="horas">0</span>
+                <span class="counter-label">HORAS</span>
+            </div>
+
+            <div class="counter-box">
+                <span class="counter-number" id="minutos">0</span>
+                <span class="counter-label">MINUTOS</span>
+            </div>
+
+            <div class="counter-box">
+                <span class="counter-number" id="segundos">0</span>
+                <span class="counter-label">SEGUNDOS</span>
+            </div>
+
+        </div>
+
+        <div class="counter-love">
+            Y quiero seguir sumando muchos más contigo. ♡
+        </div>
+
+    </div>
 
 </section>
 
@@ -471,13 +524,9 @@ footer {
 
 <section>
 
-    <div class="number">
-        02
-    </div>
+    <div class="number">02</div>
 
-    <h2>
-        Algo que quiero decirte
-    </h2>
+    <h2>Algo que quiero decirte</h2>
 
     <p class="text">
         Tewi, hice este pequeño espacio porque quería darte
@@ -489,29 +538,15 @@ footer {
         canciones y pequeños momentos que sean solamente nuestros.
     </p>
 
-    <p class="text">
-        Y esto apenas está comenzando...
-    </p>
-
-
     <div class="letter-container">
 
-        <button
-            class="letter-button"
-            onclick="abrirCarta()">
-
+        <button class="letter-button" onclick="abrirCarta()">
             🔐 Abrir mi carta ♡
-
         </button>
 
+        <div class="letter" id="carta">
 
-        <div
-            class="letter"
-            id="carta">
-
-            <h3>
-                Para ti, Tewi
-            </h3>
+            <h3>Para ti, Tewi</h3>
 
             <p>
                 Hay personas que llegan a nuestra vida
@@ -541,8 +576,7 @@ footer {
 
             <p>
                 Y si esto es solamente el comienzo...
-                entonces me emociona muchísimo pensar
-                en todo lo que viene después.
+                me emociona muchísimo pensar en todo lo que viene después.
             </p>
 
             <div class="signature">
@@ -556,17 +590,13 @@ footer {
 </section>
 
 
-<!-- NUESTRO LADO SECRETO -->
+<!-- LADO SECRETO -->
 
 <section class="secret">
 
-    <div class="number">
-        03
-    </div>
+    <div class="number">03</div>
 
-    <h2>
-        Nuestro lado secreto
-    </h2>
+    <h2>Nuestro lado secreto</h2>
 
     <p class="text">
         Porque también existen esas partes de nosotros
@@ -587,18 +617,116 @@ footer {
 </section>
 
 
+<!-- VALES -->
+
+<section>
+
+    <div class="number">04</div>
+
+    <h2>Nuestros vales secretos</h2>
+
+    <p class="text">
+        Algunos pequeños regalos que podrás canjear cuando quieras. ♡
+    </p>
+
+    <div class="vouchers">
+
+        <div class="voucher" id="vale1">
+
+            <div class="voucher-icon">💋</div>
+
+            <h3>Vale por un beso</h3>
+
+            <p>
+                Canjeable cuando tú quieras.
+            </p>
+
+            <button class="redeem" onclick="canjear(1)">
+                Canjear ♡
+            </button>
+
+        </div>
+
+
+        <div class="voucher" id="vale2">
+
+            <div class="voucher-icon">🤗</div>
+
+            <h3>Vale por un abrazo</h3>
+
+            <p>
+                De esos que duran un poquito más.
+            </p>
+
+            <button class="redeem" onclick="canjear(2)">
+                Canjear ♡
+            </button>
+
+        </div>
+
+
+        <div class="voucher" id="vale3">
+
+            <div class="voucher-icon">🌙</div>
+
+            <h3>Vale por una cita</h3>
+
+            <p>
+                Tú eliges el momento.
+            </p>
+
+            <button class="redeem" onclick="canjear(3)">
+                Canjear ♡
+            </button>
+
+        </div>
+
+
+        <div class="voucher" id="vale4">
+
+            <div class="voucher-icon">🔐</div>
+
+            <h3>Vale por una sorpresa</h3>
+
+            <p>
+                Una pequeña aventura solamente nuestra.
+            </p>
+
+            <button class="redeem" onclick="canjear(4)">
+                Canjear ♡
+            </button>
+
+        </div>
+
+
+        <div class="voucher" id="vale5">
+
+            <div class="voucher-icon">❤️</div>
+
+            <h3>Vale por elegir</h3>
+
+            <p>
+                Hoy tú decides qué hacemos juntos.
+            </p>
+
+            <button class="redeem" onclick="canjear(5)">
+                Canjear ♡
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
 <!-- CANCIÓN -->
 
 <section class="song">
 
-    <div class="number">
-        04
-    </div>
+    <div class="number">05</div>
 
-    <h2>
-        Nuestra canción
-    </h2>
-
+    <h2>Nuestra canción</h2>
 
     <div class="song-card">
 
@@ -628,13 +756,9 @@ footer {
 
 <section class="final">
 
-    <div class="number">
-        05
-    </div>
+    <div class="number">06</div>
 
-    <h2>
-        Esto apenas comienza...
-    </h2>
+    <h2>Esto apenas comienza...</h2>
 
     <p class="text">
         Todavía tenemos mucho por vivir.
@@ -652,8 +776,6 @@ footer {
 </section>
 
 
-<!-- PIE -->
-
 <footer>
 
     Hecho especialmente para Tewi ♡
@@ -669,9 +791,56 @@ footer {
 </footer>
 
 
-<!-- JAVASCRIPT -->
-
 <script>
+
+/* CONTADOR */
+
+function actualizarContador() {
+
+    const inicio = new Date("2026-05-23T00:00:00");
+
+    const ahora = new Date();
+
+    const diferencia = ahora - inicio;
+
+    if (diferencia < 0) {
+        return;
+    }
+
+    const dias = Math.floor(
+        diferencia / (1000 * 60 * 60 * 24)
+    );
+
+    const horas = Math.floor(
+        (diferencia / (1000 * 60 * 60)) % 24
+    );
+
+    const minutos = Math.floor(
+        (diferencia / (1000 * 60)) % 60
+    );
+
+    const segundos = Math.floor(
+        (diferencia / 1000) % 60
+    );
+
+    document.getElementById("dias").textContent = dias;
+
+    document.getElementById("horas").textContent =
+        String(horas).padStart(2, "0");
+
+    document.getElementById("minutos").textContent =
+        String(minutos).padStart(2, "0");
+
+    document.getElementById("segundos").textContent =
+        String(segundos).padStart(2, "0");
+}
+
+actualizarContador();
+
+setInterval(actualizarContador, 1000);
+
+
+/* CARTA */
 
 function abrirCarta() {
 
@@ -681,8 +850,31 @@ function abrirCarta() {
 
 }
 
-</script>
 
+/* VALES */
+
+function canjear(numero) {
+
+    const vale = document.getElementById("vale" + numero);
+
+    vale.innerHTML = `
+        <div class="voucher-icon">♡</div>
+
+        <h3>Vale canjeado</h3>
+
+        <p>
+            Este momento queda reservado
+            solamente para nosotros.
+        </p>
+
+        <div class="redeemed">
+            ✦ Vale aceptado ✦
+        </div>
+    `;
+
+}
+
+</script>
 
 </body>
 </html>
