@@ -1,1101 +1,508 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Para Tewi ♡</title>
+<title>Nuestra Aventura de Vida ♡</title>
 
 <style>
-
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Georgia,"Times New Roman",serif;
-    background:#f5faf6;
-    color:#30483a;
-    line-height:1.7;
-}
-
-.heart{
-    position:fixed;
-    color:#91b79d;
-    font-size:18px;
-    opacity:.35;
-    animation:float 8s linear infinite;
-    pointer-events:none;
-    z-index:0;
-}
-
-.heart:nth-child(1){left:10%;animation-delay:0s}
-.heart:nth-child(2){left:30%;animation-delay:2s}
-.heart:nth-child(3){left:55%;animation-delay:4s}
-.heart:nth-child(4){left:75%;animation-delay:1s}
-.heart:nth-child(5){left:90%;animation-delay:3s}
-
-@keyframes float{
-    0%{bottom:-30px;transform:translateX(0)}
-    50%{transform:translateX(20px)}
-    100%{bottom:110%;transform:translateX(-20px)}
-}
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:30px;
-    background:
-        radial-gradient(circle at top,#fff,transparent 60%),
-        linear-gradient(135deg,#eef8f1,#dbeee0);
-}
-
-.hero-content{
-    max-width:700px;
-}
-
-.small-title{
-    letter-spacing:4px;
-    text-transform:uppercase;
-    font-size:12px;
-    color:#6f927a;
-    margin-bottom:20px;
-}
-
-h1{
-    font-size:clamp(55px,12vw,110px);
-    font-weight:normal;
-    color:#345441;
-}
-
-.date{
-    letter-spacing:4px;
-    color:#789683;
-    margin-bottom:30px;
-}
-
-.intro{
-    font-size:19px;
-    max-width:550px;
-    margin:auto;
-    color:#53695b;
-}
-
-.button,
-.letter-button,
-.redeem{
-    display:inline-block;
-    border:1px solid #779783;
-    background:transparent;
-    color:#466653;
-    border-radius:50px;
-    font-family:inherit;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.button{
-    margin-top:35px;
-    padding:14px 30px;
-    text-decoration:none;
-}
-
-.letter-button{
-    padding:15px 28px;
-    font-size:16px;
-}
-
-.redeem{
-    padding:10px 20px;
-}
-
-.button:hover,
-.letter-button:hover,
-.redeem:hover{
-    background:#466653;
-    color:white;
-}
-
-section{
-    max-width:850px;
-    margin:auto;
-    padding:100px 25px;
-}
-
-.number{
-    font-size:13px;
-    letter-spacing:4px;
-    color:#89a995;
-    margin-bottom:10px;
-}
-
-h2{
-    font-size:40px;
-    font-weight:normal;
-    color:#345441;
-    margin-bottom:25px;
-}
-
-.text{
-    font-size:18px;
-    color:#5c7063;
-    margin-bottom:18px;
-}
-
-/* CONTADOR */
-
-.counter-card{
-    margin-top:40px;
-    padding:35px 25px;
-    background:white;
-    border:1px solid #d5e4d9;
-    border-radius:22px;
-    box-shadow:0 15px 40px rgba(65,91,73,.08);
-    text-align:center;
-}
-
-.counter-title{
-    color:#6f927a;
-    letter-spacing:2px;
-    margin-bottom:25px;
-}
-
-.counter{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:10px;
-}
-
-.counter-box{
-    padding:10px;
-}
-
-.counter-number{
-    display:block;
-    font-size:32px;
-    color:#345441;
-}
-
-.counter-label{
-    font-size:12px;
-    color:#82988a;
-    letter-spacing:1px;
-}
-
-.counter-love{
-    margin-top:25px;
-    color:#789683;
-    font-style:italic;
-}
-
-/* CARTA */
-
-.letter-container{
-    margin-top:40px;
-    text-align:center;
-}
-
-.letter{
-    display:none;
-    margin-top:30px;
-    padding:35px;
-    background:white;
-    border:1px solid #d5e4d9;
-    border-radius:18px;
-    box-shadow:0 15px 40px rgba(65,91,73,.10);
-    text-align:left;
-}
-
-.letter.show{
-    display:block;
-    animation:openLetter .7s ease;
-}
-
-.letter h3{
-    color:#345441;
-    font-size:27px;
-    font-weight:normal;
-    margin-bottom:20px;
-}
-
-.letter p{
-    margin-bottom:18px;
-    color:#53695b;
-}
-
-.signature{
-    text-align:right;
-    margin-top:30px;
-    font-style:italic;
-    color:#6c8b77;
-}
-
-@keyframes openLetter{
-    from{
-        opacity:0;
-        transform:translateY(-15px) scale(.97);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0) scale(1);
-    }
-}
-
-/* LADO SECRETO */
-
-.secret{
-    background:#30483a;
-    color:#eef7f0;
-    max-width:none;
-    padding-left:max(25px,calc((100% - 850px)/2));
-    padding-right:max(25px,calc((100% - 850px)/2));
+* {
+    box-sizing: border-box;
 }
 
-.secret h2{
-    color:#f1f8f2;
+body {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #eef7f0;
+    color: #30483a;
 }
 
-.secret .number{
-    color:#a8c5b0;
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #e9f5ec, #f8fbf8);
 }
 
-.secret .text{
-    color:#d8e6dc;
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #355d46;
 }
 
-/* FOTOS SECRETAS */
-
-.secret-gallery{
-    margin-top:35px;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:14px;
-}
-
-.secret-gallery img{
-    width:100%;
-    aspect-ratio:1/1;
-    object-fit:cover;
-    border-radius:16px;
-    cursor:pointer;
-    transition:.35s;
-    border:1px solid rgba(255,255,255,.15);
-}
-
-.secret-gallery img:hover{
-    transform:scale(1.03);
+.hero p {
+    font-size: 1.2rem;
+    max-width: 650px;
+    line-height: 1.7;
 }
 
-/* VALES */
-
-.vouchers{
-    margin-top:40px;
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:20px;
+.boton {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 28px;
+    border-radius: 30px;
+    border: none;
+    background: #537c62;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
-.voucher{
-    background:white;
-    border:1px solid #d5e4d9;
-    border-radius:18px;
-    padding:28px 22px;
-    text-align:center;
-    box-shadow:0 12px 30px rgba(65,91,73,.07);
-    transition:.3s;
+.boton:hover {
+    transform: scale(1.05);
+    background: #42664f;
 }
 
-.voucher:hover{
-    transform:translateY(-4px);
+.seccion {
+    max-width: 1000px;
+    margin: auto;
+    padding: 70px 20px;
+    text-align: center;
 }
 
-.voucher-icon{
-    font-size:32px;
-    margin-bottom:10px;
+.seccion h2 {
+    color: #355d46;
+    font-size: 2rem;
+    margin-bottom: 25px;
 }
 
-.voucher h3{
-    color:#345441;
-    font-weight:normal;
-    font-size:22px;
-    margin-bottom:8px;
+.carta {
+    background: rgba(255,255,255,0.75);
+    padding: 35px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(50,80,60,0.10);
+    line-height: 1.9;
+    text-align: left;
 }
 
-.voucher p{
-    color:#789683;
-    font-size:14px;
-    margin-bottom:18px;
+.carta strong {
+    color: #355d46;
 }
 
-.redeemed{
-    color:#5f806b;
-    font-style:italic;
+.contador {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-top: 25px;
+    color: #52755f;
 }
 
-/* CANCIÓN */
-
-.song{
-    text-align:center;
+.vouchers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 18px;
+    margin-top: 30px;
 }
 
-.song-card{
-    margin-top:35px;
-    padding:30px;
-    border:1px solid #d5e4d9;
-    border-radius:20px;
-    background:white;
-    box-shadow:0 15px 40px rgba(65,91,73,.08);
+.voucher {
+    background: white;
+    padding: 25px 15px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(50,80,60,0.10);
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.music-symbol{
-    font-size:35px;
-    margin-bottom:15px;
+.voucher:hover {
+    transform: translateY(-5px);
 }
 
-.song-title{
-    font-size:27px;
-    color:#345441;
+.voucher h3 {
+    margin-top: 0;
+    color: #41634d;
 }
 
-.artist{
-    color:#7a9582;
-    margin-bottom:25px;
+.mensaje {
+    margin-top: 12px;
+    font-size: 0.95rem;
 }
 
-.youtube-player{
-    width:100%;
-    max-width:700px;
-    aspect-ratio:16/9;
-    border:none;
-    border-radius:15px;
-    display:block;
-    margin:auto;
+.musica {
+    margin-top: 30px;
 }
-
-/* RECUERDOS */
 
-.memories{
-    max-width:1100px;
+iframe {
+    width: 100%;
+    max-width: 700px;
+    height: 180px;
+    border: 0;
+    border-radius: 18px;
 }
 
-.memories-intro{
-    max-width:700px;
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 18px;
+    margin-top: 30px;
 }
 
-.memories-gallery{
-    margin-top:40px;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
+.galeria img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 18px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(50,80,60,0.15);
+    transition: 0.3s;
 }
 
-.memory{
-    overflow:hidden;
-    border-radius:18px;
-    background:white;
-    box-shadow:0 12px 30px rgba(65,91,73,.08);
-    cursor:pointer;
+.galeria img:hover {
+    transform: scale(1.03);
 }
 
-.memory img{
-    width:100%;
-    aspect-ratio:1/1;
-    object-fit:cover;
-    display:block;
-    transition:.4s;
+.secreto {
+    background: #24382c;
+    color: #edf7ef;
+    border-radius: 30px;
+    padding: 45px 25px;
+    margin-top: 20px;
 }
 
-.memory:hover img{
-    transform:scale(1.06);
+.secreto h2 {
+    color: #d8eadb;
 }
 
-/* MODAL */
-
-.modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(20,35,27,.9);
-    z-index:100;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
+.secreto p {
+    line-height: 1.8;
 }
 
-.modal.show{
-    display:flex;
+.secreto .galeria img {
+    border: 2px solid rgba(255,255,255,0.15);
 }
 
-.modal img{
-    max-width:95%;
-    max-height:90vh;
-    object-fit:contain;
-    border-radius:12px;
+.final {
+    padding: 80px 20px;
+    text-align: center;
+    background: #dfeee2;
 }
 
-.close{
-    position:absolute;
-    top:20px;
-    right:25px;
-    color:white;
-    font-size:38px;
-    cursor:pointer;
+.final h2 {
+    color: #355d46;
+    font-size: 2.2rem;
 }
 
-/* FINAL */
-
-.final{
-    text-align:center;
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
-.final h2{
-    font-size:45px;
+.modal img {
+    max-width: 95%;
+    max-height: 90vh;
+    border-radius: 15px;
 }
 
-footer{
-    text-align:center;
-    padding:50px 20px;
-    color:#82988a;
-    font-size:14px;
+.cerrar {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
 }
-
-@media(max-width:700px){
 
-    section{
-        padding:75px 22px;
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2.2rem;
     }
 
-    h2{
-        font-size:34px;
+    .carta {
+        padding: 25px 20px;
     }
 
-    .letter{
-        padding:25px;
+    .galeria img {
+        height: 200px;
     }
-
-    .counter{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .vouchers{
-        grid-template-columns:1fr;
-    }
-
-    .secret-gallery{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .memories-gallery{
-        grid-template-columns:repeat(2,1fr);
-        gap:12px;
-    }
-
 }
-
 </style>
 </head>
 
 <body>
 
-<div class="heart">♡</div>
-<div class="heart">♡</div>
-<div class="heart">♡</div>
-<div class="heart">♡</div>
-<div class="heart">♡</div>
+<section class="hero">
+    <h1>Para ti, Tewi ❤️</h1>
+
+    <p>
+        Un pequeño rincón creado para guardar un pedacito
+        de nuestra historia, nuestros recuerdos y todo lo que somos.
+    </p>
+
+    <button class="boton" onclick="abrirCarta()">
+        Abrir mi regalo ♡
+    </button>
+
+    <div class="contador" id="contador">
+        ✨ Calculando nuestros días... ✨
+    </div>
+</section>
 
 
-<!-- PORTADA -->
+<section class="seccion" id="carta">
 
-<header class="hero">
+    <h2>Una carta para ti 💌</h2>
 
-<div class="hero-content">
+    <div class="carta">
 
-<div class="small-title">
-Una pequeña sorpresa
-</div>
+        <p>
+            Esta página existe por una razón muy sencilla:
+            <strong>tú</strong>. ❤️
+        </p>
 
-<h1>Tewi</h1>
+        <p>
+            Porque hay personas que llegan a nuestra vida y la cambian
+            de una manera que no se puede explicar con palabras.
+            Tú eres esa persona para mí. Mi lugar seguro, mi alegría,
+            mi complicidad y ese pequeño caos bonito que hace que cada
+            día tenga algo especial.
+        </p>
 
-<div class="date">
-23 · 05 · 2026
-</div>
+        <p>
+            Quiero que este espacio sea un pedacito de todo lo que siento
+            por ti: nuestros momentos, nuestros recuerdos, nuestras
+            locuras y cada detalle que hace que te ame un poquito más.
+        </p>
 
-<p class="intro">
-Hay cosas que son difíciles de decir con palabras...
-así que decidí crear un pequeño lugar solamente para ti.
-</p>
+        <p>
+            No sé qué nos depare el futuro, pero sí sé algo:
+            <strong>quiero seguir escribiendo nuestra historia contigo</strong>. 🖤
+        </p>
 
-<a href="#historia"
-class="button"
-onclick="iniciarMusica()">
-Abrir mi regalo ♡
-</a>
+        <p>
+            Gracias por existir, por ser tú y por dejarme compartir
+            este camino a tu lado.
+        </p>
 
-</div>
+        <p>
+            <strong>
+                Te amo, hoy, mañana y en cada versión de nosotros que
+                todavía nos queda por conocer.
+            </strong> ♾️❤️
+        </p>
 
-</header>
+        <p style="text-align:center; margin-top:35px;">
+            Con amor,<br>
+            <strong>Mony ♡</strong>
+        </p>
 
-
-<!-- HISTORIA -->
-
-<section id="historia">
-
-<div class="number">01</div>
-
-<h2>Nuestra historia</h2>
-
-<p class="text">
-<strong>23 de mayo de 2026</strong>
-</p>
-
-<p class="text">
-Quizás una fecha pueda parecer solamente un día más
-en el calendario.
-</p>
-
-<p class="text">
-Pero para mí representa el comienzo de algo que quiero
-seguir construyendo contigo.
-</p>
-
-
-<div class="counter-card">
-
-<div class="counter-title">
-Nuestra historia lleva...
-</div>
-
-<div class="counter">
-
-<div class="counter-box">
-<span class="counter-number" id="dias">0</span>
-<span class="counter-label">DÍAS</span>
-</div>
-
-<div class="counter-box">
-<span class="counter-number" id="horas">0</span>
-<span class="counter-label">HORAS</span>
-</div>
-
-<div class="counter-box">
-<span class="counter-number" id="minutos">0</span>
-<span class="counter-label">MINUTOS</span>
-</div>
-
-<div class="counter-box">
-<span class="counter-number" id="segundos">0</span>
-<span class="counter-label">SEGUNDOS</span>
-</div>
-
-</div>
-
-<div class="counter-love">
-Y quiero seguir sumando muchos más contigo. ♡
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- CARTA -->
+<section class="seccion">
 
-<section>
+    <h2>Pequeños detalles para nosotros ✨</h2>
 
-<div class="number">02</div>
+    <div class="vouchers">
 
-<h2>Algo que quiero decirte</h2>
+        <div class="voucher" onclick="canjear(this)">
+            ☕
+            <h3>Tarde de café</h3>
+            <div class="mensaje"></div>
+        </div>
 
-<p class="text">
-Hay cosas que simplemente no caben en una conversación.
-</p>
+        <div class="voucher" onclick="canjear(this)">
+            🌙
+            <h3>Charla nocturna</h3>
+            <div class="mensaje"></div>
+        </div>
 
-<div class="letter-container">
+        <div class="voucher" onclick="canjear(this)">
+            🎬
+            <h3>Película juntos</h3>
+            <div class="mensaje"></div>
+        </div>
 
-<button class="letter-button" onclick="abrirCarta()">
-🔐 Abrir mi carta ♡
-</button>
+        <div class="voucher" onclick="canjear(this)">
+            💌
+            <h3>Carta sorpresa</h3>
+            <div class="mensaje"></div>
+        </div>
 
-<div class="letter" id="carta">
+        <div class="voucher" onclick="canjear(this)">
+            ✨
+            <h3>Una sorpresa secreta</h3>
+            <div class="mensaje"></div>
+        </div>
 
-<h3>Para ti, Tewi</h3>
-
-<p>
-Esta página existe por una razón muy sencilla:
-<strong>tú</strong>. ❤️
-</p>
-
-<p>
-Porque hay personas que llegan a nuestra vida y la cambian
-de una manera que no se puede explicar con palabras.
-Tú eres esa persona para mí. Mi lugar seguro, mi alegría,
-mi complicidad y ese pequeño caos bonito que hace que cada
-día tenga algo especial.
-</p>
-
-<p>
-Quiero que este espacio sea un pedacito de todo lo que siento
-por ti: nuestros momentos, nuestros recuerdos, nuestras
-locuras y cada detalle que hace que te ame un poquito más.
-</p>
-
-<p>
-No sé qué nos depare el futuro, pero sí sé algo:
-<strong>quiero seguir escribiendo nuestra historia contigo</strong>. 🖤
-</p>
-
-<p>
-Gracias por existir, por ser tú y por dejarme compartir
-este camino a tu lado.
-</p>
-
-<p>
-<strong>
-Te amo, hoy, mañana y en cada versión de nosotros
-que todavía nos queda por conocer.
-</strong> ♾️❤️
-</p>
-
-<div class="signature">
-Con amor, Mony ♡
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- LADO SECRETO -->
+<section class="seccion secreto">
 
-<section class="secret">
+    <h2>🔐 Nuestro lado secreto</h2>
 
-<div class="number">03</div>
+    <p>
+        Hay cosas que solamente nosotros entendemos...
+        miradas, complicidades, secretos y momentos que son
+        únicamente nuestros. 🖤
+    </p>
 
-<h2>Nuestro lado secreto</h2>
+    <div class="galeria">
 
-<p class="text">
-Porque también existen esas partes de nosotros
-que no necesitan explicarse a nadie más.
-</p>
+        <img src="fotos/foto 1.jpg" onclick="abrirFoto(this.src)">
+        <img src="fotos/foto 2.jpg" onclick="abrirFoto(this.src)">
+        <img src="fotos/foto 3.jpg" onclick="abrirFoto(this.src)">
+        <img src="fotos/foto 4.jpg" onclick="abrirFoto(this.src)">
+        <img src="fotos/foto 5.jpg" onclick="abrirFoto(this.src)">
+        <img src="fotos/foto 6.jpg" onclick="abrirFoto(this.src)">
 
-<p class="text">
-Este espacio será para nuestros secretos,
-nuestras complicidades y aquello que solamente
-nosotros entendemos.
-</p>
-
-<p class="text">
-🔐 Una parte de nuestra historia que solamente
-nosotros conocemos.
-</p>
-
-
-<div class="secret-gallery">
-
-<img src="fotos/foto1.jpg" alt="Nuestro lado secreto 1"
-onclick="abrirFoto(this.src)">
-
-<img src="fotos/foto2.jpg" alt="Nuestro lado secreto 2"
-onclick="abrirFoto(this.src)">
-
-<img src="fotos/foto3.jpg" alt="Nuestro lado secreto 3"
-onclick="abrirFoto(this.src)">
-
-<img src="fotos/foto4.jpg" alt="Nuestro lado secreto 4"
-onclick="abrirFoto(this.src)">
-
-<img src="fotos/foto5.jpg" alt="Nuestro lado secreto 5"
-onclick="abrirFoto(this.src)">
-
-<img src="fotos/foto6.jpg" alt="Nuestro lado secreto 6"
-onclick="abrirFoto(this.src)">
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- VALES -->
+<section class="seccion">
 
-<section>
+    <h2>🎵 Canción dedicada</h2>
 
-<div class="number">04</div>
+    <p>
+        Porque algunas canciones simplemente nos hacen pensar
+        en esa persona especial...
+    </p>
 
-<h2>Nuestros vales secretos</h2>
+    <div class="musica">
 
-<p class="text">
-Algunos pequeños regalos que podrás canjear cuando quieras. ♡
-</p>
+        <iframe
+            id="youtubePlayer"
+            src="https://www.youtube.com/embed/eMGMlqoHikU?enablejsapi=1&rel=0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+        </iframe>
 
-<div class="vouchers">
-
-<div class="voucher" id="vale1">
-<div class="voucher-icon">💋</div>
-<h3>Vale por un beso</h3>
-<p>Canjeable cuando tú quieras.</p>
-<button class="redeem" onclick="canjear(1)">
-Canjear ♡
-</button>
-</div>
-
-<div class="voucher" id="vale2">
-<div class="voucher-icon">🤗</div>
-<h3>Vale por un abrazo</h3>
-<p>De esos que duran un poquito más.</p>
-<button class="redeem" onclick="canjear(2)">
-Canjear ♡
-</button>
-</div>
-
-<div class="voucher" id="vale3">
-<div class="voucher-icon">🌙</div>
-<h3>Vale por una cita</h3>
-<p>Tú eliges el momento.</p>
-<button class="redeem" onclick="canjear(3)">
-Canjear ♡
-</button>
-</div>
-
-<div class="voucher" id="vale4">
-<div class="voucher-icon">🔐</div>
-<h3>Vale por una sorpresa</h3>
-<p>Una pequeña aventura solamente nuestra.</p>
-<button class="redeem" onclick="canjear(4)">
-Canjear ♡
-</button>
-</div>
-
-<div class="voucher" id="vale5">
-<div class="voucher-icon">❤️</div>
-<h3>Vale por elegir</h3>
-<p>Hoy tú decides qué hacemos juntos.</p>
-<button class="redeem" onclick="canjear(5)">
-Canjear ♡
-</button>
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- CANCIÓN -->
+<section class="seccion">
 
-<section class="song">
+    <h2>📸 Nuestros recuerdos</h2>
 
-<div class="number">05</div>
+    <p>
+        Momentos que quiero guardar para siempre. ❤️
+    </p>
 
-<h2>Nuestra canción</h2>
+    <div class="galeria">
 
-<div class="song-card">
+        <img src="fotos/foto 7.jpg" onclick="abrirFoto(this.src)">
+        <img src="fotos/foto 8.jpg" onclick="abrirFoto(this.src)">
+        <img src="fotos/foto 9.jpg" onclick="abrirFoto(this.src)">
+        <img src="fotos/foto 10.jpg" onclick="abrirFoto(this.src)">
+        <img src="fotos/foto 11.jpg" onclick="abrirFoto(this.src)">
+        <img src="fotos/foto 12.jpg" onclick="abrirFoto(this.src)">
+        <img src="fotos/foto 13.jpg" onclick="abrirFoto(this.src)">
+        <img src="fotos/foto 14.jpg" onclick="abrirFoto(this.src)">
+        <img src="fotos/foto 15.jpg" onclick="abrirFoto(this.src)">
+        <img src="fotos/foto 16.jpg" onclick="abrirFoto(this.src)">
 
-<div class="music-symbol">♪</div>
-
-<div class="song-title">
-Me gustas tanto
-</div>
-
-<div class="artist">
-Andrey Serrano
-</div>
-
-<iframe
-id="youtubePlayer"
-class="youtube-player"
-src="https://www.youtube.com/embed/eMGMlqoHikU?enablejsapi=1&rel=0"
-title="Me Gustas Tanto - Andrey Serrano"
-allow="autoplay; encrypted-media"
-allowfullscreen>
-</iframe>
-
-<p class="text" style="margin-top:20px;">
-Nuestra canción, para acompañar nuestra historia. ♡
-</p>
-
-</div>
+    </div>
 
 </section>
 
-
-<!-- RECUERDOS -->
-
-<section class="memories">
-
-<div class="number">06</div>
-
-<h2>Nuestros recuerdos</h2>
-
-<p class="text memories-intro">
-Algunos momentos que quiero guardar contigo,
-porque cada recuerdo contigo merece un lugar especial. ♡
-</p>
-
-<div class="memories-gallery">
-
-<div class="memory">
-<img src="fotos/foto7.jpg" alt="Nuestro recuerdo 7"
-onclick="abrirFoto(this.src)">
-</div>
-
-<div class="memory">
-<img src="fotos/foto8.jpg" alt="Nuestro recuerdo 8"
-onclick="abrirFoto(this.src)">
-</div>
-
-<div class="memory">
-<img src="fotos/foto9.jpg" alt="Nuestro recuerdo 9"
-onclick="abrirFoto(this.src)">
-</div>
-
-<div class="memory">
-<img src="fotos/foto10.jpg" alt="Nuestro recuerdo 10"
-onclick="abrirFoto(this.src)">
-</div>
-
-<div class="memory">
-<img src="fotos/foto11.jpg" alt="Nuestro recuerdo 11"
-onclick="abrirFoto(this.src)">
-</div>
-
-<div class="memory">
-<img src="fotos/foto12.jpg" alt="Nuestro recuerdo 12"
-onclick="abrirFoto(this.src)">
-</div>
-
-<div class="memory">
-<img src="fotos/foto13.jpg" alt="Nuestro recuerdo 13"
-onclick="abrirFoto(this.src)">
-</div>
-
-<div class="memory">
-<img src="fotos/foto14.jpg" alt="Nuestro recuerdo 14"
-onclick="abrirFoto(this.src)">
-</div>
-
-<div class="memory">
-<img src="fotos/foto15.jpg" alt="Nuestro recuerdo 15"
-onclick="abrirFoto(this.src)">
-</div>
-
-<div class="memory">
-<img src="fotos/foto16.jpg" alt="Nuestro recuerdo 16"
-onclick="abrirFoto(this.src)">
-</div>
-
-</div>
-
-</section>
-
-
-<!-- FINAL -->
 
 <section class="final">
 
-<div class="number">07</div>
+    <h2>Por todas las aventuras que nos quedan... ♾️</h2>
 
-<h2>Esto apenas comienza...</h2>
+    <p>
+        Esto es solamente el comienzo de nuestra historia.
+    </p>
 
-<p class="text">
-Todavía tenemos mucho por vivir.
-</p>
-
-<p class="text">
-Fotos, recuerdos, cartas, sueños, sorpresas
-y muchas historias que todavía no hemos escrito.
-</p>
-
-<p class="text">
-Y quiero descubrirlas contigo. ♡
-</p>
+    <p style="font-size:1.4rem;">
+        Te amo, Tewi. ❤️
+    </p>
 
 </section>
 
 
-<footer>
-
-Hecho especialmente para Tewi ♡
-
-<br><br>
-
-23 · 05 · 2026
-
-<br>
-
-Nuestra Aventura de Vida
-
-</footer>
-
-
-<!-- VISOR DE FOTOS -->
-
 <div class="modal" id="modal" onclick="cerrarFoto()">
 
-<span class="close">×</span>
+    <span class="cerrar">&times;</span>
 
-<img id="modalImage" src="" alt="Foto ampliada">
+    <img id="fotoGrande" src="" onclick="event.stopPropagation()">
 
 </div>
 
 
 <script>
 
-/* CONTADOR */
+function actualizarContador() {
 
-function actualizarContador(){
+    const inicio = new Date("2026-05-23T00:00:00");
+    const ahora = new Date();
 
-    const inicio =
-        new Date("2026-05-23T00:00:00");
+    const diferencia = ahora - inicio;
 
-    const ahora =
-        new Date();
+    const dias = Math.floor(
+        diferencia / (1000 * 60 * 60 * 24)
+    );
 
-    const diferencia =
-        ahora - inicio;
-
-    if(diferencia < 0) return;
-
-    const dias =
-        Math.floor(
-            diferencia /
-            (1000*60*60*24)
-        );
-
-    const horas =
-        Math.floor(
-            (diferencia /
-            (1000*60*60)) % 24
-        );
-
-    const minutos =
-        Math.floor(
-            (diferencia /
-            (1000*60)) % 60
-        );
-
-    const segundos =
-        Math.floor(
-            (diferencia /
-            1000) % 60
-        );
-
-    document.getElementById("dias")
-        .textContent = dias;
-
-    document.getElementById("horas")
-        .textContent =
-        String(horas).padStart(2,"0");
-
-    document.getElementById("minutos")
-        .textContent =
-        String(minutos).padStart(2,"0");
-
-    document.getElementById("segundos")
-        .textContent =
-        String(segundos).padStart(2,"0");
+    document.getElementById("contador").innerHTML =
+        "✨ " + dias + " días desde que llegaste ✨";
 }
 
 actualizarContador();
 
-setInterval(
-    actualizarContador,
-    1000
-);
+
+function abrirCarta() {
+
+    document.getElementById("carta").scrollIntoView({
+        behavior: "smooth"
+    });
+
+    iniciarMusica();
+}
 
 
-/* CARTA */
+function canjear(elemento) {
 
-function abrirCarta(){
+    const mensaje = elemento.querySelector(".mensaje");
 
-    const carta =
-        document.getElementById("carta");
-
-    carta.classList.toggle("show");
+    mensaje.innerHTML =
+        "♡ Este vale queda oficialmente guardado para nosotros ♡";
 
 }
 
 
-/* VALES */
+function abrirFoto(src) {
 
-function canjear(numero){
+    document.getElementById("fotoGrande").src = src;
 
-    const vale =
-        document.getElementById(
-            "vale"+numero
-        );
-
-    vale.innerHTML = `
-
-        <div class="voucher-icon">
-            ♡
-        </div>
-
-        <h3>
-            Vale canjeado
-        </h3>
-
-        <p>
-            Este momento queda reservado
-            solamente para nosotros.
-        </p>
-
-        <div class="redeemed">
-            ✦ Vale aceptado ✦
-        </div>
-
-    `;
-}
-
-
-/* FOTOS */
-
-function abrirFoto(src){
-
-    const modal =
-        document.getElementById("modal");
-
-    const imagen =
-        document.getElementById("modalImage");
-
-    imagen.src = src;
-
-    modal.classList.add("show");
-
-}
-
-function cerrarFoto(){
-
-    document.getElementById("modal")
-        .classList.remove("show");
+    document.getElementById("modal").style.display = "flex";
 
 }
 
 
-/* MÚSICA */
+function cerrarFoto() {
 
-function iniciarMusica(){
+    document.getElementById("modal").style.display = "none";
 
-    const player =
-        document.getElementById(
-            "youtubePlayer"
-        );
+    document.getElementById("fotoGrande").src = "";
+
+}
+
+
+function iniciarMusica() {
+
+    const player = document.getElementById("youtubePlayer");
 
     player.contentWindow.postMessage(
-        JSON.stringify({
-            event:"command",
-            func:"playVideo",
-            args:[]
-        }),
+        '{"event":"command","func":"playVideo","args":""}',
         "*"
     );
 
@@ -1105,3 +512,4 @@ function iniciarMusica(){
 
 </body>
 </html>
+```
