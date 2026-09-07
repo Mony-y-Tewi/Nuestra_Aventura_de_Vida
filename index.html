@@ -8,605 +8,495 @@
 
 <style>
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    font-family: Georgia, "Times New Roman", serif;
-    background: #f5faf6;
-    color: #30483a;
-    line-height: 1.7;
+body{
+    font-family:Georgia,"Times New Roman",serif;
+    background:#f5faf6;
+    color:#30483a;
+    line-height:1.7;
 }
 
-/* CORAZONES */
-
-.heart {
-    position: fixed;
-    color: #91b79d;
-    font-size: 18px;
-    opacity: .35;
-    animation: float 8s linear infinite;
-    pointer-events: none;
-    z-index: 0;
+.heart{
+    position:fixed;
+    color:#91b79d;
+    font-size:18px;
+    opacity:.35;
+    animation:float 8s linear infinite;
+    pointer-events:none;
+    z-index:0;
 }
 
-.heart:nth-child(1) {
-    left: 10%;
-    animation-delay: 0s;
+.heart:nth-child(1){left:10%;animation-delay:0s}
+.heart:nth-child(2){left:30%;animation-delay:2s}
+.heart:nth-child(3){left:55%;animation-delay:4s}
+.heart:nth-child(4){left:75%;animation-delay:1s}
+.heart:nth-child(5){left:90%;animation-delay:3s}
+
+@keyframes float{
+    0%{bottom:-30px;transform:translateX(0)}
+    50%{transform:translateX(20px)}
+    100%{bottom:110%;transform:translateX(-20px)}
 }
 
-.heart:nth-child(2) {
-    left: 30%;
-    animation-delay: 2s;
-}
-
-.heart:nth-child(3) {
-    left: 55%;
-    animation-delay: 4s;
-}
-
-.heart:nth-child(4) {
-    left: 75%;
-    animation-delay: 1s;
-}
-
-.heart:nth-child(5) {
-    left: 90%;
-    animation-delay: 3s;
-}
-
-@keyframes float {
-
-    0% {
-        bottom: -30px;
-        transform: translateX(0);
-    }
-
-    50% {
-        transform: translateX(20px);
-    }
-
-    100% {
-        bottom: 110%;
-        transform: translateX(-20px);
-    }
-
-}
-
-/* PORTADA */
-
-.hero {
-    min-height: 100vh;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    padding: 30px;
-
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:30px;
     background:
-        radial-gradient(circle at top, #ffffff, transparent 60%),
-        linear-gradient(135deg, #eef8f1, #dbeee0);
+        radial-gradient(circle at top,#fff,transparent 60%),
+        linear-gradient(135deg,#eef8f1,#dbeee0);
 }
 
-.hero-content {
-    max-width: 700px;
+.hero-content{
+    max-width:700px;
 }
 
-.small-title {
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    font-size: 12px;
-    color: #6f927a;
-    margin-bottom: 20px;
+.small-title{
+    letter-spacing:4px;
+    text-transform:uppercase;
+    font-size:12px;
+    color:#6f927a;
+    margin-bottom:20px;
 }
 
-h1 {
-    font-size: clamp(55px, 12vw, 110px);
-    font-weight: normal;
-    color: #345441;
+h1{
+    font-size:clamp(55px,12vw,110px);
+    font-weight:normal;
+    color:#345441;
 }
 
-.date {
-    letter-spacing: 4px;
-    color: #789683;
-    margin-bottom: 30px;
+.date{
+    letter-spacing:4px;
+    color:#789683;
+    margin-bottom:30px;
 }
 
-.intro {
-    font-size: 19px;
-    max-width: 550px;
-    margin: auto;
-    color: #53695b;
+.intro{
+    font-size:19px;
+    max-width:550px;
+    margin:auto;
+    color:#53695b;
 }
 
-.button {
-    display: inline-block;
-
-    margin-top: 35px;
-
-    padding: 14px 30px;
-
-    border: 1px solid #779783;
-    border-radius: 50px;
-
-    color: #466653;
-
-    text-decoration: none;
-
-    transition: .3s;
-
-    cursor: pointer;
+.button,
+.letter-button,
+.redeem{
+    display:inline-block;
+    border:1px solid #779783;
+    background:transparent;
+    color:#466653;
+    border-radius:50px;
+    font-family:inherit;
+    cursor:pointer;
+    transition:.3s;
 }
 
-.button:hover {
-    background: #466653;
-    color: white;
+.button{
+    margin-top:35px;
+    padding:14px 30px;
+    text-decoration:none;
 }
 
-/* SECCIONES */
-
-section {
-    max-width: 850px;
-    margin: auto;
-    padding: 100px 25px;
+.letter-button{
+    padding:15px 28px;
+    font-size:16px;
 }
 
-.number {
-    font-size: 13px;
-    letter-spacing: 4px;
-    color: #89a995;
-    margin-bottom: 10px;
+.redeem{
+    padding:10px 20px;
 }
 
-h2 {
-    font-size: 40px;
-    font-weight: normal;
-    color: #345441;
-    margin-bottom: 25px;
+.button:hover,
+.letter-button:hover,
+.redeem:hover{
+    background:#466653;
+    color:white;
 }
 
-.text {
-    font-size: 18px;
-    color: #5c7063;
-    margin-bottom: 18px;
+section{
+    max-width:850px;
+    margin:auto;
+    padding:100px 25px;
+}
+
+.number{
+    font-size:13px;
+    letter-spacing:4px;
+    color:#89a995;
+    margin-bottom:10px;
+}
+
+h2{
+    font-size:40px;
+    font-weight:normal;
+    color:#345441;
+    margin-bottom:25px;
+}
+
+.text{
+    font-size:18px;
+    color:#5c7063;
+    margin-bottom:18px;
 }
 
 /* CONTADOR */
 
-.counter-card {
-    margin-top: 40px;
-
-    padding: 35px 25px;
-
-    background: white;
-
-    border: 1px solid #d5e4d9;
-
-    border-radius: 22px;
-
-    box-shadow: 0 15px 40px rgba(65, 91, 73, .08);
-
-    text-align: center;
+.counter-card{
+    margin-top:40px;
+    padding:35px 25px;
+    background:white;
+    border:1px solid #d5e4d9;
+    border-radius:22px;
+    box-shadow:0 15px 40px rgba(65,91,73,.08);
+    text-align:center;
 }
 
-.counter-title {
-    color: #6f927a;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 25px;
+.counter-title{
+    color:#6f927a;
+    letter-spacing:2px;
+    margin-bottom:25px;
 }
 
-.counter {
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 10px;
+.counter{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
 }
 
-.counter-box {
-    padding: 10px;
+.counter-box{
+    padding:10px;
 }
 
-.counter-number {
-    display: block;
-
-    font-size: 32px;
-
-    color: #345441;
+.counter-number{
+    display:block;
+    font-size:32px;
+    color:#345441;
 }
 
-.counter-label {
-    font-size: 12px;
-
-    color: #82988a;
-
-    letter-spacing: 1px;
+.counter-label{
+    font-size:12px;
+    color:#82988a;
+    letter-spacing:1px;
 }
 
-.counter-love {
-    margin-top: 25px;
-
-    color: #789683;
-
-    font-style: italic;
+.counter-love{
+    margin-top:25px;
+    color:#789683;
+    font-style:italic;
 }
 
 /* CARTA */
 
-.letter-container {
-    margin-top: 40px;
-
-    text-align: center;
+.letter-container{
+    margin-top:40px;
+    text-align:center;
 }
 
-.letter-button {
-    border: 1px solid #779783;
-
-    background: transparent;
-
-    color: #466653;
-
-    padding: 15px 28px;
-
-    border-radius: 50px;
-
-    font-family: inherit;
-
-    font-size: 16px;
-
-    cursor: pointer;
-
-    transition: .3s;
+.letter{
+    display:none;
+    margin-top:30px;
+    padding:35px;
+    background:white;
+    border:1px solid #d5e4d9;
+    border-radius:18px;
+    box-shadow:0 15px 40px rgba(65,91,73,.10);
+    text-align:left;
 }
 
-.letter-button:hover {
-    background: #466653;
-
-    color: white;
+.letter.show{
+    display:block;
+    animation:openLetter .7s ease;
 }
 
-.letter {
-    display: none;
-
-    margin-top: 30px;
-
-    padding: 35px;
-
-    background: white;
-
-    border: 1px solid #d5e4d9;
-
-    border-radius: 18px;
-
-    box-shadow: 0 15px 40px rgba(65, 91, 73, .10);
-
-    text-align: left;
+.letter h3{
+    color:#345441;
+    font-size:27px;
+    font-weight:normal;
+    margin-bottom:20px;
 }
 
-.letter.show {
-    display: block;
-
-    animation: openLetter .7s ease;
+.letter p{
+    margin-bottom:18px;
+    color:#53695b;
 }
 
-.letter h3 {
-    color: #345441;
-
-    font-size: 27px;
-
-    font-weight: normal;
-
-    margin-bottom: 20px;
+.signature{
+    text-align:right;
+    margin-top:30px;
+    font-style:italic;
+    color:#6c8b77;
 }
 
-.letter p {
-    margin-bottom: 18px;
-
-    color: #53695b;
-}
-
-.signature {
-    text-align: right;
-
-    margin-top: 30px;
-
-    font-style: italic;
-
-    color: #6c8b77;
-}
-
-@keyframes openLetter {
-
-    from {
-        opacity: 0;
-
-        transform:
-            translateY(-15px)
-            scale(.97);
+@keyframes openLetter{
+    from{
+        opacity:0;
+        transform:translateY(-15px) scale(.97);
     }
-
-    to {
-        opacity: 1;
-
-        transform:
-            translateY(0)
-            scale(1);
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
     }
-
 }
 
-/* SECCIÓN SECRETA */
+/* LADO SECRETO */
 
-.secret {
-    background: #30483a;
-
-    color: #eef7f0;
-
-    max-width: none;
-
-    padding-left:
-        max(25px, calc((100% - 850px) / 2));
-
-    padding-right:
-        max(25px, calc((100% - 850px) / 2));
+.secret{
+    background:#30483a;
+    color:#eef7f0;
+    max-width:none;
+    padding-left:max(25px,calc((100% - 850px)/2));
+    padding-right:max(25px,calc((100% - 850px)/2));
 }
 
-.secret h2 {
-    color: #f1f8f2;
+.secret h2{
+    color:#f1f8f2;
 }
 
-.secret .number {
-    color: #a8c5b0;
+.secret .number{
+    color:#a8c5b0;
 }
 
-.secret .text {
-    color: #d8e6dc;
+.secret .text{
+    color:#d8e6dc;
+}
+
+/* FOTOS SECRETAS */
+
+.secret-gallery{
+    margin-top:35px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+}
+
+.secret-gallery img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:16px;
+    cursor:pointer;
+    transition:.35s;
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.secret-gallery img:hover{
+    transform:scale(1.03);
 }
 
 /* VALES */
 
-.vouchers {
-    margin-top: 40px;
-
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 20px;
+.vouchers{
+    margin-top:40px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
 }
 
-.voucher {
-    background: white;
-
-    border: 1px solid #d5e4d9;
-
-    border-radius: 18px;
-
-    padding: 28px 22px;
-
-    text-align: center;
-
-    box-shadow:
-        0 12px 30px rgba(65, 91, 73, .07);
-
-    transition: .3s;
+.voucher{
+    background:white;
+    border:1px solid #d5e4d9;
+    border-radius:18px;
+    padding:28px 22px;
+    text-align:center;
+    box-shadow:0 12px 30px rgba(65,91,73,.07);
+    transition:.3s;
 }
 
-.voucher:hover {
-    transform: translateY(-4px);
+.voucher:hover{
+    transform:translateY(-4px);
 }
 
-.voucher-icon {
-    font-size: 32px;
-
-    margin-bottom: 10px;
+.voucher-icon{
+    font-size:32px;
+    margin-bottom:10px;
 }
 
-.voucher h3 {
-    color: #345441;
-
-    font-weight: normal;
-
-    font-size: 22px;
-
-    margin-bottom: 8px;
+.voucher h3{
+    color:#345441;
+    font-weight:normal;
+    font-size:22px;
+    margin-bottom:8px;
 }
 
-.voucher p {
-    color: #789683;
-
-    font-size: 14px;
-
-    margin-bottom: 18px;
+.voucher p{
+    color:#789683;
+    font-size:14px;
+    margin-bottom:18px;
 }
 
-.redeem {
-    border: 1px solid #779783;
-
-    background: transparent;
-
-    color: #466653;
-
-    padding: 10px 20px;
-
-    border-radius: 50px;
-
-    font-family: inherit;
-
-    cursor: pointer;
-
-    transition: .3s;
-}
-
-.redeem:hover {
-    background: #466653;
-
-    color: white;
-}
-
-.redeemed {
-    color: #5f806b;
-
-    font-style: italic;
+.redeemed{
+    color:#5f806b;
+    font-style:italic;
 }
 
 /* CANCIÓN */
 
-.song {
-    text-align: center;
+.song{
+    text-align:center;
 }
 
-.song-card {
-    margin-top: 35px;
-
-    padding: 30px;
-
-    border: 1px solid #d5e4d9;
-
-    border-radius: 20px;
-
-    background: white;
-
-    box-shadow:
-        0 15px 40px rgba(65, 91, 73, .08);
+.song-card{
+    margin-top:35px;
+    padding:30px;
+    border:1px solid #d5e4d9;
+    border-radius:20px;
+    background:white;
+    box-shadow:0 15px 40px rgba(65,91,73,.08);
 }
 
-.music-symbol {
-    font-size: 35px;
-
-    margin-bottom: 15px;
+.music-symbol{
+    font-size:35px;
+    margin-bottom:15px;
 }
 
-.song-title {
-    font-size: 27px;
-
-    color: #345441;
+.song-title{
+    font-size:27px;
+    color:#345441;
 }
 
-.artist {
-    color: #7a9582;
-
-    margin-bottom: 25px;
+.artist{
+    color:#7a9582;
+    margin-bottom:25px;
 }
 
-.youtube-player {
-    width: 100%;
-
-    max-width: 700px;
-
-    aspect-ratio: 16 / 9;
-
-    border: none;
-
-    border-radius: 15px;
-
-    display: block;
-
-    margin: 0 auto 20px auto;
+.youtube-player{
+    width:100%;
+    max-width:700px;
+    aspect-ratio:16/9;
+    border:none;
+    border-radius:15px;
+    display:block;
+    margin:auto;
 }
 
-.music-message {
-    color: #789683;
+/* RECUERDOS */
 
-    font-style: italic;
+.memories{
+    max-width:1100px;
+}
 
-    font-size: 15px;
+.memories-intro{
+    max-width:700px;
+}
+
+.memories-gallery{
+    margin-top:40px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.memory{
+    overflow:hidden;
+    border-radius:18px;
+    background:white;
+    box-shadow:0 12px 30px rgba(65,91,73,.08);
+    cursor:pointer;
+}
+
+.memory img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    display:block;
+    transition:.4s;
+}
+
+.memory:hover img{
+    transform:scale(1.06);
+}
+
+/* MODAL */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(20,35,27,.9);
+    z-index:100;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal img{
+    max-width:95%;
+    max-height:90vh;
+    object-fit:contain;
+    border-radius:12px;
+}
+
+.close{
+    position:absolute;
+    top:20px;
+    right:25px;
+    color:white;
+    font-size:38px;
+    cursor:pointer;
 }
 
 /* FINAL */
 
-.final {
-    text-align: center;
+.final{
+    text-align:center;
 }
 
-.final h2 {
-    font-size: 45px;
+.final h2{
+    font-size:45px;
 }
 
-/* FOOTER */
-
-footer {
-    text-align: center;
-
-    padding: 50px 20px;
-
-    color: #82988a;
-
-    font-size: 14px;
+footer{
+    text-align:center;
+    padding:50px 20px;
+    color:#82988a;
+    font-size:14px;
 }
 
-/* MENSAJE DE MÚSICA */
+@media(max-width:700px){
 
-.music-started {
-    position: fixed;
-
-    bottom: 20px;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    background: #30483a;
-
-    color: white;
-
-    padding: 12px 20px;
-
-    border-radius: 50px;
-
-    font-size: 14px;
-
-    opacity: 0;
-
-    pointer-events: none;
-
-    transition: .4s;
-
-    z-index: 20;
-}
-
-.music-started.show {
-    opacity: 1;
-}
-
-/* MÓVIL */
-
-@media (max-width: 600px) {
-
-    section {
-        padding: 75px 22px;
+    section{
+        padding:75px 22px;
     }
 
-    h2 {
-        font-size: 34px;
+    h2{
+        font-size:34px;
     }
 
-    .letter {
-        padding: 25px;
+    .letter{
+        padding:25px;
     }
 
-    .counter {
-        grid-template-columns: repeat(2, 1fr);
+    .counter{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .vouchers {
-        grid-template-columns: 1fr;
+    .vouchers{
+        grid-template-columns:1fr;
     }
 
-    .youtube-player {
-        border-radius: 10px;
+    .secret-gallery{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .memories-gallery{
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
     }
 
 }
@@ -614,10 +504,7 @@ footer {
 </style>
 </head>
 
-
 <body>
-
-<!-- CORAZONES -->
 
 <div class="heart">♡</div>
 <div class="heart">♡</div>
@@ -630,148 +517,92 @@ footer {
 
 <header class="hero">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <div class="small-title">
-            Una pequeña sorpresa
-        </div>
+<div class="small-title">
+Una pequeña sorpresa
+</div>
 
-        <h1>Tewi</h1>
+<h1>Tewi</h1>
 
-        <div class="date">
-            23 · 05 · 2026
-        </div>
+<div class="date">
+23 · 05 · 2026
+</div>
 
-        <p class="intro">
-            Hay cosas que son difíciles de decir con palabras...
-            así que decidí crear un pequeño lugar solamente para ti.
-        </p>
+<p class="intro">
+Hay cosas que son difíciles de decir con palabras...
+así que decidí crear un pequeño lugar solamente para ti.
+</p>
 
-        <a
-            href="#historia"
-            class="button"
-            onclick="iniciarMusica()"
-        >
-            Abrir mi regalo ♡
-        </a>
+<a href="#historia"
+class="button"
+onclick="iniciarMusica()">
+Abrir mi regalo ♡
+</a>
 
-    </div>
+</div>
 
 </header>
 
 
-<!-- HISTORIA + CONTADOR -->
+<!-- HISTORIA -->
 
 <section id="historia">
 
-    <div class="number">
-        01
-    </div>
+<div class="number">01</div>
 
-    <h2>
-        Nuestra historia
-    </h2>
+<h2>Nuestra historia</h2>
 
-    <p class="text">
-        <strong>
-            23 de mayo de 2026
-        </strong>
-    </p>
+<p class="text">
+<strong>23 de mayo de 2026</strong>
+</p>
 
-    <p class="text">
-        Quizás una fecha pueda parecer solamente
-        un día más en el calendario.
-    </p>
+<p class="text">
+Quizás una fecha pueda parecer solamente un día más
+en el calendario.
+</p>
 
-    <p class="text">
-        Pero para mí representa el comienzo de algo
-        que quiero seguir construyendo contigo.
-    </p>
+<p class="text">
+Pero para mí representa el comienzo de algo que quiero
+seguir construyendo contigo.
+</p>
 
 
-    <div class="counter-card">
+<div class="counter-card">
 
-        <div class="counter-title">
-            Nuestra historia lleva...
-        </div>
+<div class="counter-title">
+Nuestra historia lleva...
+</div>
 
+<div class="counter">
 
-        <div class="counter">
+<div class="counter-box">
+<span class="counter-number" id="dias">0</span>
+<span class="counter-label">DÍAS</span>
+</div>
 
-            <div class="counter-box">
+<div class="counter-box">
+<span class="counter-number" id="horas">0</span>
+<span class="counter-label">HORAS</span>
+</div>
 
-                <span
-                    class="counter-number"
-                    id="dias"
-                >
-                    0
-                </span>
+<div class="counter-box">
+<span class="counter-number" id="minutos">0</span>
+<span class="counter-label">MINUTOS</span>
+</div>
 
-                <span class="counter-label">
-                    DÍAS
-                </span>
+<div class="counter-box">
+<span class="counter-number" id="segundos">0</span>
+<span class="counter-label">SEGUNDOS</span>
+</div>
 
-            </div>
+</div>
 
+<div class="counter-love">
+Y quiero seguir sumando muchos más contigo. ♡
+</div>
 
-            <div class="counter-box">
-
-                <span
-                    class="counter-number"
-                    id="horas"
-                >
-                    0
-                </span>
-
-                <span class="counter-label">
-                    HORAS
-                </span>
-
-            </div>
-
-
-            <div class="counter-box">
-
-                <span
-                    class="counter-number"
-                    id="minutos"
-                >
-                    0
-                </span>
-
-                <span class="counter-label">
-                    MINUTOS
-                </span>
-
-            </div>
-
-
-            <div class="counter-box">
-
-                <span
-                    class="counter-number"
-                    id="segundos"
-                >
-                    0
-                </span>
-
-                <span class="counter-label">
-                    SEGUNDOS
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="counter-love">
-
-            Y quiero seguir sumando
-            muchos más contigo. ♡
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
@@ -780,92 +611,67 @@ footer {
 
 <section>
 
-    <div class="number">
-        02
-    </div>
+<div class="number">02</div>
 
-    <h2>
-        Algo que quiero decirte
-    </h2>
+<h2>Algo que quiero decirte</h2>
 
-    <p class="text">
-        Hay cosas que simplemente no caben
-        en una conversación.
-    </p>
+<p class="text">
+Hay cosas que simplemente no caben en una conversación.
+</p>
 
-    <div class="letter-container">
+<div class="letter-container">
 
-        <button
-            class="letter-button"
-            onclick="abrirCarta()"
-        >
-            🔐 Abrir mi carta ♡
-        </button>
+<button class="letter-button" onclick="abrirCarta()">
+🔐 Abrir mi carta ♡
+</button>
 
+<div class="letter" id="carta">
 
-        <div
-            class="letter"
-            id="carta"
-        >
+<h3>Para ti, Tewi</h3>
 
-            <h3>
-                Para ti, Tewi
-            </h3>
+<p>
+Esta página existe por una razón muy sencilla:
+<strong>tú</strong>. ❤️
+</p>
 
+<p>
+Porque hay personas que llegan a nuestra vida y la cambian
+de una manera que no se puede explicar con palabras.
+Tú eres esa persona para mí. Mi lugar seguro, mi alegría,
+mi complicidad y ese pequeño caos bonito que hace que cada
+día tenga algo especial.
+</p>
 
-            <p>
-                Esta página existe por una razón muy sencilla:
-                <strong>tú</strong>. ❤️
-            </p>
+<p>
+Quiero que este espacio sea un pedacito de todo lo que siento
+por ti: nuestros momentos, nuestros recuerdos, nuestras
+locuras y cada detalle que hace que te ame un poquito más.
+</p>
 
+<p>
+No sé qué nos depare el futuro, pero sí sé algo:
+<strong>quiero seguir escribiendo nuestra historia contigo</strong>. 🖤
+</p>
 
-            <p>
-                Porque hay personas que llegan a nuestra vida
-                y la cambian de una manera que no se puede explicar
-                con palabras. Tú eres esa persona para mí.
-                Mi lugar seguro, mi alegría, mi complicidad y ese
-                pequeño caos bonito que hace que cada día tenga
-                algo especial.
-            </p>
+<p>
+Gracias por existir, por ser tú y por dejarme compartir
+este camino a tu lado.
+</p>
 
+<p>
+<strong>
+Te amo, hoy, mañana y en cada versión de nosotros
+que todavía nos queda por conocer.
+</strong> ♾️❤️
+</p>
 
-            <p>
-                Quiero que este espacio sea un pedacito de todo
-                lo que siento por ti: nuestros momentos, nuestros
-                recuerdos, nuestras locuras y cada detalle que hace
-                que te ame un poquito más.
-            </p>
+<div class="signature">
+Con amor, Mony ♡
+</div>
 
+</div>
 
-            <p>
-                No sé qué nos depare el futuro, pero sí sé algo:
-                <strong>
-                    quiero seguir escribiendo nuestra historia contigo
-                </strong>. 🖤
-            </p>
-
-
-            <p>
-                Gracias por existir, por ser tú y por dejarme
-                compartir este camino a tu lado.
-            </p>
-
-
-            <p>
-                <strong>
-                    Te amo, hoy, mañana y en cada versión de nosotros
-                    que todavía nos queda por conocer.
-                </strong> ♾️❤️
-            </p>
-
-
-            <div class="signature">
-                Con amor, Mony ♡
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
@@ -874,29 +680,48 @@ footer {
 
 <section class="secret">
 
-    <div class="number">
-        03
-    </div>
+<div class="number">03</div>
 
-    <h2>
-        Nuestro lado secreto
-    </h2>
+<h2>Nuestro lado secreto</h2>
 
-    <p class="text">
-        Porque también existen esas partes de nosotros
-        que no necesitan explicarse a nadie más.
-    </p>
+<p class="text">
+Porque también existen esas partes de nosotros
+que no necesitan explicarse a nadie más.
+</p>
 
-    <p class="text">
-        Este espacio será para nuestros secretos,
-        nuestras complicidades y aquello que solamente
-        nosotros entendemos.
-    </p>
+<p class="text">
+Este espacio será para nuestros secretos,
+nuestras complicidades y aquello que solamente
+nosotros entendemos.
+</p>
 
-    <p class="text">
-        🔐 Una parte de nuestra historia que solamente
-        nosotros conocemos.
-    </p>
+<p class="text">
+🔐 Una parte de nuestra historia que solamente
+nosotros conocemos.
+</p>
+
+
+<div class="secret-gallery">
+
+<img src="fotos/foto1.jpg" alt="Nuestro lado secreto 1"
+onclick="abrirFoto(this.src)">
+
+<img src="fotos/foto2.jpg" alt="Nuestro lado secreto 2"
+onclick="abrirFoto(this.src)">
+
+<img src="fotos/foto3.jpg" alt="Nuestro lado secreto 3"
+onclick="abrirFoto(this.src)">
+
+<img src="fotos/foto4.jpg" alt="Nuestro lado secreto 4"
+onclick="abrirFoto(this.src)">
+
+<img src="fotos/foto5.jpg" alt="Nuestro lado secreto 5"
+onclick="abrirFoto(this.src)">
+
+<img src="fotos/foto6.jpg" alt="Nuestro lado secreto 6"
+onclick="abrirFoto(this.src)">
+
+</div>
 
 </section>
 
@@ -905,168 +730,62 @@ footer {
 
 <section>
 
-    <div class="number">
-        04
-    </div>
+<div class="number">04</div>
 
-    <h2>
-        Nuestros vales secretos
-    </h2>
+<h2>Nuestros vales secretos</h2>
 
-    <p class="text">
-        Algunos pequeños regalos que podrás canjear
-        cuando quieras. ♡
-    </p>
+<p class="text">
+Algunos pequeños regalos que podrás canjear cuando quieras. ♡
+</p>
 
+<div class="vouchers">
 
-    <div class="vouchers">
+<div class="voucher" id="vale1">
+<div class="voucher-icon">💋</div>
+<h3>Vale por un beso</h3>
+<p>Canjeable cuando tú quieras.</p>
+<button class="redeem" onclick="canjear(1)">
+Canjear ♡
+</button>
+</div>
 
+<div class="voucher" id="vale2">
+<div class="voucher-icon">🤗</div>
+<h3>Vale por un abrazo</h3>
+<p>De esos que duran un poquito más.</p>
+<button class="redeem" onclick="canjear(2)">
+Canjear ♡
+</button>
+</div>
 
-        <!-- VALE 1 -->
+<div class="voucher" id="vale3">
+<div class="voucher-icon">🌙</div>
+<h3>Vale por una cita</h3>
+<p>Tú eliges el momento.</p>
+<button class="redeem" onclick="canjear(3)">
+Canjear ♡
+</button>
+</div>
 
-        <div
-            class="voucher"
-            id="vale1"
-        >
+<div class="voucher" id="vale4">
+<div class="voucher-icon">🔐</div>
+<h3>Vale por una sorpresa</h3>
+<p>Una pequeña aventura solamente nuestra.</p>
+<button class="redeem" onclick="canjear(4)">
+Canjear ♡
+</button>
+</div>
 
-            <div class="voucher-icon">
-                💋
-            </div>
+<div class="voucher" id="vale5">
+<div class="voucher-icon">❤️</div>
+<h3>Vale por elegir</h3>
+<p>Hoy tú decides qué hacemos juntos.</p>
+<button class="redeem" onclick="canjear(5)">
+Canjear ♡
+</button>
+</div>
 
-            <h3>
-                Vale por un beso
-            </h3>
-
-            <p>
-                Canjeable cuando tú quieras.
-            </p>
-
-            <button
-                class="redeem"
-                onclick="canjear(1)"
-            >
-                Canjear ♡
-            </button>
-
-        </div>
-
-
-        <!-- VALE 2 -->
-
-        <div
-            class="voucher"
-            id="vale2"
-        >
-
-            <div class="voucher-icon">
-                🤗
-            </div>
-
-            <h3>
-                Vale por un abrazo
-            </h3>
-
-            <p>
-                De esos que duran un poquito más.
-            </p>
-
-            <button
-                class="redeem"
-                onclick="canjear(2)"
-            >
-                Canjear ♡
-            </button>
-
-        </div>
-
-
-        <!-- VALE 3 -->
-
-        <div
-            class="voucher"
-            id="vale3"
-        >
-
-            <div class="voucher-icon">
-                🌙
-            </div>
-
-            <h3>
-                Vale por una cita
-            </h3>
-
-            <p>
-                Tú eliges el momento.
-            </p>
-
-            <button
-                class="redeem"
-                onclick="canjear(3)"
-            >
-                Canjear ♡
-            </button>
-
-        </div>
-
-
-        <!-- VALE 4 -->
-
-        <div
-            class="voucher"
-            id="vale4"
-        >
-
-            <div class="voucher-icon">
-                🔐
-            </div>
-
-            <h3>
-                Vale por una sorpresa
-            </h3>
-
-            <p>
-                Una pequeña aventura solamente nuestra.
-            </p>
-
-            <button
-                class="redeem"
-                onclick="canjear(4)"
-            >
-                Canjear ♡
-            </button>
-
-        </div>
-
-
-        <!-- VALE 5 -->
-
-        <div
-            class="voucher"
-            id="vale5"
-        >
-
-            <div class="voucher-icon">
-                ❤️
-            </div>
-
-            <h3>
-                Vale por elegir
-            </h3>
-
-            <p>
-                Hoy tú decides qué hacemos juntos.
-            </p>
-
-            <button
-                class="redeem"
-                onclick="canjear(5)"
-            >
-                Canjear ♡
-            </button>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
@@ -1075,46 +794,106 @@ footer {
 
 <section class="song">
 
-    <div class="number">
-        05
-    </div>
+<div class="number">05</div>
 
-    <h2>
-        Nuestra canción
-    </h2>
+<h2>Nuestra canción</h2>
+
+<div class="song-card">
+
+<div class="music-symbol">♪</div>
+
+<div class="song-title">
+Me gustas tanto
+</div>
+
+<div class="artist">
+Andrey Serrano
+</div>
+
+<iframe
+id="youtubePlayer"
+class="youtube-player"
+src="https://www.youtube.com/embed/eMGMlqoHikU?enablejsapi=1&rel=0"
+title="Me Gustas Tanto - Andrey Serrano"
+allow="autoplay; encrypted-media"
+allowfullscreen>
+</iframe>
+
+<p class="text" style="margin-top:20px;">
+Nuestra canción, para acompañar nuestra historia. ♡
+</p>
+
+</div>
+
+</section>
 
 
-    <div class="song-card">
+<!-- RECUERDOS -->
 
-        <div class="music-symbol">
-            ♪
-        </div>
+<section class="memories">
 
-        <div class="song-title">
-            Me gustas tanto
-        </div>
+<div class="number">06</div>
 
-        <div class="artist">
-            Andrey Serrano
-        </div>
+<h2>Nuestros recuerdos</h2>
 
+<p class="text memories-intro">
+Algunos momentos que quiero guardar contigo,
+porque cada recuerdo contigo merece un lugar especial. ♡
+</p>
 
-        <iframe
-            id="youtubePlayer"
-            class="youtube-player"
-            src="https://www.youtube.com/embed/eMGMlqoHikU?enablejsapi=1&rel=0"
-            title="Me Gustas Tanto - Andrey Serrano"
-            allow="autoplay; encrypted-media"
-            allowfullscreen>
-        </iframe>
+<div class="memories-gallery">
 
+<div class="memory">
+<img src="fotos/foto7.jpg" alt="Nuestro recuerdo 7"
+onclick="abrirFoto(this.src)">
+</div>
 
-        <p class="music-message">
-            Nuestra canción, para acompañar
-            nuestra historia. ♡
-        </p>
+<div class="memory">
+<img src="fotos/foto8.jpg" alt="Nuestro recuerdo 8"
+onclick="abrirFoto(this.src)">
+</div>
 
-    </div>
+<div class="memory">
+<img src="fotos/foto9.jpg" alt="Nuestro recuerdo 9"
+onclick="abrirFoto(this.src)">
+</div>
+
+<div class="memory">
+<img src="fotos/foto10.jpg" alt="Nuestro recuerdo 10"
+onclick="abrirFoto(this.src)">
+</div>
+
+<div class="memory">
+<img src="fotos/foto11.jpg" alt="Nuestro recuerdo 11"
+onclick="abrirFoto(this.src)">
+</div>
+
+<div class="memory">
+<img src="fotos/foto12.jpg" alt="Nuestro recuerdo 12"
+onclick="abrirFoto(this.src)">
+</div>
+
+<div class="memory">
+<img src="fotos/foto13.jpg" alt="Nuestro recuerdo 13"
+onclick="abrirFoto(this.src)">
+</div>
+
+<div class="memory">
+<img src="fotos/foto14.jpg" alt="Nuestro recuerdo 14"
+onclick="abrirFoto(this.src)">
+</div>
+
+<div class="memory">
+<img src="fotos/foto15.jpg" alt="Nuestro recuerdo 15"
+onclick="abrirFoto(this.src)">
+</div>
+
+<div class="memory">
+<img src="fotos/foto16.jpg" alt="Nuestro recuerdo 16"
+onclick="abrirFoto(this.src)">
+</div>
+
+</div>
 
 </section>
 
@@ -1123,64 +902,57 @@ footer {
 
 <section class="final">
 
-    <div class="number">
-        06
-    </div>
+<div class="number">07</div>
 
-    <h2>
-        Esto apenas comienza...
-    </h2>
+<h2>Esto apenas comienza...</h2>
 
-    <p class="text">
-        Todavía tenemos mucho por vivir.
-    </p>
+<p class="text">
+Todavía tenemos mucho por vivir.
+</p>
 
-    <p class="text">
-        Fotos, recuerdos, cartas, sueños, sorpresas
-        y muchas historias que todavía no hemos escrito.
-    </p>
+<p class="text">
+Fotos, recuerdos, cartas, sueños, sorpresas
+y muchas historias que todavía no hemos escrito.
+</p>
 
-    <p class="text">
-        Y quiero descubrirlas contigo. ♡
-    </p>
+<p class="text">
+Y quiero descubrirlas contigo. ♡
+</p>
 
 </section>
 
 
-<!-- FOOTER -->
-
 <footer>
 
-    Hecho especialmente para Tewi ♡
+Hecho especialmente para Tewi ♡
 
-    <br><br>
+<br><br>
 
-    23 · 05 · 2026
+23 · 05 · 2026
 
-    <br>
+<br>
 
-    Nuestra Aventura de Vida
+Nuestra Aventura de Vida
 
 </footer>
 
 
-<!-- MENSAJE DE MÚSICA -->
+<!-- VISOR DE FOTOS -->
 
-<div
-    class="music-started"
-    id="musicStarted"
->
-    🎵 Nuestra canción ♡
+<div class="modal" id="modal" onclick="cerrarFoto()">
+
+<span class="close">×</span>
+
+<img id="modalImage" src="" alt="Foto ampliada">
+
 </div>
 
 
 <script>
 
-/* ==========================
-   CONTADOR
-========================== */
+/* CONTADOR */
 
-function actualizarContador() {
+function actualizarContador(){
 
     const inicio =
         new Date("2026-05-23T00:00:00");
@@ -1191,32 +963,25 @@ function actualizarContador() {
     const diferencia =
         ahora - inicio;
 
-
-    if (diferencia < 0) {
-        return;
-    }
-
+    if(diferencia < 0) return;
 
     const dias =
         Math.floor(
             diferencia /
-            (1000 * 60 * 60 * 24)
+            (1000*60*60*24)
         );
-
 
     const horas =
         Math.floor(
             (diferencia /
-            (1000 * 60 * 60)) % 24
+            (1000*60*60)) % 24
         );
-
 
     const minutos =
         Math.floor(
             (diferencia /
-            (1000 * 60)) % 60
+            (1000*60)) % 60
         );
-
 
     const segundos =
         Math.floor(
@@ -1224,30 +989,23 @@ function actualizarContador() {
             1000) % 60
         );
 
-
     document.getElementById("dias")
         .textContent = dias;
 
-
     document.getElementById("horas")
         .textContent =
-        String(horas).padStart(2, "0");
-
+        String(horas).padStart(2,"0");
 
     document.getElementById("minutos")
         .textContent =
-        String(minutos).padStart(2, "0");
-
+        String(minutos).padStart(2,"0");
 
     document.getElementById("segundos")
         .textContent =
-        String(segundos).padStart(2, "0");
-
+        String(segundos).padStart(2,"0");
 }
 
-
 actualizarContador();
-
 
 setInterval(
     actualizarContador,
@@ -1255,32 +1013,26 @@ setInterval(
 );
 
 
-/* ==========================
-   CARTA
-========================== */
+/* CARTA */
 
-function abrirCarta() {
+function abrirCarta(){
 
     const carta =
         document.getElementById("carta");
-
 
     carta.classList.toggle("show");
 
 }
 
 
-/* ==========================
-   VALES
-========================== */
+/* VALES */
 
-function canjear(numero) {
+function canjear(numero){
 
     const vale =
         document.getElementById(
-            "vale" + numero
+            "vale"+numero
         );
-
 
     vale.innerHTML = `
 
@@ -1302,50 +1054,49 @@ function canjear(numero) {
         </div>
 
     `;
+}
+
+
+/* FOTOS */
+
+function abrirFoto(src){
+
+    const modal =
+        document.getElementById("modal");
+
+    const imagen =
+        document.getElementById("modalImage");
+
+    imagen.src = src;
+
+    modal.classList.add("show");
+
+}
+
+function cerrarFoto(){
+
+    document.getElementById("modal")
+        .classList.remove("show");
 
 }
 
 
-/* ==========================
-   MÚSICA
-========================== */
+/* MÚSICA */
 
-function iniciarMusica() {
+function iniciarMusica(){
 
     const player =
         document.getElementById(
             "youtubePlayer"
         );
 
-
     player.contentWindow.postMessage(
         JSON.stringify({
-            event: "command",
-            func: "playVideo",
-            args: []
+            event:"command",
+            func:"playVideo",
+            args:[]
         }),
         "*"
-    );
-
-
-    const mensaje =
-        document.getElementById(
-            "musicStarted"
-        );
-
-
-    mensaje.classList.add("show");
-
-
-    setTimeout(
-        function() {
-
-            mensaje.classList.remove(
-                "show"
-            );
-
-        },
-        3000
     );
 
 }
