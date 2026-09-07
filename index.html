@@ -1,558 +1,542 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Para Tewi ♡</title>
+<title>Para Tewi ♡</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
 
-        html {
-            scroll-behavior: smooth;
-        }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        body {
-            font-family: Georgia, "Times New Roman", serif;
-            background: #edf6ef;
-            color: #25372b;
-            overflow-x: hidden;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        /* Corazones flotantes */
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #f5faf6;
+    color: #30483a;
+    line-height: 1.7;
+}
 
-        .heart {
-            position: fixed;
-            bottom: -30px;
-            font-size: 20px;
-            opacity: 0;
-            animation: float 8s linear infinite;
-            z-index: 0;
-            color: #789b82;
-        }
+/* CORAZONES */
 
-        .heart:nth-child(1) {
-            left: 10%;
-            animation-delay: 1s;
-        }
+.heart {
+    position: fixed;
+    color: #91b79d;
+    font-size: 18px;
+    opacity: .35;
+    animation: float 8s linear infinite;
+    pointer-events: none;
+}
 
-        .heart:nth-child(2) {
-            left: 30%;
-            animation-delay: 4s;
-        }
+.heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+.heart:nth-child(2) { left: 30%; animation-delay: 2s; }
+.heart:nth-child(3) { left: 55%; animation-delay: 4s; }
+.heart:nth-child(4) { left: 75%; animation-delay: 1s; }
+.heart:nth-child(5) { left: 90%; animation-delay: 3s; }
 
-        .heart:nth-child(3) {
-            left: 55%;
-            animation-delay: 2s;
-        }
+@keyframes float {
+    0% {
+        bottom: -30px;
+        transform: translateX(0);
+    }
 
-        .heart:nth-child(4) {
-            left: 80%;
-            animation-delay: 6s;
-        }
+    50% {
+        transform: translateX(20px);
+    }
 
-        @keyframes float {
-            0% {
-                transform: translateY(0) scale(.8);
-                opacity: 0;
-            }
+    100% {
+        bottom: 110%;
+        transform: translateX(-20px);
+    }
+}
 
-            20% {
-                opacity: .5;
-            }
+/* PORTADA */
 
-            80% {
-                opacity: .3;
-            }
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
 
-            100% {
-                transform: translateY(-110vh) scale(1.3);
-                opacity: 0;
-            }
-        }
+    background:
+        radial-gradient(circle at top, #ffffff, transparent 60%),
+        linear-gradient(135deg, #eef8f1, #dbeee0);
+}
 
-        /* PORTADA */
+.hero-content {
+    max-width: 700px;
+}
 
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 30px;
-            position: relative;
-            background:
-                radial-gradient(
-                    circle at center,
-                    #f7fff8 0%,
-                    #e5f2e8 45%,
-                    #cfe5d3 100%
-                );
-        }
+.small-title {
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #6f927a;
+    margin-bottom: 20px;
+}
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 700px;
-            animation: appear 2s ease;
-        }
+h1 {
+    font-size: clamp(55px, 12vw, 110px);
+    font-weight: normal;
+    color: #345441;
+    margin-bottom: 5px;
+}
 
-        @keyframes appear {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
+.date {
+    letter-spacing: 4px;
+    color: #789683;
+    margin-bottom: 30px;
+}
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+.intro {
+    font-size: 19px;
+    max-width: 550px;
+    margin: auto;
+    color: #53695b;
+}
 
-        .symbol {
-            font-size: 45px;
-            color: #587a62;
-            margin-bottom: 25px;
-        }
+.button {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 14px 30px;
+    border: 1px solid #779783;
+    border-radius: 50px;
+    color: #466653;
+    text-decoration: none;
+    transition: .3s;
+}
 
-        .small-title {
-            font-size: 15px;
-            letter-spacing: 6px;
-            text-transform: uppercase;
-            color: #587a62;
-            margin-bottom: 20px;
-        }
+.button:hover {
+    background: #466653;
+    color: white;
+}
 
-        h1 {
-            font-size: clamp(55px, 12vw, 100px);
-            font-weight: normal;
-            letter-spacing: 8px;
-            margin-bottom: 20px;
-        }
+/* SECCIONES */
 
-        .date {
-            font-size: 17px;
-            letter-spacing: 5px;
-            color: #587a62;
-            margin-bottom: 30px;
-        }
+section {
+    max-width: 850px;
+    margin: auto;
+    padding: 100px 25px;
+}
 
-        .intro {
-            font-size: 20px;
-            font-style: italic;
-            line-height: 1.8;
-            margin: auto;
-            max-width: 520px;
-            margin-bottom: 45px;
-        }
+.number {
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: #89a995;
+    margin-bottom: 10px;
+}
 
-        .open-button {
-            display: inline-block;
-            padding: 17px 42px;
-            border-radius: 50px;
-            background: #587a62;
-            color: white;
-            text-decoration: none;
-            letter-spacing: 2px;
-            transition: all .4s ease;
-            box-shadow: 0 10px 30px rgba(50, 90, 60, .2);
-        }
+h2 {
+    font-size: 40px;
+    font-weight: normal;
+    color: #345441;
+    margin-bottom: 25px;
+}
 
-        .open-button:hover {
-            background: #3f5d47;
-            transform: translateY(-4px);
-            box-shadow: 0 15px 35px rgba(50, 90, 60, .3);
-        }
+.text {
+    font-size: 18px;
+    color: #5c7063;
+}
 
-        .scroll {
-            position: absolute;
-            bottom: 25px;
-            font-size: 13px;
-            letter-spacing: 3px;
-            color: #587a62;
-        }
+/* CARTA */
 
-        /* SECCIONES */
+.letter-container {
+    margin-top: 40px;
+    text-align: center;
+}
 
-        section {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
-            margin: auto;
-            padding: 100px 25px;
-            text-align: center;
-        }
+.letter-button {
+    border: 1px solid #779783;
+    background: transparent;
+    color: #466653;
+    padding: 15px 28px;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s;
+}
 
-        .section-number {
-            color: #7d9f84;
-            letter-spacing: 4px;
-            font-size: 13px;
-            margin-bottom: 15px;
-        }
+.letter-button:hover {
+    background: #466653;
+    color: white;
+}
 
-        h2 {
-            font-size: 40px;
-            font-weight: normal;
-            margin-bottom: 30px;
-        }
+.letter {
+    display: none;
+    margin-top: 30px;
+    padding: 35px;
+    background: #ffffff;
+    border: 1px solid #d5e4d9;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(65, 91, 73, .10);
+    text-align: left;
+    animation: openLetter .7s ease;
+}
 
-        .card {
-            background: rgba(255, 255, 255, .7);
-            border: 1px solid rgba(90, 120, 95, .15);
-            padding: 45px 35px;
-            border-radius: 25px;
-            box-shadow: 0 15px 45px rgba(45, 70, 50, .08);
-            line-height: 1.9;
-        }
+.letter.show {
+    display: block;
+}
 
-        .highlight {
-            font-size: 22px;
-            font-style: italic;
-            color: #4d6e55;
-            margin-bottom: 25px;
-        }
+.letter h3 {
+    color: #345441;
+    font-size: 27px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
 
-        /* PARTE ESPECIAL */
+.letter p {
+    margin-bottom: 18px;
+    color: #53695b;
+}
 
-        .secret {
-            background: #27372c;
-            color: #eef7ef;
-            border-radius: 25px;
-            padding: 55px 30px;
-            box-shadow: 0 20px 50px rgba(30, 45, 35, .2);
-        }
+.signature {
+    text-align: right;
+    margin-top: 30px;
+    font-style: italic;
+    color: #6c8b77;
+}
 
-        .secret h2 {
-            color: #d9ebdc;
-        }
+@keyframes openLetter {
+    from {
+        opacity: 0;
+        transform: translateY(-15px) scale(.97);
+    }
 
-        .secret-symbol {
-            font-size: 35px;
-            margin-bottom: 20px;
-            color: #b8d5bd;
-        }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
 
-        /* MUSICA */
+/* SEPARADORES */
 
-        .music-box {
-            background: #dcecdf;
-            padding: 35px;
-            border-radius: 25px;
-        }
+.secret {
+    background: #30483a;
+    color: #eef7f0;
+    max-width: none;
+    padding-left: max(25px, calc((100% - 850px) / 2));
+    padding-right: max(25px, calc((100% - 850px) / 2));
+}
 
-        .music-title {
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
+.secret h2 {
+    color: #f1f8f2;
+}
 
-        .music-note {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
+.secret .number {
+    color: #a8c5b0;
+}
 
-        /* FOOTER */
+.secret .text {
+    color: #d8e6dc;
+}
 
-        footer {
-            text-align: center;
-            padding: 70px 25px;
-            background: #d5e7d9;
-        }
+/* CANCIÓN */
 
-        footer .heart-symbol {
-            font-size: 35px;
-            color: #587a62;
-            margin-bottom: 20px;
-        }
+.song {
+    text-align: center;
+}
 
-        footer p {
-            margin: 8px;
-        }
+.song-card {
+    margin-top: 35px;
+    padding: 35px;
+    border: 1px solid #d5e4d9;
+    border-radius: 20px;
+    background: #ffffff;
+}
 
-        @media (max-width: 600px) {
+.music-symbol {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
 
-            h1 {
-                letter-spacing: 4px;
-            }
+.song-title {
+    font-size: 27px;
+    color: #345441;
+}
 
-            h2 {
-                font-size: 32px;
-            }
+.artist {
+    color: #7a9582;
+    margin-top: 5px;
+}
 
-            .intro {
-                font-size: 18px;
-            }
+/* FINAL */
 
-            .card {
-                padding: 30px 22px;
-            }
-        }
-    </style>
+.final {
+    text-align: center;
+}
+
+.final h2 {
+    font-size: 45px;
+}
+
+footer {
+    text-align: center;
+    padding: 50px 20px;
+    color: #82988a;
+    font-size: 14px;
+}
+
+</style>
 </head>
 
 <body>
 
-    <!-- Corazones flotantes -->
+<div class="heart">♡</div>
+<div class="heart">♡</div>
+<div class="heart">♡</div>
+<div class="heart">♡</div>
+<div class="heart">♡</div>
 
-    <div class="heart">♡</div>
-    <div class="heart">♡</div>
-    <div class="heart">♡</div>
-    <div class="heart">♡</div>
 
+<!-- PORTADA -->
 
-    <!-- PORTADA -->
+<header class="hero">
 
-    <div class="hero">
+    <div class="hero-content">
 
-        <div class="hero-content">
-
-            <div class="symbol">♡</div>
-
-            <div class="small-title">
-                Una pequeña sorpresa
-            </div>
-
-            <h1>Tewi</h1>
-
-            <div class="date">
-                23 · 05 · 2026
-            </div>
-
-            <p class="intro">
-                Hay cosas que son difíciles de decir
-                con palabras...
-                así que decidí crear un pequeño lugar
-                solamente para ti.
-            </p>
-
-            <a href="#historia" class="open-button">
-                Abrir mi regalo ♡
-            </a>
-
+        <div class="small-title">
+            Una pequeña sorpresa
         </div>
 
-        <div class="scroll">
-            ↓
+        <h1>Tewi</h1>
+
+        <div class="date">
+            23 · 05 · 2026
+        </div>
+
+        <p class="intro">
+            Hay cosas que son difíciles de decir con palabras...
+            así que decidí crear un pequeño lugar solamente para ti.
+        </p>
+
+        <a href="#historia" class="button">
+            Abrir mi regalo ♡
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- HISTORIA -->
+
+<section id="historia">
+
+    <div class="number">01</div>
+
+    <h2>Nuestra historia</h2>
+
+    <p class="text">
+        <strong>23 de mayo de 2026</strong>
+    </p>
+
+    <p class="text">
+        Quizás una fecha pueda parecer solamente un día más
+        en el calendario.
+    </p>
+
+    <p class="text">
+        Pero para mí representa el comienzo de algo que quiero
+        seguir construyendo contigo.
+    </p>
+
+    <p class="text">
+        Esta página irá guardando poco a poco nuestra historia.
+    </p>
+
+</section>
+
+
+<!-- CARTA -->
+
+<section>
+
+    <div class="number">02</div>
+
+    <h2>Algo que quiero decirte</h2>
+
+    <p class="text">
+        Tewi, hice este pequeño espacio porque quería darte
+        algo diferente.
+    </p>
+
+    <p class="text">
+        Un lugar donde podamos guardar recuerdos, palabras,
+        canciones y pequeños momentos que sean solamente nuestros.
+    </p>
+
+    <div class="letter-container">
+
+        <button class="letter-button" onclick="abrirCarta()">
+            🔐 Abrir mi carta ♡
+        </button>
+
+        <div class="letter" id="carta">
+
+            <h3>Para ti, Tewi</h3>
+
+            <p>
+                Hay personas que llegan a nuestra vida y simplemente
+                pasan.
+            </p>
+
+            <p>
+                Y hay otras que hacen que queramos detenernos,
+                mirar alrededor y guardar cada momento.
+            </p>
+
+            <p>
+                Tú eres una de esas personas para mí.
+            </p>
+
+            <p>
+                Quiero seguir descubriendo todo lo que podemos vivir,
+                desde las cosas más sencillas hasta esas aventuras
+                que todavía ni siquiera imaginamos.
+            </p>
+
+            <p>
+                Quiero que este pequeño rincón sea solamente nuestro:
+                un lugar para recordar lo que sentimos, lo que soñamos
+                y todo aquello que todavía nos falta vivir.
+            </p>
+
+            <p>
+                Y si esto es solamente el comienzo...
+                entonces me emociona muchísimo pensar en todo lo que
+                viene después.
+            </p>
+
+            <div class="signature">
+                Con amor ♡
+            </div>
+
         </div>
 
     </div>
 
+</section>
 
-    <!-- HISTORIA -->
 
-    <section id="historia">
+<!-- LADO SECRETO -->
 
-        <div class="section-number">
-            01
+<section class="secret">
+
+    <div class="number">03</div>
+
+    <h2>Nuestro lado secreto</h2>
+
+    <p class="text">
+        Porque también existen esas partes de nosotros que no
+        necesitan explicarse a nadie más.
+    </p>
+
+    <p class="text">
+        Este espacio será para nuestros secretos, nuestras
+        complicidades y aquello que solamente nosotros entendemos.
+    </p>
+
+    <p class="text">
+        🔐 Una parte de nuestra historia que solamente nosotros
+        conocemos.
+    </p>
+
+</section>
+
+
+<!-- CANCIÓN -->
+
+<section class="song">
+
+    <div class="number">04</div>
+
+    <h2>Nuestra canción</h2>
+
+    <div class="song-card">
+
+        <div class="music-symbol">
+            ♪
         </div>
 
-        <h2>Nuestra historia</h2>
-
-        <div class="card">
-
-            <p class="highlight">
-                23 de mayo de 2026
-            </p>
-
-            <p>
-                Quizás una fecha pueda parecer solamente
-                un día más en el calendario.
-            </p>
-
-            <br>
-
-            <p>
-                Pero para mí representa el comienzo
-                de algo que quiero seguir construyendo
-                contigo.
-            </p>
-
-            <br>
-
-            <p>
-                Esta página irá guardando poco a poco
-                nuestra historia.
-            </p>
-
+        <div class="song-title">
+            Me gustas tanto
         </div>
 
-    </section>
-
-
-    <!-- CARTA -->
-
-    <section>
-
-        <div class="section-number">
-            02
+        <div class="artist">
+            Andrey Serrano
         </div>
 
-        <h2>Algo que quiero decirte</h2>
-
-        <div class="card">
-
-            <p>
-                Tewi,
-            </p>
-
-            <br>
-
-            <p>
-                hice este pequeño espacio porque quería
-                darte algo diferente.
-            </p>
-
-            <br>
-
-            <p>
-                Un lugar donde podamos guardar recuerdos,
-                palabras, canciones y pequeños momentos
-                que sean solamente nuestros.
-            </p>
-
-            <br>
-
-            <p>
-                Y esto apenas está comenzando...
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- LADO ESPECIAL -->
-
-    <section>
-
-        <div class="secret">
-
-            <div class="secret-symbol">
-                ♡
-            </div>
-
-            <div class="section-number">
-                03
-            </div>
-
-            <h2>
-                Nuestro lado secreto
-            </h2>
-
-            <p>
-                Porque también existen esas partes
-                de nosotros que no necesitan explicarse
-                a nadie más.
-            </p>
-
-            <br>
-
-            <p>
-                Este espacio será para nuestros secretos,
-                nuestras complicidades y aquello que
-                solamente nosotros entendemos.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- CANCION -->
-
-    <section>
-
-        <div class="section-number">
-            04
-        </div>
-
-        <h2>Nuestra canción</h2>
-
-        <div class="music-box">
-
-            <div class="music-note">
-                ♪
-            </div>
-
-            <div class="music-title">
-                Me gustas tanto
-            </div>
-
-            <p>
-                Andrey Serrano
-            </p>
-
-            <br>
-
-            <p>
-                🎵 Aquí colocaremos la música
-                para que comience cuando abras
-                nuestro regalo.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- FINAL TEMPORAL -->
-
-    <section>
-
-        <div class="section-number">
-            05
-        </div>
-
-        <h2>Esto apenas comienza...</h2>
-
-        <div class="card">
-
-            <p class="highlight">
-                Todavía tenemos mucho por vivir.
-            </p>
-
-            <p>
-                Fotos, recuerdos, cartas, sueños,
-                sorpresas y muchas historias que
-                todavía no hemos escrito.
-            </p>
-
-            <br>
-
-            <p>
-                Y quiero descubrirlas contigo.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <footer>
-
-        <div class="heart-symbol">
-            ♡
-        </div>
-
-        <p>
-            Hecho especialmente para Tewi
+        <p class="text" style="margin-top:20px;">
+            Nuestra canción quedará aquí,
+            esperando acompañar nuestros recuerdos.
         </p>
 
-        <p>
-            23 · 05 · 2026
-        </p>
+    </div>
 
-        <br>
+</section>
 
-        <p>
-            Nuestra Aventura de Vida
-        </p>
 
-    </footer>
+<!-- FINAL -->
+
+<section class="final">
+
+    <div class="number">05</div>
+
+    <h2>Esto apenas comienza...</h2>
+
+    <p class="text">
+        Todavía tenemos mucho por vivir.
+    </p>
+
+    <p class="text">
+        Fotos, recuerdos, cartas, sueños, sorpresas y muchas
+        historias que todavía no hemos escrito.
+    </p>
+
+    <p class="text">
+        Y quiero descubrirlas contigo. ♡
+    </p>
+
+</section>
+
+
+<footer>
+
+    Hecho especialmente para Tewi ♡
+
+    <br><br>
+
+    23 · 05 · 2026
+
+    <br>
+
+    Nuestra Aventura de Vida
+
+</footer>
+
+
+<script>
+
+function abrirCarta() {
+
+    const carta = document.getElementById("carta");
+
+    carta.classList.toggle("show");
+
+}
+
+</script>
 
 </body>
 </html>
