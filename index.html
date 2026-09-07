@@ -4,61 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* CONTADOR */
-
-.counter-card {
-    margin-top: 45px;
-    padding: 35px 25px;
-    background: #ffffff;
-    border: 1px solid #d5e4d9;
-    border-radius: 22px;
-    box-shadow: 0 15px 40px rgba(65, 91, 73, .08);
-    text-align: center;
-}
-
-.counter-title {
-    color: #6f927a;
-    letter-spacing: 2px;
-    font-size: 14px;
-    margin-bottom: 25px;
-}
-
-.counter {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-}
-
-.counter div {
-    padding: 15px 5px;
-}
-
-.counter span {
-    display: block;
-    font-size: 32px;
-    color: #345441;
-    font-weight: normal;
-}
-
-.counter small {
-    color: #82988a;
-    font-size: 12px;
-    letter-spacing: 1px;
-}
-
-.counter-love {
-    margin-top: 25px;
-    color: #789683;
-    font-style: italic;
-}
-
-@media (max-width: 600px) {
-
-    .counter {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-}<title>Para Tewi ♡</title>
+<title>Para Tewi ♡</title>
 
 <style>
 
@@ -72,41 +18,7 @@ html {
     scroll-behavior: smooth;
 }
 
-<script>
-
-function actualizarContador() {
-
-    const inicio = new Date("2026-05-23T00:00:00");
-
-    const ahora = new Date();
-
-    const diferencia = ahora - inicio;
-
-    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-
-    const horas = Math.floor(
-        (diferencia / (1000 * 60 * 60)) % 24
-    );
-
-    const minutos = Math.floor(
-        (diferencia / (1000 * 60)) % 60
-    );
-
-    const segundos = Math.floor(
-        (diferencia / 1000) % 60
-    );
-
-    document.getElementById("dias").textContent = dias;
-    document.getElementById("horas").textContent = horas;
-    document.getElementById("minutos").textContent = minutos;
-    document.getElementById("segundos").textContent = segundos;
-}
-
-actualizarContador();
-
-setInterval(actualizarContador, 1000);
-
-</script>body {
+body {
     font-family: Georgia, "Times New Roman", serif;
     background: #f5faf6;
     color: #30483a;
@@ -122,15 +34,36 @@ setInterval(actualizarContador, 1000);
     opacity: .35;
     animation: float 8s linear infinite;
     pointer-events: none;
+    z-index: 0;
 }
 
-.heart:nth-child(1) { left: 10%; animation-delay: 0s; }
-.heart:nth-child(2) { left: 30%; animation-delay: 2s; }
-.heart:nth-child(3) { left: 55%; animation-delay: 4s; }
-.heart:nth-child(4) { left: 75%; animation-delay: 1s; }
-.heart:nth-child(5) { left: 90%; animation-delay: 3s; }
+.heart:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.heart:nth-child(2) {
+    left: 30%;
+    animation-delay: 2s;
+}
+
+.heart:nth-child(3) {
+    left: 55%;
+    animation-delay: 4s;
+}
+
+.heart:nth-child(4) {
+    left: 75%;
+    animation-delay: 1s;
+}
+
+.heart:nth-child(5) {
+    left: 90%;
+    animation-delay: 3s;
+}
 
 @keyframes float {
+
     0% {
         bottom: -30px;
         transform: translateX(0);
@@ -144,25 +77,33 @@ setInterval(actualizarContador, 1000);
         bottom: 110%;
         transform: translateX(-20px);
     }
+
 }
+
 
 /* PORTADA */
 
 .hero {
     min-height: 100vh;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     text-align: center;
     padding: 30px;
 
     background:
         radial-gradient(circle at top, #ffffff, transparent 60%),
         linear-gradient(135deg, #eef8f1, #dbeee0);
+
+    position: relative;
 }
 
 .hero-content {
     max-width: 700px;
+    position: relative;
+    z-index: 2;
 }
 
 .small-title {
@@ -195,12 +136,16 @@ h1 {
 
 .button {
     display: inline-block;
+
     margin-top: 35px;
     padding: 14px 30px;
+
     border: 1px solid #779783;
     border-radius: 50px;
+
     color: #466653;
     text-decoration: none;
+
     transition: .3s;
 }
 
@@ -208,6 +153,7 @@ h1 {
     background: #466653;
     color: white;
 }
+
 
 /* SECCIONES */
 
@@ -234,7 +180,9 @@ h2 {
 .text {
     font-size: 18px;
     color: #5c7063;
+    margin-bottom: 18px;
 }
+
 
 /* CARTA */
 
@@ -245,13 +193,20 @@ h2 {
 
 .letter-button {
     border: 1px solid #779783;
+
     background: transparent;
+
     color: #466653;
+
     padding: 15px 28px;
+
     border-radius: 50px;
+
     font-family: inherit;
     font-size: 16px;
+
     cursor: pointer;
+
     transition: .3s;
 }
 
@@ -262,13 +217,21 @@ h2 {
 
 .letter {
     display: none;
+
     margin-top: 30px;
     padding: 35px;
+
     background: #ffffff;
+
     border: 1px solid #d5e4d9;
+
     border-radius: 18px;
-    box-shadow: 0 15px 40px rgba(65, 91, 73, .10);
+
+    box-shadow:
+        0 15px 40px rgba(65, 91, 73, .10);
+
     text-align: left;
+
     animation: openLetter .7s ease;
 }
 
@@ -278,24 +241,32 @@ h2 {
 
 .letter h3 {
     color: #345441;
+
     font-size: 27px;
+
     font-weight: normal;
+
     margin-bottom: 20px;
 }
 
 .letter p {
     margin-bottom: 18px;
+
     color: #53695b;
 }
 
 .signature {
     text-align: right;
+
     margin-top: 30px;
+
     font-style: italic;
+
     color: #6c8b77;
 }
 
 @keyframes openLetter {
+
     from {
         opacity: 0;
         transform: translateY(-15px) scale(.97);
@@ -305,14 +276,19 @@ h2 {
         opacity: 1;
         transform: translateY(0) scale(1);
     }
+
 }
 
-/* SEPARADORES */
+
+/* SECCIÓN SECRETA */
 
 .secret {
     background: #30483a;
+
     color: #eef7f0;
+
     max-width: none;
+
     padding-left: max(25px, calc((100% - 850px) / 2));
     padding-right: max(25px, calc((100% - 850px) / 2));
 }
@@ -329,6 +305,7 @@ h2 {
     color: #d8e6dc;
 }
 
+
 /* CANCIÓN */
 
 .song {
@@ -337,26 +314,37 @@ h2 {
 
 .song-card {
     margin-top: 35px;
+
     padding: 35px;
+
     border: 1px solid #d5e4d9;
+
     border-radius: 20px;
+
     background: #ffffff;
+
+    box-shadow:
+        0 15px 40px rgba(65, 91, 73, .06);
 }
 
 .music-symbol {
     font-size: 35px;
+
     margin-bottom: 15px;
 }
 
 .song-title {
     font-size: 27px;
+
     color: #345441;
 }
 
 .artist {
     color: #7a9582;
+
     margin-top: 5px;
 }
+
 
 /* FINAL */
 
@@ -368,17 +356,46 @@ h2 {
     font-size: 45px;
 }
 
+
+/* FOOTER */
+
 footer {
     text-align: center;
+
     padding: 50px 20px;
+
     color: #82988a;
+
     font-size: 14px;
+}
+
+
+/* MÓVIL */
+
+@media (max-width: 600px) {
+
+    section {
+        padding: 75px 22px;
+    }
+
+    h2 {
+        font-size: 34px;
+    }
+
+    .letter {
+        padding: 25px;
+    }
+
 }
 
 </style>
 </head>
 
+
 <body>
+
+
+<!-- CORAZONES -->
 
 <div class="heart">♡</div>
 <div class="heart">♡</div>
@@ -416,13 +433,18 @@ footer {
 
 </header>
 
-<!-- HISTORIA -->
+
+<!-- NUESTRA HISTORIA -->
 
 <section id="historia">
 
-    <div class="number">01</div>
+    <div class="number">
+        01
+    </div>
 
-    <h2>Nuestra historia</h2>
+    <h2>
+        Nuestra historia
+    </h2>
 
     <p class="text">
         <strong>23 de mayo de 2026</strong>
@@ -439,56 +461,23 @@ footer {
     </p>
 
     <p class="text">
-        Y desde aquel día, cada segundo cuenta. ♡
+        Esta página irá guardando poco a poco nuestra historia.
     </p>
 
-    <!-- CONTADOR -->
-
-    <div class="counter-card">
-
-        <p class="counter-title">
-            Nuestra historia lleva...
-        </p>
-
-        <div class="counter">
-
-            <div>
-                <span id="dias">0</span>
-                <small>días</small>
-            </div>
-
-            <div>
-                <span id="horas">0</span>
-                <small>horas</small>
-            </div>
-
-            <div>
-                <span id="minutos">0</span>
-                <small>minutos</small>
-            </div>
-
-            <div>
-                <span id="segundos">0</span>
-                <small>segundos</small>
-            </div>
-
-        </div>
-
-        <p class="counter-love">
-            Y quiero seguir sumando muchos más contigo. 💚
-        </p>
-
-    </div>
-
 </section>
+
 
 <!-- CARTA -->
 
 <section>
 
-    <div class="number">02</div>
+    <div class="number">
+        02
+    </div>
 
-    <h2>Algo que quiero decirte</h2>
+    <h2>
+        Algo que quiero decirte
+    </h2>
 
     <p class="text">
         Tewi, hice este pequeño espacio porque quería darte
@@ -500,19 +489,33 @@ footer {
         canciones y pequeños momentos que sean solamente nuestros.
     </p>
 
+    <p class="text">
+        Y esto apenas está comenzando...
+    </p>
+
+
     <div class="letter-container">
 
-        <button class="letter-button" onclick="abrirCarta()">
+        <button
+            class="letter-button"
+            onclick="abrirCarta()">
+
             🔐 Abrir mi carta ♡
+
         </button>
 
-        <div class="letter" id="carta">
 
-            <h3>Para ti, Tewi</h3>
+        <div
+            class="letter"
+            id="carta">
+
+            <h3>
+                Para ti, Tewi
+            </h3>
 
             <p>
-                Hay personas que llegan a nuestra vida y simplemente
-                pasan.
+                Hay personas que llegan a nuestra vida
+                y simplemente pasan.
             </p>
 
             <p>
@@ -532,14 +535,14 @@ footer {
 
             <p>
                 Quiero que este pequeño rincón sea solamente nuestro:
-                un lugar para recordar lo que sentimos, lo que soñamos
-                y todo aquello que todavía nos falta vivir.
+                un lugar para recordar lo que sentimos,
+                lo que soñamos y todo aquello que todavía nos falta vivir.
             </p>
 
             <p>
                 Y si esto es solamente el comienzo...
-                entonces me emociona muchísimo pensar en todo lo que
-                viene después.
+                entonces me emociona muchísimo pensar
+                en todo lo que viene después.
             </p>
 
             <div class="signature">
@@ -553,27 +556,32 @@ footer {
 </section>
 
 
-<!-- LADO SECRETO -->
+<!-- NUESTRO LADO SECRETO -->
 
 <section class="secret">
 
-    <div class="number">03</div>
+    <div class="number">
+        03
+    </div>
 
-    <h2>Nuestro lado secreto</h2>
+    <h2>
+        Nuestro lado secreto
+    </h2>
 
     <p class="text">
-        Porque también existen esas partes de nosotros que no
-        necesitan explicarse a nadie más.
+        Porque también existen esas partes de nosotros
+        que no necesitan explicarse a nadie más.
     </p>
 
     <p class="text">
-        Este espacio será para nuestros secretos, nuestras
-        complicidades y aquello que solamente nosotros entendemos.
+        Este espacio será para nuestros secretos,
+        nuestras complicidades y aquello que solamente
+        nosotros entendemos.
     </p>
 
     <p class="text">
-        🔐 Una parte de nuestra historia que solamente nosotros
-        conocemos.
+        🔐 Una parte de nuestra historia que solamente
+        nosotros conocemos.
     </p>
 
 </section>
@@ -583,9 +591,14 @@ footer {
 
 <section class="song">
 
-    <div class="number">04</div>
+    <div class="number">
+        04
+    </div>
 
-    <h2>Nuestra canción</h2>
+    <h2>
+        Nuestra canción
+    </h2>
+
 
     <div class="song-card">
 
@@ -615,17 +628,21 @@ footer {
 
 <section class="final">
 
-    <div class="number">05</div>
+    <div class="number">
+        05
+    </div>
 
-    <h2>Esto apenas comienza...</h2>
+    <h2>
+        Esto apenas comienza...
+    </h2>
 
     <p class="text">
         Todavía tenemos mucho por vivir.
     </p>
 
     <p class="text">
-        Fotos, recuerdos, cartas, sueños, sorpresas y muchas
-        historias que todavía no hemos escrito.
+        Fotos, recuerdos, cartas, sueños, sorpresas
+        y muchas historias que todavía no hemos escrito.
     </p>
 
     <p class="text">
@@ -634,6 +651,8 @@ footer {
 
 </section>
 
+
+<!-- PIE -->
 
 <footer>
 
@@ -650,6 +669,8 @@ footer {
 </footer>
 
 
+<!-- JAVASCRIPT -->
+
 <script>
 
 function abrirCarta() {
@@ -661,6 +682,7 @@ function abrirCarta() {
 }
 
 </script>
+
 
 </body>
 </html>
