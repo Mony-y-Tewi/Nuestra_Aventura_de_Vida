@@ -4,7 +4,61 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Para Tewi ♡</title>
+/* CONTADOR */
+
+.counter-card {
+    margin-top: 45px;
+    padding: 35px 25px;
+    background: #ffffff;
+    border: 1px solid #d5e4d9;
+    border-radius: 22px;
+    box-shadow: 0 15px 40px rgba(65, 91, 73, .08);
+    text-align: center;
+}
+
+.counter-title {
+    color: #6f927a;
+    letter-spacing: 2px;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.counter {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.counter div {
+    padding: 15px 5px;
+}
+
+.counter span {
+    display: block;
+    font-size: 32px;
+    color: #345441;
+    font-weight: normal;
+}
+
+.counter small {
+    color: #82988a;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.counter-love {
+    margin-top: 25px;
+    color: #789683;
+    font-style: italic;
+}
+
+@media (max-width: 600px) {
+
+    .counter {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}<title>Para Tewi ♡</title>
 
 <style>
 
@@ -18,7 +72,41 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
+<script>
+
+function actualizarContador() {
+
+    const inicio = new Date("2026-05-23T00:00:00");
+
+    const ahora = new Date();
+
+    const diferencia = ahora - inicio;
+
+    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+
+    const horas = Math.floor(
+        (diferencia / (1000 * 60 * 60)) % 24
+    );
+
+    const minutos = Math.floor(
+        (diferencia / (1000 * 60)) % 60
+    );
+
+    const segundos = Math.floor(
+        (diferencia / 1000) % 60
+    );
+
+    document.getElementById("dias").textContent = dias;
+    document.getElementById("horas").textContent = horas;
+    document.getElementById("minutos").textContent = minutos;
+    document.getElementById("segundos").textContent = segundos;
+}
+
+actualizarContador();
+
+setInterval(actualizarContador, 1000);
+
+</script>body {
     font-family: Georgia, "Times New Roman", serif;
     background: #f5faf6;
     color: #30483a;
@@ -328,7 +416,6 @@ footer {
 
 </header>
 
-
 <!-- HISTORIA -->
 
 <section id="historia">
@@ -352,11 +439,48 @@ footer {
     </p>
 
     <p class="text">
-        Esta página irá guardando poco a poco nuestra historia.
+        Y desde aquel día, cada segundo cuenta. ♡
     </p>
 
-</section>
+    <!-- CONTADOR -->
 
+    <div class="counter-card">
+
+        <p class="counter-title">
+            Nuestra historia lleva...
+        </p>
+
+        <div class="counter">
+
+            <div>
+                <span id="dias">0</span>
+                <small>días</small>
+            </div>
+
+            <div>
+                <span id="horas">0</span>
+                <small>horas</small>
+            </div>
+
+            <div>
+                <span id="minutos">0</span>
+                <small>minutos</small>
+            </div>
+
+            <div>
+                <span id="segundos">0</span>
+                <small>segundos</small>
+            </div>
+
+        </div>
+
+        <p class="counter-love">
+            Y quiero seguir sumando muchos más contigo. 💚
+        </p>
+
+    </div>
+
+</section>
 
 <!-- CARTA -->
 
