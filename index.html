@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 
@@ -41,30 +42,11 @@ body{
     z-index:0;
 }
 
-.heart:nth-child(1){
-    left:10%;
-    animation-delay:0s;
-}
-
-.heart:nth-child(2){
-    left:30%;
-    animation-delay:2s;
-}
-
-.heart:nth-child(3){
-    left:55%;
-    animation-delay:4s;
-}
-
-.heart:nth-child(4){
-    left:75%;
-    animation-delay:1s;
-}
-
-.heart:nth-child(5){
-    left:90%;
-    animation-delay:3s;
-}
+.heart:nth-child(1){left:10%;animation-delay:0s}
+.heart:nth-child(2){left:30%;animation-delay:2s}
+.heart:nth-child(3){left:55%;animation-delay:4s}
+.heart:nth-child(4){left:75%;animation-delay:1s}
+.heart:nth-child(5){left:90%;animation-delay:3s}
 
 @keyframes float{
 
@@ -844,6 +826,654 @@ h2{
 }
 
 /* =========================
+   RINCÓN DE MONY
+========================= */
+
+.mony-corner{
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7fbf8,
+            #edf6f0
+        );
+}
+
+.mony-intro{
+
+    max-width:680px;
+
+    color:#5c7063;
+
+    font-size:18px;
+
+    margin-bottom:35px;
+}
+
+.mony-panel{
+
+    max-width:750px;
+
+    margin:40px auto 0;
+
+    background:white;
+
+    border:1px solid #d5e4d9;
+
+    border-radius:25px;
+
+    padding:35px;
+
+    box-shadow:
+        0 18px 45px
+        rgba(65,91,73,.09);
+}
+
+.mony-lock{
+
+    text-align:center;
+
+    font-size:48px;
+
+    margin-bottom:10px;
+}
+
+.mony-panel-title{
+
+    text-align:center;
+
+    font-size:27px;
+
+    color:#345441;
+
+    font-weight:normal;
+
+    margin-bottom:8px;
+}
+
+.mony-panel-subtitle{
+
+    text-align:center;
+
+    color:#789683;
+
+    font-size:15px;
+
+    margin-bottom:25px;
+}
+
+.pin-area{
+
+    max-width:350px;
+
+    margin:auto;
+}
+
+.pin-input{
+
+    width:100%;
+
+    padding:13px 18px;
+
+    border:1px solid #cbded0;
+
+    border-radius:50px;
+
+    font-family:inherit;
+
+    font-size:16px;
+
+    text-align:center;
+
+    outline:none;
+}
+
+.pin-input:focus{
+
+    border-color:#779783;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(119,151,131,.12);
+}
+
+.pin-button{
+
+    width:100%;
+
+    margin-top:12px;
+
+    padding:13px 20px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#466653;
+
+    color:white;
+
+    font-family:inherit;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.pin-button:hover{
+
+    background:#345441;
+
+    transform:translateY(-1px);
+}
+
+.pin-error{
+
+    display:none;
+
+    text-align:center;
+
+    color:#9a6666;
+
+    font-size:14px;
+
+    margin-top:12px;
+}
+
+.mony-editor{
+
+    display:none;
+
+    animation:editorOpen .6s ease;
+}
+
+.mony-editor.show{
+
+    display:block;
+}
+
+@keyframes editorOpen{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(15px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+.editor-header{
+
+    text-align:center;
+
+    margin-bottom:30px;
+}
+
+.editor-header h3{
+
+    color:#345441;
+
+    font-size:27px;
+
+    font-weight:normal;
+
+    margin-bottom:5px;
+}
+
+.editor-header p{
+
+    color:#789683;
+
+    font-size:14px;
+}
+
+.entry-form{
+
+    background:#f7fbf8;
+
+    border:1px solid #e0ebe3;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    margin-bottom:35px;
+}
+
+.form-label{
+
+    display:block;
+
+    color:#466653;
+
+    font-size:14px;
+
+    margin-bottom:7px;
+
+}
+
+.form-select,
+.form-title,
+.form-text{
+
+    width:100%;
+
+    border:1px solid #cbded0;
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:12px 14px;
+
+    font-family:inherit;
+
+    color:#30483a;
+
+    font-size:15px;
+
+    outline:none;
+
+    margin-bottom:18px;
+}
+
+.form-text{
+
+    min-height:150px;
+
+    resize:vertical;
+
+    line-height:1.7;
+}
+
+.form-select:focus,
+.form-title:focus,
+.form-text:focus{
+
+    border-color:#779783;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(119,151,131,.10);
+}
+
+.form-actions{
+
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+}
+
+.save-entry,
+.cancel-edit{
+
+    border-radius:50px;
+
+    padding:12px 22px;
+
+    font-family:inherit;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.save-entry{
+
+    border:1px solid #466653;
+
+    background:#466653;
+
+    color:white;
+}
+
+.save-entry:hover{
+
+    background:#345441;
+}
+
+.cancel-edit{
+
+    display:none;
+
+    border:1px solid #779783;
+
+    background:transparent;
+
+    color:#466653;
+}
+
+.cancel-edit.show{
+
+    display:inline-block;
+}
+
+.cancel-edit:hover{
+
+    background:#eef7f0;
+}
+
+.entries-title{
+
+    color:#345441;
+
+    font-size:23px;
+
+    font-weight:normal;
+
+    margin-bottom:20px;
+
+    text-align:center;
+}
+
+.entries-list{
+
+    display:grid;
+
+    gap:18px;
+}
+
+.entry-card{
+
+    border:1px solid #d5e4d9;
+
+    border-radius:18px;
+
+    padding:23px;
+
+    background:white;
+
+    box-shadow:
+        0 10px 25px
+        rgba(65,91,73,.06);
+
+    animation:entryAppear .5s ease;
+}
+
+@keyframes entryAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(10px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+    }
+
+}
+
+.entry-top{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-bottom:10px;
+}
+
+.entry-type{
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    color:#89a995;
+}
+
+.entry-date{
+
+    color:#a0b2a6;
+
+    font-size:12px;
+}
+
+.entry-title{
+
+    color:#345441;
+
+    font-size:23px;
+
+    font-weight:normal;
+
+    margin-bottom:12px;
+}
+
+.entry-preview{
+
+    color:#53695b;
+
+    font-size:15px;
+
+    white-space:pre-wrap;
+
+    margin-bottom:15px;
+}
+
+.entry-actions{
+
+    display:flex;
+
+    gap:8px;
+
+    flex-wrap:wrap;
+}
+
+.entry-open,
+.entry-edit,
+.entry-delete{
+
+    padding:8px 15px;
+
+    border-radius:50px;
+
+    font-family:inherit;
+
+    font-size:13px;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.entry-open{
+
+    border:1px solid #779783;
+
+    background:transparent;
+
+    color:#466653;
+}
+
+.entry-edit{
+
+    border:1px solid #cbded0;
+
+    background:#f7fbf8;
+
+    color:#466653;
+}
+
+.entry-delete{
+
+    border:1px solid #decaca;
+
+    background:transparent;
+
+    color:#8c6464;
+}
+
+.entry-open:hover,
+.entry-edit:hover{
+
+    background:#eef7f0;
+}
+
+.entry-delete:hover{
+
+    background:#faf0f0;
+}
+
+.entry-full{
+
+    display:none;
+
+    margin-top:20px;
+
+    padding-top:20px;
+
+    border-top:1px solid #e5eee7;
+
+    color:#53695b;
+
+    white-space:pre-wrap;
+
+    line-height:1.9;
+}
+
+.entry-full.show{
+
+    display:block;
+
+    animation:openEntry .5s ease;
+}
+
+@keyframes openEntry{
+
+    from{
+
+        opacity:0;
+        transform:translateY(-8px);
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.empty-entries{
+
+    text-align:center;
+
+    padding:30px 20px;
+
+    color:#82988a;
+
+    font-style:italic;
+
+    border:1px dashed #cbded0;
+
+    border-radius:18px;
+}
+
+.backup-area{
+
+    margin-top:30px;
+
+    padding-top:25px;
+
+    border-top:1px solid #e0ebe3;
+
+    text-align:center;
+}
+
+.backup-title{
+
+    color:#466653;
+
+    font-size:15px;
+
+    margin-bottom:12px;
+}
+
+.backup-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+}
+
+.backup-button{
+
+    padding:9px 16px;
+
+    border-radius:50px;
+
+    border:1px solid #cbded0;
+
+    background:#f7fbf8;
+
+    color:#466653;
+
+    font-family:inherit;
+
+    font-size:13px;
+
+    cursor:pointer;
+}
+
+.backup-button:hover{
+
+    background:#eef7f0;
+}
+
+.logout-button{
+
+    display:block;
+
+    margin:25px auto 0;
+
+    border:none;
+
+    background:transparent;
+
+    color:#82988a;
+
+    font-family:inherit;
+
+    font-size:13px;
+
+    cursor:pointer;
+}
+
+.logout-button:hover{
+
+    color:#466653;
+}
+
+/* =========================
    FINAL
 ========================= */
 
@@ -1429,6 +2059,36 @@ footer{
     .no-button{
 
         padding:12px 22px;
+    }
+
+    .mony-panel{
+
+        padding:25px 18px;
+    }
+
+    .entry-form{
+
+        padding:20px;
+    }
+
+    .entry-top{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+        gap:3px;
+    }
+
+    .form-actions{
+
+        flex-direction:column;
+    }
+
+    .save-entry,
+    .cancel-edit{
+
+        width:100%;
     }
 
 }
@@ -2049,74 +2709,282 @@ class="photo-gallery memories-gallery"
 id="memoriesGallery">
 
 <div class="memory">
-<img
-src="foto 7.jpg"
-onclick="abrirFoto(this.src)"
-alt="Recuerdo 7">
+<img src="foto 7.jpg" onclick="abrirFoto(this.src)" alt="Recuerdo 7">
 </div>
 
 <div class="memory">
-<img
-src="foto 8.jpg"
-onclick="abrirFoto(this.src)"
-alt="Recuerdo 8">
+<img src="foto 8.jpg" onclick="abrirFoto(this.src)" alt="Recuerdo 8">
 </div>
 
 <div class="memory">
-<img
-src="foto 9.jpg"
-onclick="abrirFoto(this.src)"
-alt="Recuerdo 9">
+<img src="foto 9.jpg" onclick="abrirFoto(this.src)" alt="Recuerdo 9">
 </div>
 
 <div class="memory">
-<img
-src="foto 10.jpg"
-onclick="abrirFoto(this.src)"
-alt="Recuerdo 10">
+<img src="foto 10.jpg" onclick="abrirFoto(this.src)" alt="Recuerdo 10">
 </div>
 
 <div class="memory">
-<img
-src="foto 11.jpg"
-onclick="abrirFoto(this.src)"
-alt="Recuerdo 11">
+<img src="foto 11.jpg" onclick="abrirFoto(this.src)" alt="Recuerdo 11">
 </div>
 
 <div class="memory">
-<img
-src="foto 12.jpg"
-onclick="abrirFoto(this.src)"
-alt="Recuerdo 12">
+<img src="foto 12.jpg" onclick="abrirFoto(this.src)" alt="Recuerdo 12">
 </div>
 
 <div class="memory">
-<img
-src="foto 13.jpg"
-onclick="abrirFoto(this.src)"
-alt="Recuerdo 13">
+<img src="foto 13.jpg" onclick="abrirFoto(this.src)" alt="Recuerdo 13">
 </div>
 
 <div class="memory">
-<img
-src="foto 14.jpg"
-onclick="abrirFoto(this.src)"
-alt="Recuerdo 14">
+<img src="foto 14.jpg" onclick="abrirFoto(this.src)" alt="Recuerdo 14">
 </div>
 
 <div class="memory">
-<img
-src="foto 15.jpg"
-onclick="abrirFoto(this.src)"
-alt="Recuerdo 15">
+<img src="foto 15.jpg" onclick="abrirFoto(this.src)" alt="Recuerdo 15">
 </div>
 
 <div class="memory">
-<img
-src="foto 16.jpg"
-onclick="abrirFoto(this.src)"
-alt="Recuerdo 16">
+<img src="foto 16.jpg" onclick="abrirFoto(this.src)" alt="Recuerdo 16">
 </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     RINCÓN DE MONY
+========================= -->
+
+<section class="mony-corner">
+
+<div class="number">
+07
+</div>
+
+<h2>
+El rincón de Mony 🌙
+</h2>
+
+<p class="mony-intro">
+
+Hay palabras que no quiero que se pierdan.
+
+Este es mi pequeño rincón para guardar notas,
+poemas, pensamientos y todas esas cosas que
+algún día quiero dejarte.
+
+</p>
+
+
+<div class="mony-panel">
+
+<!-- ACCESO -->
+
+<div id="monyLogin">
+
+<div class="mony-lock">
+🔐
+</div>
+
+<div class="mony-panel-title">
+Solo para Mony
+</div>
+
+<div class="mony-panel-subtitle">
+
+Un pequeño espacio para escribirle a Tewi.
+
+</div>
+
+<div class="pin-area">
+
+<input
+type="password"
+id="monyPin"
+class="pin-input"
+placeholder="Escribe tu PIN"
+maxlength="20"
+onkeydown="if(event.key==='Enter') entrarRincon()">
+
+<button
+class="pin-button"
+onclick="entrarRincon()">
+
+Abrir mi rincón ♡
+
+</button>
+
+<div
+class="pin-error"
+id="pinError">
+
+Ese PIN no es correcto ♡
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- EDITOR -->
+
+<div
+class="mony-editor"
+id="monyEditor">
+
+<div class="editor-header">
+
+<h3>
+Bienvenida, Mony ♡
+</h3>
+
+<p>
+Aquí puedes dejar todo lo que quieras decirle.
+</p>
+
+</div>
+
+
+<!-- FORMULARIO -->
+
+<div class="entry-form">
+
+<label class="form-label">
+¿Qué quieres guardar?
+</label>
+
+<select
+class="form-select"
+id="entryType">
+
+<option value="Nota">
+💌 Nota
+</option>
+
+<option value="Poema">
+🌙 Poema
+</option>
+
+<option value="Pensamiento">
+🌿 Pensamiento
+</option>
+
+<option value="Carta">
+📜 Carta
+</option>
+
+</select>
+
+
+<label class="form-label">
+Título
+</label>
+
+<input
+type="text"
+class="form-title"
+id="entryTitle"
+placeholder="Ej: Para cuando me extrañes...">
+
+
+<label class="form-label">
+Lo que quiero decirle...
+</label>
+
+<textarea
+class="form-text"
+id="entryText"
+placeholder="Escribe aquí tus palabras..."></textarea>
+
+
+<div class="form-actions">
+
+<button
+class="save-entry"
+id="saveEntryButton"
+onclick="guardarEntrada()">
+
+💾 Guardar entrada
+
+</button>
+
+<button
+class="cancel-edit"
+id="cancelEditButton"
+onclick="cancelarEdicion()">
+
+Cancelar
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ENTRADAS -->
+
+<div class="entries-title">
+Mis palabras para Tewi ♡
+</div>
+
+<div
+class="entries-list"
+id="entriesList">
+
+</div>
+
+
+<!-- COPIAS DE SEGURIDAD -->
+
+<div class="backup-area">
+
+<div class="backup-title">
+Guardar una copia de tus escritos
+</div>
+
+<div class="backup-buttons">
+
+<button
+class="backup-button"
+onclick="exportarEntradas()">
+
+📤 Exportar mis notas
+
+</button>
+
+<button
+class="backup-button"
+onclick="document.getElementById('importFile').click()">
+
+📥 Importar notas
+
+</button>
+
+<input
+type="file"
+id="importFile"
+accept=".json"
+style="display:none"
+onchange="importarEntradas(event)">
+
+</div>
+
+</div>
+
+
+<button
+class="logout-button"
+onclick="cerrarRincon()">
+
+Cerrar el rincón 🔐
+
+</button>
 
 </div>
 
@@ -2132,7 +3000,7 @@ alt="Recuerdo 16">
 <section class="final">
 
 <div class="number">
-07
+08
 </div>
 
 <h2>
@@ -2169,7 +3037,7 @@ Te amo, Tewi. ♡
 <section class="capsule-section">
 
 <div class="number">
-08
+09
 </div>
 
 <h2>
@@ -2189,8 +3057,6 @@ Quiero guardarlos para nuestros días especiales.
 
 <div class="capsule-content">
 
-
-<!-- BLOQUEADO -->
 
 <div id="capsuleLocked">
 
@@ -2221,9 +3087,7 @@ cuando vuelva a llegar nuestro día.
 <span
 class="capsule-time-number"
 id="capsuleDays">
-
 0
-
 </span>
 
 <span class="capsule-time-label">
@@ -2238,9 +3102,7 @@ DÍAS
 <span
 class="capsule-time-number"
 id="capsuleHours">
-
 0
-
 </span>
 
 <span class="capsule-time-label">
@@ -2255,9 +3117,7 @@ HORAS
 <span
 class="capsule-time-number"
 id="capsuleMinutes">
-
 0
-
 </span>
 
 <span class="capsule-time-label">
@@ -2272,9 +3132,7 @@ MINUTOS
 <span
 class="capsule-time-number"
 id="capsuleSeconds">
-
 0
-
 </span>
 
 <span class="capsule-time-label">
@@ -2296,8 +3154,6 @@ Se abrirá el próximo 23 ♡
 
 </div>
 
-
-<!-- DESBLOQUEADO -->
 
 <div
 id="capsuleUnlocked"
@@ -2428,7 +3284,7 @@ Mony ♡
 <section class="question">
 
 <div class="number">
-09
+10
 </div>
 
 <h2>
@@ -2548,9 +3404,7 @@ function actualizarContador(){
 
 
     if(diferencia < 0){
-
         diferencia = 0;
-
     }
 
 
@@ -2656,7 +3510,7 @@ function usarVale(boton){
 
 
 /* =========================
-   GALERÍAS DE FOTOS
+   GALERÍAS
 ========================= */
 
 function toggleGaleria(id, boton){
@@ -2753,20 +3607,597 @@ function iniciarMusica(){
 
 
 /* =========================
-   CÁPSULA DEL TIEMPO
+   RINCÓN DE MONY
 ========================= */
 
 /*
-   La relación comenzó:
-   23 de mayo de 2026
+   CAMBIA ESTE PIN POR UNO TUYO.
 
-   La cápsula se abre:
-   cada día 23
-
-   Primera apertura:
-   23 de septiembre de 2026
+   IMPORTANTE:
+   Este PIN es una barrera visual,
+   NO una contraseña de seguridad real,
+   porque el código está publicado
+   en GitHub Pages.
 */
 
+const PIN_MONY = "2305";
+
+
+let entradas =
+    JSON.parse(
+        localStorage.getItem("monyEntradas") || "[]"
+    );
+
+
+let entradaEditando = null;
+
+
+/* ENTRAR */
+
+function entrarRincon(){
+
+    const pin =
+        document.getElementById("monyPin").value;
+
+    const error =
+        document.getElementById("pinError");
+
+
+    if(pin === PIN_MONY){
+
+        document
+            .getElementById("monyLogin")
+            .style.display = "none";
+
+
+        document
+            .getElementById("monyEditor")
+            .classList.add("show");
+
+
+        error.style.display = "none";
+
+        document.getElementById("monyPin").value = "";
+
+        mostrarEntradas();
+
+    }else{
+
+        error.style.display = "block";
+
+    }
+
+}
+
+
+/* CERRAR */
+
+function cerrarRincon(){
+
+    document
+        .getElementById("monyEditor")
+        .classList.remove("show");
+
+
+    document
+        .getElementById("monyLogin")
+        .style.display = "block";
+
+
+    cancelarEdicion();
+
+}
+
+
+/* GUARDAR */
+
+function guardarEntrada(){
+
+    const tipo =
+        document.getElementById("entryType").value;
+
+    const titulo =
+        document.getElementById("entryTitle").value.trim();
+
+    const texto =
+        document.getElementById("entryText").value.trim();
+
+
+    if(!titulo || !texto){
+
+        alert(
+            "Primero escribe un título y tu mensaje ♡"
+        );
+
+        return;
+
+    }
+
+
+    if(entradaEditando !== null){
+
+        entradas[entradaEditando].tipo = tipo;
+
+        entradas[entradaEditando].titulo = titulo;
+
+        entradas[entradaEditando].texto = texto;
+
+        entradas[entradaEditando].fecha =
+            entradas[entradaEditando].fecha;
+
+        entradaEditando = null;
+
+
+        document.getElementById(
+            "saveEntryButton"
+        ).textContent =
+            "💾 Guardar entrada";
+
+
+        document.getElementById(
+            "cancelEditButton"
+        ).classList.remove("show");
+
+    }else{
+
+        entradas.unshift({
+
+            tipo:tipo,
+
+            titulo:titulo,
+
+            texto:texto,
+
+            fecha:new Date().toLocaleDateString(
+                "es-ES",
+                {
+                    day:"numeric",
+                    month:"long",
+                    year:"numeric"
+                }
+            )
+
+        });
+
+    }
+
+
+    localStorage.setItem(
+        "monyEntradas",
+        JSON.stringify(entradas)
+    );
+
+
+    limpiarFormulario();
+
+    mostrarEntradas();
+
+}
+
+
+/* MOSTRAR */
+
+function mostrarEntradas(){
+
+    const lista =
+        document.getElementById("entriesList");
+
+
+    if(entradas.length === 0){
+
+        lista.innerHTML = `
+
+            <div class="empty-entries">
+
+                Todavía no has guardado ninguna nota...
+
+                <br>
+
+                Quizás hoy sea un buen día para escribirle algo a Tewi. ♡
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    lista.innerHTML = "";
+
+
+    entradas.forEach(
+        (entrada,index) => {
+
+            const tarjeta =
+                document.createElement("div");
+
+            tarjeta.className =
+                "entry-card";
+
+
+            tarjeta.innerHTML = `
+
+                <div class="entry-top">
+
+                    <div class="entry-type">
+                        ${escapeHTML(entrada.tipo)}
+                    </div>
+
+                    <div class="entry-date">
+                        ${escapeHTML(entrada.fecha)}
+                    </div>
+
+                </div>
+
+
+                <div class="entry-title">
+                    ${escapeHTML(entrada.titulo)}
+                </div>
+
+
+                <div class="entry-preview">
+
+                    ${escapeHTML(
+                        entrada.texto.substring(0,150)
+                    )}
+
+                    ${entrada.texto.length > 150 ? "..." : ""}
+
+                </div>
+
+
+                <div class="entry-actions">
+
+                    <button
+                        class="entry-open"
+                        onclick="verEntrada(${index})">
+
+                        💌 Abrir
+
+                    </button>
+
+
+                    <button
+                        class="entry-edit"
+                        onclick="editarEntrada(${index})">
+
+                        ✏️ Editar
+
+                    </button>
+
+
+                    <button
+                        class="entry-delete"
+                        onclick="eliminarEntrada(${index})">
+
+                        🗑️ Eliminar
+
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="entry-full"
+                    id="fullEntry${index}">
+
+                    ${escapeHTML(entrada.texto)}
+
+                </div>
+
+            `;
+
+
+            lista.appendChild(tarjeta);
+
+        }
+    );
+
+}
+
+
+/* ABRIR ENTRADA */
+
+function verEntrada(index){
+
+    const contenido =
+        document.getElementById(
+            "fullEntry" + index
+        );
+
+
+    contenido.classList.toggle("show");
+
+
+    const boton =
+        contenido
+            .parentElement
+            .querySelector(".entry-open");
+
+
+    if(contenido.classList.contains("show")){
+
+        boton.textContent =
+            "Cerrar ♡";
+
+    }else{
+
+        boton.textContent =
+            "💌 Abrir";
+
+    }
+
+}
+
+
+/* EDITAR */
+
+function editarEntrada(index){
+
+    const entrada =
+        entradas[index];
+
+
+    document.getElementById(
+        "entryType"
+    ).value =
+        entrada.tipo;
+
+
+    document.getElementById(
+        "entryTitle"
+    ).value =
+        entrada.titulo;
+
+
+    document.getElementById(
+        "entryText"
+    ).value =
+        entrada.texto;
+
+
+    entradaEditando = index;
+
+
+    document.getElementById(
+        "saveEntryButton"
+    ).textContent =
+        "💾 Guardar cambios";
+
+
+    document.getElementById(
+        "cancelEditButton"
+    ).classList.add("show");
+
+
+    document
+        .querySelector(".entry-form")
+        .scrollIntoView({
+            behavior:"smooth",
+            block:"center"
+        });
+
+}
+
+
+/* CANCELAR EDICIÓN */
+
+function cancelarEdicion(){
+
+    entradaEditando = null;
+
+    limpiarFormulario();
+
+
+    document.getElementById(
+        "saveEntryButton"
+    ).textContent =
+        "💾 Guardar entrada";
+
+
+    document.getElementById(
+        "cancelEditButton"
+    ).classList.remove("show");
+
+}
+
+
+/* ELIMINAR */
+
+function eliminarEntrada(index){
+
+    const confirmar =
+        confirm(
+            "¿Quieres borrar esta entrada? Esta acción no se puede deshacer."
+        );
+
+
+    if(!confirmar){
+        return;
+    }
+
+
+    entradas.splice(index,1);
+
+
+    localStorage.setItem(
+        "monyEntradas",
+        JSON.stringify(entradas)
+    );
+
+
+    mostrarEntradas();
+
+}
+
+
+/* LIMPIAR */
+
+function limpiarFormulario(){
+
+    document.getElementById(
+        "entryTitle"
+    ).value = "";
+
+
+    document.getElementById(
+        "entryText"
+    ).value = "";
+
+
+    document.getElementById(
+        "entryType"
+    ).value = "Nota";
+
+}
+
+
+/* EVITAR HTML DENTRO DE LAS NOTAS */
+
+function escapeHTML(text){
+
+    const div =
+        document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
+
+}
+
+
+/* =========================
+   COPIA DE SEGURIDAD
+========================= */
+
+function exportarEntradas(){
+
+    if(entradas.length === 0){
+
+        alert(
+            "Todavía no tienes entradas para guardar."
+        );
+
+        return;
+
+    }
+
+
+    const contenido =
+        JSON.stringify(
+            entradas,
+            null,
+            2
+        );
+
+
+    const blob =
+        new Blob(
+            [contenido],
+            {
+                type:"application/json"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const enlace =
+        document.createElement("a");
+
+
+    enlace.href = url;
+
+    enlace.download =
+        "El_Rincon_de_Mony_backup.json";
+
+
+    enlace.click();
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* IMPORTAR */
+
+function importarEntradas(event){
+
+    const archivo =
+        event.target.files[0];
+
+
+    if(!archivo){
+        return;
+    }
+
+
+    const lector =
+        new FileReader();
+
+
+    lector.onload =
+        function(e){
+
+            try{
+
+                const datos =
+                    JSON.parse(
+                        e.target.result
+                    );
+
+
+                if(!Array.isArray(datos)){
+
+                    throw new Error();
+
+                }
+
+
+                entradas = datos;
+
+
+                localStorage.setItem(
+                    "monyEntradas",
+                    JSON.stringify(entradas)
+                );
+
+
+                mostrarEntradas();
+
+
+                alert(
+                    "Tus notas fueron restauradas correctamente. ♡"
+                );
+
+
+            }catch(error){
+
+                alert(
+                    "No pude leer este archivo de respaldo."
+                );
+
+            }
+
+        };
+
+
+    lector.readAsText(archivo);
+
+
+    event.target.value = "";
+
+}
+
+
+/* =========================
+   CÁPSULA DEL TIEMPO
+========================= */
 
 function obtenerProximoDia23(){
 
@@ -2797,6 +4228,7 @@ function obtenerProximoDia23(){
 
         mes++;
 
+
         if(mes > 11){
 
             mes = 0;
@@ -2804,6 +4236,7 @@ function obtenerProximoDia23(){
             anio++;
 
         }
+
 
         fechaObjetivo =
             new Date(
@@ -3105,3 +4538,4 @@ function respuestaSi(){
 </body>
 
 </html>
+```
