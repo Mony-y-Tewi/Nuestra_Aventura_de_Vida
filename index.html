@@ -1,21 +1,14 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Para Tewi ♡</title>
 
-
 <style>
-
-/* =========================
-   ESTILOS GENERALES
-========================= */
 
 *{
     box-sizing:border-box;
@@ -34,9 +27,8 @@ body{
     line-height:1.7;
 }
 
-
 /* =========================
-   CORAZONES FLOTANTES
+   CORAZONES
 ========================= */
 
 .heart{
@@ -91,7 +83,6 @@ body{
     }
 
 }
-
 
 /* =========================
    PORTADA
@@ -164,7 +155,8 @@ h1{
 
 .button,
 .letter-button,
-.redeem{
+.redeem,
+.photo-toggle{
 
     display:inline-block;
 
@@ -206,13 +198,13 @@ h1{
 
 .button:hover,
 .letter-button:hover,
-.redeem:hover{
+.redeem:hover,
+.photo-toggle:hover{
 
     background:#466653;
 
     color:white;
 }
-
 
 /* =========================
    SECCIONES
@@ -257,7 +249,6 @@ h2{
 
     margin-bottom:18px;
 }
-
 
 /* =========================
    CONTADOR
@@ -328,7 +319,6 @@ h2{
 
     font-style:italic;
 }
-
 
 /* =========================
    CARTA
@@ -418,7 +408,6 @@ h2{
 
 }
 
-
 /* =========================
    LADO SECRETO
 ========================= */
@@ -450,16 +439,160 @@ h2{
     color:#d8e6dc;
 }
 
-.secret-gallery{
+/* =========================
+   CÁPSULA DE FOTOS
+========================= */
+
+.photo-capsule{
 
     margin-top:35px;
 
+    padding:25px;
+
+    border-radius:24px;
+
+    transition:.3s;
+}
+
+.secret-capsule{
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.15);
+}
+
+.memories-capsule{
+
+    background:#fff;
+
+    border:1px solid #d5e4d9;
+
+    box-shadow:
+        0 15px 40px
+        rgba(65,91,73,.08);
+}
+
+.photo-capsule-header{
+
+    text-align:center;
+
+    margin-bottom:5px;
+}
+
+.photo-capsule-icon{
+
+    font-size:42px;
+
+    margin-bottom:10px;
+}
+
+.photo-capsule-title{
+
+    font-size:25px;
+
+    font-weight:normal;
+
+    margin-bottom:8px;
+}
+
+.secret-capsule .photo-capsule-title{
+    color:#f1f8f2;
+}
+
+.memories-capsule .photo-capsule-title{
+    color:#345441;
+}
+
+.photo-capsule-description{
+
+    font-size:15px;
+
+    margin-bottom:20px;
+}
+
+.secret-capsule .photo-capsule-description{
+    color:#cbded0;
+}
+
+.memories-capsule .photo-capsule-description{
+    color:#789683;
+}
+
+.photo-toggle{
+
+    padding:13px 25px;
+
+    font-size:15px;
+}
+
+.secret-toggle{
+
+    border-color:#a8c5b0;
+
+    color:#e9f4ec;
+}
+
+.secret-toggle:hover{
+
+    background:#eef7f0;
+
+    color:#345441;
+}
+
+.photo-gallery{
+
+    display:none;
+
+    margin-top:30px;
+
+    animation:galleryOpen .6s ease;
+}
+
+.photo-gallery.show{
     display:grid;
+}
+
+.secret-gallery{
 
     grid-template-columns:repeat(3,1fr);
 
     gap:14px;
 }
+
+.memories-gallery{
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+}
+
+@keyframes galleryOpen{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(-15px)
+            scale(.98);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+/* FOTOS SECRETAS */
 
 .secret-gallery img{
 
@@ -485,6 +618,40 @@ h2{
     transform:scale(1.03);
 }
 
+/* RECUERDOS */
+
+.memory{
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+    background:white;
+
+    box-shadow:
+        0 12px 30px
+        rgba(65,91,73,.08);
+
+    cursor:pointer;
+}
+
+.memory img{
+
+    width:100%;
+
+    aspect-ratio:1/1;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.4s;
+}
+
+.memory:hover img{
+
+    transform:scale(1.06);
+}
 
 /* =========================
    VALES
@@ -559,7 +726,6 @@ h2{
     font-style:italic;
 }
 
-
 /* =========================
    MÚSICA
 ========================= */
@@ -623,66 +789,6 @@ h2{
     margin:auto;
 }
 
-
-/* =========================
-   RECUERDOS
-========================= */
-
-.memories{
-
-    max-width:1100px;
-}
-
-.memories-intro{
-
-    max-width:700px;
-}
-
-.memories-gallery{
-
-    margin-top:40px;
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:18px;
-}
-
-.memory{
-
-    overflow:hidden;
-
-    border-radius:18px;
-
-    background:white;
-
-    box-shadow:
-        0 12px 30px
-        rgba(65,91,73,.08);
-
-    cursor:pointer;
-}
-
-.memory img{
-
-    width:100%;
-
-    aspect-ratio:1/1;
-
-    object-fit:cover;
-
-    display:block;
-
-    transition:.4s;
-}
-
-.memory:hover img{
-
-    transform:scale(1.06);
-}
-
-
 /* =========================
    MODAL FOTOS
 ========================= */
@@ -737,20 +843,17 @@ h2{
     cursor:pointer;
 }
 
-
 /* =========================
    FINAL
 ========================= */
 
 .final{
-
     text-align:center;
 }
 
 .final h2{
     font-size:45px;
 }
-
 
 /* =========================
    CÁPSULA DEL TIEMPO
@@ -779,9 +882,6 @@ h2{
     color:#5c7063;
 }
 
-
-/* TARJETA */
-
 .capsule-card{
 
     max-width:650px;
@@ -804,9 +904,6 @@ h2{
 
     overflow:hidden;
 }
-
-
-/* DECORACIÓN */
 
 .capsule-card::before{
 
@@ -849,9 +946,6 @@ h2{
 
     opacity:.8;
 }
-
-
-/* CONTENIDO */
 
 .capsule-content{
 
@@ -901,9 +995,6 @@ h2{
     margin-bottom:25px;
 }
 
-
-/* CUENTA REGRESIVA */
-
 .capsule-countdown{
 
     display:grid;
@@ -945,9 +1036,6 @@ h2{
     color:#82988a;
 }
 
-
-/* FECHA */
-
 .capsule-date{
 
     color:#6f927a;
@@ -956,9 +1044,6 @@ h2{
 
     margin-top:20px;
 }
-
-
-/* BOTÓN ABRIR */
 
 .open-capsule{
 
@@ -993,9 +1078,6 @@ h2{
 
     background:#345441;
 }
-
-
-/* CAPSULA ABIERTA */
 
 .capsule-message{
 
@@ -1073,9 +1155,6 @@ h2{
 
 }
 
-
-/* CORAZONES AL ABRIR */
-
 .capsule-hearts{
 
     display:none;
@@ -1110,7 +1189,6 @@ h2{
     }
 
 }
-
 
 /* =========================
    PREGUNTA FINAL
@@ -1188,9 +1266,6 @@ h2{
     position:relative;
 }
 
-
-/* MENSAJE SÍ */
-
 .yes-message{
 
     display:none;
@@ -1254,7 +1329,6 @@ h2{
 
 }
 
-
 /* =========================
    FOOTER
 ========================= */
@@ -1269,7 +1343,6 @@ footer{
 
     font-size:14px;
 }
-
 
 /* =========================
    MÓVIL
@@ -1303,10 +1376,17 @@ footer{
         grid-template-columns:1fr;
     }
 
+    .photo-capsule{
+
+        padding:20px 15px;
+    }
+
     .secret-gallery{
 
         grid-template-columns:
             repeat(2,1fr);
+
+        gap:10px;
     }
 
     .memories-gallery{
@@ -1315,6 +1395,11 @@ footer{
             repeat(2,1fr);
 
         gap:12px;
+    }
+
+    .photo-capsule-title{
+
+        font-size:22px;
     }
 
     .capsule-card{
@@ -1654,31 +1739,73 @@ Este espacio será para nuestros secretos, nuestras complicidades y aquello que 
 </p>
 
 
-<div class="secret-gallery">
+<!-- CÁPSULA FOTOS SECRETAS -->
+
+<div class="photo-capsule secret-capsule">
+
+<div class="photo-capsule-header">
+
+<div class="photo-capsule-icon">
+🔐
+</div>
+
+<div class="photo-capsule-title">
+Nuestros secretos
+</div>
+
+<div class="photo-capsule-description">
+
+Estas fotografías están guardadas especialmente para nosotros.
+
+</div>
+
+<button
+class="photo-toggle secret-toggle"
+id="secretToggle"
+onclick="toggleGaleria('secretGallery',this)">
+
+Abrir nuestros secretos ♡
+
+</button>
+
+</div>
+
+
+<div
+class="photo-gallery secret-gallery"
+id="secretGallery">
 
 <img
 src="foto 1.jpg"
-onclick="abrirFoto(this.src)">
+onclick="abrirFoto(this.src)"
+alt="Nuestro recuerdo 1">
 
 <img
 src="foto 2.jpg"
-onclick="abrirFoto(this.src)">
+onclick="abrirFoto(this.src)"
+alt="Nuestro recuerdo 2">
 
 <img
 src="foto 3.jpg"
-onclick="abrirFoto(this.src)">
+onclick="abrirFoto(this.src)"
+alt="Nuestro recuerdo 3">
 
 <img
 src="foto 4.jpg"
-onclick="abrirFoto(this.src)">
+onclick="abrirFoto(this.src)"
+alt="Nuestro recuerdo 4">
 
 <img
 src="foto 5.jpg"
-onclick="abrirFoto(this.src)">
+onclick="abrirFoto(this.src)"
+alt="Nuestro recuerdo 5">
 
 <img
 src="foto 6.jpg"
-onclick="abrirFoto(this.src)">
+onclick="abrirFoto(this.src)"
+alt="Nuestro recuerdo 6">
+
+</div>
 
 </div>
 
@@ -1877,7 +2004,7 @@ allowfullscreen>
 Nuestros recuerdos
 </h2>
 
-<p class="text memories-intro">
+<p class="text">
 
 Cada foto guarda un pequeño pedacito de nuestra historia.
 Y todavía nos quedan muchísimos recuerdos por crear.
@@ -1885,46 +2012,112 @@ Y todavía nos quedan muchísimos recuerdos por crear.
 </p>
 
 
-<div class="memories-gallery">
+<!-- CÁPSULA FOTOS RECUERDOS -->
+
+<div class="photo-capsule memories-capsule">
+
+<div class="photo-capsule-header">
+
+<div class="photo-capsule-icon">
+📸
+</div>
+
+<div class="photo-capsule-title">
+Nuestros recuerdos
+</div>
+
+<div class="photo-capsule-description">
+
+Diez pequeños recuerdos guardados en un solo lugar.
+
+</div>
+
+<button
+class="photo-toggle"
+id="memoriesToggle"
+onclick="toggleGaleria('memoriesGallery',this)">
+
+Abrir nuestros recuerdos ♡
+
+</button>
+
+</div>
+
+
+<div
+class="photo-gallery memories-gallery"
+id="memoriesGallery">
 
 <div class="memory">
-<img src="foto 7.jpg" onclick="abrirFoto(this.src)">
+<img
+src="foto 7.jpg"
+onclick="abrirFoto(this.src)"
+alt="Recuerdo 7">
 </div>
 
 <div class="memory">
-<img src="foto 8.jpg" onclick="abrirFoto(this.src)">
+<img
+src="foto 8.jpg"
+onclick="abrirFoto(this.src)"
+alt="Recuerdo 8">
 </div>
 
 <div class="memory">
-<img src="foto 9.jpg" onclick="abrirFoto(this.src)">
+<img
+src="foto 9.jpg"
+onclick="abrirFoto(this.src)"
+alt="Recuerdo 9">
 </div>
 
 <div class="memory">
-<img src="foto 10.jpg" onclick="abrirFoto(this.src)">
+<img
+src="foto 10.jpg"
+onclick="abrirFoto(this.src)"
+alt="Recuerdo 10">
 </div>
 
 <div class="memory">
-<img src="foto 11.jpg" onclick="abrirFoto(this.src)">
+<img
+src="foto 11.jpg"
+onclick="abrirFoto(this.src)"
+alt="Recuerdo 11">
 </div>
 
 <div class="memory">
-<img src="foto 12.jpg" onclick="abrirFoto(this.src)">
+<img
+src="foto 12.jpg"
+onclick="abrirFoto(this.src)"
+alt="Recuerdo 12">
 </div>
 
 <div class="memory">
-<img src="foto 13.jpg" onclick="abrirFoto(this.src)">
+<img
+src="foto 13.jpg"
+onclick="abrirFoto(this.src)"
+alt="Recuerdo 13">
 </div>
 
 <div class="memory">
-<img src="foto 14.jpg" onclick="abrirFoto(this.src)">
+<img
+src="foto 14.jpg"
+onclick="abrirFoto(this.src)"
+alt="Recuerdo 14">
 </div>
 
 <div class="memory">
-<img src="foto 15.jpg" onclick="abrirFoto(this.src)">
+<img
+src="foto 15.jpg"
+onclick="abrirFoto(this.src)"
+alt="Recuerdo 15">
 </div>
 
 <div class="memory">
-<img src="foto 16.jpg" onclick="abrirFoto(this.src)">
+<img
+src="foto 16.jpg"
+onclick="abrirFoto(this.src)"
+alt="Recuerdo 16">
+</div>
+
 </div>
 
 </div>
@@ -2106,7 +2299,8 @@ Se abrirá el próximo 23 ♡
 
 <!-- DESBLOQUEADO -->
 
-<div id="capsuleUnlocked"
+<div
+id="capsuleUnlocked"
 style="display:none;">
 
 <div class="capsule-lock">
@@ -2336,9 +2530,8 @@ alt="Recuerdo">
 
 <script>
 
-
 /* =========================
-   CONTADOR DE RELACIÓN
+   CONTADOR
 ========================= */
 
 const fechaInicio =
@@ -2463,7 +2656,53 @@ function usarVale(boton){
 
 
 /* =========================
-   FOTOS
+   GALERÍAS DE FOTOS
+========================= */
+
+function toggleGaleria(id, boton){
+
+    const galeria =
+        document.getElementById(id);
+
+    const abierta =
+        galeria.classList.toggle("show");
+
+
+    if(abierta){
+
+        if(id === "secretGallery"){
+
+            boton.textContent =
+                "Cerrar nuestros secretos ♡";
+
+        }else{
+
+            boton.textContent =
+                "Cerrar nuestros recuerdos ♡";
+
+        }
+
+    }else{
+
+        if(id === "secretGallery"){
+
+            boton.textContent =
+                "Abrir nuestros secretos ♡";
+
+        }else{
+
+            boton.textContent =
+                "Abrir nuestros recuerdos ♡";
+
+        }
+
+    }
+
+}
+
+
+/* =========================
+   VISOR DE FOTOS
 ========================= */
 
 function abrirFoto(src){
@@ -2517,7 +2756,6 @@ function iniciarMusica(){
    CÁPSULA DEL TIEMPO
 ========================= */
 
-
 /*
    La relación comenzó:
    23 de mayo de 2026
@@ -2555,11 +2793,6 @@ function obtenerProximoDia23(){
         );
 
 
-    /*
-       Si ya pasó el día 23,
-       esperamos al próximo mes.
-    */
-
     if(ahora >= fechaObjetivo){
 
         mes++;
@@ -2596,18 +2829,6 @@ function actualizarCapsula(){
         new Date();
 
 
-    let anio =
-        ahora.getFullYear();
-
-
-    let mes =
-        ahora.getMonth();
-
-
-    /*
-       Comprobamos si HOY es día 23.
-    */
-
     if(ahora.getDate() === 23){
 
         mostrarCapsulaDesbloqueada();
@@ -2616,11 +2837,6 @@ function actualizarCapsula(){
 
     }
 
-
-    /*
-       Si no es día 23,
-       permanece bloqueada.
-    */
 
     const objetivo =
         obtenerProximoDia23();
@@ -2738,10 +2954,6 @@ function mostrarCapsulaDesbloqueada(){
 }
 
 
-/*
-   Abrir la cápsula
-*/
-
 function abrirCapsula(){
 
     const mensaje =
@@ -2771,14 +2983,6 @@ function abrirCapsula(){
 
 }
 
-
-/*
-   Comprobar cada segundo.
-
-   Esto permite que el día 23
-   se desbloquee automáticamente
-   sin tener que recargar la página.
-*/
 
 actualizarCapsula();
 
@@ -2840,19 +3044,11 @@ function moverNo(){
 }
 
 
-/*
-   Computador
-*/
-
 noButton.addEventListener(
     "mouseenter",
     moverNo
 );
 
-
-/*
-   Celular
-*/
 
 noButton.addEventListener(
     "touchstart",
@@ -2865,11 +3061,6 @@ noButton.addEventListener(
     }
 );
 
-
-/*
-   También por clic,
-   por si intenta atraparlo.
-*/
 
 noButton.addEventListener(
     "click",
@@ -2914,4 +3105,3 @@ function respuestaSi(){
 </body>
 
 </html>
-```
