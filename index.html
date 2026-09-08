@@ -1,13 +1,21 @@
+```html
 <!DOCTYPE html>
-
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Para Tewi ♡</title>
 
+
 <style>
+
+/* =========================
+   ESTILOS GENERALES
+========================= */
 
 *{
     box-sizing:border-box;
@@ -26,10 +34,10 @@ body{
     line-height:1.7;
 }
 
-button{
-    font-family:inherit;
-    cursor:pointer;
-}
+
+/* =========================
+   CORAZONES FLOTANTES
+========================= */
 
 .heart{
     position:fixed;
@@ -41,33 +49,68 @@ button{
     z-index:0;
 }
 
-.heart:nth-child(1){left:10%;animation-delay:0s}
-.heart:nth-child(2){left:30%;animation-delay:2s}
-.heart:nth-child(3){left:55%;animation-delay:4s}
-.heart:nth-child(4){left:75%;animation-delay:1s}
-.heart:nth-child(5){left:90%;animation-delay:3s}
+.heart:nth-child(1){
+    left:10%;
+    animation-delay:0s;
+}
+
+.heart:nth-child(2){
+    left:30%;
+    animation-delay:2s;
+}
+
+.heart:nth-child(3){
+    left:55%;
+    animation-delay:4s;
+}
+
+.heart:nth-child(4){
+    left:75%;
+    animation-delay:1s;
+}
+
+.heart:nth-child(5){
+    left:90%;
+    animation-delay:3s;
+}
 
 @keyframes float{
+
     0%{
         bottom:-30px;
         transform:translateX(0);
     }
+
     50%{
         transform:translateX(20px);
     }
+
     100%{
         bottom:110%;
         transform:translateX(-20px);
     }
+
 }
 
+
+/* =========================
+   PORTADA
+========================= */
+
 .hero{
+
     min-height:100vh;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     text-align:center;
+
     padding:30px;
+
     background:
         radial-gradient(circle at top,#fff,transparent 60%),
         linear-gradient(135deg,#eef8f1,#dbeee0);
@@ -75,585 +118,593 @@ button{
 
 .hero-content{
     max-width:700px;
-    position:relative;
-    z-index:2;
 }
 
 .small-title{
+
     letter-spacing:4px;
+
     text-transform:uppercase;
+
     font-size:12px;
+
     color:#6f927a;
+
     margin-bottom:20px;
 }
 
 h1{
+
     font-size:clamp(55px,12vw,110px);
+
     font-weight:normal;
+
     color:#345441;
 }
 
 .date{
+
     letter-spacing:4px;
+
     color:#789683;
+
     margin-bottom:30px;
 }
 
 .intro{
+
     font-size:19px;
+
     max-width:550px;
+
     margin:auto;
+
     color:#53695b;
 }
 
 .button,
 .letter-button,
 .redeem{
+
     display:inline-block;
+
     border:1px solid #779783;
+
     background:transparent;
+
     color:#466653;
+
     border-radius:50px;
+
     font-family:inherit;
+
     cursor:pointer;
+
     transition:.3s;
 }
 
 .button{
+
     margin-top:35px;
+
     padding:14px 30px;
+
     text-decoration:none;
 }
 
 .letter-button{
+
     padding:15px 28px;
+
     font-size:16px;
 }
 
 .redeem{
+
     padding:10px 20px;
 }
 
 .button:hover,
 .letter-button:hover,
 .redeem:hover{
+
     background:#466653;
+
     color:white;
 }
 
+
+/* =========================
+   SECCIONES
+========================= */
+
 section{
+
     max-width:850px;
+
     margin:auto;
+
     padding:100px 25px;
 }
 
 .number{
+
     font-size:13px;
+
     letter-spacing:4px;
+
     color:#89a995;
+
     margin-bottom:10px;
 }
 
 h2{
+
     font-size:40px;
+
     font-weight:normal;
+
     color:#345441;
+
     margin-bottom:25px;
 }
 
 .text{
+
     font-size:18px;
+
     color:#5c7063;
+
     margin-bottom:18px;
 }
 
-/* CONTADOR */
+
+/* =========================
+   CONTADOR
+========================= */
 
 .counter-card{
+
     margin-top:40px;
+
     padding:35px 25px;
+
     background:white;
+
     border:1px solid #d5e4d9;
+
     border-radius:22px;
+
     box-shadow:0 15px 40px rgba(65,91,73,.08);
+
+    text-align:center;
 }
 
 .counter-title{
-    text-align:center;
-    color:#789683;
-    margin-bottom:25px;
-    font-size:14px;
+
+    color:#6f927a;
+
     letter-spacing:2px;
-    text-transform:uppercase;
+
+    margin-bottom:25px;
 }
 
 .counter{
+
     display:grid;
+
     grid-template-columns:repeat(4,1fr);
-    gap:15px;
+
+    gap:10px;
 }
 
 .counter-box{
-    text-align:center;
-    padding:15px 5px;
+    padding:10px;
 }
 
 .counter-number{
+
     display:block;
+
     font-size:32px;
-    color:#466653;
+
+    color:#345441;
 }
 
 .counter-label{
-    display:block;
-    font-size:11px;
-    letter-spacing:2px;
-    color:#89a995;
-    margin-top:5px;
+
+    font-size:12px;
+
+    color:#82988a;
+
+    letter-spacing:1px;
 }
 
 .counter-love{
-    text-align:center;
+
     margin-top:25px;
+
     color:#789683;
+
     font-style:italic;
 }
 
-/* CARTA */
+
+/* =========================
+   CARTA
+========================= */
 
 .letter-container{
+
+    margin-top:40px;
+
     text-align:center;
-    margin-top:35px;
 }
 
 .letter{
+
     display:none;
+
     margin-top:30px;
-    padding:40px;
-    background:#fff;
+
+    padding:35px;
+
+    background:white;
+
     border:1px solid #d5e4d9;
-    border-radius:22px;
+
+    border-radius:18px;
+
+    box-shadow:0 15px 40px rgba(65,91,73,.10);
+
     text-align:left;
-    box-shadow:0 15px 40px rgba(65,91,73,.08);
-    animation:appear .5s ease;
 }
 
 .letter.show{
+
     display:block;
+
+    animation:openLetter .7s ease;
 }
 
 .letter h3{
+
     color:#345441;
+
+    font-size:27px;
+
     font-weight:normal;
-    font-size:24px;
-    margin-bottom:25px;
+
+    margin-bottom:20px;
 }
 
 .letter p{
-    margin-bottom:20px;
+
+    margin-bottom:18px;
+
     color:#53695b;
 }
 
 .signature{
+
     text-align:right;
+
     margin-top:30px;
-    color:#557b61;
+
     font-style:italic;
+
+    color:#6c8b77;
 }
 
-@keyframes appear{
+@keyframes openLetter{
+
     from{
+
         opacity:0;
-        transform:translateY(10px);
+
+        transform:
+            translateY(-15px)
+            scale(.97);
     }
+
     to{
+
         opacity:1;
-        transform:translateY(0);
+
+        transform:
+            translateY(0)
+            scale(1);
     }
+
 }
 
-/* LADO SECRETO */
+
+/* =========================
+   LADO SECRETO
+========================= */
 
 .secret{
+
+    background:#30483a;
+
+    color:#eef7f0;
+
     max-width:none;
-    background:
-        radial-gradient(circle at top right,rgba(100,135,109,.15),transparent 35%),
-        linear-gradient(135deg,#1d2921,#26392c);
-    color:#e8f2e9;
-}
 
-.secret > *{
-    max-width:850px;
-    margin-left:auto;
-    margin-right:auto;
-}
+    padding-left:
+        max(25px,calc((100% - 850px)/2));
 
-.secret .number{
-    color:#aabdaa;
+    padding-right:
+        max(25px,calc((100% - 850px)/2));
 }
 
 .secret h2{
-    color:#eef7ef;
+    color:#f1f8f2;
+}
+
+.secret .number{
+    color:#a8c5b0;
 }
 
 .secret .text{
-    color:#c2d2c5;
-}
-
-/* CAPSULAS DE FOTOS */
-
-.gallery-capsule{
-    margin-top:35px;
-}
-
-.capsule-button{
-    display:block;
-    margin:0 auto 30px;
-    padding:15px 28px;
-    border:1px solid rgba(255,255,255,.3);
-    background:rgba(255,255,255,.07);
-    color:#eef7ef;
-    border-radius:50px;
-    font-family:inherit;
-    font-size:16px;
-    transition:.3s;
-}
-
-.capsule-button:hover{
-    background:rgba(255,255,255,.16);
-    transform:translateY(-2px);
-}
-
-.gallery-content{
-    display:none;
-    animation:appear .5s ease;
-}
-
-.gallery-content.open{
-    display:block;
+    color:#d8e6dc;
 }
 
 .secret-gallery{
+
+    margin-top:35px;
+
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
-    gap:15px;
+
+    gap:14px;
 }
 
 .secret-gallery img{
+
     width:100%;
+
     aspect-ratio:1/1;
+
     object-fit:cover;
-    border-radius:18px;
+
+    border-radius:16px;
+
     cursor:pointer;
-    transition:.4s;
-    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+    transition:.35s;
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
 }
 
 .secret-gallery img:hover{
+
     transform:scale(1.03);
 }
 
-/* VALES */
+
+/* =========================
+   VALES
+========================= */
 
 .vouchers{
+
     margin-top:40px;
+
     display:grid;
+
     grid-template-columns:repeat(2,1fr);
+
     gap:20px;
 }
 
 .voucher{
+
     background:white;
+
     border:1px solid #d5e4d9;
+
     border-radius:18px;
+
     padding:28px 22px;
+
     text-align:center;
-    box-shadow:0 12px 30px rgba(65,91,73,.07);
+
+    box-shadow:
+        0 12px 30px
+        rgba(65,91,73,.07);
+
     transition:.3s;
 }
 
 .voucher:hover{
+
     transform:translateY(-4px);
 }
 
 .voucher-icon{
+
     font-size:32px;
+
     margin-bottom:10px;
 }
 
 .voucher h3{
+
     color:#345441;
+
     font-weight:normal;
+
     font-size:22px;
+
     margin-bottom:8px;
 }
 
 .voucher p{
+
     color:#789683;
+
     font-size:14px;
+
     margin-bottom:18px;
 }
 
 .redeemed{
-    margin-top:15px;
-    color:#557b61;
+
+    color:#5f806b;
+
     font-style:italic;
 }
 
-/* CANCION */
+
+/* =========================
+   MÚSICA
+========================= */
 
 .song{
-    background:#e9f3eb;
-    max-width:none;
     text-align:center;
 }
 
-.song > *{
-    max-width:850px;
-    margin-left:auto;
-    margin-right:auto;
-}
-
 .song-card{
-    max-width:700px;
-    margin:35px auto 0;
-    background:white;
+
+    margin-top:35px;
+
+    padding:30px;
+
     border:1px solid #d5e4d9;
-    border-radius:22px;
-    padding:35px;
-    box-shadow:0 15px 40px rgba(65,91,73,.08);
+
+    border-radius:20px;
+
+    background:white;
+
+    box-shadow:
+        0 15px 40px
+        rgba(65,91,73,.08);
 }
 
 .music-symbol{
-    font-size:45px;
-    color:#557b61;
-    margin-bottom:10px;
+
+    font-size:35px;
+
+    margin-bottom:15px;
 }
 
 .song-title{
-    font-size:26px;
+
+    font-size:27px;
+
     color:#345441;
 }
 
 .artist{
-    color:#789683;
+
+    color:#7a9582;
+
     margin-bottom:25px;
 }
 
 .youtube-player{
+
     width:100%;
-    height:315px;
-    border:0;
+
+    max-width:700px;
+
+    aspect-ratio:16/9;
+
+    border:none;
+
     border-radius:15px;
+
+    display:block;
+
+    margin:auto;
 }
 
-/* RECUERDOS */
+
+/* =========================
+   RECUERDOS
+========================= */
 
 .memories{
-    background:#f5faf6;
-    max-width:none;
-}
 
-.memories > *{
-    max-width:850px;
-    margin-left:auto;
-    margin-right:auto;
-}
-
-.memories .number,
-.memories h2{
-    text-align:left;
+    max-width:1100px;
 }
 
 .memories-intro{
+
     max-width:700px;
 }
 
 .memories-gallery{
+
+    margin-top:40px;
+
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
-    gap:15px;
+
+    gap:18px;
 }
 
 .memory{
+
     overflow:hidden;
+
     border-radius:18px;
-    aspect-ratio:1/1;
-    box-shadow:0 10px 25px rgba(65,91,73,.12);
+
+    background:white;
+
+    box-shadow:
+        0 12px 30px
+        rgba(65,91,73,.08);
+
+    cursor:pointer;
 }
 
 .memory img{
+
     width:100%;
-    height:100%;
+
+    aspect-ratio:1/1;
+
     object-fit:cover;
+
     display:block;
-    cursor:pointer;
+
     transition:.4s;
 }
 
 .memory:hover img{
-    transform:scale(1.05);
+
+    transform:scale(1.06);
 }
 
-/* CAPSULA DEL TIEMPO */
 
-.time-capsule{
-    background:
-        radial-gradient(circle at center top,rgba(255,255,255,.8),transparent 50%),
-        linear-gradient(135deg,#eef8f1,#dcefe2);
-    max-width:none;
-    text-align:center;
-}
-
-.time-capsule > *{
-    max-width:700px;
-    margin-left:auto;
-    margin-right:auto;
-}
-
-.capsule-card{
-    margin-top:35px;
-    background:rgba(255,255,255,.8);
-    border:1px solid #d5e4d9;
-    border-radius:25px;
-    padding:40px 30px;
-    box-shadow:0 15px 40px rgba(65,91,73,.08);
-}
-
-.capsule-icon{
-    font-size:50px;
-    margin-bottom:15px;
-}
-
-.capsule-countdown{
-    font-size:20px;
-    color:#557b61;
-    margin:20px 0;
-}
-
-.capsule-message{
-    display:none;
-    animation:appear .6s ease;
-}
-
-.capsule-message.show{
-    display:block;
-}
-
-.capsule-message p{
-    color:#53695b;
-    font-size:18px;
-    margin-bottom:18px;
-}
-
-.open-capsule{
-    display:none;
-    border:1px solid #779783;
-    background:transparent;
-    color:#466653;
-    border-radius:50px;
-    padding:14px 28px;
-    font-family:inherit;
-    font-size:16px;
-    transition:.3s;
-}
-
-.open-capsule:hover{
-    background:#466653;
-    color:white;
-}
-
-/* FINAL */
-
-.final{
-    text-align:center;
-}
-
-.final h2{
-    font-size:45px;
-}
-
-.question-box{
-    margin-top:40px;
-    padding:40px 25px;
-    background:white;
-    border:1px solid #d5e4d9;
-    border-radius:22px;
-    box-shadow:0 15px 40px rgba(65,91,73,.08);
-}
-
-.question-box h3{
-    font-size:24px;
-    font-weight:normal;
-    color:#345441;
-    margin-bottom:30px;
-}
-
-.question-buttons{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:20px;
-    flex-wrap:wrap;
-}
-
-.yes-button,
-.no-button{
-    border-radius:50px;
-    padding:13px 28px;
-    font-family:inherit;
-    font-size:16px;
-    transition:.3s;
-}
-
-.yes-button{
-    border:1px solid #557b61;
-    background:#557b61;
-    color:white;
-}
-
-.yes-button:hover{
-    background:#466653;
-    transform:translateY(-2px);
-}
-
-.no-button{
-    border:1px solid #b7c8bb;
-    background:white;
-    color:#789683;
-    position:relative;
-}
-
-.yes-message{
-    display:none;
-    margin-top:25px;
-    color:#557b61;
-    font-size:18px;
-    animation:appear .5s ease;
-}
-
-.yes-message.show{
-    display:block;
-}
-
-footer{
-    text-align:center;
-    padding:50px 20px;
-    color:#82988a;
-    font-size:14px;
-}
-
-/* MODAL */
+/* =========================
+   MODAL FOTOS
+========================= */
 
 .modal{
-    position:fixed;
-    inset:0;
-    background:rgba(15,25,18,.92);
+
     display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+        rgba(20,35,27,.9);
+
+    z-index:100;
+
     align-items:center;
+
     justify-content:center;
+
     padding:20px;
-    z-index:9999;
 }
 
 .modal.show{
@@ -661,60 +712,638 @@ footer{
 }
 
 .modal img{
+
     max-width:95%;
+
     max-height:90vh;
+
     object-fit:contain;
+
     border-radius:12px;
 }
 
 .close{
+
     position:absolute;
+
     top:20px;
+
     right:25px;
+
     color:white;
+
     font-size:38px;
+
     cursor:pointer;
 }
 
-/* RESPONSIVE */
+
+/* =========================
+   FINAL
+========================= */
+
+.final{
+
+    text-align:center;
+}
+
+.final h2{
+    font-size:45px;
+}
+
+
+/* =========================
+   CÁPSULA DEL TIEMPO
+========================= */
+
+.capsule-section{
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #edf7f0,
+            #f8fbf8
+        );
+}
+
+.capsule-intro{
+
+    max-width:650px;
+
+    margin:0 auto 35px;
+
+    font-size:18px;
+
+    color:#5c7063;
+}
+
+
+/* TARJETA */
+
+.capsule-card{
+
+    max-width:650px;
+
+    margin:40px auto 0;
+
+    padding:45px 30px;
+
+    background:white;
+
+    border:1px solid #d5e4d9;
+
+    border-radius:28px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(65,91,73,.10);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+
+/* DECORACIÓN */
+
+.capsule-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    background:#eef7f0;
+
+    top:-100px;
+
+    left:-80px;
+
+    opacity:.8;
+}
+
+.capsule-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:140px;
+
+    height:140px;
+
+    border-radius:50%;
+
+    background:#f0f8f2;
+
+    bottom:-80px;
+
+    right:-50px;
+
+    opacity:.8;
+}
+
+
+/* CONTENIDO */
+
+.capsule-content{
+
+    position:relative;
+
+    z-index:2;
+}
+
+.capsule-lock{
+
+    font-size:65px;
+
+    margin-bottom:15px;
+
+    animation:lockPulse 2s infinite;
+}
+
+@keyframes lockPulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+
+}
+
+.capsule-title{
+
+    font-size:30px;
+
+    color:#345441;
+
+    font-weight:normal;
+
+    margin-bottom:12px;
+}
+
+.capsule-status{
+
+    color:#789683;
+
+    font-size:16px;
+
+    margin-bottom:25px;
+}
+
+
+/* CUENTA REGRESIVA */
+
+.capsule-countdown{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:10px;
+
+    margin:25px 0;
+}
+
+.capsule-time{
+
+    padding:14px 5px;
+
+    background:#f5faf6;
+
+    border-radius:15px;
+
+    border:1px solid #e0ebe3;
+}
+
+.capsule-time-number{
+
+    display:block;
+
+    font-size:25px;
+
+    color:#345441;
+}
+
+.capsule-time-label{
+
+    font-size:10px;
+
+    letter-spacing:1px;
+
+    color:#82988a;
+}
+
+
+/* FECHA */
+
+.capsule-date{
+
+    color:#6f927a;
+
+    font-style:italic;
+
+    margin-top:20px;
+}
+
+
+/* BOTÓN ABRIR */
+
+.open-capsule{
+
+    display:none;
+
+    border:none;
+
+    background:#466653;
+
+    color:white;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    font-family:inherit;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 8px 20px
+        rgba(70,102,83,.20);
+
+    transition:.3s;
+}
+
+.open-capsule:hover{
+
+    transform:scale(1.05);
+
+    background:#345441;
+}
+
+
+/* CAPSULA ABIERTA */
+
+.capsule-message{
+
+    display:none;
+
+    margin-top:30px;
+
+    padding:30px 25px;
+
+    background:#f7fbf8;
+
+    border:1px solid #d5e4d9;
+
+    border-radius:20px;
+
+    text-align:left;
+
+    animation:capsuleOpen .8s ease;
+}
+
+.capsule-message.show{
+    display:block;
+}
+
+.capsule-message h3{
+
+    color:#345441;
+
+    font-size:26px;
+
+    font-weight:normal;
+
+    margin-bottom:18px;
+
+    text-align:center;
+}
+
+.capsule-message p{
+
+    color:#53695b;
+
+    margin-bottom:17px;
+}
+
+.capsule-signature{
+
+    text-align:right;
+
+    color:#6c8b77;
+
+    font-style:italic;
+
+    margin-top:25px;
+}
+
+@keyframes capsuleOpen{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(25px)
+            scale(.95);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+/* CORAZONES AL ABRIR */
+
+.capsule-hearts{
+
+    display:none;
+
+    font-size:25px;
+
+    margin-top:20px;
+
+    letter-spacing:10px;
+
+    animation:heartAppear 1s ease;
+}
+
+.capsule-hearts.show{
+    display:block;
+}
+
+@keyframes heartAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.5);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+    }
+
+}
+
+
+/* =========================
+   PREGUNTA FINAL
+========================= */
+
+.question{
+
+    text-align:center;
+
+    max-width:850px;
+}
+
+.question-text{
+
+    font-size:20px;
+
+    color:#5c7063;
+
+    margin-bottom:35px;
+}
+
+.question-buttons{
+
+    position:relative;
+
+    min-height:120px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+}
+
+.yes-button,
+.no-button{
+
+    padding:14px 30px;
+
+    border-radius:50px;
+
+    font-family:inherit;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.yes-button{
+
+    border:1px solid #779783;
+
+    background:#466653;
+
+    color:white;
+}
+
+.yes-button:hover{
+
+    transform:scale(1.06);
+}
+
+.no-button{
+
+    border:1px solid #779783;
+
+    background:transparent;
+
+    color:#466653;
+
+    position:relative;
+}
+
+
+/* MENSAJE SÍ */
+
+.yes-message{
+
+    display:none;
+
+    margin:20px auto 0;
+
+    padding:30px;
+
+    max-width:650px;
+
+    background:white;
+
+    border:1px solid #d5e4d9;
+
+    border-radius:20px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(65,91,73,.10);
+
+    animation:aparecer .7s ease;
+}
+
+.yes-message.show{
+    display:block;
+}
+
+.yes-message h3{
+
+    color:#345441;
+
+    font-size:27px;
+
+    font-weight:normal;
+
+    margin-bottom:15px;
+}
+
+.yes-message p{
+
+    color:#53695b;
+
+    margin-bottom:15px;
+}
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+    }
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    text-align:center;
+
+    padding:50px 20px;
+
+    color:#82988a;
+
+    font-size:14px;
+}
+
+
+/* =========================
+   MÓVIL
+========================= */
 
 @media(max-width:700px){
 
     section{
+
         padding:75px 22px;
     }
 
     h2{
+
         font-size:34px;
     }
 
     .letter{
+
         padding:25px;
     }
 
     .counter{
-        grid-template-columns:repeat(2,1fr);
+
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
     .vouchers{
+
         grid-template-columns:1fr;
     }
 
     .secret-gallery{
-        grid-template-columns:repeat(2,1fr);
+
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
     .memories-gallery{
-        grid-template-columns:repeat(2,1fr);
+
+        grid-template-columns:
+            repeat(2,1fr);
+
         gap:12px;
     }
 
-    .youtube-player{
-        height:220px;
+    .capsule-card{
+
+        padding:35px 20px;
     }
 
-    .final h2{
-        font-size:36px;
+    .capsule-title{
+
+        font-size:26px;
+    }
+
+    .capsule-countdown{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:8px;
+    }
+
+    .question-buttons{
+
+        min-height:150px;
+    }
+
+    .yes-button,
+    .no-button{
+
+        padding:12px 22px;
     }
 
 }
@@ -723,15 +1352,22 @@ footer{
 
 </head>
 
+
 <body>
 
+
+<!-- CORAZONES -->
+
 <div class="heart">♡</div>
 <div class="heart">♡</div>
 <div class="heart">♡</div>
 <div class="heart">♡</div>
 <div class="heart">♡</div>
 
-<!-- PORTADA -->
+
+<!-- =========================
+     PORTADA
+========================= -->
 
 <header class="hero">
 
@@ -741,47 +1377,65 @@ footer{
 Una pequeña sorpresa
 </div>
 
-<h1>Tewi</h1>
+<h1>
+Tewi
+</h1>
 
 <div class="date">
 23 · 05 · 2026
 </div>
 
 <p class="intro">
+
 Hay cosas que son difíciles de decir con palabras...
 así que decidí crear un pequeño lugar solamente para ti.
+
 </p>
 
-<a href="#historia"
+<a
+href="#historia"
 class="button"
 onclick="iniciarMusica()">
-Abrir mi regalo ♡ </a>
+
+Abrir mi regalo ♡
+
+</a>
 
 </div>
 
 </header>
 
-<!-- HISTORIA -->
+
+<!-- =========================
+     HISTORIA
+========================= -->
 
 <section id="historia">
 
-<div class="number">01</div>
+<div class="number">
+01
+</div>
 
-<h2>Nuestra historia</h2>
+<h2>
+Nuestra historia
+</h2>
 
 <p class="text">
 <strong>23 de mayo de 2026</strong>
 </p>
 
 <p class="text">
-Quizás una fecha pueda parecer solamente un día más
-en el calendario.
+
+Quizás una fecha pueda parecer solamente un día más en el calendario.
+
 </p>
 
 <p class="text">
-Pero para mí representa el comienzo de algo que quiero
-seguir construyendo contigo.
+
+Pero para mí representa el comienzo de algo que quiero seguir construyendo contigo.
+
 </p>
+
 
 <div class="counter-card">
 
@@ -792,95 +1446,172 @@ Nuestra historia lleva...
 <div class="counter">
 
 <div class="counter-box">
-<span class="counter-number" id="dias">0</span>
-<span class="counter-label">DÍAS</span>
+
+<span
+class="counter-number"
+id="dias">
+0
+</span>
+
+<span class="counter-label">
+DÍAS
+</span>
+
 </div>
 
-<div class="counter-box">
-<span class="counter-number" id="horas">0</span>
-<span class="counter-label">HORAS</span>
-</div>
 
 <div class="counter-box">
-<span class="counter-number" id="minutos">0</span>
-<span class="counter-label">MINUTOS</span>
+
+<span
+class="counter-number"
+id="horas">
+0
+</span>
+
+<span class="counter-label">
+HORAS
+</span>
+
 </div>
 
+
 <div class="counter-box">
-<span class="counter-number" id="segundos">0</span>
-<span class="counter-label">SEGUNDOS</span>
+
+<span
+class="counter-number"
+id="minutos">
+0
+</span>
+
+<span class="counter-label">
+MINUTOS
+</span>
+
+</div>
+
+
+<div class="counter-box">
+
+<span
+class="counter-number"
+id="segundos">
+0
+</span>
+
+<span class="counter-label">
+SEGUNDOS
+</span>
+
 </div>
 
 </div>
 
 <div class="counter-love">
+
 Y quiero seguir sumando muchos más contigo. ♡
+
 </div>
 
 </div>
 
 </section>
 
-<!-- CARTA -->
+
+<!-- =========================
+     CARTA
+========================= -->
 
 <section>
 
-<div class="number">02</div>
+<div class="number">
+02
+</div>
 
-<h2>Algo que quiero decirte</h2>
+<h2>
+Algo que quiero decirte
+</h2>
 
 <p class="text">
+
 Hay cosas que simplemente no caben en una conversación.
+
 </p>
+
 
 <div class="letter-container">
 
-<button class="letter-button" onclick="abrirCarta()">
+<button
+class="letter-button"
+onclick="abrirCarta()">
+
 🔐 Abrir mi carta ♡
+
 </button>
 
-<div class="letter" id="carta">
 
-<h3>Para ti, Tewi</h3>
+<div
+class="letter"
+id="carta">
+
+<h3>
+Para ti, Tewi
+</h3>
+
 
 <p>
+
 Esta página existe por una razón muy sencilla:
 <strong>tú</strong>. ❤️
+
 </p>
 
-<p>
-Porque hay personas que llegan a nuestra vida y la cambian
-de una manera que no se puede explicar con palabras.
-Tú eres esa persona para mí. Mi lugar seguro, mi alegría,
-mi complicidad y ese pequeño caos bonito que hace que cada
-día tenga algo especial.
-</p>
 
 <p>
-Quiero que este espacio sea un pedacito de todo lo que siento
-por ti: nuestros momentos, nuestros recuerdos, nuestras
-locuras y cada detalle que hace que te ame un poquito más.
+
+Porque hay personas que llegan a nuestra vida y la cambian de una manera que no se puede explicar con palabras. Tú eres esa persona para mí. Mi lugar seguro, mi alegría, mi complicidad y ese pequeño caos bonito que hace que cada día tenga algo especial.
+
 </p>
 
+
 <p>
+
+Quiero que este espacio sea un pedacito de todo lo que siento por ti: nuestros momentos, nuestros recuerdos, nuestras locuras y cada detalle que hace que te ame un poquito más.
+
+</p>
+
+
+<p>
+
 No sé qué nos depare el futuro, pero sí sé algo:
 <strong>quiero seguir escribiendo nuestra historia contigo</strong>. 🖤
+
 </p>
 
-<p>
-Gracias por existir, por ser tú y por dejarme compartir
-este camino a tu lado.
-</p>
 
 <p>
+
+Gracias por existir, por ser tú y por dejarme compartir este camino a tu lado.
+
+</p>
+
+
+<p>
+
 <strong>
-Te amo, hoy, mañana y en cada versión de nosotros
-que todavía nos queda por conocer.
-</strong> ♾️❤️
+
+Te amo, hoy, mañana y en cada versión de nosotros que todavía nos queda por conocer.
+
+</strong>
+
+♾️❤️
+
 </p>
+
 
 <div class="signature">
-Con amor, Tu cachorrita 🐾 ♡
+
+Con amor, Mony ♡
+
 </div>
 
 </div>
@@ -889,164 +1620,191 @@ Con amor, Tu cachorrita 🐾 ♡
 
 </section>
 
-<!-- LADO SECRETO -->
+
+<!-- =========================
+     LADO SECRETO
+========================= -->
 
 <section class="secret">
 
-<div class="number">03</div>
+<div class="number">
+03
+</div>
 
-<h2>Nuestro lado secreto</h2>
+<h2>
+Nuestro lado secreto
+</h2>
 
 <p class="text">
-Porque también existen esas partes de nosotros
-que no necesitan explicarse a nadie más.
+
+Porque también existen esas partes de nosotros que no necesitan explicarse a nadie más.
+
 </p>
 
 <p class="text">
-Este espacio será para nuestros secretos,
-nuestras complicidades y aquello que solamente
-nosotros entendemos.
+
+Este espacio será para nuestros secretos, nuestras complicidades y aquello que solamente nosotros entendemos.
+
 </p>
 
 <p class="text">
-🔐 Una parte de nuestra historia que solamente
-nosotros conocemos.
+
+🔐 Una parte de nuestra historia que solamente nosotros conocemos.
+
 </p>
 
-<div class="gallery-capsule">
-
-<button class="capsule-button"
-onclick="toggleGaleria('secretGallery','secretButton')"
-id="secretButton">
-🔐 Abrir nuestros secretos ♡ </button>
-
-<div class="gallery-content" id="secretGallery">
 
 <div class="secret-gallery">
 
-<img src="foto 1.jpg"
-alt="Nuestro lado secreto 1"
+<img
+src="foto 1.jpg"
 onclick="abrirFoto(this.src)">
 
-<img src="foto 2.jpg"
-alt="Nuestro lado secreto 2"
+<img
+src="foto 2.jpg"
 onclick="abrirFoto(this.src)">
 
-<img src="foto 3.jpg"
-alt="Nuestro lado secreto 3"
+<img
+src="foto 3.jpg"
 onclick="abrirFoto(this.src)">
 
-<img src="foto 4.jpg"
-alt="Nuestro lado secreto 4"
+<img
+src="foto 4.jpg"
 onclick="abrirFoto(this.src)">
 
-<img src="foto 5.jpg"
-alt="Nuestro lado secreto 5"
+<img
+src="foto 5.jpg"
 onclick="abrirFoto(this.src)">
 
-<img src="foto 6.jpg"
-alt="Nuestro lado secreto 6"
+<img
+src="foto 6.jpg"
 onclick="abrirFoto(this.src)">
-
-</div>
-
-</div>
 
 </div>
 
 </section>
 
-<!-- VALES -->
+
+<!-- =========================
+     VALES
+========================= -->
 
 <section>
 
-<div class="number">04</div>
+<div class="number">
+04
+</div>
 
-<h2>Nuestros vales secretos</h2>
+<h2>
+Pequeños vales para ti
+</h2>
 
 <p class="text">
-Algunos pequeños regalos que podrás canjear cuando quieras. ♡
+
+Porque algunas cosas bonitas también merecen convertirse en pequeños regalos.
+
 </p>
+
 
 <div class="vouchers">
 
-<div class="voucher" id="vale1">
 
-<div class="voucher-icon">💋</div>
+<div class="voucher">
 
-<h3>Vale por un beso</h3>
+<div class="voucher-icon">
+☕
+</div>
+
+<h3>
+Una cita
+</h3>
 
 <p>
-Canjeable cuando tú quieras.
+Una cita elegida especialmente para nosotros.
 </p>
 
-<button class="redeem"
-onclick="canjear(1)">
-Canjear ♡ </button>
+<button
+class="redeem"
+onclick="usarVale(this)">
+
+Canjear ♡
+
+</button>
 
 </div>
 
-<div class="voucher" id="vale2">
 
-<div class="voucher-icon">🤗</div>
+<div class="voucher">
 
-<h3>Vale por un abrazo</h3>
+<div class="voucher-icon">
+💆
+</div>
+
+<h3>
+Mimos infinitos
+</h3>
 
 <p>
-De esos que duran un poquito más.
+Una sesión de cariño, abrazos y consentirte mucho.
 </p>
 
-<button class="redeem"
-onclick="canjear(2)">
-Canjear ♡ </button>
+<button
+class="redeem"
+onclick="usarVale(this)">
+
+Canjear ♡
+
+</button>
 
 </div>
 
-<div class="voucher" id="vale3">
 
-<div class="voucher-icon">🌙</div>
+<div class="voucher">
 
-<h3>Vale por una cita</h3>
+<div class="voucher-icon">
+🌙
+</div>
+
+<h3>
+Una noche especial
+</h3>
 
 <p>
-Tú eliges el momento.
+Una noche solamente para nosotros, sin interrupciones.
 </p>
 
-<button class="redeem"
-onclick="canjear(3)">
-Canjear ♡ </button>
+<button
+class="redeem"
+onclick="usarVale(this)">
+
+Canjear ♡
+
+</button>
 
 </div>
 
-<div class="voucher" id="vale4">
 
-<div class="voucher-icon">🔐</div>
+<div class="voucher">
 
-<h3>Vale por una sorpresa</h3>
-
-<p>
-Una pequeña aventura solamente nuestra.
-</p>
-
-<button class="redeem"
-onclick="canjear(4)">
-Canjear ♡ </button>
-
+<div class="voucher-icon">
+🖤
 </div>
 
-<div class="voucher" id="vale5">
-
-<div class="voucher-icon">❤️</div>
-
-<h3>Vale por elegir</h3>
+<h3>
+Nuestro secreto
+</h3>
 
 <p>
-Hoy tú decides qué hacemos juntos.
+Un deseo reservado solamente para nosotros.
 </p>
 
-<button class="redeem"
-onclick="canjear(5)">
-Canjear ♡ </button>
+<button
+class="redeem"
+onclick="usarVale(this)">
+
+Canjear ♡
+
+</button>
 
 </div>
 
@@ -1054,193 +1812,413 @@ Canjear ♡ </button>
 
 </section>
 
-<!-- CANCIÓN -->
+
+<!-- =========================
+     MÚSICA
+========================= -->
 
 <section class="song">
 
-<div class="number">05</div>
+<div class="number">
+05
+</div>
 
-<h2>Nuestra canción</h2>
+<h2>
+Nuestra canción
+</h2>
+
+<p class="text">
+
+Porque hay canciones que terminan convirtiéndose en recuerdos.
+
+</p>
+
 
 <div class="song-card">
 
 <div class="music-symbol">
-♪
+♪ ♡
 </div>
 
 <div class="song-title">
-Me gustas tanto
+Me Gustas Tanto
 </div>
 
 <div class="artist">
 Andrey Serrano
 </div>
 
+
 <iframe
-id="youtubePlayer"
 class="youtube-player"
+id="youtubePlayer"
 src="https://www.youtube.com/embed/eMGMlqoHikU?enablejsapi=1&rel=0"
 title="Me Gustas Tanto - Andrey Serrano"
 allow="autoplay; encrypted-media"
 allowfullscreen>
 </iframe>
 
-<p class="text" style="margin-top:20px;">
-Nuestra canción, para acompañar nuestra historia. ♡
-</p>
-
 </div>
 
 </section>
 
-<!-- RECUERDOS -->
+
+<!-- =========================
+     RECUERDOS
+========================= -->
 
 <section class="memories">
 
-<div class="number">06</div>
+<div class="number">
+06
+</div>
 
-<h2>Nuestros recuerdos</h2>
+<h2>
+Nuestros recuerdos
+</h2>
 
 <p class="text memories-intro">
-Algunos momentos que quiero guardar contigo,
-porque cada recuerdo contigo merece un lugar especial. ♡
+
+Cada foto guarda un pequeño pedacito de nuestra historia.
+Y todavía nos quedan muchísimos recuerdos por crear.
+
 </p>
 
-<div class="gallery-capsule">
-
-<button class="capsule-button"
-onclick="toggleGaleria('memoriesGallery','memoriesButton')"
-id="memoriesButton"
-style="border-color:#779783;background:transparent;color:#466653;">
-📸 Abrir nuestros recuerdos ♡ </button>
-
-<div class="gallery-content" id="memoriesGallery">
 
 <div class="memories-gallery">
 
 <div class="memory">
-<img src="foto 7.jpg"
-alt="Nuestro recuerdo 7"
-onclick="abrirFoto(this.src)">
+<img src="foto 7.jpg" onclick="abrirFoto(this.src)">
 </div>
 
 <div class="memory">
-<img src="foto 8.jpg"
-alt="Nuestro recuerdo 8"
-onclick="abrirFoto(this.src)">
+<img src="foto 8.jpg" onclick="abrirFoto(this.src)">
 </div>
 
 <div class="memory">
-<img src="foto 9.jpg"
-alt="Nuestro recuerdo 9"
-onclick="abrirFoto(this.src)">
+<img src="foto 9.jpg" onclick="abrirFoto(this.src)">
 </div>
 
 <div class="memory">
-<img src="foto 10.jpg"
-alt="Nuestro recuerdo 10"
-onclick="abrirFoto(this.src)">
+<img src="foto 10.jpg" onclick="abrirFoto(this.src)">
 </div>
 
 <div class="memory">
-<img src="foto 11.jpg"
-alt="Nuestro recuerdo 11"
-onclick="abrirFoto(this.src)">
+<img src="foto 11.jpg" onclick="abrirFoto(this.src)">
 </div>
 
 <div class="memory">
-<img src="foto 12.jpg"
-alt="Nuestro recuerdo 12"
-onclick="abrirFoto(this.src)">
+<img src="foto 12.jpg" onclick="abrirFoto(this.src)">
 </div>
 
 <div class="memory">
-<img src="foto 13.jpg"
-alt="Nuestro recuerdo 13"
-onclick="abrirFoto(this.src)">
+<img src="foto 13.jpg" onclick="abrirFoto(this.src)">
 </div>
 
 <div class="memory">
-<img src="foto 14.jpg"
-alt="Nuestro recuerdo 14"
-onclick="abrirFoto(this.src)">
+<img src="foto 14.jpg" onclick="abrirFoto(this.src)">
 </div>
 
 <div class="memory">
-<img src="foto 15.jpg"
-alt="Nuestro recuerdo 15"
-onclick="abrirFoto(this.src)">
+<img src="foto 15.jpg" onclick="abrirFoto(this.src)">
 </div>
 
 <div class="memory">
-<img src="foto 16.jpg"
-alt="Nuestro recuerdo 16"
-onclick="abrirFoto(this.src)">
-</div>
-
-</div>
-
+<img src="foto 16.jpg" onclick="abrirFoto(this.src)">
 </div>
 
 </div>
 
 </section>
 
-<!-- CAPSULA DEL TIEMPO -->
 
-<section class="time-capsule">
+<!-- =========================
+     FINAL
+========================= -->
 
-<div class="number">07</div>
+<section class="final">
 
-<h2>Una cápsula para nosotros</h2>
+<div class="number">
+07
+</div>
+
+<h2>
+Y esto apenas comienza...
+</h2>
 
 <p class="text">
-Hay sorpresas que merecen esperar el momento correcto. ♡
+
+Nuestra historia todavía tiene muchas páginas por escribir.
+
 </p>
+
+<p class="text">
+
+Y espero poder llenarlas todas contigo.
+
+</p>
+
+<p class="text">
+
+<strong>
+Te amo, Tewi. ♡
+</strong>
+
+</p>
+
+</section>
+
+
+<!-- =========================
+     CÁPSULA DEL TIEMPO
+========================= -->
+
+<section class="capsule-section">
+
+<div class="number">
+08
+</div>
+
+<h2>
+Una cápsula para nosotros 🔐
+</h2>
+
+<p class="capsule-intro">
+
+Hay mensajes que no quiero darte cualquier día.
+
+Quiero guardarlos para nuestros días especiales.
+
+</p>
+
 
 <div class="capsule-card">
 
-<div class="capsule-icon">
-💌
+<div class="capsule-content">
+
+
+<!-- BLOQUEADO -->
+
+<div id="capsuleLocked">
+
+<div class="capsule-lock">
+🔐
+</div>
+
+<div class="capsule-title">
+Nuestra cápsula del tiempo
+</div>
+
+<div class="capsule-status">
+Todavía está cerrada...
 </div>
 
 <p class="text">
-Esta pequeña cápsula se abre cada día 23,
-porque cada mes contigo merece una pequeña sorpresa.
+
+Nuestra próxima sorpresa se desbloqueará
+cuando vuelva a llegar nuestro día.
+
 </p>
 
-<div class="capsule-countdown"
-id="capsuleCountdown">
-Calculando...
+
+<div class="capsule-countdown">
+
+<div class="capsule-time">
+
+<span
+class="capsule-time-number"
+id="capsuleDays">
+
+0
+
+</span>
+
+<span class="capsule-time-label">
+DÍAS
+</span>
+
 </div>
+
+
+<div class="capsule-time">
+
+<span
+class="capsule-time-number"
+id="capsuleHours">
+
+0
+
+</span>
+
+<span class="capsule-time-label">
+HORAS
+</span>
+
+</div>
+
+
+<div class="capsule-time">
+
+<span
+class="capsule-time-number"
+id="capsuleMinutes">
+
+0
+
+</span>
+
+<span class="capsule-time-label">
+MINUTOS
+</span>
+
+</div>
+
+
+<div class="capsule-time">
+
+<span
+class="capsule-time-number"
+id="capsuleSeconds">
+
+0
+
+</span>
+
+<span class="capsule-time-label">
+SEGUNDOS
+</span>
+
+</div>
+
+</div>
+
+
+<div
+class="capsule-date"
+id="capsuleDateText">
+
+Se abrirá el próximo 23 ♡
+
+</div>
+
+</div>
+
+
+<!-- DESBLOQUEADO -->
+
+<div id="capsuleUnlocked"
+style="display:none;">
+
+<div class="capsule-lock">
+💌
+</div>
+
+<div class="capsule-title">
+Hoy sí...
+</div>
+
+<div class="capsule-status">
+
+Es nuestro día. Puedes abrirla. ❤️
+
+</div>
+
 
 <button
 class="open-capsule"
-id="openCapsule"
+id="openCapsuleButton"
 onclick="abrirCapsula()">
-💌 Abrir mi cápsula </button>
+
+💌 Abrir mi cápsula
+
+</button>
+
+
+<div
+class="capsule-hearts"
+id="capsuleHearts">
+
+♡ ♡ ♡
+
+</div>
+
 
 <div
 class="capsule-message"
 id="capsuleMessage">
 
+<h3>
+Para ti, Tewi ❤️
+</h3>
+
 <p>
-Gracias por seguir aquí, por cada momento,
-cada sonrisa, cada locura y por dejarme ser
-<strong>Tu cachorrita</strong>. 🐾
+
+Otro día 23.
+
+Otro pequeño capítulo de nuestra historia.
+
 </p>
 
 <p>
-Que este nuevo mes de nuestra historia
-sea solamente otro capítulo de todos los
-que todavía nos quedan por escribir.
+
+Quizás para alguien más sea solamente una fecha,
+pero para mí es un recordatorio de que seguimos
+aquí, eligiéndonos y construyendo algo que quiero
+seguir cuidando.
+
 </p>
 
 <p>
+
+Gracias por cada momento, por cada sonrisa,
+por nuestras conversaciones, nuestras locuras,
+nuestros secretos y por todos esos pequeños
+instantes que solamente nosotros entendemos.
+
+</p>
+
+<p>
+
+Si pudiera volver al día en que comenzó todo,
+te volvería a elegir.
+
+Y si me preguntaran si quiero seguir escribiendo
+esta historia contigo...
+
+la respuesta seguiría siendo la misma.
+
 <strong>
-Te amo, Tewi. ❤️
+Sí. Una y otra vez.
 </strong>
+
 </p>
+
+<p>
+
+Por este cumplemes y por todos los que todavía
+nos quedan.
+
+</p>
+
+<p>
+
+<strong>
+Te amo, Tewi. ♾️❤️
+</strong>
+
+</p>
+
+<div class="capsule-signature">
+
+Con amor,
+
+Mony ♡
+
+</div>
+
+</div>
+
+</div>
 
 </div>
 
@@ -1248,79 +2226,96 @@ Te amo, Tewi. ❤️
 
 </section>
 
-<!-- FINAL -->
 
-<section class="final">
+<!-- =========================
+     PREGUNTA INTERACTIVA
+========================= -->
 
-<div class="number">08</div>
+<section class="question">
 
-<h2>Esto apenas comienza...</h2>
+<div class="number">
+09
+</div>
 
-<p class="text">
-Todavía tenemos mucho por vivir.
-</p>
+<h2>
+Y ahora quiero preguntarte algo...
+</h2>
 
-<p class="text">
-Fotos, recuerdos, cartas, sueños, sorpresas
-y muchas historias que todavía no hemos escrito.
-</p>
+<p class="question-text">
 
-<p class="text">
-Y quiero descubrirlas contigo. ♡
-</p>
+Después de todo lo que hemos vivido,<br>
 
-<div class="question-box">
-
-<h3>
-Después de todo lo que hemos vivido,
+<strong>
 ¿quieres seguir escribiendo nuestra historia conmigo? ♡
-</h3>
+</strong>
+
+</p>
+
 
 <div class="question-buttons">
 
 <button
 class="yes-button"
 onclick="respuestaSi()">
-Sí, quiero ♡ </button>
+
+Sí, quiero ❤️
+
+</button>
+
 
 <button
 class="no-button"
 id="noButton">
-No </button>
+
+No
+
+</button>
 
 </div>
+
 
 <div
 class="yes-message"
 id="yesMessage">
 
-Te amo, Tewi. Tu cachorrita 🐾❤️
+<h3>
+Sabía que dirías que sí... 🥹❤️
+</h3>
 
-</div>
+<p>
+
+Entonces prepárate, porque esto apenas comienza.
+
+Todavía nos quedan muchísimos momentos,
+secretos, aventuras y recuerdos por vivir.
+
+</p>
+
+<p>
+
+<strong>
+Te elegiría una y otra vez. ♾️
+</strong>
+
+</p>
 
 </div>
 
 </section>
 
+
+<!-- FOOTER -->
+
 <footer>
 
-Hecho especialmente para Tewi ♡
-
-<br><br>
-
-23 · 05 · 2026
-
-<br>
-
-Nuestra Aventura de Vida
-
-<br><br>
-
-Por Tu cachorrita 🐾
+Hecho con amor por Mony ♡
 
 </footer>
 
-<!-- VISOR DE FOTOS -->
+
+<!-- =========================
+     VISOR DE FOTOS
+========================= -->
 
 <div
 class="modal"
@@ -1332,69 +2327,93 @@ onclick="cerrarFoto()">
 </span>
 
 <img
-id="modalImage"
+id="modalImg"
 src=""
-alt="Foto ampliada"
-onclick="event.stopPropagation()">
+alt="Recuerdo">
 
 </div>
 
+
 <script>
 
-/* CONTADOR */
+
+/* =========================
+   CONTADOR DE RELACIÓN
+========================= */
+
+const fechaInicio =
+new Date("2026-05-23T00:00:00");
+
 
 function actualizarContador(){
-
-    const inicio =
-        new Date("2026-05-23T00:00:00");
 
     const ahora =
         new Date();
 
-    const diferencia =
-        ahora - inicio;
+    let diferencia =
+        ahora - fechaInicio;
 
-    if(diferencia < 0) return;
+
+    if(diferencia < 0){
+
+        diferencia = 0;
+
+    }
+
+
+    const segundosTotales =
+        Math.floor(
+            diferencia / 1000
+        );
+
 
     const dias =
         Math.floor(
-            diferencia /
-            (1000*60*60*24)
+            segundosTotales / 86400
         );
+
 
     const horas =
         Math.floor(
-            (diferencia /
-            (1000*60*60)) % 24
+            (segundosTotales % 86400)
+            / 3600
         );
+
 
     const minutos =
         Math.floor(
-            (diferencia /
-            (1000*60)) % 60
+            (segundosTotales % 3600)
+            / 60
         );
 
+
     const segundos =
-        Math.floor(
-            (diferencia /
-            1000) % 60
-        );
+        segundosTotales % 60;
+
 
     document.getElementById("dias")
         .textContent = dias;
 
+
     document.getElementById("horas")
         .textContent =
-        String(horas).padStart(2,"0");
+        horas.toString()
+        .padStart(2,"0");
+
 
     document.getElementById("minutos")
         .textContent =
-        String(minutos).padStart(2,"0");
+        minutos.toString()
+        .padStart(2,"0");
+
 
     document.getElementById("segundos")
         .textContent =
-        String(segundos).padStart(2,"0");
+        segundos.toString()
+        .padStart(2,"0");
+
 }
+
 
 actualizarContador();
 
@@ -1404,7 +2423,9 @@ setInterval(
 );
 
 
-/* CARTA */
+/* =========================
+   CARTA
+========================= */
 
 function abrirCarta(){
 
@@ -1416,84 +2437,34 @@ function abrirCarta(){
 }
 
 
-/* GALERIAS */
+/* =========================
+   VALES
+========================= */
 
-function toggleGaleria(galeriaId,buttonId){
+function usarVale(boton){
 
-    const galeria =
-        document.getElementById(galeriaId);
-
-    const boton =
-        document.getElementById(buttonId);
-
-    galeria.classList.toggle("open");
-
-    if(galeria.classList.contains("open")){
-
-        if(galeriaId === "secretGallery"){
-
-            boton.textContent =
-                "🔐 Cerrar nuestros secretos ♡";
-
-        }else{
-
-            boton.textContent =
-                "📸 Cerrar nuestros recuerdos ♡";
-
-        }
-
-    }else{
-
-        if(galeriaId === "secretGallery"){
-
-            boton.textContent =
-                "🔐 Abrir nuestros secretos ♡";
-
-        }else{
-
-            boton.textContent =
-                "📸 Abrir nuestros recuerdos ♡";
-
-        }
-
-    }
-
-}
-
-
-/* VALES */
-
-function canjear(numero){
-
-    const vale =
-        document.getElementById(
-            "vale"+numero
-        );
-
-    vale.innerHTML = `
+    boton.parentElement.innerHTML = `
 
         <div class="voucher-icon">
-            ♡
+        ♡
         </div>
 
         <h3>
-            Vale canjeado
+        Canjeado
         </h3>
 
-        <p>
-            Este momento queda reservado
-            solamente para nosotros.
+        <p class="redeemed">
+        Este vale queda guardado para nosotros.
         </p>
 
-        <div class="redeemed">
-            ✦ Vale aceptado ✦
-        </div>
-
     `;
+
 }
 
 
-/* FOTOS */
+/* =========================
+   FOTOS
+========================= */
 
 function abrirFoto(src){
 
@@ -1501,7 +2472,7 @@ function abrirFoto(src){
         document.getElementById("modal");
 
     const imagen =
-        document.getElementById("modalImage");
+        document.getElementById("modalImg");
 
     imagen.src = src;
 
@@ -1509,15 +2480,19 @@ function abrirFoto(src){
 
 }
 
+
 function cerrarFoto(){
 
-    document.getElementById("modal")
+    document
+        .getElementById("modal")
         .classList.remove("show");
 
 }
 
 
-/* MÚSICA */
+/* =========================
+   MÚSICA
+========================= */
 
 function iniciarMusica(){
 
@@ -1526,52 +2501,92 @@ function iniciarMusica(){
             "youtubePlayer"
         );
 
+
     player.contentWindow.postMessage(
-        JSON.stringify({
-            event:"command",
-            func:"playVideo",
-            args:[]
-        }),
+
+        '{"event":"command","func":"playVideo","args":""}',
+
         "*"
+
     );
 
 }
 
 
-/* CAPSULA DEL TIEMPO */
+/* =========================
+   CÁPSULA DEL TIEMPO
+========================= */
+
+
+/*
+   La relación comenzó:
+   23 de mayo de 2026
+
+   La cápsula se abre:
+   cada día 23
+
+   Primera apertura:
+   23 de septiembre de 2026
+*/
+
 
 function obtenerProximoDia23(){
 
     const ahora =
         new Date();
 
+
     let anio =
         ahora.getFullYear();
+
 
     let mes =
         ahora.getMonth();
 
-    if(ahora.getDate() > 23){
+
+    let fechaObjetivo =
+        new Date(
+            anio,
+            mes,
+            23,
+            0,
+            0,
+            0
+        );
+
+
+    /*
+       Si ya pasó el día 23,
+       esperamos al próximo mes.
+    */
+
+    if(ahora >= fechaObjetivo){
 
         mes++;
 
         if(mes > 11){
 
             mes = 0;
+
             anio++;
 
         }
 
+        fechaObjetivo =
+            new Date(
+                anio,
+                mes,
+                23,
+                0,
+                0,
+                0
+            );
+
     }
 
-    return new Date(
-        anio,
-        mes,
-        23,
-        0,
-        0,
-        0
-    );
+
+    return fechaObjetivo;
+
 }
 
 
@@ -1580,167 +2595,323 @@ function actualizarCapsula(){
     const ahora =
         new Date();
 
-    const proximo23 =
-        obtenerProximoDia23();
+
+    let anio =
+        ahora.getFullYear();
+
+
+    let mes =
+        ahora.getMonth();
+
+
+    /*
+       Comprobamos si HOY es día 23.
+    */
 
     if(ahora.getDate() === 23){
 
-        document.getElementById(
-            "capsuleCountdown"
-        ).textContent =
-            "Hoy es el día. Esta cápsula es para ti. ♡";
-
-        document.getElementById(
-            "openCapsule"
-        ).style.display =
-            "inline-block";
+        mostrarCapsulaDesbloqueada();
 
         return;
 
     }
 
+
+    /*
+       Si no es día 23,
+       permanece bloqueada.
+    */
+
+    const objetivo =
+        obtenerProximoDia23();
+
+
     const diferencia =
-        proximo23 - ahora;
+        objetivo - ahora;
+
+
+    const totalSegundos =
+        Math.max(
+            0,
+            Math.floor(
+                diferencia / 1000
+            )
+        );
+
 
     const dias =
         Math.floor(
-            diferencia /
-            (1000*60*60*24)
+            totalSegundos / 86400
         );
+
 
     const horas =
         Math.floor(
-            (diferencia /
-            (1000*60*60)) % 24
+            (totalSegundos % 86400)
+            / 3600
         );
+
 
     const minutos =
         Math.floor(
-            (diferencia /
-            (1000*60)) % 60
+            (totalSegundos % 3600)
+            / 60
         );
 
+
+    const segundos =
+        totalSegundos % 60;
+
+
     document.getElementById(
-        "capsuleCountdown"
+        "capsuleDays"
     ).textContent =
-        "Faltan " +
-        dias +
-        " días, " +
-        horas +
-        " horas y " +
-        minutos +
-        " minutos para abrirla. ♡";
+        dias;
+
+
+    document.getElementById(
+        "capsuleHours"
+    ).textContent =
+        horas.toString()
+        .padStart(2,"0");
+
+
+    document.getElementById(
+        "capsuleMinutes"
+    ).textContent =
+        minutos.toString()
+        .padStart(2,"0");
+
+
+    document.getElementById(
+        "capsuleSeconds"
+    ).textContent =
+        segundos.toString()
+        .padStart(2,"0");
+
+
+    const meses = [
+
+        "enero",
+        "febrero",
+        "marzo",
+        "abril",
+        "mayo",
+        "junio",
+        "julio",
+        "agosto",
+        "septiembre",
+        "octubre",
+        "noviembre",
+        "diciembre"
+
+    ];
+
+
+    document.getElementById(
+        "capsuleDateText"
+    ).textContent =
+        "Se abrirá el 23 de " +
+        meses[objetivo.getMonth()] +
+        " ♡";
 
 }
 
+
+function mostrarCapsulaDesbloqueada(){
+
+    document.getElementById(
+        "capsuleLocked"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "capsuleUnlocked"
+    ).style.display = "block";
+
+
+    document.getElementById(
+        "openCapsuleButton"
+    ).style.display =
+        "inline-block";
+
+}
+
+
+/*
+   Abrir la cápsula
+*/
 
 function abrirCapsula(){
 
-    document.getElementById(
-        "capsuleMessage"
-    ).classList.add("show");
+    const mensaje =
+        document.getElementById(
+            "capsuleMessage"
+        );
 
-    document.getElementById(
-        "openCapsule"
-    ).style.display =
-        "none";
 
-    document.getElementById(
-        "capsuleCountdown"
-    ).style.display =
-        "none";
+    const corazones =
+        document.getElementById(
+            "capsuleHearts"
+        );
+
+
+    mensaje.classList.add("show");
+
+    corazones.classList.add("show");
+
+
+    mensaje.scrollIntoView({
+
+        behavior:"smooth",
+
+        block:"center"
+
+    });
 
 }
 
+
+/*
+   Comprobar cada segundo.
+
+   Esto permite que el día 23
+   se desbloquee automáticamente
+   sin tener que recargar la página.
+*/
 
 actualizarCapsula();
 
 setInterval(
     actualizarCapsula,
-    60000
+    1000
 );
 
 
-/* PREGUNTA FINAL */
-
-function respuestaSi(){
-
-    document.getElementById(
-        "yesMessage"
-    ).classList.add("show");
-
-}
-
-
-/* BOTON NO */
+/* =========================
+   PREGUNTA SÍ / NO
+========================= */
 
 const noButton =
-    document.getElementById("noButton");
+    document.getElementById(
+        "noButton"
+    );
 
 
 function moverNo(){
 
-    const maxX =
-        Math.max(
-            50,
-            window.innerWidth / 2 - 100
+    const area =
+        document.querySelector(
+            ".question-buttons"
         );
 
-    const maxY =
-        Math.max(
-            50,
-            window.innerHeight / 2 - 100
-        );
+
+    const anchoDisponible =
+        area.clientWidth -
+        noButton.offsetWidth;
+
+
+    const altoDisponible =
+        area.clientHeight -
+        noButton.offsetHeight;
+
 
     const x =
-        (Math.random() * maxX * 2) -
-        maxX;
+        Math.random() *
+        Math.max(0,anchoDisponible)
+        -
+        Math.max(0,anchoDisponible) / 2;
+
 
     const y =
-        (Math.random() * maxY * 2) -
-        maxY;
+        Math.random() *
+        Math.max(0,altoDisponible)
+        -
+        Math.max(0,altoDisponible) / 2;
+
 
     noButton.style.position =
-        "fixed";
+        "absolute";
 
-    noButton.style.left =
-        "50%";
-
-    noButton.style.top =
-        "50%";
 
     noButton.style.transform =
-        `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
+        `translate(${x}px,${y}px)`;
 
 }
 
+
+/*
+   Computador
+*/
 
 noButton.addEventListener(
     "mouseenter",
     moverNo
 );
 
+
+/*
+   Celular
+*/
+
 noButton.addEventListener(
     "touchstart",
-    function(event){
+    function(e){
 
-        event.preventDefault();
+        e.preventDefault();
+
         moverNo();
 
     }
 );
+
+
+/*
+   También por clic,
+   por si intenta atraparlo.
+*/
 
 noButton.addEventListener(
     "click",
-    function(event){
+    function(e){
 
-        event.preventDefault();
+        e.preventDefault();
+
         moverNo();
 
     }
 );
 
+
+/* =========================
+   RESPUESTA SÍ
+========================= */
+
+function respuestaSi(){
+
+    const mensaje =
+        document.getElementById(
+            "yesMessage"
+        );
+
+
+    mensaje.classList.add("show");
+
+
+    mensaje.scrollIntoView({
+
+        behavior:"smooth",
+
+        block:"center"
+
+    });
+
+}
+
 </script>
 
+
 </body>
+
 </html>
+```
