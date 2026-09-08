@@ -1,12 +1,21 @@
 ```html
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Para Tewi ♡</title>
 
+
 <style>
+
+/* =========================
+   ESTILOS GENERALES
+========================= */
 
 *{
     box-sizing:border-box;
@@ -25,7 +34,10 @@ body{
     line-height:1.7;
 }
 
-/* CORAZONES */
+
+/* =========================
+   CORAZONES FLOTANTES
+========================= */
 
 .heart{
     position:fixed;
@@ -37,35 +49,66 @@ body{
     z-index:0;
 }
 
-.heart:nth-child(1){left:10%;animation-delay:0s}
-.heart:nth-child(2){left:30%;animation-delay:2s}
-.heart:nth-child(3){left:55%;animation-delay:4s}
-.heart:nth-child(4){left:75%;animation-delay:1s}
-.heart:nth-child(5){left:90%;animation-delay:3s}
+.heart:nth-child(1){
+    left:10%;
+    animation-delay:0s;
+}
+
+.heart:nth-child(2){
+    left:30%;
+    animation-delay:2s;
+}
+
+.heart:nth-child(3){
+    left:55%;
+    animation-delay:4s;
+}
+
+.heart:nth-child(4){
+    left:75%;
+    animation-delay:1s;
+}
+
+.heart:nth-child(5){
+    left:90%;
+    animation-delay:3s;
+}
 
 @keyframes float{
+
     0%{
         bottom:-30px;
         transform:translateX(0);
     }
+
     50%{
         transform:translateX(20px);
     }
+
     100%{
         bottom:110%;
         transform:translateX(-20px);
     }
+
 }
 
 
-/* PORTADA */
+/* =========================
+   PORTADA
+========================= */
 
 .hero{
+
     min-height:100vh;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     text-align:center;
+
     padding:30px;
 
     background:
@@ -78,118 +121,180 @@ body{
 }
 
 .small-title{
+
     letter-spacing:4px;
+
     text-transform:uppercase;
+
     font-size:12px;
+
     color:#6f927a;
+
     margin-bottom:20px;
 }
 
 h1{
+
     font-size:clamp(55px,12vw,110px);
+
     font-weight:normal;
+
     color:#345441;
 }
 
 .date{
+
     letter-spacing:4px;
+
     color:#789683;
+
     margin-bottom:30px;
 }
 
 .intro{
+
     font-size:19px;
+
     max-width:550px;
+
     margin:auto;
+
     color:#53695b;
 }
 
 .button,
 .letter-button,
 .redeem{
+
     display:inline-block;
+
     border:1px solid #779783;
+
     background:transparent;
+
     color:#466653;
+
     border-radius:50px;
+
     font-family:inherit;
+
     cursor:pointer;
+
     transition:.3s;
 }
 
 .button{
+
     margin-top:35px;
+
     padding:14px 30px;
+
     text-decoration:none;
 }
 
 .letter-button{
+
     padding:15px 28px;
+
     font-size:16px;
 }
 
 .redeem{
+
     padding:10px 20px;
 }
 
 .button:hover,
 .letter-button:hover,
 .redeem:hover{
+
     background:#466653;
+
     color:white;
 }
 
 
-/* SECCIONES */
+/* =========================
+   SECCIONES
+========================= */
 
 section{
+
     max-width:850px;
+
     margin:auto;
+
     padding:100px 25px;
 }
 
 .number{
+
     font-size:13px;
+
     letter-spacing:4px;
+
     color:#89a995;
+
     margin-bottom:10px;
 }
 
 h2{
+
     font-size:40px;
+
     font-weight:normal;
+
     color:#345441;
+
     margin-bottom:25px;
 }
 
 .text{
+
     font-size:18px;
+
     color:#5c7063;
+
     margin-bottom:18px;
 }
 
 
-/* CONTADOR */
+/* =========================
+   CONTADOR
+========================= */
 
 .counter-card{
+
     margin-top:40px;
+
     padding:35px 25px;
+
     background:white;
+
     border:1px solid #d5e4d9;
+
     border-radius:22px;
+
     box-shadow:0 15px 40px rgba(65,91,73,.08);
+
     text-align:center;
 }
 
 .counter-title{
+
     color:#6f927a;
+
     letter-spacing:2px;
+
     margin-bottom:25px;
 }
 
 .counter{
+
     display:grid;
+
     grid-template-columns:repeat(4,1fr);
+
     gap:10px;
 }
 
@@ -198,90 +303,139 @@ h2{
 }
 
 .counter-number{
+
     display:block;
+
     font-size:32px;
+
     color:#345441;
 }
 
 .counter-label{
+
     font-size:12px;
+
     color:#82988a;
+
     letter-spacing:1px;
 }
 
 .counter-love{
+
     margin-top:25px;
+
     color:#789683;
+
     font-style:italic;
 }
 
 
-/* CARTA */
+/* =========================
+   CARTA
+========================= */
 
 .letter-container{
+
     margin-top:40px;
+
     text-align:center;
 }
 
 .letter{
+
     display:none;
+
     margin-top:30px;
+
     padding:35px;
+
     background:white;
+
     border:1px solid #d5e4d9;
+
     border-radius:18px;
+
     box-shadow:0 15px 40px rgba(65,91,73,.10);
+
     text-align:left;
 }
 
 .letter.show{
+
     display:block;
+
     animation:openLetter .7s ease;
 }
 
 .letter h3{
+
     color:#345441;
+
     font-size:27px;
+
     font-weight:normal;
+
     margin-bottom:20px;
 }
 
 .letter p{
+
     margin-bottom:18px;
+
     color:#53695b;
 }
 
 .signature{
+
     text-align:right;
+
     margin-top:30px;
+
     font-style:italic;
+
     color:#6c8b77;
 }
 
 @keyframes openLetter{
 
     from{
+
         opacity:0;
-        transform:translateY(-15px) scale(.97);
+
+        transform:
+            translateY(-15px)
+            scale(.97);
     }
 
     to{
+
         opacity:1;
-        transform:translateY(0) scale(1);
+
+        transform:
+            translateY(0)
+            scale(1);
     }
 
 }
 
 
-/* LADO SECRETO */
+/* =========================
+   LADO SECRETO
+========================= */
 
 .secret{
+
     background:#30483a;
+
     color:#eef7f0;
+
     max-width:none;
 
-    padding-left:max(25px,calc((100% - 850px)/2));
-    padding-right:max(25px,calc((100% - 850px)/2));
+    padding-left:
+        max(25px,calc((100% - 850px)/2));
+
+    padding-right:
+        max(25px,calc((100% - 850px)/2));
 }
 
 .secret h2{
@@ -297,164 +451,223 @@ h2{
 }
 
 .secret-gallery{
+
     margin-top:35px;
 
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
+
     gap:14px;
 }
 
 .secret-gallery img{
+
     width:100%;
+
     aspect-ratio:1/1;
+
     object-fit:cover;
 
     border-radius:16px;
+
     cursor:pointer;
 
     transition:.35s;
 
-    border:1px solid rgba(255,255,255,.15);
+    border:
+        1px solid
+        rgba(255,255,255,.15);
 }
 
 .secret-gallery img:hover{
+
     transform:scale(1.03);
 }
 
 
-/* VALES */
+/* =========================
+   VALES
+========================= */
 
 .vouchers{
+
     margin-top:40px;
 
     display:grid;
+
     grid-template-columns:repeat(2,1fr);
+
     gap:20px;
 }
 
 .voucher{
+
     background:white;
 
     border:1px solid #d5e4d9;
+
     border-radius:18px;
 
     padding:28px 22px;
 
     text-align:center;
 
-    box-shadow:0 12px 30px rgba(65,91,73,.07);
+    box-shadow:
+        0 12px 30px
+        rgba(65,91,73,.07);
 
     transition:.3s;
 }
 
 .voucher:hover{
+
     transform:translateY(-4px);
 }
 
 .voucher-icon{
+
     font-size:32px;
+
     margin-bottom:10px;
 }
 
 .voucher h3{
+
     color:#345441;
+
     font-weight:normal;
+
     font-size:22px;
+
     margin-bottom:8px;
 }
 
 .voucher p{
+
     color:#789683;
+
     font-size:14px;
+
     margin-bottom:18px;
 }
 
 .redeemed{
+
     color:#5f806b;
+
     font-style:italic;
 }
 
 
-/* MÚSICA */
+/* =========================
+   MÚSICA
+========================= */
 
 .song{
     text-align:center;
 }
 
 .song-card{
+
     margin-top:35px;
 
     padding:30px;
 
     border:1px solid #d5e4d9;
+
     border-radius:20px;
 
     background:white;
 
-    box-shadow:0 15px 40px rgba(65,91,73,.08);
+    box-shadow:
+        0 15px 40px
+        rgba(65,91,73,.08);
 }
 
 .music-symbol{
+
     font-size:35px;
+
     margin-bottom:15px;
 }
 
 .song-title{
+
     font-size:27px;
+
     color:#345441;
 }
 
 .artist{
+
     color:#7a9582;
+
     margin-bottom:25px;
 }
 
 .youtube-player{
+
     width:100%;
+
     max-width:700px;
 
     aspect-ratio:16/9;
 
     border:none;
+
     border-radius:15px;
 
     display:block;
+
     margin:auto;
 }
 
 
-/* RECUERDOS */
+/* =========================
+   RECUERDOS
+========================= */
 
 .memories{
+
     max-width:1100px;
 }
 
 .memories-intro{
+
     max-width:700px;
 }
 
 .memories-gallery{
+
     margin-top:40px;
 
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
+
     gap:18px;
 }
 
 .memory{
+
     overflow:hidden;
 
     border-radius:18px;
 
     background:white;
 
-    box-shadow:0 12px 30px rgba(65,91,73,.08);
+    box-shadow:
+        0 12px 30px
+        rgba(65,91,73,.08);
 
     cursor:pointer;
 }
 
 .memory img{
+
     width:100%;
+
     aspect-ratio:1/1;
 
     object-fit:cover;
@@ -465,24 +678,30 @@ h2{
 }
 
 .memory:hover img{
+
     transform:scale(1.06);
 }
 
 
-/* VISOR DE FOTOS */
+/* =========================
+   MODAL FOTOS
+========================= */
 
 .modal{
+
     display:none;
 
     position:fixed;
 
     inset:0;
 
-    background:rgba(20,35,27,.9);
+    background:
+        rgba(20,35,27,.9);
 
     z-index:100;
 
     align-items:center;
+
     justify-content:center;
 
     padding:20px;
@@ -493,7 +712,9 @@ h2{
 }
 
 .modal img{
+
     max-width:95%;
+
     max-height:90vh;
 
     object-fit:contain;
@@ -502,9 +723,11 @@ h2{
 }
 
 .close{
+
     position:absolute;
 
     top:20px;
+
     right:25px;
 
     color:white;
@@ -515,21 +738,402 @@ h2{
 }
 
 
-/* PREGUNTA FINAL */
+/* =========================
+   FINAL
+========================= */
+
+.final{
+
+    text-align:center;
+}
+
+.final h2{
+    font-size:45px;
+}
+
+
+/* =========================
+   CÁPSULA DEL TIEMPO
+========================= */
+
+.capsule-section{
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #edf7f0,
+            #f8fbf8
+        );
+}
+
+.capsule-intro{
+
+    max-width:650px;
+
+    margin:0 auto 35px;
+
+    font-size:18px;
+
+    color:#5c7063;
+}
+
+
+/* TARJETA */
+
+.capsule-card{
+
+    max-width:650px;
+
+    margin:40px auto 0;
+
+    padding:45px 30px;
+
+    background:white;
+
+    border:1px solid #d5e4d9;
+
+    border-radius:28px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(65,91,73,.10);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+
+/* DECORACIÓN */
+
+.capsule-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    background:#eef7f0;
+
+    top:-100px;
+
+    left:-80px;
+
+    opacity:.8;
+}
+
+.capsule-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:140px;
+
+    height:140px;
+
+    border-radius:50%;
+
+    background:#f0f8f2;
+
+    bottom:-80px;
+
+    right:-50px;
+
+    opacity:.8;
+}
+
+
+/* CONTENIDO */
+
+.capsule-content{
+
+    position:relative;
+
+    z-index:2;
+}
+
+.capsule-lock{
+
+    font-size:65px;
+
+    margin-bottom:15px;
+
+    animation:lockPulse 2s infinite;
+}
+
+@keyframes lockPulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+
+}
+
+.capsule-title{
+
+    font-size:30px;
+
+    color:#345441;
+
+    font-weight:normal;
+
+    margin-bottom:12px;
+}
+
+.capsule-status{
+
+    color:#789683;
+
+    font-size:16px;
+
+    margin-bottom:25px;
+}
+
+
+/* CUENTA REGRESIVA */
+
+.capsule-countdown{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:10px;
+
+    margin:25px 0;
+}
+
+.capsule-time{
+
+    padding:14px 5px;
+
+    background:#f5faf6;
+
+    border-radius:15px;
+
+    border:1px solid #e0ebe3;
+}
+
+.capsule-time-number{
+
+    display:block;
+
+    font-size:25px;
+
+    color:#345441;
+}
+
+.capsule-time-label{
+
+    font-size:10px;
+
+    letter-spacing:1px;
+
+    color:#82988a;
+}
+
+
+/* FECHA */
+
+.capsule-date{
+
+    color:#6f927a;
+
+    font-style:italic;
+
+    margin-top:20px;
+}
+
+
+/* BOTÓN ABRIR */
+
+.open-capsule{
+
+    display:none;
+
+    border:none;
+
+    background:#466653;
+
+    color:white;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    font-family:inherit;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 8px 20px
+        rgba(70,102,83,.20);
+
+    transition:.3s;
+}
+
+.open-capsule:hover{
+
+    transform:scale(1.05);
+
+    background:#345441;
+}
+
+
+/* CAPSULA ABIERTA */
+
+.capsule-message{
+
+    display:none;
+
+    margin-top:30px;
+
+    padding:30px 25px;
+
+    background:#f7fbf8;
+
+    border:1px solid #d5e4d9;
+
+    border-radius:20px;
+
+    text-align:left;
+
+    animation:capsuleOpen .8s ease;
+}
+
+.capsule-message.show{
+    display:block;
+}
+
+.capsule-message h3{
+
+    color:#345441;
+
+    font-size:26px;
+
+    font-weight:normal;
+
+    margin-bottom:18px;
+
+    text-align:center;
+}
+
+.capsule-message p{
+
+    color:#53695b;
+
+    margin-bottom:17px;
+}
+
+.capsule-signature{
+
+    text-align:right;
+
+    color:#6c8b77;
+
+    font-style:italic;
+
+    margin-top:25px;
+}
+
+@keyframes capsuleOpen{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(25px)
+            scale(.95);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+/* CORAZONES AL ABRIR */
+
+.capsule-hearts{
+
+    display:none;
+
+    font-size:25px;
+
+    margin-top:20px;
+
+    letter-spacing:10px;
+
+    animation:heartAppear 1s ease;
+}
+
+.capsule-hearts.show{
+    display:block;
+}
+
+@keyframes heartAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.5);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+    }
+
+}
+
+
+/* =========================
+   PREGUNTA FINAL
+========================= */
 
 .question{
+
     text-align:center;
+
     max-width:850px;
 }
 
 .question-text{
+
     font-size:20px;
+
     color:#5c7063;
 
     margin-bottom:35px;
 }
 
 .question-buttons{
+
     position:relative;
 
     min-height:120px;
@@ -537,6 +1141,7 @@ h2{
     display:flex;
 
     justify-content:center;
+
     align-items:center;
 
     gap:20px;
@@ -568,6 +1173,7 @@ h2{
 }
 
 .yes-button:hover{
+
     transform:scale(1.06);
 }
 
@@ -583,7 +1189,7 @@ h2{
 }
 
 
-/* MENSAJE DEL SÍ */
+/* MENSAJE SÍ */
 
 .yes-message{
 
@@ -601,7 +1207,9 @@ h2{
 
     border-radius:20px;
 
-    box-shadow:0 15px 40px rgba(65,91,73,.10);
+    box-shadow:
+        0 15px 40px
+        rgba(65,91,73,.10);
 
     animation:aparecer .7s ease;
 }
@@ -631,29 +1239,28 @@ h2{
 @keyframes aparecer{
 
     from{
+
         opacity:0;
+
         transform:translateY(15px);
     }
 
     to{
+
         opacity:1;
+
         transform:translateY(0);
     }
 
 }
 
 
-/* FINAL */
-
-.final{
-    text-align:center;
-}
-
-.final h2{
-    font-size:45px;
-}
+/* =========================
+   FOOTER
+========================= */
 
 footer{
+
     text-align:center;
 
     padding:50px 20px;
@@ -664,45 +1271,78 @@ footer{
 }
 
 
-/* MÓVIL */
+/* =========================
+   MÓVIL
+========================= */
 
 @media(max-width:700px){
 
     section{
+
         padding:75px 22px;
     }
 
     h2{
+
         font-size:34px;
     }
 
     .letter{
+
         padding:25px;
     }
 
     .counter{
-        grid-template-columns:repeat(2,1fr);
+
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
     .vouchers{
+
         grid-template-columns:1fr;
     }
 
     .secret-gallery{
-        grid-template-columns:repeat(2,1fr);
+
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
     .memories-gallery{
-        grid-template-columns:repeat(2,1fr);
+
+        grid-template-columns:
+            repeat(2,1fr);
+
         gap:12px;
     }
 
+    .capsule-card{
+
+        padding:35px 20px;
+    }
+
+    .capsule-title{
+
+        font-size:26px;
+    }
+
+    .capsule-countdown{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:8px;
+    }
+
     .question-buttons{
+
         min-height:150px;
     }
 
     .yes-button,
     .no-button{
+
         padding:12px 22px;
     }
 
@@ -725,7 +1365,9 @@ footer{
 <div class="heart">♡</div>
 
 
-<!-- PORTADA -->
+<!-- =========================
+     PORTADA
+========================= -->
 
 <header class="hero">
 
@@ -764,7 +1406,9 @@ Abrir mi regalo ♡
 </header>
 
 
-<!-- HISTORIA -->
+<!-- =========================
+     HISTORIA
+========================= -->
 
 <section id="historia">
 
@@ -873,7 +1517,9 @@ Y quiero seguir sumando muchos más contigo. ♡
 </section>
 
 
-<!-- CARTA -->
+<!-- =========================
+     CARTA
+========================= -->
 
 <section>
 
@@ -886,7 +1532,9 @@ Algo que quiero decirte
 </h2>
 
 <p class="text">
+
 Hay cosas que simplemente no caben en una conversación.
+
 </p>
 
 
@@ -973,7 +1621,9 @@ Con amor, Mony ♡
 </section>
 
 
-<!-- NUESTRO LADO SECRETO -->
+<!-- =========================
+     LADO SECRETO
+========================= -->
 
 <section class="secret">
 
@@ -1006,19 +1656,38 @@ Este espacio será para nuestros secretos, nuestras complicidades y aquello que 
 
 <div class="secret-gallery">
 
-<img src="foto 1.jpg" onclick="abrirFoto(this.src)">
-<img src="foto 2.jpg" onclick="abrirFoto(this.src)">
-<img src="foto 3.jpg" onclick="abrirFoto(this.src)">
-<img src="foto 4.jpg" onclick="abrirFoto(this.src)">
-<img src="foto 5.jpg" onclick="abrirFoto(this.src)">
-<img src="foto 6.jpg" onclick="abrirFoto(this.src)">
+<img
+src="foto 1.jpg"
+onclick="abrirFoto(this.src)">
+
+<img
+src="foto 2.jpg"
+onclick="abrirFoto(this.src)">
+
+<img
+src="foto 3.jpg"
+onclick="abrirFoto(this.src)">
+
+<img
+src="foto 4.jpg"
+onclick="abrirFoto(this.src)">
+
+<img
+src="foto 5.jpg"
+onclick="abrirFoto(this.src)">
+
+<img
+src="foto 6.jpg"
+onclick="abrirFoto(this.src)">
 
 </div>
 
 </section>
 
 
-<!-- VALES -->
+<!-- =========================
+     VALES
+========================= -->
 
 <section>
 
@@ -1144,7 +1813,9 @@ Canjear ♡
 </section>
 
 
-<!-- MÚSICA -->
+<!-- =========================
+     MÚSICA
+========================= -->
 
 <section class="song">
 
@@ -1192,7 +1863,9 @@ allowfullscreen>
 </section>
 
 
-<!-- RECUERDOS -->
+<!-- =========================
+     RECUERDOS
+========================= -->
 
 <section class="memories">
 
@@ -1259,7 +1932,9 @@ Y todavía nos quedan muchísimos recuerdos por crear.
 </section>
 
 
-<!-- FINAL -->
+<!-- =========================
+     FINAL
+========================= -->
 
 <section class="final">
 
@@ -1294,12 +1969,272 @@ Te amo, Tewi. ♡
 </section>
 
 
-<!-- PREGUNTA INTERACTIVA -->
+<!-- =========================
+     CÁPSULA DEL TIEMPO
+========================= -->
+
+<section class="capsule-section">
+
+<div class="number">
+08
+</div>
+
+<h2>
+Una cápsula para nosotros 🔐
+</h2>
+
+<p class="capsule-intro">
+
+Hay mensajes que no quiero darte cualquier día.
+
+Quiero guardarlos para nuestros días especiales.
+
+</p>
+
+
+<div class="capsule-card">
+
+<div class="capsule-content">
+
+
+<!-- BLOQUEADO -->
+
+<div id="capsuleLocked">
+
+<div class="capsule-lock">
+🔐
+</div>
+
+<div class="capsule-title">
+Nuestra cápsula del tiempo
+</div>
+
+<div class="capsule-status">
+Todavía está cerrada...
+</div>
+
+<p class="text">
+
+Nuestra próxima sorpresa se desbloqueará
+cuando vuelva a llegar nuestro día.
+
+</p>
+
+
+<div class="capsule-countdown">
+
+<div class="capsule-time">
+
+<span
+class="capsule-time-number"
+id="capsuleDays">
+
+0
+
+</span>
+
+<span class="capsule-time-label">
+DÍAS
+</span>
+
+</div>
+
+
+<div class="capsule-time">
+
+<span
+class="capsule-time-number"
+id="capsuleHours">
+
+0
+
+</span>
+
+<span class="capsule-time-label">
+HORAS
+</span>
+
+</div>
+
+
+<div class="capsule-time">
+
+<span
+class="capsule-time-number"
+id="capsuleMinutes">
+
+0
+
+</span>
+
+<span class="capsule-time-label">
+MINUTOS
+</span>
+
+</div>
+
+
+<div class="capsule-time">
+
+<span
+class="capsule-time-number"
+id="capsuleSeconds">
+
+0
+
+</span>
+
+<span class="capsule-time-label">
+SEGUNDOS
+</span>
+
+</div>
+
+</div>
+
+
+<div
+class="capsule-date"
+id="capsuleDateText">
+
+Se abrirá el próximo 23 ♡
+
+</div>
+
+</div>
+
+
+<!-- DESBLOQUEADO -->
+
+<div id="capsuleUnlocked"
+style="display:none;">
+
+<div class="capsule-lock">
+💌
+</div>
+
+<div class="capsule-title">
+Hoy sí...
+</div>
+
+<div class="capsule-status">
+
+Es nuestro día. Puedes abrirla. ❤️
+
+</div>
+
+
+<button
+class="open-capsule"
+id="openCapsuleButton"
+onclick="abrirCapsula()">
+
+💌 Abrir mi cápsula
+
+</button>
+
+
+<div
+class="capsule-hearts"
+id="capsuleHearts">
+
+♡ ♡ ♡
+
+</div>
+
+
+<div
+class="capsule-message"
+id="capsuleMessage">
+
+<h3>
+Para ti, Tewi ❤️
+</h3>
+
+<p>
+
+Otro día 23.
+
+Otro pequeño capítulo de nuestra historia.
+
+</p>
+
+<p>
+
+Quizás para alguien más sea solamente una fecha,
+pero para mí es un recordatorio de que seguimos
+aquí, eligiéndonos y construyendo algo que quiero
+seguir cuidando.
+
+</p>
+
+<p>
+
+Gracias por cada momento, por cada sonrisa,
+por nuestras conversaciones, nuestras locuras,
+nuestros secretos y por todos esos pequeños
+instantes que solamente nosotros entendemos.
+
+</p>
+
+<p>
+
+Si pudiera volver al día en que comenzó todo,
+te volvería a elegir.
+
+Y si me preguntaran si quiero seguir escribiendo
+esta historia contigo...
+
+la respuesta seguiría siendo la misma.
+
+<strong>
+Sí. Una y otra vez.
+</strong>
+
+</p>
+
+<p>
+
+Por este cumplemes y por todos los que todavía
+nos quedan.
+
+</p>
+
+<p>
+
+<strong>
+Te amo, Tewi. ♾️❤️
+</strong>
+
+</p>
+
+<div class="capsule-signature">
+
+Con amor,
+
+Mony ♡
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PREGUNTA INTERACTIVA
+========================= -->
 
 <section class="question">
 
 <div class="number">
-08
+09
 </div>
 
 <h2>
@@ -1369,6 +2304,8 @@ Te elegiría una y otra vez. ♾️
 </section>
 
 
+<!-- FOOTER -->
+
 <footer>
 
 Hecho con amor por Mony ♡
@@ -1376,7 +2313,9 @@ Hecho con amor por Mony ♡
 </footer>
 
 
-<!-- VISOR -->
+<!-- =========================
+     VISOR DE FOTOS
+========================= -->
 
 <div
 class="modal"
@@ -1398,7 +2337,9 @@ alt="Recuerdo">
 <script>
 
 
-/* CONTADOR */
+/* =========================
+   CONTADOR DE RELACIÓN
+========================= */
 
 const fechaInicio =
 new Date("2026-05-23T00:00:00");
@@ -1406,46 +2347,70 @@ new Date("2026-05-23T00:00:00");
 
 function actualizarContador(){
 
-    const ahora = new Date();
+    const ahora =
+        new Date();
 
     let diferencia =
         ahora - fechaInicio;
 
+
     if(diferencia < 0){
+
         diferencia = 0;
+
     }
 
+
     const segundosTotales =
-        Math.floor(diferencia / 1000);
+        Math.floor(
+            diferencia / 1000
+        );
+
 
     const dias =
-        Math.floor(segundosTotales / 86400);
+        Math.floor(
+            segundosTotales / 86400
+        );
+
 
     const horas =
         Math.floor(
-            (segundosTotales % 86400) / 3600
+            (segundosTotales % 86400)
+            / 3600
         );
+
 
     const minutos =
         Math.floor(
-            (segundosTotales % 3600) / 60
+            (segundosTotales % 3600)
+            / 60
         );
+
 
     const segundos =
         segundosTotales % 60;
 
 
-    document.getElementById("dias").textContent =
-        dias;
+    document.getElementById("dias")
+        .textContent = dias;
 
-    document.getElementById("horas").textContent =
-        horas.toString().padStart(2,"0");
 
-    document.getElementById("minutos").textContent =
-        minutos.toString().padStart(2,"0");
+    document.getElementById("horas")
+        .textContent =
+        horas.toString()
+        .padStart(2,"0");
 
-    document.getElementById("segundos").textContent =
-        segundos.toString().padStart(2,"0");
+
+    document.getElementById("minutos")
+        .textContent =
+        minutos.toString()
+        .padStart(2,"0");
+
+
+    document.getElementById("segundos")
+        .textContent =
+        segundos.toString()
+        .padStart(2,"0");
 
 }
 
@@ -1458,7 +2423,9 @@ setInterval(
 );
 
 
-/* CARTA */
+/* =========================
+   CARTA
+========================= */
 
 function abrirCarta(){
 
@@ -1470,7 +2437,9 @@ function abrirCarta(){
 }
 
 
-/* VALES */
+/* =========================
+   VALES
+========================= */
 
 function usarVale(boton){
 
@@ -1493,7 +2462,9 @@ function usarVale(boton){
 }
 
 
-/* FOTOS */
+/* =========================
+   FOTOS
+========================= */
 
 function abrirFoto(src){
 
@@ -1519,12 +2490,17 @@ function cerrarFoto(){
 }
 
 
-/* MÚSICA */
+/* =========================
+   MÚSICA
+========================= */
 
 function iniciarMusica(){
 
     const player =
-        document.getElementById("youtubePlayer");
+        document.getElementById(
+            "youtubePlayer"
+        );
+
 
     player.contentWindow.postMessage(
 
@@ -1537,36 +2513,321 @@ function iniciarMusica(){
 }
 
 
-/* PREGUNTA INTERACTIVA */
+/* =========================
+   CÁPSULA DEL TIEMPO
+========================= */
+
+
+/*
+   La relación comenzó:
+   23 de mayo de 2026
+
+   La cápsula se abre:
+   cada día 23
+
+   Primera apertura:
+   23 de septiembre de 2026
+*/
+
+
+function obtenerProximoDia23(){
+
+    const ahora =
+        new Date();
+
+
+    let anio =
+        ahora.getFullYear();
+
+
+    let mes =
+        ahora.getMonth();
+
+
+    let fechaObjetivo =
+        new Date(
+            anio,
+            mes,
+            23,
+            0,
+            0,
+            0
+        );
+
+
+    /*
+       Si ya pasó el día 23,
+       esperamos al próximo mes.
+    */
+
+    if(ahora >= fechaObjetivo){
+
+        mes++;
+
+        if(mes > 11){
+
+            mes = 0;
+
+            anio++;
+
+        }
+
+        fechaObjetivo =
+            new Date(
+                anio,
+                mes,
+                23,
+                0,
+                0,
+                0
+            );
+
+    }
+
+
+    return fechaObjetivo;
+
+}
+
+
+function actualizarCapsula(){
+
+    const ahora =
+        new Date();
+
+
+    let anio =
+        ahora.getFullYear();
+
+
+    let mes =
+        ahora.getMonth();
+
+
+    /*
+       Comprobamos si HOY es día 23.
+    */
+
+    if(ahora.getDate() === 23){
+
+        mostrarCapsulaDesbloqueada();
+
+        return;
+
+    }
+
+
+    /*
+       Si no es día 23,
+       permanece bloqueada.
+    */
+
+    const objetivo =
+        obtenerProximoDia23();
+
+
+    const diferencia =
+        objetivo - ahora;
+
+
+    const totalSegundos =
+        Math.max(
+            0,
+            Math.floor(
+                diferencia / 1000
+            )
+        );
+
+
+    const dias =
+        Math.floor(
+            totalSegundos / 86400
+        );
+
+
+    const horas =
+        Math.floor(
+            (totalSegundos % 86400)
+            / 3600
+        );
+
+
+    const minutos =
+        Math.floor(
+            (totalSegundos % 3600)
+            / 60
+        );
+
+
+    const segundos =
+        totalSegundos % 60;
+
+
+    document.getElementById(
+        "capsuleDays"
+    ).textContent =
+        dias;
+
+
+    document.getElementById(
+        "capsuleHours"
+    ).textContent =
+        horas.toString()
+        .padStart(2,"0");
+
+
+    document.getElementById(
+        "capsuleMinutes"
+    ).textContent =
+        minutos.toString()
+        .padStart(2,"0");
+
+
+    document.getElementById(
+        "capsuleSeconds"
+    ).textContent =
+        segundos.toString()
+        .padStart(2,"0");
+
+
+    const meses = [
+
+        "enero",
+        "febrero",
+        "marzo",
+        "abril",
+        "mayo",
+        "junio",
+        "julio",
+        "agosto",
+        "septiembre",
+        "octubre",
+        "noviembre",
+        "diciembre"
+
+    ];
+
+
+    document.getElementById(
+        "capsuleDateText"
+    ).textContent =
+        "Se abrirá el 23 de " +
+        meses[objetivo.getMonth()] +
+        " ♡";
+
+}
+
+
+function mostrarCapsulaDesbloqueada(){
+
+    document.getElementById(
+        "capsuleLocked"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "capsuleUnlocked"
+    ).style.display = "block";
+
+
+    document.getElementById(
+        "openCapsuleButton"
+    ).style.display =
+        "inline-block";
+
+}
+
+
+/*
+   Abrir la cápsula
+*/
+
+function abrirCapsula(){
+
+    const mensaje =
+        document.getElementById(
+            "capsuleMessage"
+        );
+
+
+    const corazones =
+        document.getElementById(
+            "capsuleHearts"
+        );
+
+
+    mensaje.classList.add("show");
+
+    corazones.classList.add("show");
+
+
+    mensaje.scrollIntoView({
+
+        behavior:"smooth",
+
+        block:"center"
+
+    });
+
+}
+
+
+/*
+   Comprobar cada segundo.
+
+   Esto permite que el día 23
+   se desbloquee automáticamente
+   sin tener que recargar la página.
+*/
+
+actualizarCapsula();
+
+setInterval(
+    actualizarCapsula,
+    1000
+);
+
+
+/* =========================
+   PREGUNTA SÍ / NO
+========================= */
 
 const noButton =
-    document.getElementById("noButton");
+    document.getElementById(
+        "noButton"
+    );
 
 
 function moverNo(){
 
     const area =
-        document.querySelector(".question-buttons");
+        document.querySelector(
+            ".question-buttons"
+        );
 
 
-    const maxX =
+    const anchoDisponible =
         area.clientWidth -
         noButton.offsetWidth;
 
 
-    const maxY =
+    const altoDisponible =
         area.clientHeight -
         noButton.offsetHeight;
 
 
     const x =
-        Math.random() * maxX -
-        maxX / 2;
+        Math.random() *
+        Math.max(0,anchoDisponible)
+        -
+        Math.max(0,anchoDisponible) / 2;
 
 
     const y =
-        Math.random() * maxY -
-        maxY / 2;
+        Math.random() *
+        Math.max(0,altoDisponible)
+        -
+        Math.max(0,altoDisponible) / 2;
 
 
     noButton.style.position =
@@ -1574,12 +2835,14 @@ function moverNo(){
 
 
     noButton.style.transform =
-        `translate(${x}px, ${y}px)`;
+        `translate(${x}px,${y}px)`;
 
 }
 
 
-/* COMPUTADOR */
+/*
+   Computador
+*/
 
 noButton.addEventListener(
     "mouseenter",
@@ -1587,7 +2850,9 @@ noButton.addEventListener(
 );
 
 
-/* CELULAR */
+/*
+   Celular
+*/
 
 noButton.addEventListener(
     "touchstart",
@@ -1601,12 +2866,33 @@ noButton.addEventListener(
 );
 
 
-/* SI */
+/*
+   También por clic,
+   por si intenta atraparlo.
+*/
+
+noButton.addEventListener(
+    "click",
+    function(e){
+
+        e.preventDefault();
+
+        moverNo();
+
+    }
+);
+
+
+/* =========================
+   RESPUESTA SÍ
+========================= */
 
 function respuestaSi(){
 
     const mensaje =
-        document.getElementById("yesMessage");
+        document.getElementById(
+            "yesMessage"
+        );
 
 
     mensaje.classList.add("show");
@@ -1624,6 +2910,8 @@ function respuestaSi(){
 
 </script>
 
+
 </body>
+
 </html>
 ```
