@@ -1,2263 +1,1264 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Para Tewi ♡</title>
 
 <style>
-
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-    font-family:Georgia,"Times New Roman",serif;
-    background:#f5faf6;
-    color:#30483a;
-    line-height:1.7;
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #f5faf5;
+    color: #304a3a;
+    line-height: 1.7;
 }
 
-/* =========================
-   CORAZONES
-========================= */
-
-.heart{
-    position:fixed;
-    color:#91b79d;
-    font-size:18px;
-    opacity:.35;
-    animation:float 8s linear infinite;
-    pointer-events:none;
-    z-index:0;
-}
-
-.heart:nth-child(1){left:10%;animation-delay:0s}
-.heart:nth-child(2){left:30%;animation-delay:2s}
-.heart:nth-child(3){left:55%;animation-delay:4s}
-.heart:nth-child(4){left:75%;animation-delay:1s}
-.heart:nth-child(5){left:90%;animation-delay:3s}
-
-@keyframes float{
-
-    0%{
-        bottom:-30px;
-        transform:translateX(0);
-    }
-
-    50%{
-        transform:translateX(20px);
-    }
-
-    100%{
-        bottom:110%;
-        transform:translateX(-20px);
-    }
-
+button {
+    font-family: inherit;
+    cursor: pointer;
 }
 
 /* =========================
    PORTADA
 ========================= */
 
-.hero{
-
-    min-height:100vh;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    text-align:center;
-
-    padding:30px;
-
+.hero {
+    min-height: 100vh;
     background:
-        radial-gradient(circle at top,#fff,transparent 60%),
-        linear-gradient(135deg,#eef8f1,#dbeee0);
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.8), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(211,235,217,.8), transparent 35%),
+        linear-gradient(135deg, #edf7ef, #dcefe0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
 }
 
-.hero-content{
-    max-width:700px;
+.hero-content {
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
 }
 
-.small-title{
-
-    letter-spacing:4px;
-
-    text-transform:uppercase;
-
-    font-size:12px;
-
-    color:#6f927a;
-
-    margin-bottom:20px;
+.small-title {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: .8rem;
+    color: #78917e;
+    margin-bottom: 20px;
 }
 
-h1{
-
-    font-size:clamp(55px,12vw,110px);
-
-    font-weight:normal;
-
-    color:#345441;
+.hero h1 {
+    font-size: clamp(4rem, 12vw, 8rem);
+    font-weight: normal;
+    color: #395b45;
+    margin-bottom: 10px;
 }
 
-.date{
-
-    letter-spacing:4px;
-
-    color:#789683;
-
-    margin-bottom:30px;
+.hero-date {
+    letter-spacing: 5px;
+    color: #78917e;
+    font-size: 1rem;
+    margin-bottom: 30px;
 }
 
-.intro{
-
-    font-size:19px;
-
-    max-width:550px;
-
-    margin:auto;
-
-    color:#53695b;
+.hero-text {
+    max-width: 580px;
+    margin: 0 auto 35px;
+    font-size: 1.15rem;
+    color: #506858;
 }
 
-.button,
-.letter-button,
-.redeem,
-.photo-toggle{
-
-    display:inline-block;
-
-    border:1px solid #779783;
-
-    background:transparent;
-
-    color:#466653;
-
-    border-radius:50px;
-
-    font-family:inherit;
-
-    cursor:pointer;
-
-    transition:.3s;
+.main-button {
+    display: inline-block;
+    border: none;
+    background: #557b61;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 40px;
+    font-size: 1rem;
+    transition: .3s;
+    box-shadow: 0 8px 25px rgba(60, 95, 70, .2);
 }
 
-.button{
-
-    margin-top:35px;
-
-    padding:14px 30px;
-
-    text-decoration:none;
+.main-button:hover {
+    transform: translateY(-3px);
+    background: #466b52;
 }
 
-.letter-button{
-
-    padding:15px 28px;
-
-    font-size:16px;
+.heart {
+    position: absolute;
+    opacity: .35;
+    animation: floatHeart 7s infinite ease-in-out;
 }
 
-.redeem{
-
-    padding:10px 20px;
+.heart:nth-child(1) {
+    top: 15%;
+    left: 10%;
+    font-size: 30px;
 }
 
-.button:hover,
-.letter-button:hover,
-.redeem:hover,
-.photo-toggle:hover{
+.heart:nth-child(2) {
+    top: 25%;
+    right: 12%;
+    font-size: 24px;
+    animation-delay: 1s;
+}
 
-    background:#466653;
+.heart:nth-child(3) {
+    bottom: 20%;
+    left: 15%;
+    font-size: 22px;
+    animation-delay: 2s;
+}
 
-    color:white;
+.heart:nth-child(4) {
+    bottom: 15%;
+    right: 18%;
+    font-size: 35px;
+    animation-delay: 3s;
+}
+
+@keyframes floatHeart {
+    0%, 100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(8deg);
+    }
 }
 
 /* =========================
    SECCIONES
 ========================= */
 
-section{
-
-    max-width:850px;
-
-    margin:auto;
-
-    padding:100px 25px;
+section {
+    padding: 90px 20px;
 }
 
-.number{
-
-    font-size:13px;
-
-    letter-spacing:4px;
-
-    color:#89a995;
-
-    margin-bottom:10px;
+.container {
+    max-width: 1050px;
+    margin: auto;
 }
 
-h2{
-
-    font-size:40px;
-
-    font-weight:normal;
-
-    color:#345441;
-
-    margin-bottom:25px;
+.section-number {
+    text-align: center;
+    font-size: .75rem;
+    letter-spacing: 4px;
+    color: #8ca493;
+    margin-bottom: 10px;
 }
 
-.text{
+.section-title {
+    text-align: center;
+    font-size: clamp(2rem, 5vw, 3.3rem);
+    font-weight: normal;
+    color: #395b45;
+    margin-bottom: 20px;
+}
 
-    font-size:18px;
+.section-subtitle {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 50px;
+    color: #698070;
+}
 
-    color:#5c7063;
+/* =========================
+   HISTORIA
+========================= */
 
-    margin-bottom:18px;
+.history {
+    background: #fff;
+}
+
+.history-date {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #78917e;
+    margin-bottom: 30px;
+}
+
+.history-text {
+    max-width: 750px;
+    margin: auto;
+    text-align: center;
+    font-size: 1.1rem;
 }
 
 /* =========================
    CONTADOR
 ========================= */
 
-.counter-card{
-
-    margin-top:40px;
-
-    padding:35px 25px;
-
-    background:white;
-
-    border:1px solid #d5e4d9;
-
-    border-radius:22px;
-
-    box-shadow:0 15px 40px rgba(65,91,73,.08);
-
-    text-align:center;
+.counter-section {
+    background: #edf6ef;
 }
 
-.counter-title{
-
-    color:#6f927a;
-
-    letter-spacing:2px;
-
-    margin-bottom:25px;
+.counter {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    max-width: 800px;
+    margin: 40px auto 0;
 }
 
-.counter{
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:10px;
+.counter-box {
+    background: rgba(255,255,255,.75);
+    padding: 25px 10px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(54, 87, 63, .07);
 }
 
-.counter-box{
-    padding:10px;
+.counter-number {
+    display: block;
+    font-size: 2rem;
+    color: #496d54;
 }
 
-.counter-number{
-
-    display:block;
-
-    font-size:32px;
-
-    color:#345441;
-}
-
-.counter-label{
-
-    font-size:12px;
-
-    color:#82988a;
-
-    letter-spacing:1px;
-}
-
-.counter-love{
-
-    margin-top:25px;
-
-    color:#789683;
-
-    font-style:italic;
+.counter-label {
+    font-size: .7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #829788;
 }
 
 /* =========================
    CARTA
 ========================= */
 
-.letter-container{
-
-    margin-top:40px;
-
-    text-align:center;
+.letter-section {
+    background: #fff;
 }
 
-.letter{
-
-    display:none;
-
-    margin-top:30px;
-
-    padding:35px;
-
-    background:white;
-
-    border:1px solid #d5e4d9;
-
-    border-radius:18px;
-
-    box-shadow:0 15px 40px rgba(65,91,73,.10);
-
-    text-align:left;
+.letter-card {
+    max-width: 750px;
+    margin: auto;
+    background: #f8fbf8;
+    padding: 50px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(52, 82, 59, .08);
 }
 
-.letter.show{
-
-    display:block;
-
-    animation:openLetter .7s ease;
+.letter-content {
+    display: none;
+    text-align: left;
+    margin-top: 35px;
+    animation: fadeIn .6s ease;
 }
 
-.letter h3{
-
-    color:#345441;
-
-    font-size:27px;
-
-    font-weight:normal;
-
-    margin-bottom:20px;
+.letter-content.open {
+    display: block;
 }
 
-.letter p{
-
-    margin-bottom:18px;
-
-    color:#53695b;
+.letter-content p {
+    margin-bottom: 20px;
 }
 
-.signature{
-
-    text-align:right;
-
-    margin-top:30px;
-
-    font-style:italic;
-
-    color:#6c8b77;
+.letter-signature {
+    text-align: right;
+    margin-top: 35px;
+    font-style: italic;
+    color: #557b61;
 }
 
-@keyframes openLetter{
-
-    from{
-
-        opacity:0;
-
-        transform:
-            translateY(-15px)
-            scale(.97);
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
     }
 
-    to{
-
-        opacity:1;
-
-        transform:
-            translateY(0)
-            scale(1);
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
-
 }
 
 /* =========================
    LADO SECRETO
 ========================= */
 
-.secret{
-
-    background:#30483a;
-
-    color:#eef7f0;
-
-    max-width:none;
-
-    padding-left:
-        max(25px,calc((100% - 850px)/2));
-
-    padding-right:
-        max(25px,calc((100% - 850px)/2));
+.secret-section {
+    background:
+        radial-gradient(circle at top right, rgba(95,126,103,.2), transparent 35%),
+        linear-gradient(135deg, #1d2921, #26392c);
+    color: #e8f2e9;
 }
 
-.secret h2{
-    color:#f1f8f2;
+.secret-section .section-title {
+    color: #eef7ef;
 }
 
-.secret .number{
-    color:#a8c5b0;
+.secret-section .section-subtitle,
+.secret-section .section-number {
+    color: #aabdaa;
 }
 
-.secret .text{
-    color:#d8e6dc;
+.gallery-capsule {
+    max-width: 950px;
+    margin: auto;
 }
 
-/* =========================
-   CÁPSULA DE FOTOS
-========================= */
-
-.photo-capsule{
-
-    margin-top:35px;
-
-    padding:25px;
-
-    border-radius:24px;
-
-    transition:.3s;
+.capsule-button {
+    display: block;
+    margin: 0 auto 35px;
+    padding: 16px 30px;
+    border: 1px solid rgba(255,255,255,.25);
+    background: rgba(255,255,255,.08);
+    color: #f1f8f2;
+    border-radius: 40px;
+    font-size: 1rem;
+    transition: .3s;
 }
 
-.secret-capsule{
-
-    background:rgba(255,255,255,.06);
-
-    border:1px solid rgba(255,255,255,.15);
-
-    box-shadow:
-        0 15px 40px
-        rgba(0,0,0,.15);
+.capsule-button:hover {
+    background: rgba(255,255,255,.15);
+    transform: translateY(-2px);
 }
 
-.memories-capsule{
-
-    background:#fff;
-
-    border:1px solid #d5e4d9;
-
-    box-shadow:
-        0 15px 40px
-        rgba(65,91,73,.08);
+.gallery-content {
+    display: none;
+    animation: fadeIn .6s ease;
 }
 
-.photo-capsule-header{
-
-    text-align:center;
-
-    margin-bottom:5px;
+.gallery-content.open {
+    display: block;
 }
 
-.photo-capsule-icon{
-
-    font-size:42px;
-
-    margin-bottom:10px;
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
 }
 
-.photo-capsule-title{
-
-    font-size:25px;
-
-    font-weight:normal;
-
-    margin-bottom:8px;
+.gallery-item {
+    border-radius: 18px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,.25);
 }
 
-.secret-capsule .photo-capsule-title{
-    color:#f1f8f2;
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: .4s;
 }
 
-.memories-capsule .photo-capsule-title{
-    color:#345441;
-}
-
-.photo-capsule-description{
-
-    font-size:15px;
-
-    margin-bottom:20px;
-}
-
-.secret-capsule .photo-capsule-description{
-    color:#cbded0;
-}
-
-.memories-capsule .photo-capsule-description{
-    color:#789683;
-}
-
-.photo-toggle{
-
-    padding:13px 25px;
-
-    font-size:15px;
-}
-
-.secret-toggle{
-
-    border-color:#a8c5b0;
-
-    color:#e9f4ec;
-}
-
-.secret-toggle:hover{
-
-    background:#eef7f0;
-
-    color:#345441;
-}
-
-.photo-gallery{
-
-    display:none;
-
-    margin-top:30px;
-
-    animation:galleryOpen .6s ease;
-}
-
-.photo-gallery.show{
-    display:grid;
-}
-
-.secret-gallery{
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:14px;
-}
-
-.memories-gallery{
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:18px;
-}
-
-@keyframes galleryOpen{
-
-    from{
-
-        opacity:0;
-
-        transform:
-            translateY(-15px)
-            scale(.98);
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-            translateY(0)
-            scale(1);
-    }
-
-}
-
-/* FOTOS SECRETAS */
-
-.secret-gallery img{
-
-    width:100%;
-
-    aspect-ratio:1/1;
-
-    object-fit:cover;
-
-    border-radius:16px;
-
-    cursor:pointer;
-
-    transition:.35s;
-
-    border:
-        1px solid
-        rgba(255,255,255,.15);
-}
-
-.secret-gallery img:hover{
-
-    transform:scale(1.03);
-}
-
-/* RECUERDOS */
-
-.memory{
-
-    overflow:hidden;
-
-    border-radius:18px;
-
-    background:white;
-
-    box-shadow:
-        0 12px 30px
-        rgba(65,91,73,.08);
-
-    cursor:pointer;
-}
-
-.memory img{
-
-    width:100%;
-
-    aspect-ratio:1/1;
-
-    object-fit:cover;
-
-    display:block;
-
-    transition:.4s;
-}
-
-.memory:hover img{
-
-    transform:scale(1.06);
+.gallery-item:hover img {
+    transform: scale(1.06);
 }
 
 /* =========================
-   VALES
+   VOUCHERS
 ========================= */
 
-.vouchers{
-
-    margin-top:40px;
-
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:20px;
+.vouchers-section {
+    background: #f7fbf7;
 }
 
-.voucher{
-
-    background:white;
-
-    border:1px solid #d5e4d9;
-
-    border-radius:18px;
-
-    padding:28px 22px;
-
-    text-align:center;
-
-    box-shadow:
-        0 12px 30px
-        rgba(65,91,73,.07);
-
-    transition:.3s;
+.vouchers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
 }
 
-.voucher:hover{
-
-    transform:translateY(-4px);
+.voucher {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #e0ebe2;
+    transition: .3s;
 }
 
-.voucher-icon{
-
-    font-size:32px;
-
-    margin-bottom:10px;
+.voucher:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(54, 87, 63, .08);
 }
 
-.voucher h3{
-
-    color:#345441;
-
-    font-weight:normal;
-
-    font-size:22px;
-
-    margin-bottom:8px;
+.voucher-icon {
+    font-size: 2.3rem;
+    margin-bottom: 15px;
 }
 
-.voucher p{
-
-    color:#789683;
-
-    font-size:14px;
-
-    margin-bottom:18px;
+.voucher h3 {
+    color: #496d54;
+    margin-bottom: 10px;
+    font-weight: normal;
 }
 
-.redeemed{
-
-    color:#5f806b;
-
-    font-style:italic;
+.voucher p {
+    font-size: .95rem;
+    color: #748479;
 }
 
 /* =========================
    MÚSICA
 ========================= */
 
-.song{
-    text-align:center;
+.music-section {
+    background: #e9f3eb;
 }
 
-.song-card{
-
-    margin-top:35px;
-
-    padding:30px;
-
-    border:1px solid #d5e4d9;
-
-    border-radius:20px;
-
-    background:white;
-
-    box-shadow:
-        0 15px 40px
-        rgba(65,91,73,.08);
+.music-card {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 35px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 10px 35px rgba(54, 87, 63, .08);
 }
 
-.music-symbol{
-
-    font-size:35px;
-
-    margin-bottom:15px;
+.music-card h3 {
+    font-weight: normal;
+    color: #496d54;
+    margin-bottom: 8px;
 }
 
-.song-title{
-
-    font-size:27px;
-
-    color:#345441;
+.music-card p {
+    color: #819086;
+    margin-bottom: 25px;
 }
 
-.artist{
-
-    color:#7a9582;
-
-    margin-bottom:25px;
-}
-
-.youtube-player{
-
-    width:100%;
-
-    max-width:700px;
-
-    aspect-ratio:16/9;
-
-    border:none;
-
-    border-radius:15px;
-
-    display:block;
-
-    margin:auto;
+.music-player {
+    width: 100%;
+    border: none;
+    border-radius: 15px;
 }
 
 /* =========================
-   MODAL FOTOS
+   RINCÓN DE TU CACHORRITA
 ========================= */
 
-.modal{
-
-    display:none;
-
-    position:fixed;
-
-    inset:0;
-
-    background:
-        rgba(20,35,27,.9);
-
-    z-index:100;
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:20px;
+.mony-corner {
+    background: #fff;
 }
 
-.modal.show{
-    display:flex;
+.mony-intro {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    text-align: center;
+    color: #6f8174;
 }
 
-.modal img{
-
-    max-width:95%;
-
-    max-height:90vh;
-
-    object-fit:contain;
-
-    border-radius:12px;
+.mony-panel {
+    max-width: 900px;
+    margin: auto;
 }
 
-.close{
-
-    position:absolute;
-
-    top:20px;
-
-    right:25px;
-
-    color:white;
-
-    font-size:38px;
-
-    cursor:pointer;
+.mony-lock {
+    background: #f5faf5;
+    border: 1px solid #dce9de;
+    border-radius: 25px;
+    padding: 35px;
+    text-align: center;
 }
 
-/* =========================
-   RINCÓN DE MONY
-========================= */
-
-.mony-corner{
-
-    background:
-        linear-gradient(
-            135deg,
-            #f7fbf8,
-            #edf6f0
-        );
+.mony-panel-title {
+    color: #496d54;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
 }
 
-.mony-intro{
-
-    max-width:680px;
-
-    color:#5c7063;
-
-    font-size:18px;
-
-    margin-bottom:35px;
+.mony-panel-subtitle {
+    color: #819086;
+    margin-bottom: 25px;
+    font-size: .95rem;
 }
 
-.mony-panel{
-
-    max-width:750px;
-
-    margin:40px auto 0;
-
-    background:white;
-
-    border:1px solid #d5e4d9;
-
-    border-radius:25px;
-
-    padding:35px;
-
-    box-shadow:
-        0 18px 45px
-        rgba(65,91,73,.09);
+.pin-area {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-.mony-lock{
-
-    text-align:center;
-
-    font-size:48px;
-
-    margin-bottom:10px;
+.pin-input {
+    width: 180px;
+    padding: 13px 16px;
+    border: 1px solid #ccdcd0;
+    border-radius: 30px;
+    text-align: center;
+    letter-spacing: 5px;
+    font-size: 1rem;
+    outline: none;
 }
 
-.mony-panel-title{
-
-    text-align:center;
-
-    font-size:27px;
-
-    color:#345441;
-
-    font-weight:normal;
-
-    margin-bottom:8px;
+.pin-input:focus {
+    border-color: #789b80;
 }
 
-.mony-panel-subtitle{
-
-    text-align:center;
-
-    color:#789683;
-
-    font-size:15px;
-
-    margin-bottom:25px;
+.pin-button {
+    padding: 13px 25px;
+    border: none;
+    border-radius: 30px;
+    background: #557b61;
+    color: white;
 }
 
-.pin-area{
-
-    max-width:350px;
-
-    margin:auto;
+.pin-error {
+    color: #a85c5c;
+    margin-top: 15px;
+    display: none;
 }
 
-.pin-input{
-
-    width:100%;
-
-    padding:13px 18px;
-
-    border:1px solid #cbded0;
-
-    border-radius:50px;
-
-    font-family:inherit;
-
-    font-size:16px;
-
-    text-align:center;
-
-    outline:none;
+.mony-editor {
+    display: none;
+    margin-top: 25px;
 }
 
-.pin-input:focus{
-
-    border-color:#779783;
-
-    box-shadow:
-        0 0 0 3px
-        rgba(119,151,131,.12);
+.mony-editor.open {
+    display: block;
+    animation: fadeIn .5s ease;
 }
 
-.pin-button{
-
-    width:100%;
-
-    margin-top:12px;
-
-    padding:13px 20px;
-
-    border:none;
-
-    border-radius:50px;
-
-    background:#466653;
-
-    color:white;
-
-    font-family:inherit;
-
-    font-size:15px;
-
-    cursor:pointer;
-
-    transition:.3s;
+.editor-header {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-.pin-button:hover{
-
-    background:#345441;
-
-    transform:translateY(-1px);
+.editor-header h3 {
+    font-size: 1.7rem;
+    font-weight: normal;
+    color: #496d54;
 }
 
-.pin-error{
-
-    display:none;
-
-    text-align:center;
-
-    color:#9a6666;
-
-    font-size:14px;
-
-    margin-top:12px;
+.entry-form {
+    background: #f7faf7;
+    border-radius: 22px;
+    padding: 30px;
+    margin-bottom: 35px;
 }
 
-.mony-editor{
-
-    display:none;
-
-    animation:editorOpen .6s ease;
-}
-
-.mony-editor.show{
-
-    display:block;
-}
-
-@keyframes editorOpen{
-
-    from{
-
-        opacity:0;
-
-        transform:
-            translateY(15px);
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-            translateY(0);
-    }
-
-}
-
-.editor-header{
-
-    text-align:center;
-
-    margin-bottom:30px;
-}
-
-.editor-header h3{
-
-    color:#345441;
-
-    font-size:27px;
-
-    font-weight:normal;
-
-    margin-bottom:5px;
-}
-
-.editor-header p{
-
-    color:#789683;
-
-    font-size:14px;
-}
-
-.entry-form{
-
-    background:#f7fbf8;
-
-    border:1px solid #e0ebe3;
-
-    border-radius:20px;
-
-    padding:25px;
-
-    margin-bottom:35px;
-}
-
-.form-label{
-
-    display:block;
-
-    color:#466653;
-
-    font-size:14px;
-
-    margin-bottom:7px;
-
+.form-label {
+    display: block;
+    color: #617567;
+    margin-bottom: 7px;
+    font-size: .9rem;
 }
 
 .form-select,
 .form-title,
-.form-text{
-
-    width:100%;
-
-    border:1px solid #cbded0;
-
-    background:white;
-
-    border-radius:12px;
-
-    padding:12px 14px;
-
-    font-family:inherit;
-
-    color:#30483a;
-
-    font-size:15px;
-
-    outline:none;
-
-    margin-bottom:18px;
+.form-text {
+    width: 100%;
+    border: 1px solid #d4e1d6;
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-bottom: 20px;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    background: white;
 }
 
-.form-text{
-
-    min-height:150px;
-
-    resize:vertical;
-
-    line-height:1.7;
+.form-text {
+    min-height: 160px;
+    resize: vertical;
 }
 
 .form-select:focus,
 .form-title:focus,
-.form-text:focus{
-
-    border-color:#779783;
-
-    box-shadow:
-        0 0 0 3px
-        rgba(119,151,131,.10);
+.form-text:focus {
+    border-color: #789b80;
 }
 
-.form-actions{
-
-    display:flex;
-
-    gap:10px;
-
-    flex-wrap:wrap;
+.form-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .save-entry,
-.cancel-edit{
-
-    border-radius:50px;
-
-    padding:12px 22px;
-
-    font-family:inherit;
-
-    cursor:pointer;
-
-    transition:.3s;
+.cancel-edit {
+    border: none;
+    border-radius: 25px;
+    padding: 12px 22px;
 }
 
-.save-entry{
-
-    border:1px solid #466653;
-
-    background:#466653;
-
-    color:white;
+.save-entry {
+    background: #557b61;
+    color: white;
 }
 
-.save-entry:hover{
-
-    background:#345441;
+.cancel-edit {
+    background: #dfe9e1;
+    color: #526657;
+    display: none;
 }
 
-.cancel-edit{
+/* =========================
+   SOBRES
+========================= */
 
-    display:none;
-
-    border:1px solid #779783;
-
-    background:transparent;
-
-    color:#466653;
+.entries-title {
+    text-align: center;
+    color: #496d54;
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-bottom: 25px;
 }
 
-.cancel-edit.show{
-
-    display:inline-block;
+.entries-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
-.cancel-edit:hover{
-
-    background:#eef7f0;
+.envelope-card {
+    position: relative;
+    background: linear-gradient(145deg, #f7efe2, #eee0cb);
+    border-radius: 18px;
+    min-height: 240px;
+    padding: 25px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(86, 69, 48, .1);
+    border: 1px solid rgba(133, 104, 67, .15);
+    transition: .35s;
 }
 
-.entries-title{
-
-    color:#345441;
-
-    font-size:23px;
-
-    font-weight:normal;
-
-    margin-bottom:20px;
-
-    text-align:center;
+.envelope-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(86, 69, 48, .16);
 }
 
-.entries-list{
-
-    display:grid;
-
-    gap:18px;
+.envelope-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(135deg, transparent 49%, rgba(139,110,74,.12) 50%, transparent 51%),
+        linear-gradient(45deg, transparent 49%, rgba(139,110,74,.1) 50%, transparent 51%);
+    pointer-events: none;
 }
 
-.entry-card{
-
-    border:1px solid #d5e4d9;
-
-    border-radius:18px;
-
-    padding:23px;
-
-    background:white;
-
-    box-shadow:
-        0 10px 25px
-        rgba(65,91,73,.06);
-
-    animation:entryAppear .5s ease;
+.envelope-top {
+    position: relative;
+    z-index: 2;
+    text-align: center;
 }
 
-@keyframes entryAppear{
+.envelope-icon {
+    font-size: 3.2rem;
+    margin-bottom: 10px;
+}
 
-    from{
+.envelope-label {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: .7rem;
+    color: #917957;
+    margin-bottom: 7px;
+}
 
-        opacity:0;
+.envelope-title-hidden {
+    color: #5f4d38;
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+    font-weight: normal;
+}
 
-        transform:translateY(10px);
+.envelope-teaser {
+    color: #87765e;
+    font-size: .9rem;
+    font-style: italic;
+    margin-bottom: 18px;
+}
+
+.envelope-open {
+    border: none;
+    background: #7e9a83;
+    color: white;
+    border-radius: 25px;
+    padding: 10px 20px;
+    transition: .3s;
+}
+
+.envelope-open:hover {
+    background: #66826c;
+}
+
+.envelope-content {
+    display: none;
+    position: relative;
+    z-index: 3;
+    background: rgba(255,255,255,.75);
+    border-radius: 15px;
+    padding: 22px;
+    margin-top: 15px;
+    animation: letterOpen .55s ease;
+}
+
+.envelope-card.open .envelope-content {
+    display: block;
+}
+
+.envelope-card.open .envelope-title-hidden {
+    font-size: 1.4rem;
+}
+
+.envelope-card.open {
+    cursor: default;
+}
+
+.envelope-card.open .envelope-open {
+    display: none;
+}
+
+.envelope-content p {
+    white-space: pre-wrap;
+    color: #574b3d;
+    line-height: 1.8;
+}
+
+.envelope-signature {
+    text-align: right;
+    margin-top: 20px;
+    color: #6f806e;
+    font-style: italic;
+}
+
+@keyframes letterOpen {
+    from {
+        opacity: 0;
+        transform: translateY(-10px) scale(.98);
     }
 
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
     }
-
 }
 
-.entry-top{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    gap:15px;
-
-    margin-bottom:10px;
+.empty-entries {
+    text-align: center;
+    color: #829086;
+    padding: 30px;
+    background: #f7faf7;
+    border-radius: 18px;
 }
 
-.entry-type{
-
-    font-size:12px;
-
-    letter-spacing:2px;
-
-    text-transform:uppercase;
-
-    color:#89a995;
+.entry-card {
+    background: white;
+    border: 1px solid #e1eae2;
+    border-radius: 18px;
+    padding: 20px;
 }
 
-.entry-date{
-
-    color:#a0b2a6;
-
-    font-size:12px;
+.entry-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
-.entry-title{
-
-    color:#345441;
-
-    font-size:23px;
-
-    font-weight:normal;
-
-    margin-bottom:12px;
+.entry-type {
+    color: #557b61;
+    font-size: .8rem;
 }
 
-.entry-preview{
-
-    color:#53695b;
-
-    font-size:15px;
-
-    white-space:pre-wrap;
-
-    margin-bottom:15px;
+.entry-date {
+    color: #9aa89e;
+    font-size: .75rem;
 }
 
-.entry-actions{
+.entry-title {
+    color: #496d54;
+    margin-bottom: 8px;
+}
 
-    display:flex;
+.entry-preview {
+    color: #7a887e;
+    font-size: .9rem;
+    margin-bottom: 15px;
+}
 
-    gap:8px;
-
-    flex-wrap:wrap;
+.entry-actions {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
 }
 
 .entry-open,
 .entry-edit,
-.entry-delete{
-
-    padding:8px 15px;
-
-    border-radius:50px;
-
-    font-family:inherit;
-
-    font-size:13px;
-
-    cursor:pointer;
-
-    transition:.25s;
+.entry-delete {
+    border: none;
+    border-radius: 20px;
+    padding: 8px 14px;
+    font-size: .8rem;
 }
 
-.entry-open{
-
-    border:1px solid #779783;
-
-    background:transparent;
-
-    color:#466653;
+.entry-open {
+    background: #e7f0e8;
+    color: #4f6e56;
 }
 
-.entry-edit{
-
-    border:1px solid #cbded0;
-
-    background:#f7fbf8;
-
-    color:#466653;
+.entry-edit {
+    background: #edf0e8;
+    color: #68725c;
 }
 
-.entry-delete{
-
-    border:1px solid #decaca;
-
-    background:transparent;
-
-    color:#8c6464;
+.entry-delete {
+    background: #f4e5e5;
+    color: #956060;
 }
 
-.entry-open:hover,
-.entry-edit:hover{
-
-    background:#eef7f0;
+.entry-full {
+    display: none;
+    white-space: pre-wrap;
+    background: #f8faf8;
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 15px;
+    color: #59695d;
 }
 
-.entry-delete:hover{
-
-    background:#faf0f0;
+.backup-area {
+    margin-top: 35px;
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #e1eae2;
 }
 
-.entry-full{
-
-    display:none;
-
-    margin-top:20px;
-
-    padding-top:20px;
-
-    border-top:1px solid #e5eee7;
-
-    color:#53695b;
-
-    white-space:pre-wrap;
-
-    line-height:1.9;
+.backup-title {
+    color: #617567;
+    margin-bottom: 15px;
 }
 
-.entry-full.show{
-
-    display:block;
-
-    animation:openEntry .5s ease;
+.backup-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-@keyframes openEntry{
-
-    from{
-
-        opacity:0;
-        transform:translateY(-8px);
-    }
-
-    to{
-
-        opacity:1;
-        transform:translateY(0);
-    }
-
+.backup-button {
+    border: none;
+    background: #e8efe9;
+    color: #536b59;
+    padding: 10px 18px;
+    border-radius: 22px;
 }
 
-.empty-entries{
-
-    text-align:center;
-
-    padding:30px 20px;
-
-    color:#82988a;
-
-    font-style:italic;
-
-    border:1px dashed #cbded0;
-
-    border-radius:18px;
-}
-
-.backup-area{
-
-    margin-top:30px;
-
-    padding-top:25px;
-
-    border-top:1px solid #e0ebe3;
-
-    text-align:center;
-}
-
-.backup-title{
-
-    color:#466653;
-
-    font-size:15px;
-
-    margin-bottom:12px;
-}
-
-.backup-buttons{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:10px;
-
-    flex-wrap:wrap;
-}
-
-.backup-button{
-
-    padding:9px 16px;
-
-    border-radius:50px;
-
-    border:1px solid #cbded0;
-
-    background:#f7fbf8;
-
-    color:#466653;
-
-    font-family:inherit;
-
-    font-size:13px;
-
-    cursor:pointer;
-}
-
-.backup-button:hover{
-
-    background:#eef7f0;
-}
-
-.logout-button{
-
-    display:block;
-
-    margin:25px auto 0;
-
-    border:none;
-
-    background:transparent;
-
-    color:#82988a;
-
-    font-family:inherit;
-
-    font-size:13px;
-
-    cursor:pointer;
-}
-
-.logout-button:hover{
-
-    color:#466653;
+.logout-button {
+    display: block;
+    margin: 25px auto 0;
+    border: none;
+    background: transparent;
+    color: #9a6b6b;
 }
 
 /* =========================
-   FINAL
+   RECUERDOS
 ========================= */
 
-.final{
-    text-align:center;
+.memories-section {
+    background: #fff;
 }
 
-.final h2{
-    font-size:45px;
+.memories-section .gallery-item {
+    box-shadow: 0 8px 20px rgba(50,70,55,.1);
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.photo-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(12, 18, 14, .92);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.photo-modal.open {
+    display: flex;
+}
+
+.photo-modal img {
+    max-width: 95%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 2rem;
 }
 
 /* =========================
    CÁPSULA DEL TIEMPO
 ========================= */
 
-.capsule-section{
-
-    text-align:center;
-
+.time-capsule {
     background:
-        linear-gradient(
-            135deg,
-            #edf7f0,
-            #f8fbf8
-        );
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,.08), transparent 30%),
+        linear-gradient(135deg, #26352b, #18231c);
+    color: white;
+    text-align: center;
 }
 
-.capsule-intro{
-
-    max-width:650px;
-
-    margin:0 auto 35px;
-
-    font-size:18px;
-
-    color:#5c7063;
+.time-capsule .section-title {
+    color: white;
 }
 
-.capsule-card{
-
-    max-width:650px;
-
-    margin:40px auto 0;
-
-    padding:45px 30px;
-
-    background:white;
-
-    border:1px solid #d5e4d9;
-
-    border-radius:28px;
-
-    box-shadow:
-        0 20px 50px
-        rgba(65,91,73,.10);
-
-    position:relative;
-
-    overflow:hidden;
+.time-capsule .section-subtitle,
+.time-capsule .section-number {
+    color: #b7c7ba;
 }
 
-.capsule-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:180px;
-
-    height:180px;
-
-    border-radius:50%;
-
-    background:#eef7f0;
-
-    top:-100px;
-
-    left:-80px;
-
-    opacity:.8;
+.capsule-box {
+    max-width: 700px;
+    margin: auto;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.12);
+    padding: 40px 25px;
+    border-radius: 25px;
 }
 
-.capsule-card::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:140px;
-
-    height:140px;
-
-    border-radius:50%;
-
-    background:#f0f8f2;
-
-    bottom:-80px;
-
-    right:-50px;
-
-    opacity:.8;
+.capsule-icon {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
 }
 
-.capsule-content{
-
-    position:relative;
-
-    z-index:2;
+.capsule-countdown {
+    font-size: 1.8rem;
+    color: #dcebdd;
+    margin: 20px 0;
 }
 
-.capsule-lock{
-
-    font-size:65px;
-
-    margin-bottom:15px;
-
-    animation:lockPulse 2s infinite;
+.capsule-open-button {
+    border: none;
+    background: #dcebdd;
+    color: #304a3a;
+    padding: 14px 28px;
+    border-radius: 30px;
+    display: none;
+    margin: auto;
 }
 
-@keyframes lockPulse{
-
-    0%,100%{
-        transform:scale(1);
-    }
-
-    50%{
-        transform:scale(1.08);
-    }
-
+.capsule-message {
+    display: none;
+    margin-top: 25px;
+    padding: 25px;
+    background: rgba(255,255,255,.08);
+    border-radius: 18px;
+    line-height: 1.8;
 }
 
-.capsule-title{
-
-    font-size:30px;
-
-    color:#345441;
-
-    font-weight:normal;
-
-    margin-bottom:12px;
-}
-
-.capsule-status{
-
-    color:#789683;
-
-    font-size:16px;
-
-    margin-bottom:25px;
-}
-
-.capsule-countdown{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:10px;
-
-    margin:25px 0;
-}
-
-.capsule-time{
-
-    padding:14px 5px;
-
-    background:#f5faf6;
-
-    border-radius:15px;
-
-    border:1px solid #e0ebe3;
-}
-
-.capsule-time-number{
-
-    display:block;
-
-    font-size:25px;
-
-    color:#345441;
-}
-
-.capsule-time-label{
-
-    font-size:10px;
-
-    letter-spacing:1px;
-
-    color:#82988a;
-}
-
-.capsule-date{
-
-    color:#6f927a;
-
-    font-style:italic;
-
-    margin-top:20px;
-}
-
-.open-capsule{
-
-    display:none;
-
-    border:none;
-
-    background:#466653;
-
-    color:white;
-
-    padding:15px 30px;
-
-    border-radius:50px;
-
-    font-family:inherit;
-
-    font-size:16px;
-
-    cursor:pointer;
-
-    box-shadow:
-        0 8px 20px
-        rgba(70,102,83,.20);
-
-    transition:.3s;
-}
-
-.open-capsule:hover{
-
-    transform:scale(1.05);
-
-    background:#345441;
-}
-
-.capsule-message{
-
-    display:none;
-
-    margin-top:30px;
-
-    padding:30px 25px;
-
-    background:#f7fbf8;
-
-    border:1px solid #d5e4d9;
-
-    border-radius:20px;
-
-    text-align:left;
-
-    animation:capsuleOpen .8s ease;
-}
-
-.capsule-message.show{
-    display:block;
-}
-
-.capsule-message h3{
-
-    color:#345441;
-
-    font-size:26px;
-
-    font-weight:normal;
-
-    margin-bottom:18px;
-
-    text-align:center;
-}
-
-.capsule-message p{
-
-    color:#53695b;
-
-    margin-bottom:17px;
-}
-
-.capsule-signature{
-
-    text-align:right;
-
-    color:#6c8b77;
-
-    font-style:italic;
-
-    margin-top:25px;
-}
-
-@keyframes capsuleOpen{
-
-    from{
-
-        opacity:0;
-
-        transform:
-            translateY(25px)
-            scale(.95);
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-            translateY(0)
-            scale(1);
-    }
-
-}
-
-.capsule-hearts{
-
-    display:none;
-
-    font-size:25px;
-
-    margin-top:20px;
-
-    letter-spacing:10px;
-
-    animation:heartAppear 1s ease;
-}
-
-.capsule-hearts.show{
-    display:block;
-}
-
-@keyframes heartAppear{
-
-    from{
-
-        opacity:0;
-
-        transform:scale(.5);
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:scale(1);
-    }
-
+.capsule-message.open {
+    display: block;
+    animation: fadeIn .7s ease;
 }
 
 /* =========================
    PREGUNTA FINAL
 ========================= */
 
-.question{
-
-    text-align:center;
-
-    max-width:850px;
+.final-section {
+    background: #edf6ef;
+    text-align: center;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
 }
 
-.question-text{
-
-    font-size:20px;
-
-    color:#5c7063;
-
-    margin-bottom:35px;
+.question-box {
+    max-width: 750px;
+    margin: auto;
 }
 
-.question-buttons{
+.question-text {
+    font-size: clamp(1.5rem, 4vw, 2.4rem);
+    color: #395b45;
+    margin: 30px 0;
+}
 
-    position:relative;
-
-    min-height:120px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:20px;
+.question-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    min-height: 60px;
 }
 
 .yes-button,
-.no-button{
-
-    padding:14px 30px;
-
-    border-radius:50px;
-
-    font-family:inherit;
-
-    font-size:16px;
-
-    cursor:pointer;
-
-    transition:.25s;
+.no-button {
+    border: none;
+    border-radius: 30px;
+    padding: 14px 30px;
+    font-size: 1rem;
 }
 
-.yes-button{
-
-    border:1px solid #779783;
-
-    background:#466653;
-
-    color:white;
+.yes-button {
+    background: #557b61;
+    color: white;
 }
 
-.yes-button:hover{
-
-    transform:scale(1.06);
+.no-button {
+    background: #d7e1d9;
+    color: #56665a;
+    position: relative;
+    transition: .2s;
 }
 
-.no-button{
-
-    border:1px solid #779783;
-
-    background:transparent;
-
-    color:#466653;
-
-    position:relative;
+.yes-message {
+    display: none;
+    margin-top: 30px;
+    color: #557b61;
+    font-size: 1.2rem;
+    animation: fadeIn .6s ease;
 }
 
-.yes-message{
-
-    display:none;
-
-    margin:20px auto 0;
-
-    padding:30px;
-
-    max-width:650px;
-
-    background:white;
-
-    border:1px solid #d5e4d9;
-
-    border-radius:20px;
-
-    box-shadow:
-        0 15px 40px
-        rgba(65,91,73,.10);
-
-    animation:aparecer .7s ease;
-}
-
-.yes-message.show{
-    display:block;
-}
-
-.yes-message h3{
-
-    color:#345441;
-
-    font-size:27px;
-
-    font-weight:normal;
-
-    margin-bottom:15px;
-}
-
-.yes-message p{
-
-    color:#53695b;
-
-    margin-bottom:15px;
-}
-
-@keyframes aparecer{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(15px);
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-    }
-
+.yes-message.open {
+    display: block;
 }
 
 /* =========================
    FOOTER
 ========================= */
 
-footer{
+footer {
+    background: #1f2c23;
+    color: #b7c5ba;
+    text-align: center;
+    padding: 35px 20px;
+    font-size: .9rem;
+}
 
-    text-align:center;
-
-    padding:50px 20px;
-
-    color:#82988a;
-
-    font-size:14px;
+footer strong {
+    color: white;
+    font-weight: normal;
 }
 
 /* =========================
-   MÓVIL
+   RESPONSIVE
 ========================= */
 
-@media(max-width:700px){
+@media (max-width: 750px) {
 
-    section{
-
-        padding:75px 22px;
+    section {
+        padding: 65px 18px;
     }
 
-    h2{
-
-        font-size:34px;
+    .counter {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .letter{
-
-        padding:25px;
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .counter{
-
-        grid-template-columns:
-            repeat(2,1fr);
+    .vouchers {
+        grid-template-columns: 1fr;
     }
 
-    .vouchers{
-
-        grid-template-columns:1fr;
+    .entries-list {
+        grid-template-columns: 1fr;
     }
 
-    .photo-capsule{
-
-        padding:20px 15px;
+    .letter-card {
+        padding: 30px 22px;
     }
 
-    .secret-gallery{
-
-        grid-template-columns:
-            repeat(2,1fr);
-
-        gap:10px;
+    .music-card {
+        padding: 25px 18px;
     }
 
-    .memories-gallery{
-
-        grid-template-columns:
-            repeat(2,1fr);
-
-        gap:12px;
+    .hero h1 {
+        font-size: 4.5rem;
     }
 
-    .photo-capsule-title{
-
-        font-size:22px;
+    .hero-text {
+        font-size: 1rem;
     }
-
-    .capsule-card{
-
-        padding:35px 20px;
-    }
-
-    .capsule-title{
-
-        font-size:26px;
-    }
-
-    .capsule-countdown{
-
-        grid-template-columns:
-            repeat(2,1fr);
-
-        gap:8px;
-    }
-
-    .question-buttons{
-
-        min-height:150px;
-    }
-
-    .yes-button,
-    .no-button{
-
-        padding:12px 22px;
-    }
-
-    .mony-panel{
-
-        padding:25px 18px;
-    }
-
-    .entry-form{
-
-        padding:20px;
-    }
-
-    .entry-top{
-
-        align-items:flex-start;
-
-        flex-direction:column;
-
-        gap:3px;
-    }
-
-    .form-actions{
-
-        flex-direction:column;
-    }
-
-    .save-entry,
-    .cancel-edit{
-
-        width:100%;
-    }
-
 }
 
-</style>
+@media (max-width: 450px) {
 
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .counter-box {
+        padding: 20px 8px;
+    }
+
+    .counter-number {
+        font-size: 1.6rem;
+    }
+
+    .pin-area {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pin-input {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .pin-button {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .question-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
 </head>
 
-
 <body>
-
-
-<!-- CORAZONES -->
-
-<div class="heart">♡</div>
-<div class="heart">♡</div>
-<div class="heart">♡</div>
-<div class="heart">♡</div>
-<div class="heart">♡</div>
-
 
 <!-- =========================
      PORTADA
 ========================= -->
 
-<header class="hero">
+<section class="hero">
 
-<div class="hero-content">
+    <div class="heart">♡</div>
+    <div class="heart">♥</div>
+    <div class="heart">♡</div>
+    <div class="heart">♥</div>
 
-<div class="small-title">
-Una pequeña sorpresa
-</div>
+    <div class="hero-content">
 
-<h1>
-Tewi
-</h1>
+        <div class="small-title">
+            Una pequeña sorpresa
+        </div>
 
-<div class="date">
-23 · 05 · 2026
-</div>
+        <h1>Tewi</h1>
 
-<p class="intro">
+        <div class="hero-date">
+            23 · 05 · 2026
+        </div>
 
-Hay cosas que son difíciles de decir con palabras...
-así que decidí crear un pequeño lugar solamente para ti.
+        <p class="hero-text">
+            Hay historias que simplemente suceden...
+            y hay otras que uno quiere guardar para siempre.
+            Esta es la nuestra. ♡
+        </p>
 
-</p>
+        <button class="main-button"
+                onclick="document.getElementById('historia').scrollIntoView()">
+            Abrir mi regalo ♡
+        </button>
 
-<a
-href="#historia"
-class="button"
-onclick="iniciarMusica()">
+    </div>
 
-Abrir mi regalo ♡
-
-</a>
-
-</div>
-
-</header>
+</section>
 
 
 <!-- =========================
      HISTORIA
 ========================= -->
 
-<section id="historia">
+<section class="history" id="historia">
 
-<div class="number">
-01
-</div>
+    <div class="container">
 
-<h2>
-Nuestra historia
-</h2>
+        <div class="section-number">01</div>
 
-<p class="text">
-<strong>23 de mayo de 2026</strong>
-</p>
+        <h2 class="section-title">
+            Nuestra historia
+        </h2>
 
-<p class="text">
+        <div class="history-date">
+            23 de mayo de 2026
+        </div>
 
-Quizás una fecha pueda parecer solamente un día más en el calendario.
+        <p class="history-text">
+            Quizás el universo sabía exactamente lo que hacía
+            cuando cruzó nuestros caminos.
+            Desde aquel momento comenzó una historia llena de
+            complicidad, cariño, aventuras, secretos y momentos
+            que quiero seguir guardando contigo.
+            <br><br>
+            Y esto apenas es el comienzo. ❤️
+        </p>
 
-</p>
+    </div>
 
-<p class="text">
-
-Pero para mí representa el comienzo de algo que quiero seguir construyendo contigo.
-
-</p>
-
-
-<div class="counter-card">
-
-<div class="counter-title">
-Nuestra historia lleva...
-</div>
-
-<div class="counter">
-
-<div class="counter-box">
-
-<span
-class="counter-number"
-id="dias">
-0
-</span>
-
-<span class="counter-label">
-DÍAS
-</span>
-
-</div>
+</section>
 
 
-<div class="counter-box">
+<!-- =========================
+     CONTADOR
+========================= -->
 
-<span
-class="counter-number"
-id="horas">
-0
-</span>
+<section class="counter-section">
 
-<span class="counter-label">
-HORAS
-</span>
+    <div class="container">
 
-</div>
+        <div class="section-number">02</div>
 
+        <h2 class="section-title">
+            Nuestro tiempo
+        </h2>
 
-<div class="counter-box">
+        <p class="section-subtitle">
+            Porque cada segundo contigo merece ser contado.
+        </p>
 
-<span
-class="counter-number"
-id="minutos">
-0
-</span>
+        <div class="counter">
 
-<span class="counter-label">
-MINUTOS
-</span>
+            <div class="counter-box">
+                <span class="counter-number" id="dias">0</span>
+                <span class="counter-label">Días</span>
+            </div>
 
-</div>
+            <div class="counter-box">
+                <span class="counter-number" id="horas">0</span>
+                <span class="counter-label">Horas</span>
+            </div>
 
+            <div class="counter-box">
+                <span class="counter-number" id="minutos">0</span>
+                <span class="counter-label">Minutos</span>
+            </div>
 
-<div class="counter-box">
+            <div class="counter-box">
+                <span class="counter-number" id="segundos">0</span>
+                <span class="counter-label">Segundos</span>
+            </div>
 
-<span
-class="counter-number"
-id="segundos">
-0
-</span>
+        </div>
 
-<span class="counter-label">
-SEGUNDOS
-</span>
-
-</div>
-
-</div>
-
-<div class="counter-love">
-
-Y quiero seguir sumando muchos más contigo. ♡
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
@@ -2266,102 +1267,77 @@ Y quiero seguir sumando muchos más contigo. ♡
      CARTA
 ========================= -->
 
-<section>
+<section class="letter-section">
 
-<div class="number">
-02
-</div>
+    <div class="container">
 
-<h2>
-Algo que quiero decirte
-</h2>
+        <div class="section-number">03</div>
 
-<p class="text">
+        <h2 class="section-title">
+            Unas palabras para ti
+        </h2>
 
-Hay cosas que simplemente no caben en una conversación.
+        <p class="section-subtitle">
+            Hay cosas que a veces es más fácil escribir que decir.
+        </p>
 
-</p>
+        <div class="letter-card">
 
+            <button class="main-button"
+                    onclick="abrirCarta()">
+                🔐 Abrir mi carta ♡
+            </button>
 
-<div class="letter-container">
+            <div class="letter-content" id="carta">
 
-<button
-class="letter-button"
-onclick="abrirCarta()">
+                <p>
+                    Esta página existe por una razón muy sencilla:
+                    <strong>tú</strong>. ❤️
+                </p>
 
-🔐 Abrir mi carta ♡
+                <p>
+                    Porque hay personas que llegan a nuestra vida
+                    y la cambian de una manera que no se puede
+                    explicar con palabras. Tú eres esa persona para mí.
+                    Mi lugar seguro, mi alegría, mi complicidad y ese
+                    pequeño caos bonito que hace que cada día tenga
+                    algo especial.
+                </p>
 
-</button>
+                <p>
+                    Quiero que este espacio sea un pedacito de todo
+                    lo que siento por ti: nuestros momentos, nuestros
+                    recuerdos, nuestras locuras y cada detalle que
+                    hace que te ame un poquito más.
+                </p>
 
+                <p>
+                    No sé qué nos depare el futuro, pero sí sé algo:
+                    <strong>quiero seguir escribiendo nuestra historia contigo</strong>. 🖤
+                </p>
 
-<div
-class="letter"
-id="carta">
+                <p>
+                    Gracias por existir, por ser tú y por dejarme
+                    compartir este camino a tu lado.
+                </p>
 
-<h3>
-Para ti, Tewi
-</h3>
+                <p>
+                    <strong>
+                        Te amo, hoy, mañana y en cada versión de nosotros
+                        que todavía nos queda por conocer.
+                    </strong> ♾️❤️
+                </p>
 
+                <div class="letter-signature">
+                    Con amor,<br>
+                    <strong>Tu cachorrita 🐾❤️</strong>
+                </div>
 
-<p>
+            </div>
 
-Esta página existe por una razón muy sencilla:
-<strong>tú</strong>. ❤️
+        </div>
 
-</p>
-
-
-<p>
-
-Porque hay personas que llegan a nuestra vida y la cambian de una manera que no se puede explicar con palabras. Tú eres esa persona para mí. Mi lugar seguro, mi alegría, mi complicidad y ese pequeño caos bonito que hace que cada día tenga algo especial.
-
-</p>
-
-
-<p>
-
-Quiero que este espacio sea un pedacito de todo lo que siento por ti: nuestros momentos, nuestros recuerdos, nuestras locuras y cada detalle que hace que te ame un poquito más.
-
-</p>
-
-
-<p>
-
-No sé qué nos depare el futuro, pero sí sé algo:
-<strong>quiero seguir escribiendo nuestra historia contigo</strong>. 🖤
-
-</p>
-
-
-<p>
-
-Gracias por existir, por ser tú y por dejarme compartir este camino a tu lado.
-
-</p>
-
-
-<p>
-
-<strong>
-
-Te amo, hoy, mañana y en cada versión de nosotros que todavía nos queda por conocer.
-
-</strong>
-
-♾️❤️
-
-</p>
-
-
-<div class="signature">
-
-Con amor, Mony ♡
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
@@ -2370,232 +1346,135 @@ Con amor, Mony ♡
      LADO SECRETO
 ========================= -->
 
-<section class="secret">
+<section class="secret-section">
 
-<div class="number">
-03
-</div>
+    <div class="container">
 
-<h2>
-Nuestro lado secreto
-</h2>
+        <div class="section-number">04</div>
 
-<p class="text">
+        <h2 class="section-title">
+            Nuestro lado secreto
+        </h2>
 
-Porque también existen esas partes de nosotros que no necesitan explicarse a nadie más.
+        <p class="section-subtitle">
+            Algunas cosas son solamente nuestras...
+            y merecen quedarse entre nosotros. 🔐
+        </p>
 
-</p>
+        <div class="gallery-capsule">
 
-<p class="text">
+            <button class="capsule-button"
+                    onclick="toggleGaleria('secretGallery', this)">
+                🔐 Abrir nuestros secretos ♡
+            </button>
 
-Este espacio será para nuestros secretos, nuestras complicidades y aquello que solamente nosotros entendemos.
+            <div class="gallery-content" id="secretGallery">
 
-</p>
+                <div class="gallery">
 
-<p class="text">
+                    <div class="gallery-item"
+                         onclick="abrirFoto('foto 1.jpg')">
+                        <img src="foto 1.jpg" alt="Nuestro recuerdo 1">
+                    </div>
 
-🔐 Una parte de nuestra historia que solamente nosotros conocemos.
+                    <div class="gallery-item"
+                         onclick="abrirFoto('foto 2.jpg')">
+                        <img src="foto 2.jpg" alt="Nuestro recuerdo 2">
+                    </div>
 
-</p>
+                    <div class="gallery-item"
+                         onclick="abrirFoto('foto 3.jpg')">
+                        <img src="foto 3.jpg" alt="Nuestro recuerdo 3">
+                    </div>
 
+                    <div class="gallery-item"
+                         onclick="abrirFoto('foto 4.jpg')">
+                        <img src="foto 4.jpg" alt="Nuestro recuerdo 4">
+                    </div>
 
-<!-- CÁPSULA FOTOS SECRETAS -->
+                    <div class="gallery-item"
+                         onclick="abrirFoto('foto 5.jpg')">
+                        <img src="foto 5.jpg" alt="Nuestro recuerdo 5">
+                    </div>
 
-<div class="photo-capsule secret-capsule">
+                    <div class="gallery-item"
+                         onclick="abrirFoto('foto 6.jpg')">
+                        <img src="foto 6.jpg" alt="Nuestro recuerdo 6">
+                    </div>
 
-<div class="photo-capsule-header">
+                </div>
 
-<div class="photo-capsule-icon">
-🔐
-</div>
+            </div>
 
-<div class="photo-capsule-title">
-Nuestros secretos
-</div>
+        </div>
 
-<div class="photo-capsule-description">
-
-Estas fotografías están guardadas especialmente para nosotros.
-
-</div>
-
-<button
-class="photo-toggle secret-toggle"
-id="secretToggle"
-onclick="toggleGaleria('secretGallery',this)">
-
-Abrir nuestros secretos ♡
-
-</button>
-
-</div>
-
-
-<div
-class="photo-gallery secret-gallery"
-id="secretGallery">
-
-<img
-src="foto 1.jpg"
-onclick="abrirFoto(this.src)"
-alt="Nuestro recuerdo 1">
-
-<img
-src="foto 2.jpg"
-onclick="abrirFoto(this.src)"
-alt="Nuestro recuerdo 2">
-
-<img
-src="foto 3.jpg"
-onclick="abrirFoto(this.src)"
-alt="Nuestro recuerdo 3">
-
-<img
-src="foto 4.jpg"
-onclick="abrirFoto(this.src)"
-alt="Nuestro recuerdo 4">
-
-<img
-src="foto 5.jpg"
-onclick="abrirFoto(this.src)"
-alt="Nuestro recuerdo 5">
-
-<img
-src="foto 6.jpg"
-onclick="abrirFoto(this.src)"
-alt="Nuestro recuerdo 6">
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
 <!-- =========================
-     VALES
+     VOUCHERS
 ========================= -->
 
-<section>
+<section class="vouchers-section">
 
-<div class="number">
-04
-</div>
+    <div class="container">
 
-<h2>
-Pequeños vales para ti
-</h2>
+        <div class="section-number">05</div>
 
-<p class="text">
+        <h2 class="section-title">
+            Vales para ti
+        </h2>
 
-Porque algunas cosas bonitas también merecen convertirse en pequeños regalos.
+        <p class="section-subtitle">
+            Pequeños vales para usar cuando quieras. ♡
+        </p>
 
-</p>
+        <div class="vouchers">
 
+            <div class="voucher">
 
-<div class="vouchers">
+                <div class="voucher-icon">💋</div>
 
+                <h3>Vale por besos</h3>
 
-<div class="voucher">
+                <p>
+                    Canjeable por una cantidad ilimitada
+                    de besos de tu cachorrita.
+                </p>
 
-<div class="voucher-icon">
-☕
-</div>
+            </div>
 
-<h3>
-Una cita
-</h3>
+            <div class="voucher">
 
-<p>
-Una cita elegida especialmente para nosotros.
-</p>
+                <div class="voucher-icon">🤗</div>
 
-<button
-class="redeem"
-onclick="usarVale(this)">
+                <h3>Vale por un abrazo</h3>
 
-Canjear ♡
+                <p>
+                    Un abrazo largo, de esos que hacen
+                    que todo vuelva a estar bien.
+                </p>
 
-</button>
+            </div>
 
-</div>
+            <div class="voucher">
 
+                <div class="voucher-icon">🌙</div>
 
-<div class="voucher">
+                <h3>Vale por una cita</h3>
 
-<div class="voucher-icon">
-💆
-</div>
+                <p>
+                    Una cita escogida por nosotros,
+                    sin excusas y con mucho amor.
+                </p>
 
-<h3>
-Mimos infinitos
-</h3>
+            </div>
 
-<p>
-Una sesión de cariño, abrazos y consentirte mucho.
-</p>
+        </div>
 
-<button
-class="redeem"
-onclick="usarVale(this)">
-
-Canjear ♡
-
-</button>
-
-</div>
-
-
-<div class="voucher">
-
-<div class="voucher-icon">
-🌙
-</div>
-
-<h3>
-Una noche especial
-</h3>
-
-<p>
-Una noche solamente para nosotros, sin interrupciones.
-</p>
-
-<button
-class="redeem"
-onclick="usarVale(this)">
-
-Canjear ♡
-
-</button>
-
-</div>
-
-
-<div class="voucher">
-
-<div class="voucher-icon">
-🖤
-</div>
-
-<h3>
-Nuestro secreto
-</h3>
-
-<p>
-Un deseo reservado solamente para nosotros.
-</p>
-
-<button
-class="redeem"
-onclick="usarVale(this)">
-
-Canjear ♡
-
-</button>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
@@ -2604,48 +1483,254 @@ Canjear ♡
      MÚSICA
 ========================= -->
 
-<section class="song">
+<section class="music-section">
 
-<div class="number">
-05
-</div>
+    <div class="container">
 
-<h2>
-Nuestra canción
-</h2>
+        <div class="section-number">06</div>
 
-<p class="text">
+        <h2 class="section-title">
+            Nuestra canción
+        </h2>
 
-Porque hay canciones que terminan convirtiéndose en recuerdos.
+        <p class="section-subtitle">
+            Porque hay canciones que terminan teniendo
+            un significado completamente diferente cuando
+            pensamos en alguien. 🎵
+        </p>
 
-</p>
+        <div class="music-card">
+
+            <h3>
+                Me Gustas Tanto
+            </h3>
+
+            <p>
+                Andrey Serrano
+            </p>
+
+            <iframe
+                class="music-player"
+                height="200"
+                src="https://www.youtube.com/embed/eMGMlqoHikU?enablejsapi=1&rel=0"
+                title="Me Gustas Tanto - Andrey Serrano"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-<div class="song-card">
+<!-- =========================
+     RINCÓN DE TU CACHORRITA
+========================= -->
 
-<div class="music-symbol">
-♪ ♡
-</div>
+<section class="mony-corner">
 
-<div class="song-title">
-Me Gustas Tanto
-</div>
+    <div class="container">
 
-<div class="artist">
-Andrey Serrano
-</div>
+        <div class="section-number">07</div>
+
+        <h2 class="section-title">
+            El rincón de Tu cachorrita 🐾
+        </h2>
+
+        <p class="mony-intro">
+            Aquí voy a dejar pequeñas partes de mí para ti:
+            pensamientos, poemas, cartas, recuerdos o cualquier
+            cosa que algún día quiera decirte.
+            <br><br>
+            Algunas palabras tendrán que ser abiertas
+            como un pequeño secreto. 💌
+        </p>
+
+        <div class="mony-panel">
+
+            <!-- LOGIN -->
+
+            <div class="mony-lock" id="monyLock">
+
+                <div class="mony-panel-title">
+                    🔐 Rincón privado
+                </div>
+
+                <div class="mony-panel-subtitle">
+                    Este espacio es para que Tu cachorrita
+                    pueda guardar nuevas palabras.
+                </div>
+
+                <div class="pin-area">
+
+                    <input
+                        type="password"
+                        id="pinInput"
+                        class="pin-input"
+                        maxlength="10"
+                        placeholder="PIN"
+                        onkeydown="if(event.key === 'Enter') entrarRincon()">
+
+                    <button
+                        class="pin-button"
+                        onclick="entrarRincon()">
+                        Entrar ♡
+                    </button>
+
+                </div>
+
+                <div class="pin-error" id="pinError">
+                    Ese PIN no es correcto. 🐾
+                </div>
+
+            </div>
 
 
-<iframe
-class="youtube-player"
-id="youtubePlayer"
-src="https://www.youtube.com/embed/eMGMlqoHikU?enablejsapi=1&rel=0"
-title="Me Gustas Tanto - Andrey Serrano"
-allow="autoplay; encrypted-media"
-allowfullscreen>
-</iframe>
+            <!-- EDITOR -->
 
-</div>
+            <div class="mony-editor" id="monyEditor">
+
+                <div class="editor-header">
+
+                    <h3>
+                        Escribe algo para Tewi 💌
+                    </h3>
+
+                    <p class="mony-panel-subtitle">
+                        Cada cosa que guardes aparecerá automáticamente
+                        como un sobre cerrado.
+                    </p>
+
+                </div>
+
+
+                <div class="entry-form">
+
+                    <label class="form-label">
+                        Tipo
+                    </label>
+
+                    <select id="entryType"
+                            class="form-select">
+
+                        <option value="Nota">
+                            💌 Nota
+                        </option>
+
+                        <option value="Poema">
+                            🌙 Poema
+                        </option>
+
+                        <option value="Pensamiento">
+                            🌿 Pensamiento
+                        </option>
+
+                        <option value="Carta">
+                            📜 Carta
+                        </option>
+
+                    </select>
+
+
+                    <label class="form-label">
+                        Título
+                    </label>
+
+                    <input
+                        type="text"
+                        id="entryTitle"
+                        class="form-title"
+                        placeholder="Ej: Para cuando me extrañes...">
+
+
+                    <label class="form-label">
+                        Lo que quieres decir
+                    </label>
+
+                    <textarea
+                        id="entryText"
+                        class="form-text"
+                        placeholder="Escribe aquí tus palabras..."></textarea>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            class="save-entry"
+                            onclick="guardarEntrada()">
+                            💾 Guardar sobre
+                        </button>
+
+                        <button
+                            class="cancel-edit"
+                            id="cancelEdit"
+                            onclick="cancelarEdicion()">
+                            Cancelar
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LISTA PARA EDITAR -->
+
+                <h3 class="entries-title">
+                    Mis palabras guardadas
+                </h3>
+
+                <div class="entries-list"
+                     id="entriesList">
+                </div>
+
+
+                <!-- RESPALDO -->
+
+                <div class="backup-area">
+
+                    <div class="backup-title">
+                        💾 Copias de seguridad
+                    </div>
+
+                    <div class="backup-buttons">
+
+                        <button
+                            class="backup-button"
+                            onclick="exportarEntradas()">
+                            Exportar
+                        </button>
+
+                        <button
+                            class="backup-button"
+                            onclick="document.getElementById('importFile').click()">
+                            Importar
+                        </button>
+
+                        <input
+                            type="file"
+                            id="importFile"
+                            accept=".json"
+                            style="display:none"
+                            onchange="importarEntradas(event)">
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="logout-button"
+                    onclick="cerrarRincon()">
+                    Cerrar rincón 🔒
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
@@ -2654,378 +1739,88 @@ allowfullscreen>
      RECUERDOS
 ========================= -->
 
-<section class="memories">
+<section class="memories-section">
 
-<div class="number">
-06
-</div>
+    <div class="container">
 
-<h2>
-Nuestros recuerdos
-</h2>
+        <div class="section-number">08</div>
 
-<p class="text">
+        <h2 class="section-title">
+            Nuestros recuerdos
+        </h2>
 
-Cada foto guarda un pequeño pedacito de nuestra historia.
-Y todavía nos quedan muchísimos recuerdos por crear.
+        <p class="section-subtitle">
+            Diez pequeños pedacitos de nuestra historia. 📸
+        </p>
 
-</p>
+        <div class="gallery-capsule">
 
+            <button class="capsule-button"
+                    onclick="toggleGaleria('memoryGallery', this)">
+                📸 Abrir nuestros recuerdos ♡
+            </button>
 
-<!-- CÁPSULA FOTOS RECUERDOS -->
+            <div class="gallery-content" id="memoryGallery">
 
-<div class="photo-capsule memories-capsule">
+                <div class="gallery">
 
-<div class="photo-capsule-header">
+                    <div class="gallery-item"
+                         onclick="abrirFoto('foto 7.jpg')">
+                        <img src="foto 7.jpg" alt="Recuerdo 7">
+                    </div>
 
-<div class="photo-capsule-icon">
-📸
-</div>
+                    <div class="gallery-item"
+                         onclick="abrirFoto('foto 8.jpg')">
+                        <img src="foto 8.jpg" alt="Recuerdo 8">
+                    </div>
 
-<div class="photo-capsule-title">
-Nuestros recuerdos
-</div>
+                    <div class="gallery-item"
+                         onclick="abrirFoto('foto 9.jpg')">
+                        <img src="foto 9.jpg" alt="Recuerdo 9">
+                    </div>
 
-<div class="photo-capsule-description">
+                    <div class="gallery-item"
+                         onclick="abrirFoto('foto 10.jpg')">
+                        <img src="foto 10.jpg" alt="Recuerdo 10">
+                    </div>
 
-Diez pequeños recuerdos guardados en un solo lugar.
+                    <div class="gallery-item"
+                         onclick="abrirFoto('foto 11.jpg')">
+                        <img src="foto 11.jpg" alt="Recuerdo 11">
+                    </div>
 
-</div>
+                    <div class="gallery-item"
+                         onclick="abrirFoto('foto 12.jpg')">
+                        <img src="foto 12.jpg" alt="Recuerdo 12">
+                    </div>
 
-<button
-class="photo-toggle"
-id="memoriesToggle"
-onclick="toggleGaleria('memoriesGallery',this)">
+                    <div class="gallery-item"
+                         onclick="abrirFoto('foto 13.jpg')">
+                        <img src="foto 13.jpg" alt="Recuerdo 13">
+                    </div>
 
-Abrir nuestros recuerdos ♡
+                    <div class="gallery-item"
+                         onclick="abrirFoto('foto 14.jpg')">
+                        <img src="foto 14.jpg" alt="Recuerdo 14">
+                    </div>
 
-</button>
+                    <div class="gallery-item"
+                         onclick="abrirFoto('foto 15.jpg')">
+                        <img src="foto 15.jpg" alt="Recuerdo 15">
+                    </div>
 
-</div>
+                    <div class="gallery-item"
+                         onclick="abrirFoto('foto 16.jpg')">
+                        <img src="foto 16.jpg" alt="Recuerdo 16">
+                    </div>
 
+                </div>
 
-<div
-class="photo-gallery memories-gallery"
-id="memoriesGallery">
+            </div>
 
-<div class="memory">
-<img src="foto 7.jpg" onclick="abrirFoto(this.src)" alt="Recuerdo 7">
-</div>
+        </div>
 
-<div class="memory">
-<img src="foto 8.jpg" onclick="abrirFoto(this.src)" alt="Recuerdo 8">
-</div>
-
-<div class="memory">
-<img src="foto 9.jpg" onclick="abrirFoto(this.src)" alt="Recuerdo 9">
-</div>
-
-<div class="memory">
-<img src="foto 10.jpg" onclick="abrirFoto(this.src)" alt="Recuerdo 10">
-</div>
-
-<div class="memory">
-<img src="foto 11.jpg" onclick="abrirFoto(this.src)" alt="Recuerdo 11">
-</div>
-
-<div class="memory">
-<img src="foto 12.jpg" onclick="abrirFoto(this.src)" alt="Recuerdo 12">
-</div>
-
-<div class="memory">
-<img src="foto 13.jpg" onclick="abrirFoto(this.src)" alt="Recuerdo 13">
-</div>
-
-<div class="memory">
-<img src="foto 14.jpg" onclick="abrirFoto(this.src)" alt="Recuerdo 14">
-</div>
-
-<div class="memory">
-<img src="foto 15.jpg" onclick="abrirFoto(this.src)" alt="Recuerdo 15">
-</div>
-
-<div class="memory">
-<img src="foto 16.jpg" onclick="abrirFoto(this.src)" alt="Recuerdo 16">
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     RINCÓN DE MONY
-========================= -->
-
-<section class="mony-corner">
-
-<div class="number">
-07
-</div>
-
-<h2>
-El rincón de Mony 🌙
-</h2>
-
-<p class="mony-intro">
-
-Hay palabras que no quiero que se pierdan.
-
-Este es mi pequeño rincón para guardar notas,
-poemas, pensamientos y todas esas cosas que
-algún día quiero dejarte.
-
-</p>
-
-
-<div class="mony-panel">
-
-<!-- ACCESO -->
-
-<div id="monyLogin">
-
-<div class="mony-lock">
-🔐
-</div>
-
-<div class="mony-panel-title">
-Solo para Mony
-</div>
-
-<div class="mony-panel-subtitle">
-
-Un pequeño espacio para escribirle a Tewi.
-
-</div>
-
-<div class="pin-area">
-
-<input
-type="password"
-id="monyPin"
-class="pin-input"
-placeholder="Escribe tu PIN"
-maxlength="20"
-onkeydown="if(event.key==='Enter') entrarRincon()">
-
-<button
-class="pin-button"
-onclick="entrarRincon()">
-
-Abrir mi rincón ♡
-
-</button>
-
-<div
-class="pin-error"
-id="pinError">
-
-Ese PIN no es correcto ♡
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- EDITOR -->
-
-<div
-class="mony-editor"
-id="monyEditor">
-
-<div class="editor-header">
-
-<h3>
-Bienvenida, Mony ♡
-</h3>
-
-<p>
-Aquí puedes dejar todo lo que quieras decirle.
-</p>
-
-</div>
-
-
-<!-- FORMULARIO -->
-
-<div class="entry-form">
-
-<label class="form-label">
-¿Qué quieres guardar?
-</label>
-
-<select
-class="form-select"
-id="entryType">
-
-<option value="Nota">
-💌 Nota
-</option>
-
-<option value="Poema">
-🌙 Poema
-</option>
-
-<option value="Pensamiento">
-🌿 Pensamiento
-</option>
-
-<option value="Carta">
-📜 Carta
-</option>
-
-</select>
-
-
-<label class="form-label">
-Título
-</label>
-
-<input
-type="text"
-class="form-title"
-id="entryTitle"
-placeholder="Ej: Para cuando me extrañes...">
-
-
-<label class="form-label">
-Lo que quiero decirle...
-</label>
-
-<textarea
-class="form-text"
-id="entryText"
-placeholder="Escribe aquí tus palabras..."></textarea>
-
-
-<div class="form-actions">
-
-<button
-class="save-entry"
-id="saveEntryButton"
-onclick="guardarEntrada()">
-
-💾 Guardar entrada
-
-</button>
-
-<button
-class="cancel-edit"
-id="cancelEditButton"
-onclick="cancelarEdicion()">
-
-Cancelar
-
-</button>
-
-</div>
-
-</div>
-
-
-<!-- ENTRADAS -->
-
-<div class="entries-title">
-Mis palabras para Tewi ♡
-</div>
-
-<div
-class="entries-list"
-id="entriesList">
-
-</div>
-
-
-<!-- COPIAS DE SEGURIDAD -->
-
-<div class="backup-area">
-
-<div class="backup-title">
-Guardar una copia de tus escritos
-</div>
-
-<div class="backup-buttons">
-
-<button
-class="backup-button"
-onclick="exportarEntradas()">
-
-📤 Exportar mis notas
-
-</button>
-
-<button
-class="backup-button"
-onclick="document.getElementById('importFile').click()">
-
-📥 Importar notas
-
-</button>
-
-<input
-type="file"
-id="importFile"
-accept=".json"
-style="display:none"
-onchange="importarEntradas(event)">
-
-</div>
-
-</div>
-
-
-<button
-class="logout-button"
-onclick="cerrarRincon()">
-
-Cerrar el rincón 🔐
-
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     FINAL
-========================= -->
-
-<section class="final">
-
-<div class="number">
-08
-</div>
-
-<h2>
-Y esto apenas comienza...
-</h2>
-
-<p class="text">
-
-Nuestra historia todavía tiene muchas páginas por escribir.
-
-</p>
-
-<p class="text">
-
-Y espero poder llenarlas todas contigo.
-
-</p>
-
-<p class="text">
-
-<strong>
-Te amo, Tewi. ♡
-</strong>
-
-</p>
+    </div>
 
 </section>
 
@@ -3034,354 +1829,178 @@ Te amo, Tewi. ♡
      CÁPSULA DEL TIEMPO
 ========================= -->
 
-<section class="capsule-section">
+<section class="time-capsule">
 
-<div class="number">
-09
-</div>
+    <div class="container">
 
-<h2>
-Una cápsula para nosotros 🔐
-</h2>
+        <div class="section-number">09</div>
 
-<p class="capsule-intro">
+        <h2 class="section-title">
+            Cápsula del tiempo 💌
+        </h2>
 
-Hay mensajes que no quiero darte cualquier día.
+        <p class="section-subtitle">
+            Un pequeño secreto que solamente podrás abrir
+            cuando llegue el día 23.
+        </p>
 
-Quiero guardarlos para nuestros días especiales.
+        <div class="capsule-box">
 
-</p>
+            <div class="capsule-icon">
+                💌
+            </div>
 
+            <div id="capsuleStatus">
+                Preparando nuestra próxima sorpresa...
+            </div>
 
-<div class="capsule-card">
+            <div class="capsule-countdown"
+                 id="capsuleCountdown">
+                --
+            </div>
 
-<div class="capsule-content">
+            <button
+                class="capsule-open-button"
+                id="capsuleOpenButton"
+                onclick="abrirCapsula()">
+                💌 Abrir mi cápsula
+            </button>
 
+            <div
+                class="capsule-message"
+                id="capsuleMessage">
 
-<div id="capsuleLocked">
+                Tewi, si estás leyendo esto es porque
+                llegó nuestro día 23. ❤️
+                <br><br>
 
-<div class="capsule-lock">
-🔐
-</div>
+                Quiero que recuerdes que cada mes a tu lado
+                significa una nueva página de nuestra historia.
+                <br><br>
 
-<div class="capsule-title">
-Nuestra cápsula del tiempo
-</div>
+                Gracias por seguir aquí, por elegirme,
+                por hacerme sonreír y por dejarme ser
+                <strong>Tu cachorrita</strong>. 🐾
+                <br><br>
 
-<div class="capsule-status">
-Todavía está cerrada...
-</div>
+                Te amo muchísimo.
+                <br><br>
 
-<p class="text">
+                ♡ Siempre tuya ♡
 
-Nuestra próxima sorpresa se desbloqueará
-cuando vuelva a llegar nuestro día.
+            </div>
 
-</p>
+        </div>
 
-
-<div class="capsule-countdown">
-
-<div class="capsule-time">
-
-<span
-class="capsule-time-number"
-id="capsuleDays">
-0
-</span>
-
-<span class="capsule-time-label">
-DÍAS
-</span>
-
-</div>
-
-
-<div class="capsule-time">
-
-<span
-class="capsule-time-number"
-id="capsuleHours">
-0
-</span>
-
-<span class="capsule-time-label">
-HORAS
-</span>
-
-</div>
-
-
-<div class="capsule-time">
-
-<span
-class="capsule-time-number"
-id="capsuleMinutes">
-0
-</span>
-
-<span class="capsule-time-label">
-MINUTOS
-</span>
-
-</div>
-
-
-<div class="capsule-time">
-
-<span
-class="capsule-time-number"
-id="capsuleSeconds">
-0
-</span>
-
-<span class="capsule-time-label">
-SEGUNDOS
-</span>
-
-</div>
-
-</div>
-
-
-<div
-class="capsule-date"
-id="capsuleDateText">
-
-Se abrirá el próximo 23 ♡
-
-</div>
-
-</div>
-
-
-<div
-id="capsuleUnlocked"
-style="display:none;">
-
-<div class="capsule-lock">
-💌
-</div>
-
-<div class="capsule-title">
-Hoy sí...
-</div>
-
-<div class="capsule-status">
-
-Es nuestro día. Puedes abrirla. ❤️
-
-</div>
-
-
-<button
-class="open-capsule"
-id="openCapsuleButton"
-onclick="abrirCapsula()">
-
-💌 Abrir mi cápsula
-
-</button>
-
-
-<div
-class="capsule-hearts"
-id="capsuleHearts">
-
-♡ ♡ ♡
-
-</div>
-
-
-<div
-class="capsule-message"
-id="capsuleMessage">
-
-<h3>
-Para ti, Tewi ❤️
-</h3>
-
-<p>
-
-Otro día 23.
-
-Otro pequeño capítulo de nuestra historia.
-
-</p>
-
-<p>
-
-Quizás para alguien más sea solamente una fecha,
-pero para mí es un recordatorio de que seguimos
-aquí, eligiéndonos y construyendo algo que quiero
-seguir cuidando.
-
-</p>
-
-<p>
-
-Gracias por cada momento, por cada sonrisa,
-por nuestras conversaciones, nuestras locuras,
-nuestros secretos y por todos esos pequeños
-instantes que solamente nosotros entendemos.
-
-</p>
-
-<p>
-
-Si pudiera volver al día en que comenzó todo,
-te volvería a elegir.
-
-Y si me preguntaran si quiero seguir escribiendo
-esta historia contigo...
-
-la respuesta seguiría siendo la misma.
-
-<strong>
-Sí. Una y otra vez.
-</strong>
-
-</p>
-
-<p>
-
-Por este cumplemes y por todos los que todavía
-nos quedan.
-
-</p>
-
-<p>
-
-<strong>
-Te amo, Tewi. ♾️❤️
-</strong>
-
-</p>
-
-<div class="capsule-signature">
-
-Con amor,
-
-Mony ♡
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
 <!-- =========================
-     PREGUNTA INTERACTIVA
+     PREGUNTA FINAL
 ========================= -->
 
-<section class="question">
+<section class="final-section">
 
-<div class="number">
-10
-</div>
+    <div class="container">
 
-<h2>
-Y ahora quiero preguntarte algo...
-</h2>
+        <div class="question-box">
 
-<p class="question-text">
+            <div class="section-number">
+                10
+            </div>
 
-Después de todo lo que hemos vivido,<br>
+            <h2 class="section-title">
+                Y antes de irte...
+            </h2>
 
-<strong>
-¿quieres seguir escribiendo nuestra historia conmigo? ♡
-</strong>
+            <p class="question-text">
+                Después de todo lo que hemos vivido,
+                ¿quieres seguir escribiendo nuestra historia conmigo? ♡
+            </p>
 
-</p>
+            <div class="question-buttons">
 
+                <button
+                    class="yes-button"
+                    onclick="responderSi()">
+                    Sí, quiero ❤️
+                </button>
 
-<div class="question-buttons">
+                <button
+                    class="no-button"
+                    id="noButton"
+                    onmouseenter="escaparNo()"
+                    ontouchstart="escaparNo()"
+                    onclick="escaparNo()">
+                    No
+                </button>
 
-<button
-class="yes-button"
-onclick="respuestaSi()">
+            </div>
 
-Sí, quiero ❤️
+            <div
+                class="yes-message"
+                id="yesMessage">
 
-</button>
+                Sabía que dirías que sí. 🥹❤️
+                <br><br>
 
+                Entonces queda oficialmente decidido:
+                todavía nos quedan muchísimas páginas
+                por escribir juntas. ♾️
+                <br><br>
 
-<button
-class="no-button"
-id="noButton">
+                Te amo, Tewi.
+                <br>
+                <strong>Tu cachorrita 🐾❤️</strong>
 
-No
+            </div>
 
-</button>
+        </div>
 
-</div>
-
-
-<div
-class="yes-message"
-id="yesMessage">
-
-<h3>
-Sabía que dirías que sí... 🥹❤️
-</h3>
-
-<p>
-
-Entonces prepárate, porque esto apenas comienza.
-
-Todavía nos quedan muchísimos momentos,
-secretos, aventuras y recuerdos por vivir.
-
-</p>
-
-<p>
-
-<strong>
-Te elegiría una y otra vez. ♾️
-</strong>
-
-</p>
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     MODAL DE FOTOS
+========================= -->
+
+<div class="photo-modal"
+     id="photoModal"
+     onclick="cerrarFoto()">
+
+    <button
+        class="modal-close"
+        onclick="cerrarFoto()">
+        ×
+    </button>
+
+    <img
+        id="modalImage"
+        src=""
+        alt="Foto ampliada"
+        onclick="event.stopPropagation()">
+
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-Hecho con amor por Mony ♡
+    Hecho con muchísimo amor para Tewi ♡
+    <br><br>
+
+    <strong>
+        Por Tu cachorrita 🐾
+    </strong>
 
 </footer>
-
-
-<!-- =========================
-     VISOR DE FOTOS
-========================= -->
-
-<div
-class="modal"
-id="modal"
-onclick="cerrarFoto()">
-
-<span class="close">
-×
-</span>
-
-<img
-id="modalImg"
-src=""
-alt="Recuerdo">
-
-</div>
 
 
 <script>
@@ -3390,121 +2009,57 @@ alt="Recuerdo">
    CONTADOR
 ========================= */
 
-const fechaInicio =
-new Date("2026-05-23T00:00:00");
+const fechaInicio = new Date("2026-05-23T00:00:00");
 
+function actualizarContador() {
 
-function actualizarContador(){
+    const ahora = new Date();
 
-    const ahora =
-        new Date();
+    let diferencia = ahora - fechaInicio;
 
-    let diferencia =
-        ahora - fechaInicio;
-
-
-    if(diferencia < 0){
+    if (diferencia < 0) {
         diferencia = 0;
     }
 
-
     const segundosTotales =
-        Math.floor(
-            diferencia / 1000
-        );
-
+        Math.floor(diferencia / 1000);
 
     const dias =
-        Math.floor(
-            segundosTotales / 86400
-        );
-
+        Math.floor(segundosTotales / 86400);
 
     const horas =
-        Math.floor(
-            (segundosTotales % 86400)
-            / 3600
-        );
-
+        Math.floor((segundosTotales % 86400) / 3600);
 
     const minutos =
-        Math.floor(
-            (segundosTotales % 3600)
-            / 60
-        );
-
+        Math.floor((segundosTotales % 3600) / 60);
 
     const segundos =
         segundosTotales % 60;
 
-
-    document.getElementById("dias")
-        .textContent = dias;
-
-
-    document.getElementById("horas")
-        .textContent =
-        horas.toString()
-        .padStart(2,"0");
-
-
-    document.getElementById("minutos")
-        .textContent =
-        minutos.toString()
-        .padStart(2,"0");
-
-
-    document.getElementById("segundos")
-        .textContent =
-        segundos.toString()
-        .padStart(2,"0");
-
+    document.getElementById("dias").textContent = dias;
+    document.getElementById("horas").textContent =
+        String(horas).padStart(2, "0");
+    document.getElementById("minutos").textContent =
+        String(minutos).padStart(2, "0");
+    document.getElementById("segundos").textContent =
+        String(segundos).padStart(2, "0");
 }
-
 
 actualizarContador();
 
-setInterval(
-    actualizarContador,
-    1000
-);
+setInterval(actualizarContador, 1000);
 
 
 /* =========================
    CARTA
 ========================= */
 
-function abrirCarta(){
+function abrirCarta() {
 
     const carta =
         document.getElementById("carta");
 
-    carta.classList.toggle("show");
-
-}
-
-
-/* =========================
-   VALES
-========================= */
-
-function usarVale(boton){
-
-    boton.parentElement.innerHTML = `
-
-        <div class="voucher-icon">
-        ♡
-        </div>
-
-        <h3>
-        Canjeado
-        </h3>
-
-        <p class="redeemed">
-        Este vale queda guardado para nosotros.
-        </p>
-
-    `;
+    carta.classList.toggle("open");
 
 }
 
@@ -3513,40 +2068,38 @@ function usarVale(boton){
    GALERÍAS
 ========================= */
 
-function toggleGaleria(id, boton){
+function toggleGaleria(id, button) {
 
-    const galeria =
+    const gallery =
         document.getElementById(id);
 
-    const abierta =
-        galeria.classList.toggle("show");
+    gallery.classList.toggle("open");
 
+    if (gallery.classList.contains("open")) {
 
-    if(abierta){
+        if (id === "secretGallery") {
 
-        if(id === "secretGallery"){
+            button.textContent =
+                "🔒 Cerrar nuestros secretos";
 
-            boton.textContent =
-                "Cerrar nuestros secretos ♡";
+        } else {
 
-        }else{
-
-            boton.textContent =
-                "Cerrar nuestros recuerdos ♡";
+            button.textContent =
+                "📸 Cerrar nuestros recuerdos";
 
         }
 
-    }else{
+    } else {
 
-        if(id === "secretGallery"){
+        if (id === "secretGallery") {
 
-            boton.textContent =
-                "Abrir nuestros secretos ♡";
+            button.textContent =
+                "🔐 Abrir nuestros secretos ♡";
 
-        }else{
+        } else {
 
-            boton.textContent =
-                "Abrir nuestros recuerdos ♡";
+            button.textContent =
+                "📸 Abrir nuestros recuerdos ♡";
 
         }
 
@@ -3556,112 +2109,100 @@ function toggleGaleria(id, boton){
 
 
 /* =========================
-   VISOR DE FOTOS
+   MODAL FOTOS
 ========================= */
 
-function abrirFoto(src){
+function abrirFoto(src) {
 
     const modal =
-        document.getElementById("modal");
+        document.getElementById("photoModal");
 
-    const imagen =
-        document.getElementById("modalImg");
+    const image =
+        document.getElementById("modalImage");
 
-    imagen.src = src;
+    image.src = src;
 
-    modal.classList.add("show");
-
-}
-
-
-function cerrarFoto(){
-
-    document
-        .getElementById("modal")
-        .classList.remove("show");
+    modal.classList.add("open");
 
 }
 
+function cerrarFoto() {
 
-/* =========================
-   MÚSICA
-========================= */
+    const modal =
+        document.getElementById("photoModal");
 
-function iniciarMusica(){
-
-    const player =
-        document.getElementById(
-            "youtubePlayer"
-        );
-
-
-    player.contentWindow.postMessage(
-
-        '{"event":"command","func":"playVideo","args":""}',
-
-        "*"
-
-    );
+    modal.classList.remove("open");
 
 }
 
 
 /* =========================
-   RINCÓN DE MONY
+   RINCÓN DE TU CACHORRITA
 ========================= */
-
-/*
-   CAMBIA ESTE PIN POR UNO TUYO.
-
-   IMPORTANTE:
-   Este PIN es una barrera visual,
-   NO una contraseña de seguridad real,
-   porque el código está publicado
-   en GitHub Pages.
-*/
 
 const PIN_MONY = "2305";
-
 
 let entradas =
     JSON.parse(
         localStorage.getItem("monyEntradas") || "[]"
     );
 
-
 let entradaEditando = null;
 
 
-/* ENTRAR */
+/* =========================
+   ICONOS
+========================= */
 
-function entrarRincon(){
+function obtenerIcono(tipo) {
+
+    if (tipo === "Nota") {
+        return "💌";
+    }
+
+    if (tipo === "Poema") {
+        return "🌙";
+    }
+
+    if (tipo === "Pensamiento") {
+        return "🌿";
+    }
+
+    if (tipo === "Carta") {
+        return "📜";
+    }
+
+    return "💌";
+}
+
+
+/* =========================
+   ENTRAR AL RINCÓN
+========================= */
+
+function entrarRincon() {
 
     const pin =
-        document.getElementById("monyPin").value;
+        document.getElementById("pinInput").value;
 
     const error =
         document.getElementById("pinError");
 
-
-    if(pin === PIN_MONY){
+    if (pin === PIN_MONY) {
 
         document
-            .getElementById("monyLogin")
+            .getElementById("monyLock")
             .style.display = "none";
-
 
         document
             .getElementById("monyEditor")
-            .classList.add("show");
-
+            .classList.add("open");
 
         error.style.display = "none";
 
-        document.getElementById("monyPin").value = "";
-
         mostrarEntradas();
 
-    }else{
+    } else {
 
         error.style.display = "block";
 
@@ -3670,28 +2211,34 @@ function entrarRincon(){
 }
 
 
-/* CERRAR */
+/* =========================
+   CERRAR RINCÓN
+========================= */
 
-function cerrarRincon(){
+function cerrarRincon() {
 
     document
         .getElementById("monyEditor")
-        .classList.remove("show");
-
+        .classList.remove("open");
 
     document
-        .getElementById("monyLogin")
+        .getElementById("monyLock")
         .style.display = "block";
 
+    document
+        .getElementById("pinInput")
+        .value = "";
 
-    cancelarEdicion();
+    limpiarFormulario();
 
 }
 
 
-/* GUARDAR */
+/* =========================
+   GUARDAR ENTRADA
+========================= */
 
-function guardarEntrada(){
+function guardarEntrada() {
 
     const tipo =
         document.getElementById("entryType").value;
@@ -3702,60 +2249,44 @@ function guardarEntrada(){
     const texto =
         document.getElementById("entryText").value.trim();
 
+    if (!titulo || !texto) {
 
-    if(!titulo || !texto){
-
-        alert(
-            "Primero escribe un título y tu mensaje ♡"
-        );
+        alert("Escribe un título y unas palabras antes de guardar. ❤️");
 
         return;
 
     }
 
+    const fecha =
+        new Date().toLocaleDateString("es-ES", {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric"
+        });
 
-    if(entradaEditando !== null){
 
-        entradas[entradaEditando].tipo = tipo;
+    if (entradaEditando !== null) {
 
-        entradas[entradaEditando].titulo = titulo;
+        entradas[entradaEditando] = {
 
-        entradas[entradaEditando].texto = texto;
+            ...entradas[entradaEditando],
 
-        entradas[entradaEditando].fecha =
-            entradas[entradaEditando].fecha;
+            tipo: tipo,
+            titulo: titulo,
+            texto: texto
+
+        };
 
         entradaEditando = null;
 
-
-        document.getElementById(
-            "saveEntryButton"
-        ).textContent =
-            "💾 Guardar entrada";
-
-
-        document.getElementById(
-            "cancelEditButton"
-        ).classList.remove("show");
-
-    }else{
+    } else {
 
         entradas.unshift({
 
-            tipo:tipo,
-
-            titulo:titulo,
-
-            texto:texto,
-
-            fecha:new Date().toLocaleDateString(
-                "es-ES",
-                {
-                    day:"numeric",
-                    month:"long",
-                    year:"numeric"
-                }
-            )
+            tipo: tipo,
+            titulo: titulo,
+            texto: texto,
+            fecha: fecha
 
         });
 
@@ -3767,36 +2298,32 @@ function guardarEntrada(){
         JSON.stringify(entradas)
     );
 
-
     limpiarFormulario();
 
     mostrarEntradas();
 
+    alert("Tu sobre ha sido guardado. 💌");
+
 }
 
 
-/* MOSTRAR */
+/* =========================
+   MOSTRAR ENTRADAS EDITOR
+========================= */
 
-function mostrarEntradas(){
+function mostrarEntradas() {
 
     const lista =
         document.getElementById("entriesList");
 
-
-    if(entradas.length === 0){
+    if (!entradas.length) {
 
         lista.innerHTML = `
-
             <div class="empty-entries">
-
-                Todavía no has guardado ninguna nota...
-
-                <br>
-
-                Quizás hoy sea un buen día para escribirle algo a Tewi. ♡
-
+                Todavía no hay palabras guardadas.
+                <br><br>
+                Escribe la primera para Tewi. 💌
             </div>
-
         `;
 
         return;
@@ -3804,259 +2331,199 @@ function mostrarEntradas(){
     }
 
 
-    lista.innerHTML = "";
+    lista.innerHTML = entradas.map((entrada, index) => {
 
+        const icono =
+            obtenerIcono(entrada.tipo);
 
-    entradas.forEach(
-        (entrada,index) => {
+        const preview =
+            entrada.texto.length > 100
+                ? entrada.texto.substring(0, 100) + "..."
+                : entrada.texto;
 
-            const tarjeta =
-                document.createElement("div");
+        return `
 
-            tarjeta.className =
-                "entry-card";
-
-
-            tarjeta.innerHTML = `
+            <div class="entry-card">
 
                 <div class="entry-top">
 
-                    <div class="entry-type">
-                        ${escapeHTML(entrada.tipo)}
-                    </div>
+                    <span class="entry-type">
+                        ${icono} ${escapeHTML(entrada.tipo)}
+                    </span>
 
-                    <div class="entry-date">
-                        ${escapeHTML(entrada.fecha)}
-                    </div>
+                    <span class="entry-date">
+                        ${escapeHTML(entrada.fecha || "")}
+                    </span>
 
                 </div>
 
-
-                <div class="entry-title">
+                <h4 class="entry-title">
                     ${escapeHTML(entrada.titulo)}
-                </div>
-
+                </h4>
 
                 <div class="entry-preview">
-
-                    ${escapeHTML(
-                        entrada.texto.substring(0,150)
-                    )}
-
-                    ${entrada.texto.length > 150 ? "..." : ""}
-
+                    ${escapeHTML(preview)}
                 </div>
-
 
                 <div class="entry-actions">
 
                     <button
                         class="entry-open"
                         onclick="verEntrada(${index})">
-
-                        💌 Abrir
-
+                        Ver
                     </button>
-
 
                     <button
                         class="entry-edit"
                         onclick="editarEntrada(${index})">
-
-                        ✏️ Editar
-
+                        Editar
                     </button>
-
 
                     <button
                         class="entry-delete"
                         onclick="eliminarEntrada(${index})">
-
-                        🗑️ Eliminar
-
+                        Borrar
                     </button>
 
                 </div>
 
-
                 <div
                     class="entry-full"
-                    id="fullEntry${index}">
-
+                    id="entryFull${index}">
                     ${escapeHTML(entrada.texto)}
-
                 </div>
 
-            `;
+            </div>
 
+        `;
 
-            lista.appendChild(tarjeta);
-
-        }
-    );
+    }).join("");
 
 }
 
 
-/* ABRIR ENTRADA */
+/* =========================
+   VER ENTRADA
+========================= */
 
-function verEntrada(index){
+function verEntrada(index) {
 
-    const contenido =
+    const elemento =
         document.getElementById(
-            "fullEntry" + index
+            "entryFull" + index
         );
 
+    if (elemento.style.display === "block") {
 
-    contenido.classList.toggle("show");
+        elemento.style.display = "none";
 
+    } else {
 
-    const boton =
-        contenido
-            .parentElement
-            .querySelector(".entry-open");
-
-
-    if(contenido.classList.contains("show")){
-
-        boton.textContent =
-            "Cerrar ♡";
-
-    }else{
-
-        boton.textContent =
-            "💌 Abrir";
+        elemento.style.display = "block";
 
     }
 
 }
 
 
-/* EDITAR */
+/* =========================
+   EDITAR ENTRADA
+========================= */
 
-function editarEntrada(index){
+function editarEntrada(index) {
 
     const entrada =
         entradas[index];
 
-
-    document.getElementById(
-        "entryType"
-    ).value =
+    document.getElementById("entryType").value =
         entrada.tipo;
 
-
-    document.getElementById(
-        "entryTitle"
-    ).value =
+    document.getElementById("entryTitle").value =
         entrada.titulo;
 
-
-    document.getElementById(
-        "entryText"
-    ).value =
+    document.getElementById("entryText").value =
         entrada.texto;
-
 
     entradaEditando = index;
 
-
-    document.getElementById(
-        "saveEntryButton"
-    ).textContent =
-        "💾 Guardar cambios";
-
-
-    document.getElementById(
-        "cancelEditButton"
-    ).classList.add("show");
-
+    document.getElementById("cancelEdit")
+        .style.display = "inline-block";
 
     document
         .querySelector(".entry-form")
         .scrollIntoView({
-            behavior:"smooth",
-            block:"center"
+            behavior: "smooth",
+            block: "center"
         });
 
 }
 
 
-/* CANCELAR EDICIÓN */
+/* =========================
+   CANCELAR EDICIÓN
+========================= */
 
-function cancelarEdicion(){
+function cancelarEdicion() {
 
     entradaEditando = null;
 
     limpiarFormulario();
 
-
-    document.getElementById(
-        "saveEntryButton"
-    ).textContent =
-        "💾 Guardar entrada";
-
-
-    document.getElementById(
-        "cancelEditButton"
-    ).classList.remove("show");
-
 }
 
 
-/* ELIMINAR */
+/* =========================
+   ELIMINAR
+========================= */
 
-function eliminarEntrada(index){
+function eliminarEntrada(index) {
 
     const confirmar =
         confirm(
-            "¿Quieres borrar esta entrada? Esta acción no se puede deshacer."
+            "¿Quieres borrar este sobre? Esta acción no se puede deshacer."
         );
 
-
-    if(!confirmar){
+    if (!confirmar) {
         return;
     }
 
-
-    entradas.splice(index,1);
-
+    entradas.splice(index, 1);
 
     localStorage.setItem(
         "monyEntradas",
         JSON.stringify(entradas)
     );
 
-
     mostrarEntradas();
 
 }
 
 
-/* LIMPIAR */
+/* =========================
+   LIMPIAR FORMULARIO
+========================= */
 
-function limpiarFormulario(){
+function limpiarFormulario() {
 
-    document.getElementById(
-        "entryTitle"
-    ).value = "";
+    document.getElementById("entryTitle").value = "";
 
+    document.getElementById("entryText").value = "";
 
-    document.getElementById(
-        "entryText"
-    ).value = "";
+    document.getElementById("entryType").value = "Nota";
 
+    entradaEditando = null;
 
-    document.getElementById(
-        "entryType"
-    ).value = "Nota";
+    document.getElementById("cancelEdit")
+        .style.display = "none";
 
 }
 
 
-/* EVITAR HTML DENTRO DE LAS NOTAS */
+/* =========================
+   ESCAPAR HTML
+========================= */
 
-function escapeHTML(text){
+function escapeHTML(text) {
 
     const div =
         document.createElement("div");
@@ -4069,126 +2536,117 @@ function escapeHTML(text){
 
 
 /* =========================
-   COPIA DE SEGURIDAD
+   SOBRES PÚBLICOS
 ========================= */
 
-function exportarEntradas(){
+function mostrarSobresPublicos() {
 
-    if(entradas.length === 0){
+    /*
+        Esta función queda preparada para una futura
+        versión pública de los sobres.
 
-        alert(
-            "Todavía no tienes entradas para guardar."
-        );
+        Las entradas se guardan actualmente en localStorage,
+        por lo que pertenecen al navegador/dispositivo donde
+        fueron creadas.
+    */
 
-        return;
-
-    }
+}
 
 
-    const contenido =
+/* =========================
+   EXPORTAR
+========================= */
+
+function exportarEntradas() {
+
+    const datos =
         JSON.stringify(
             entradas,
             null,
             2
         );
 
-
     const blob =
         new Blob(
-            [contenido],
+            [datos],
             {
-                type:"application/json"
+                type: "application/json"
             }
         );
-
 
     const url =
         URL.createObjectURL(blob);
 
-
     const enlace =
         document.createElement("a");
-
 
     enlace.href = url;
 
     enlace.download =
-        "El_Rincon_de_Mony_backup.json";
-
+        "rincon-tu-cachorrita-backup.json";
 
     enlace.click();
-
 
     URL.revokeObjectURL(url);
 
 }
 
 
-/* IMPORTAR */
+/* =========================
+   IMPORTAR
+========================= */
 
-function importarEntradas(event){
+function importarEntradas(event) {
 
     const archivo =
         event.target.files[0];
 
-
-    if(!archivo){
+    if (!archivo) {
         return;
     }
-
 
     const lector =
         new FileReader();
 
+    lector.onload = function(e) {
 
-    lector.onload =
-        function(e){
+        try {
 
-            try{
+            const datos =
+                JSON.parse(e.target.result);
 
-                const datos =
-                    JSON.parse(
-                        e.target.result
-                    );
+            if (!Array.isArray(datos)) {
 
-
-                if(!Array.isArray(datos)){
-
-                    throw new Error();
-
-                }
-
-
-                entradas = datos;
-
-
-                localStorage.setItem(
-                    "monyEntradas",
-                    JSON.stringify(entradas)
-                );
-
-
-                mostrarEntradas();
-
-
-                alert(
-                    "Tus notas fueron restauradas correctamente. ♡"
-                );
-
-
-            }catch(error){
-
-                alert(
-                    "No pude leer este archivo de respaldo."
+                throw new Error(
+                    "Formato incorrecto"
                 );
 
             }
 
-        };
+            entradas = datos;
 
+            localStorage.setItem(
+                "monyEntradas",
+                JSON.stringify(entradas)
+            );
+
+            mostrarEntradas();
+
+            alert(
+                "Tus palabras fueron restauradas correctamente. 💌"
+            );
+
+        } catch (error) {
+
+            alert(
+                "No se pudo importar el archivo."
+            );
+
+        }
+
+    };
 
     lector.readAsText(archivo);
-
 
     event.target.value = "";
 
@@ -4199,220 +2657,129 @@ function importarEntradas(event){
    CÁPSULA DEL TIEMPO
 ========================= */
 
-function obtenerProximoDia23(){
+function obtenerProximoDia23() {
 
     const ahora =
         new Date();
 
-
-    let anio =
+    let año =
         ahora.getFullYear();
-
 
     let mes =
         ahora.getMonth();
 
-
-    let fechaObjetivo =
-        new Date(
-            anio,
-            mes,
-            23,
-            0,
-            0,
-            0
-        );
-
-
-    if(ahora >= fechaObjetivo){
+    if (ahora.getDate() > 23) {
 
         mes++;
 
-
-        if(mes > 11){
+        if (mes > 11) {
 
             mes = 0;
-
-            anio++;
+            año++;
 
         }
 
-
-        fechaObjetivo =
-            new Date(
-                anio,
-                mes,
-                23,
-                0,
-                0,
-                0
-            );
-
     }
 
-
-    return fechaObjetivo;
+    return new Date(
+        año,
+        mes,
+        23,
+        0,
+        0,
+        0
+    );
 
 }
 
 
-function actualizarCapsula(){
+function actualizarCapsula() {
 
     const ahora =
         new Date();
 
+    let objetivo =
+        obtenerProximoDia23();
 
-    if(ahora.getDate() === 23){
+    const esDia23 =
+        ahora.getDate() === 23;
 
-        mostrarCapsulaDesbloqueada();
+    const status =
+        document.getElementById(
+            "capsuleStatus"
+        );
+
+    const countdown =
+        document.getElementById(
+            "capsuleCountdown"
+        );
+
+    const boton =
+        document.getElementById(
+            "capsuleOpenButton"
+        );
+
+
+    if (esDia23) {
+
+        status.textContent =
+            "Hoy es nuestro día 23. 💌";
+
+        countdown.textContent =
+            "La cápsula está desbloqueada.";
+
+        boton.style.display =
+            "block";
 
         return;
 
     }
 
 
-    const objetivo =
-        obtenerProximoDia23();
-
-
     const diferencia =
         objetivo - ahora;
 
-
-    const totalSegundos =
-        Math.max(
-            0,
-            Math.floor(
-                diferencia / 1000
-            )
-        );
-
-
     const dias =
         Math.floor(
-            totalSegundos / 86400
+            diferencia / 86400000
         );
-
 
     const horas =
         Math.floor(
-            (totalSegundos % 86400)
-            / 3600
+            (diferencia % 86400000) / 3600000
         );
-
 
     const minutos =
         Math.floor(
-            (totalSegundos % 3600)
-            / 60
+            (diferencia % 3600000) / 60000
+        );
+
+    const segundos =
+        Math.floor(
+            (diferencia % 60000) / 1000
         );
 
 
-    const segundos =
-        totalSegundos % 60;
+    status.textContent =
+        "Nuestra próxima cápsula se abrirá el día 23.";
 
+    countdown.textContent =
+        `${dias}d ${horas}h ${minutos}m ${segundos}s`;
 
-    document.getElementById(
-        "capsuleDays"
-    ).textContent =
-        dias;
-
-
-    document.getElementById(
-        "capsuleHours"
-    ).textContent =
-        horas.toString()
-        .padStart(2,"0");
-
-
-    document.getElementById(
-        "capsuleMinutes"
-    ).textContent =
-        minutos.toString()
-        .padStart(2,"0");
-
-
-    document.getElementById(
-        "capsuleSeconds"
-    ).textContent =
-        segundos.toString()
-        .padStart(2,"0");
-
-
-    const meses = [
-
-        "enero",
-        "febrero",
-        "marzo",
-        "abril",
-        "mayo",
-        "junio",
-        "julio",
-        "agosto",
-        "septiembre",
-        "octubre",
-        "noviembre",
-        "diciembre"
-
-    ];
-
-
-    document.getElementById(
-        "capsuleDateText"
-    ).textContent =
-        "Se abrirá el 23 de " +
-        meses[objetivo.getMonth()] +
-        " ♡";
+    boton.style.display =
+        "none";
 
 }
 
 
-function mostrarCapsulaDesbloqueada(){
-
-    document.getElementById(
-        "capsuleLocked"
-    ).style.display = "none";
-
-
-    document.getElementById(
-        "capsuleUnlocked"
-    ).style.display = "block";
-
-
-    document.getElementById(
-        "openCapsuleButton"
-    ).style.display =
-        "inline-block";
-
-}
-
-
-function abrirCapsula(){
+function abrirCapsula() {
 
     const mensaje =
         document.getElementById(
             "capsuleMessage"
         );
 
-
-    const corazones =
-        document.getElementById(
-            "capsuleHearts"
-        );
-
-
-    mensaje.classList.add("show");
-
-    corazones.classList.add("show");
-
-
-    mensaje.scrollIntoView({
-
-        behavior:"smooth",
-
-        block:"center"
-
-    });
+    mensaje.classList.add("open");
 
 }
 
@@ -4426,116 +2793,75 @@ setInterval(
 
 
 /* =========================
-   PREGUNTA SÍ / NO
+   PREGUNTA FINAL
 ========================= */
 
-const noButton =
-    document.getElementById(
-        "noButton"
-    );
+function responderSi() {
 
-
-function moverNo(){
-
-    const area =
-        document.querySelector(
-            ".question-buttons"
-        );
-
-
-    const anchoDisponible =
-        area.clientWidth -
-        noButton.offsetWidth;
-
-
-    const altoDisponible =
-        area.clientHeight -
-        noButton.offsetHeight;
-
-
-    const x =
-        Math.random() *
-        Math.max(0,anchoDisponible)
-        -
-        Math.max(0,anchoDisponible) / 2;
-
-
-    const y =
-        Math.random() *
-        Math.max(0,altoDisponible)
-        -
-        Math.max(0,altoDisponible) / 2;
-
-
-    noButton.style.position =
-        "absolute";
-
-
-    noButton.style.transform =
-        `translate(${x}px,${y}px)`;
+    document
+        .getElementById("yesMessage")
+        .classList.add("open");
 
 }
 
 
-noButton.addEventListener(
-    "mouseenter",
-    moverNo
-);
+function escaparNo() {
 
+    const boton =
+        document.getElementById("noButton");
 
-noButton.addEventListener(
-    "touchstart",
-    function(e){
+    const maxX =
+        Math.max(
+            100,
+            window.innerWidth * .35
+        );
 
-        e.preventDefault();
+    const maxY =
+        Math.max(
+            100,
+            window.innerHeight * .25
+        );
 
-        moverNo();
+    const x =
+        (Math.random() * maxX * 2) - maxX;
 
-    }
-);
+    const y =
+        (Math.random() * maxY * 2) - maxY;
 
+    boton.style.transform =
+        `translate(${x}px, ${y}px)`;
 
-noButton.addEventListener(
-    "click",
-    function(e){
-
-        e.preventDefault();
-
-        moverNo();
-
-    }
-);
+}
 
 
 /* =========================
-   RESPUESTA SÍ
+   ESCAPE DEL BOTÓN "NO"
 ========================= */
 
-function respuestaSi(){
+document
+    .getElementById("noButton")
+    .addEventListener(
+        "touchstart",
+        function(event) {
 
-    const mensaje =
-        document.getElementById(
-            "yesMessage"
-        );
+            event.preventDefault();
+
+            escaparNo();
+
+        },
+        {
+            passive: false
+        }
+    );
 
 
-    mensaje.classList.add("show");
+/* =========================
+   INICIALIZAR
+========================= */
 
-
-    mensaje.scrollIntoView({
-
-        behavior:"smooth",
-
-        block:"center"
-
-    });
-
-}
+mostrarSobresPublicos();
 
 </script>
 
-
 </body>
-
 </html>
-```
