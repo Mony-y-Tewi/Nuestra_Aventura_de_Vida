@@ -1,488 +1,740 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Para Tewi ♡</title>
-
+<title>Nuestra Aventura de Vida ♡</title>
 
 <style>
 
-/* =========================
-   ESTILOS GENERALES
-========================= */
-
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+* {
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    background: #eef7f0;
+    color: #30483a;
 }
 
-body{
-    font-family:Georgia,"Times New Roman",serif;
-    background:#f5faf6;
-    color:#30483a;
-    line-height:1.7;
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #e9f5ec, #f8fbf8);
 }
 
-
-/* =========================
-   CORAZONES FLOTANTES
-========================= */
-
-.heart{
-    position:fixed;
-    color:#91b79d;
-    font-size:18px;
-    opacity:.35;
-    animation:float 8s linear infinite;
-    pointer-events:none;
-    z-index:0;
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #355d46;
 }
 
-.heart:nth-child(1){
-    left:10%;
-    animation-delay:0s;
+.hero p {
+    font-size: 1.2rem;
+    max-width: 650px;
+    line-height: 1.7;
 }
 
-.heart:nth-child(2){
-    left:30%;
-    animation-delay:2s;
+.boton {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 28px;
+    border-radius: 30px;
+    border: none;
+    background: #537c62;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.heart:nth-child(3){
-    left:55%;
-    animation-delay:4s;
+.boton:hover {
+    transform: scale(1.05);
+    background: #42664f;
 }
 
-.heart:nth-child(4){
-    left:75%;
-    animation-delay:1s;
+.seccion {
+    max-width: 1000px;
+    margin: auto;
+    padding: 70px 20px;
+    text-align: center;
 }
 
-.heart:nth-child(5){
-    left:90%;
-    animation-delay:3s;
+.seccion h2 {
+    color: #355d46;
+    font-size: 2rem;
+    margin-bottom: 25px;
 }
 
-@keyframes float{
+.carta {
+    background: rgba(255,255,255,0.8);
+    padding: 35px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(50,80,60,0.10);
+    line-height: 1.9;
+    text-align: left;
+}
 
-    0%{
-        bottom:-30px;
-        transform:translateX(0);
+.carta strong {
+    color: #355d46;
+}
+
+.contador {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-top: 25px;
+    color: #52755f;
+}
+
+.vouchers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.voucher {
+    background: white;
+    padding: 25px 15px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(50,80,60,0.10);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.voucher:hover {
+    transform: translateY(-5px);
+}
+
+.voucher h3 {
+    margin-top: 10px;
+    color: #41634d;
+}
+
+.mensaje {
+    margin-top: 12px;
+    font-size: 0.95rem;
+}
+
+.musica {
+    margin-top: 30px;
+}
+
+iframe {
+    width: 100%;
+    max-width: 700px;
+    height: 180px;
+    border: 0;
+    border-radius: 18px;
+}
+
+/* GALERÍAS */
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.galeria img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 18px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(50,80,60,0.15);
+    transition: 0.3s;
+}
+
+.galeria img:hover {
+    transform: scale(1.03);
+}
+
+/* SECRETO */
+
+.secreto {
+    background: #24382c;
+    color: #edf7ef;
+    border-radius: 30px;
+    padding: 45px 25px;
+    margin-top: 20px;
+}
+
+.secreto h2 {
+    color: #d8eadb;
+}
+
+.secreto p {
+    line-height: 1.8;
+}
+
+.secreto .galeria img {
+    border: 2px solid rgba(255,255,255,0.15);
+}
+
+/* CÁPSULAS DE FOTOS */
+
+.capsula {
+    margin-top: 30px;
+}
+
+.botonCapsula {
+    display: inline-block;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 30px;
+    background: #537c62;
+    color: white;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botonCapsula:hover {
+    transform: scale(1.05);
+    background: #42664f;
+}
+
+.contenidoCapsula {
+    display: none;
+    margin-top: 25px;
+    animation: aparecer 0.5s ease;
+}
+
+.contenidoCapsula.abierta {
+    display: block;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
     }
 
-    50%{
-        transform:translateX(20px);
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* CÁPSULA DEL TIEMPO */
+
+.capsulaTiempo {
+    background: #f8fbf8;
+    border-radius: 30px;
+    padding: 40px 25px;
+    box-shadow: 0 10px 30px rgba(50,80,60,0.10);
+    margin-top: 25px;
+}
+
+.candado {
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+.estadoCapsula {
+    font-weight: bold;
+    margin: 20px 0;
+    color: #52755f;
+}
+
+.mensajeCapsula {
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+/* PREGUNTA FINAL */
+
+.pregunta {
+    margin-top: 35px;
+    padding: 35px 20px;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(50,80,60,0.10);
+}
+
+.pregunta h3 {
+    color: #355d46;
+    font-size: 1.6rem;
+}
+
+.botonesPregunta {
+    position: relative;
+    min-height: 100px;
+    margin-top: 25px;
+}
+
+.btnSi,
+.btnNo {
+    padding: 13px 28px;
+    border: none;
+    border-radius: 30px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btnSi {
+    background: #537c62;
+    color: white;
+}
+
+.btnNo {
+    background: #d6e5d9;
+    color: #30483a;
+    position: absolute;
+    margin-left: 15px;
+    transition: left 0.2s ease, top 0.2s ease;
+}
+
+.respuesta {
+    margin-top: 20px;
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: #355d46;
+}
+
+/* FINAL */
+
+.final {
+    padding: 80px 20px;
+    text-align: center;
+    background: #dfeee2;
+}
+
+.final h2 {
+    color: #355d46;
+    font-size: 2.2rem;
+}
+
+/* MODAL */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal img {
+    max-width: 95%;
+    max-height: 90vh;
+    border-radius: 15px;
+}
+
+.cerrar {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+/* MÓVIL */
+
+@media (max-width: 600px) {
+
+    .hero h1 {
+        font-size: 2.2rem;
     }
 
-    100%{
-        bottom:110%;
-        transform:translateX(-20px);
+    .carta {
+        padding: 25px 20px;
+    }
+
+    .galeria img {
+        height: 200px;
+    }
+
+    .btnNo {
+        margin-left: 5px;
     }
 
 }
 
+</style>
+</head>
 
-/* =========================
-   PORTADA
-========================= */
+<body>
 
-.hero{
+<!-- PORTADA -->
 
-    min-height:100vh;
+<section class="hero">
 
-    display:flex;
+    <h1>Para ti, Tewi ❤️</h1>
 
-    align-items:center;
+    <p>
+        Un pequeño rincón creado para guardar un pedacito
+        de nuestra historia, nuestros recuerdos y todo lo que somos.
+    </p>
 
-    justify-content:center;
+    <button class="boton" onclick="abrirCarta()">
+        Abrir mi regalo ♡
+    </button>
 
-    text-align:center;
+    <div class="contador" id="contador">
+        ✨ Calculando nuestros días... ✨
+    </div>
 
-    padding:30px;
+</section>
 
-    background:
-        radial-gradient(circle at top,#fff,transparent 60%),
-        linear-gradient(135deg,#eef8f1,#dbeee0);
-}
 
-.hero-content{
-    max-width:700px;
-}
+<!-- CARTA -->
 
-.small-title{
+<section class="seccion" id="carta">
 
-    letter-spacing:4px;
+    <h2>Una carta para ti 💌</h2>
 
-    text-transform:uppercase;
+    <div class="carta">
 
-    font-size:12px;
+        <p>
+            Esta página existe por una razón muy sencilla:
+            <strong>tú</strong>. ❤️
+        </p>
 
-    color:#6f927a;
+        <p>
+            Porque hay personas que llegan a nuestra vida y la cambian
+            de una manera que no se puede explicar con palabras.
+            Tú eres esa persona para mí. Mi lugar seguro, mi alegría,
+            mi complicidad y ese pequeño caos bonito que hace que cada
+            día tenga algo especial.
+        </p>
 
-    margin-bottom:20px;
-}
+        <p>
+            Quiero que este espacio sea un pedacito de todo lo que siento
+            por ti: nuestros momentos, nuestros recuerdos, nuestras
+            locuras y cada detalle que hace que te ame un poquito más.
+        </p>
 
-h1{
+        <p>
+            No sé qué nos depare el futuro, pero sí sé algo:
+            <strong>quiero seguir escribiendo nuestra historia contigo</strong>. 🖤
+        </p>
 
-    font-size:clamp(55px,12vw,110px);
+        <p>
+            Gracias por existir, por ser tú y por dejarme compartir
+            este camino a tu lado.
+        </p>
 
-    font-weight:normal;
+        <p>
+            <strong>
+                Te amo, hoy, mañana y en cada versión de nosotros que
+                todavía nos queda por conocer.
+            </strong> ♾️❤️
+        </p>
 
-    color:#345441;
-}
+        <p style="text-align:center; margin-top:35px;">
+            Con amor,<br>
+            <strong>🐾 Tu cachorrita ❤️</strong>
+        </p>
 
-.date{
+    </div>
 
-    letter-spacing:4px;
+</section>
 
-    color:#789683;
 
-    margin-bottom:30px;
-}
+<!-- VALES -->
 
-.intro{
+<section class="seccion">
 
-    font-size:19px;
+    <h2>Pequeños detalles para nosotros ✨</h2>
 
-    max-width:550px;
+    <div class="vouchers">
 
-    margin:auto;
+        <div class="voucher" onclick="canjear(this)">
+            ☕
+            <h3>Tarde de café</h3>
+            <div class="mensaje"></div>
+        </div>
 
-    color:#53695b;
-}
+        <div class="voucher" onclick="canjear(this)">
+            🌙
+            <h3>Charla nocturna</h3>
+            <div class="mensaje"></div>
+        </div>
 
-.button,
-.letter-button,
-.redeem{
+        <div class="voucher" onclick="canjear(this)">
+            🎬
+            <h3>Película juntos</h3>
+            <div class="mensaje"></div>
+        </div>
 
-    display:inline-block;
+        <div class="voucher" onclick="canjear(this)">
+            💌
+            <h3>Carta sorpresa</h3>
+            <div class="mensaje"></div>
+        </div>
 
-    border:1px solid #779783;
+        <div class="voucher" onclick="canjear(this)">
+            ✨
+            <h3>Una sorpresa secreta</h3>
+            <div class="mensaje"></div>
+        </div>
 
-    background:transparent;
+    </div>
 
-    color:#466653;
+</section>
 
-    border-radius:50px;
 
-    font-family:inherit;
+<!-- LADO SECRETO -->
 
-    cursor:pointer;
+<section class="seccion secreto">
 
-    transition:.3s;
-}
+    <h2>🔐 Nuestro lado secreto</h2>
 
-.button{
+    <p>
+        Hay cosas que solamente nosotros entendemos...
+        miradas, complicidades, secretos y momentos que son
+        únicamente nuestros. 🖤
+    </p>
 
-    margin-top:35px;
+    <div class="capsula">
 
-    padding:14px 30px;
+        <button class="botonCapsula" onclick="toggleCapsula('secretos', this)">
+            🔐 Abrir nuestros secretos
+        </button>
 
-    text-decoration:none;
-}
+        <div class="contenidoCapsula" id="secretos">
 
-.letter-button{
+            <div class="galeria">
 
-    padding:15px 28px;
+                <img src="foto 1.jpg" onclick="abrirFoto(this.src)">
+                <img src="foto 2.jpg" onclick="abrirFoto(this.src)">
+                <img src="foto 3.jpg" onclick="abrirFoto(this.src)">
+                <img src="foto 4.jpg" onclick="abrirFoto(this.src)">
+                <img src="foto 5.jpg" onclick="abrirFoto(this.src)">
+                <img src="foto 6.jpg" onclick="abrirFoto(this.src)">
 
-    font-size:16px;
-}
+            </div>
 
-.redeem{
+        </div>
 
-    padding:10px 20px;
-}
+    </div>
 
-.button:hover,
-.letter-button:hover,
-.redeem:hover{
+</section>
 
-    background:#466653;
 
-    color:white;
-}
+<!-- MUSICA -->
 
+<section class="seccion">
 
-/* =========================
-   SECCIONES
-========================= */
+    <h2>🎵 Canción dedicada</h2>
 
-section{
+    <p>
+        Porque algunas canciones simplemente nos hacen pensar
+        en esa persona especial...
+    </p>
 
-    max-width:850px;
+    <div class="musica">
 
-    margin:auto;
+        <iframe
+            id="youtubePlayer"
+            src="https://www.youtube.com/embed/eMGMlqoHikU?enablejsapi=1&rel=0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+        </iframe>
 
-    padding:100px 25px;
-}
+    </div>
 
-.number{
+</section>
 
-    font-size:13px;
 
-    letter-spacing:4px;
+<!-- RECUERDOS -->
 
-    color:#89a995;
+<section class="seccion">
 
-    margin-bottom:10px;
-}
+    <h2>📸 Nuestros recuerdos</h2>
 
-h2{
+    <p>
+        Momentos que quiero guardar para siempre. ❤️
+    </p>
 
-    font-size:40px;
+    <div class="capsula">
 
-    font-weight:normal;
+        <button class="botonCapsula" onclick="toggleCapsula('recuerdos', this)">
+            📸 Abrir nuestros recuerdos
+        </button>
 
-    color:#345441;
+        <div class="contenidoCapsula" id="recuerdos">
 
-    margin-bottom:25px;
-}
+            <div class="galeria">
 
-.text{
+                <img src="foto 7.jpg" onclick="abrirFoto(this.src)">
+                <img src="foto 8.jpg" onclick="abrirFoto(this.src)">
+                <img src="foto 9.jpg" onclick="abrirFoto(this.src)">
+                <img src="foto 10.jpg" onclick="abrirFoto(this.src)">
+                <img src="foto 11.jpg" onclick="abrirFoto(this.src)">
+                <img src="foto 12.jpg" onclick="abrirFoto(this.src)">
+                <img src="foto 13.jpg" onclick="abrirFoto(this.src)">
+                <img src="foto 14.jpg" onclick="abrirFoto(this.src)">
+                <img src="foto 15.jpg" onclick="abrirFoto(this.src)">
+                <img src="foto 16.jpg" onclick="abrirFoto(this.src)">
 
-    font-size:18px;
+            </div>
 
-    color:#5c7063;
+        </div>
 
-    margin-bottom:18px;
-}
+    </div>
 
+</section>
+
+
+<!-- CÁPSULA DEL TIEMPO -->
+
+<section class="seccion">
+
+    <h2>⏳ Nuestra cápsula del tiempo</h2>
+
+    <div class="capsulaTiempo">
+
+        <div class="candado" id="candado">
+            🔒
+        </div>
+
+        <h3 id="tituloCapsula">
+            Un mensaje esperando por nosotros...
+        </h3>
+
+        <div class="estadoCapsula" id="estadoCapsula">
+            🔐 Esta cápsula permanece cerrada.
+        </div>
+
+        <p class="mensajeCapsula" id="mensajeCapsula">
+            Hay palabras que merecen esperar el momento indicado.
+            Esta cápsula se abrirá el día de nuestra fecha especial. ❤️
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- PREGUNTA FINAL -->
+
+<section class="seccion">
+
+    <div class="pregunta">
+
+        <h3>
+            💕 Y antes de terminar...
+        </h3>
+
+        <p>
+            ¿Quieres seguir escribiendo nuestra historia conmigo? 🐾❤️
+        </p>
+
+        <div class="botonesPregunta">
+
+            <button class="btnSi" onclick="decirSi()">
+                ❤️ Sí
+            </button>
+
+            <button
+                class="btnNo"
+                id="btnNo"
+                onmouseover="escaparNo()"
+                ontouchstart="escaparNo()"
+                onclick="escaparNo()">
+                No
+            </button>
+
+        </div>
+
+        <div class="respuesta" id="respuesta"></div>
+
+    </div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section class="final">
+
+    <h2>
+        Por todas las aventuras que nos quedan... ♾️
+    </h2>
+
+    <p>
+        Esto es solamente el comienzo de nuestra historia.
+    </p>
+
+    <p style="font-size:1.4rem;">
+        Te amo, Tewi. ❤️
+    </p>
+
+    <p style="font-size:1.2rem;">
+        🐾 Tu cachorrita ❤️
+    </p>
+
+</section>
+
+
+<!-- VISOR DE FOTOS -->
+
+<div class="modal" id="modal" onclick="cerrarFoto()">
+
+    <span class="cerrar">&times;</span>
+
+    <img
+        id="fotoGrande"
+        src=""
+        onclick="event.stopPropagation()"
+    >
+
+</div>
+
+
+<script>
 
 /* =========================
    CONTADOR
 ========================= */
 
-.counter-card{
+function actualizarContador() {
 
-    margin-top:40px;
+    const inicio = new Date("2026-05-23T00:00:00");
+    const ahora = new Date();
 
-    padding:35px 25px;
+    const diferencia = ahora - inicio;
 
-    background:white;
+    const dias = Math.floor(
+        diferencia / (1000 * 60 * 60 * 24)
+    );
 
-    border:1px solid #d5e4d9;
-
-    border-radius:22px;
-
-    box-shadow:0 15px 40px rgba(65,91,73,.08);
-
-    text-align:center;
+    document.getElementById("contador").innerHTML =
+        "✨ " + dias + " días desde que llegaste ✨";
 }
 
-.counter-title{
-
-    color:#6f927a;
-
-    letter-spacing:2px;
-
-    margin-bottom:25px;
-}
-
-.counter{
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:10px;
-}
-
-.counter-box{
-    padding:10px;
-}
-
-.counter-number{
-
-    display:block;
-
-    font-size:32px;
-
-    color:#345441;
-}
-
-.counter-label{
-
-    font-size:12px;
-
-    color:#82988a;
-
-    letter-spacing:1px;
-}
-
-.counter-love{
-
-    margin-top:25px;
-
-    color:#789683;
-
-    font-style:italic;
-}
+actualizarContador();
 
 
 /* =========================
-   CARTA
+   ABRIR CARTA
 ========================= */
 
-.letter-container{
+function abrirCarta() {
 
-    margin-top:40px;
+    document.getElementById("carta").scrollIntoView({
+        behavior: "smooth"
+    });
 
-    text-align:center;
-}
+    iniciarMusica();
 
-.letter{
-
-    display:none;
-
-    margin-top:30px;
-
-    padding:35px;
-
-    background:white;
-
-    border:1px solid #d5e4d9;
-
-    border-radius:18px;
-
-    box-shadow:0 15px 40px rgba(65,91,73,.10);
-
-    text-align:left;
-}
-
-.letter.show{
-
-    display:block;
-
-    animation:openLetter .7s ease;
-}
-
-.letter h3{
-
-    color:#345441;
-
-    font-size:27px;
-
-    font-weight:normal;
-
-    margin-bottom:20px;
-}
-
-.letter p{
-
-    margin-bottom:18px;
-
-    color:#53695b;
-}
-
-.signature{
-
-    text-align:right;
-
-    margin-top:30px;
-
-    font-style:italic;
-
-    color:#6c8b77;
-}
-
-@keyframes openLetter{
-
-    from{
-
-        opacity:0;
-
-        transform:
-            translateY(-15px)
-            scale(.97);
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-            translateY(0)
-            scale(1);
-    }
-
-}
-
-
-/* =========================
-   LADO SECRETO
-========================= */
-
-.secret{
-
-    background:#30483a;
-
-    color:#eef7f0;
-
-    max-width:none;
-
-    padding-left:
-        max(25px,calc((100% - 850px)/2));
-
-    padding-right:
-        max(25px,calc((100% - 850px)/2));
-}
-
-.secret h2{
-    color:#f1f8f2;
-}
-
-.secret .number{
-    color:#a8c5b0;
-}
-
-.secret .text{
-    color:#d8e6dc;
-}
-
-.secret-gallery{
-
-    margin-top:35px;
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:14px;
-}
-
-.secret-gallery img{
-
-    width:100%;
-
-    aspect-ratio:1/1;
-
-    object-fit:cover;
-
-    border-radius:16px;
-
-    cursor:pointer;
-
-    transition:.35s;
-
-    border:
-        1px solid
-        rgba(255,255,255,.15);
-}
-
-.secret-gallery img:hover{
-
-    transform:scale(1.03);
 }
 
 
@@ -490,624 +742,90 @@ h2{
    VALES
 ========================= */
 
-.vouchers{
+function canjear(elemento) {
 
-    margin-top:40px;
+    const mensaje = elemento.querySelector(".mensaje");
 
-    display:grid;
+    mensaje.innerHTML =
+        "♡ Este vale queda oficialmente guardado para nosotros ♡";
 
-    grid-template-columns:repeat(2,1fr);
-
-    gap:20px;
-}
-
-.voucher{
-
-    background:white;
-
-    border:1px solid #d5e4d9;
-
-    border-radius:18px;
-
-    padding:28px 22px;
-
-    text-align:center;
-
-    box-shadow:
-        0 12px 30px
-        rgba(65,91,73,.07);
-
-    transition:.3s;
-}
-
-.voucher:hover{
-
-    transform:translateY(-4px);
-}
-
-.voucher-icon{
-
-    font-size:32px;
-
-    margin-bottom:10px;
-}
-
-.voucher h3{
-
-    color:#345441;
-
-    font-weight:normal;
-
-    font-size:22px;
-
-    margin-bottom:8px;
-}
-
-.voucher p{
-
-    color:#789683;
-
-    font-size:14px;
-
-    margin-bottom:18px;
-}
-
-.redeemed{
-
-    color:#5f806b;
-
-    font-style:italic;
 }
 
 
 /* =========================
-   MÚSICA
+   CÁPSULAS DE FOTOS
 ========================= */
 
-.song{
-    text-align:center;
-}
+function toggleCapsula(id, boton) {
 
-.song-card{
+    const contenido = document.getElementById(id);
 
-    margin-top:35px;
+    contenido.classList.toggle("abierta");
 
-    padding:30px;
+    if (contenido.classList.contains("abierta")) {
 
-    border:1px solid #d5e4d9;
+        if (id === "secretos") {
+            boton.innerHTML = "🔓 Cerrar nuestros secretos";
+        }
 
-    border-radius:20px;
+        if (id === "recuerdos") {
+            boton.innerHTML = "🔒 Cerrar nuestros recuerdos";
+        }
 
-    background:white;
+    } else {
 
-    box-shadow:
-        0 15px 40px
-        rgba(65,91,73,.08);
-}
+        if (id === "secretos") {
+            boton.innerHTML = "🔐 Abrir nuestros secretos";
+        }
 
-.music-symbol{
+        if (id === "recuerdos") {
+            boton.innerHTML = "📸 Abrir nuestros recuerdos";
+        }
 
-    font-size:35px;
+    }
 
-    margin-bottom:15px;
-}
-
-.song-title{
-
-    font-size:27px;
-
-    color:#345441;
-}
-
-.artist{
-
-    color:#7a9582;
-
-    margin-bottom:25px;
-}
-
-.youtube-player{
-
-    width:100%;
-
-    max-width:700px;
-
-    aspect-ratio:16/9;
-
-    border:none;
-
-    border-radius:15px;
-
-    display:block;
-
-    margin:auto;
 }
 
 
 /* =========================
-   RECUERDOS
+   ABRIR FOTO
 ========================= */
 
-.memories{
+function abrirFoto(src) {
 
-    max-width:1100px;
-}
+    document.getElementById("fotoGrande").src = src;
 
-.memories-intro{
+    document.getElementById("modal").style.display = "flex";
 
-    max-width:700px;
-}
-
-.memories-gallery{
-
-    margin-top:40px;
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:18px;
-}
-
-.memory{
-
-    overflow:hidden;
-
-    border-radius:18px;
-
-    background:white;
-
-    box-shadow:
-        0 12px 30px
-        rgba(65,91,73,.08);
-
-    cursor:pointer;
-}
-
-.memory img{
-
-    width:100%;
-
-    aspect-ratio:1/1;
-
-    object-fit:cover;
-
-    display:block;
-
-    transition:.4s;
-}
-
-.memory:hover img{
-
-    transform:scale(1.06);
 }
 
 
 /* =========================
-   MODAL FOTOS
+   CERRAR FOTO
 ========================= */
 
-.modal{
+function cerrarFoto() {
 
-    display:none;
+    document.getElementById("modal").style.display = "none";
 
-    position:fixed;
+    document.getElementById("fotoGrande").src = "";
 
-    inset:0;
-
-    background:
-        rgba(20,35,27,.9);
-
-    z-index:100;
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:20px;
-}
-
-.modal.show{
-    display:flex;
-}
-
-.modal img{
-
-    max-width:95%;
-
-    max-height:90vh;
-
-    object-fit:contain;
-
-    border-radius:12px;
-}
-
-.close{
-
-    position:absolute;
-
-    top:20px;
-
-    right:25px;
-
-    color:white;
-
-    font-size:38px;
-
-    cursor:pointer;
 }
 
 
 /* =========================
-   FINAL
+   MUSICA
 ========================= */
 
-.final{
-
-    text-align:center;
-}
-
-.final h2{
-    font-size:45px;
-}
-
-
-/* =========================
-   CÁPSULA DEL TIEMPO
-========================= */
-
-.capsule-section{
-
-    text-align:center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #edf7f0,
-            #f8fbf8
-        );
-}
-
-.capsule-intro{
-
-    max-width:650px;
-
-    margin:0 auto 35px;
-
-    font-size:18px;
-
-    color:#5c7063;
-}
-
-
-/* TARJETA */
-
-.capsule-card{
-
-    max-width:650px;
-
-    margin:40px auto 0;
-
-    padding:45px 30px;
-
-    background:white;
-
-    border:1px solid #d5e4d9;
-
-    border-radius:28px;
-
-    box-shadow:
-        0 20px 50px
-        rgba(65,91,73,.10);
-
-    position:relative;
-
-    overflow:hidden;
-}
-
-
-/* DECORACIÓN */
-
-.capsule-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:180px;
-
-    height:180px;
-
-    border-radius:50%;
-
-    background:#eef7f0;
-
-    top:-100px;
-
-    left:-80px;
-
-    opacity:.8;
-}
-
-.capsule-card::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:140px;
-
-    height:140px;
-
-    border-radius:50%;
-
-    background:#f0f8f2;
-
-    bottom:-80px;
-
-    right:-50px;
-
-    opacity:.8;
-}
-
-
-/* CONTENIDO */
-
-.capsule-content{
-
-    position:relative;
-
-    z-index:2;
-}
-
-.capsule-lock{
-
-    font-size:65px;
-
-    margin-bottom:15px;
-
-    animation:lockPulse 2s infinite;
-}
-
-@keyframes lockPulse{
-
-    0%,100%{
-        transform:scale(1);
-    }
-
-    50%{
-        transform:scale(1.08);
-    }
-
-}
-
-.capsule-title{
-
-    font-size:30px;
-
-    color:#345441;
-
-    font-weight:normal;
-
-    margin-bottom:12px;
-}
-
-.capsule-status{
-
-    color:#789683;
-
-    font-size:16px;
-
-    margin-bottom:25px;
-}
-
-
-/* CUENTA REGRESIVA */
-
-.capsule-countdown{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:10px;
-
-    margin:25px 0;
-}
-
-.capsule-time{
-
-    padding:14px 5px;
-
-    background:#f5faf6;
-
-    border-radius:15px;
-
-    border:1px solid #e0ebe3;
-}
-
-.capsule-time-number{
-
-    display:block;
-
-    font-size:25px;
-
-    color:#345441;
-}
-
-.capsule-time-label{
-
-    font-size:10px;
-
-    letter-spacing:1px;
-
-    color:#82988a;
-}
-
-
-/* FECHA */
-
-.capsule-date{
-
-    color:#6f927a;
-
-    font-style:italic;
-
-    margin-top:20px;
-}
-
-
-/* BOTÓN ABRIR */
-
-.open-capsule{
-
-    display:none;
-
-    border:none;
-
-    background:#466653;
-
-    color:white;
-
-    padding:15px 30px;
-
-    border-radius:50px;
-
-    font-family:inherit;
-
-    font-size:16px;
-
-    cursor:pointer;
-
-    box-shadow:
-        0 8px 20px
-        rgba(70,102,83,.20);
-
-    transition:.3s;
-}
-
-.open-capsule:hover{
-
-    transform:scale(1.05);
-
-    background:#345441;
-}
-
-
-/* CAPSULA ABIERTA */
-
-.capsule-message{
-
-    display:none;
-
-    margin-top:30px;
-
-    padding:30px 25px;
-
-    background:#f7fbf8;
-
-    border:1px solid #d5e4d9;
-
-    border-radius:20px;
-
-    text-align:left;
-
-    animation:capsuleOpen .8s ease;
-}
-
-.capsule-message.show{
-    display:block;
-}
-
-.capsule-message h3{
-
-    color:#345441;
-
-    font-size:26px;
-
-    font-weight:normal;
-
-    margin-bottom:18px;
-
-    text-align:center;
-}
-
-.capsule-message p{
-
-    color:#53695b;
-
-    margin-bottom:17px;
-}
-
-.capsule-signature{
-
-    text-align:right;
-
-    color:#6c8b77;
-
-    font-style:italic;
-
-    margin-top:25px;
-}
-
-@keyframes capsuleOpen{
-
-    from{
-
-        opacity:0;
-
-        transform:
-            translateY(25px)
-            scale(.95);
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-            translateY(0)
-            scale(1);
-    }
-
-}
-
-
-/* CORAZONES AL ABRIR */
-
-.capsule-hearts{
-
-    display:none;
-
-    font-size:25px;
-
-    margin-top:20px;
-
-    letter-spacing:10px;
-
-    animation:heartAppear 1s ease;
-}
-
-.capsule-hearts.show{
-    display:block;
-}
-
-@keyframes heartAppear{
-
-    from{
-
-        opacity:0;
-
-        transform:scale(.5);
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:scale(1);
-    }
+function iniciarMusica() {
+
+    const player =
+        document.getElementById("youtubePlayer");
+
+    player.contentWindow.postMessage(
+        '{"event":"command","func":"playVideo","args":""}',
+        "*"
+    );
 
 }
 
@@ -1116,1802 +834,113 @@ h2{
    PREGUNTA FINAL
 ========================= */
 
-.question{
+function decirSi() {
 
-    text-align:center;
-
-    max-width:850px;
-}
-
-.question-text{
-
-    font-size:20px;
-
-    color:#5c7063;
-
-    margin-bottom:35px;
-}
-
-.question-buttons{
-
-    position:relative;
-
-    min-height:120px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:20px;
-}
-
-.yes-button,
-.no-button{
-
-    padding:14px 30px;
-
-    border-radius:50px;
-
-    font-family:inherit;
-
-    font-size:16px;
-
-    cursor:pointer;
-
-    transition:.25s;
-}
-
-.yes-button{
-
-    border:1px solid #779783;
-
-    background:#466653;
-
-    color:white;
-}
-
-.yes-button:hover{
-
-    transform:scale(1.06);
-}
-
-.no-button{
-
-    border:1px solid #779783;
-
-    background:transparent;
-
-    color:#466653;
-
-    position:relative;
-}
-
-
-/* MENSAJE SÍ */
-
-.yes-message{
-
-    display:none;
-
-    margin:20px auto 0;
-
-    padding:30px;
-
-    max-width:650px;
-
-    background:white;
-
-    border:1px solid #d5e4d9;
-
-    border-radius:20px;
-
-    box-shadow:
-        0 15px 40px
-        rgba(65,91,73,.10);
-
-    animation:aparecer .7s ease;
-}
-
-.yes-message.show{
-    display:block;
-}
-
-.yes-message h3{
-
-    color:#345441;
-
-    font-size:27px;
-
-    font-weight:normal;
-
-    margin-bottom:15px;
-}
-
-.yes-message p{
-
-    color:#53695b;
-
-    margin-bottom:15px;
-}
-
-@keyframes aparecer{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(15px);
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-    }
+    document.getElementById("respuesta").innerHTML =
+        "🥹❤️ Sabía que dirías que sí... entonces queda oficialmente escrito: seguimos juntos en esta aventura. 🐾♾️";
 
 }
 
 
 /* =========================
-   FOOTER
+   BOTÓN NO ESCAPADIZO
 ========================= */
 
-footer{
+function escaparNo() {
 
-    text-align:center;
+    const boton = document.getElementById("btnNo");
+    const contenedor = document.querySelector(".botonesPregunta");
 
-    padding:50px 20px;
+    const ancho = contenedor.clientWidth;
+    const alto = contenedor.clientHeight;
 
-    color:#82988a;
+    const maxX = Math.max(0, ancho - boton.offsetWidth);
+    const maxY = Math.max(0, alto - boton.offsetHeight);
 
-    font-size:14px;
-}
+    const nuevaX =
+        Math.floor(Math.random() * (maxX + 1));
 
+    const nuevaY =
+        Math.floor(Math.random() * (maxY + 1));
 
-/* =========================
-   MÓVIL
-========================= */
-
-@media(max-width:700px){
-
-    section{
-
-        padding:75px 22px;
-    }
-
-    h2{
-
-        font-size:34px;
-    }
-
-    .letter{
-
-        padding:25px;
-    }
-
-    .counter{
-
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .vouchers{
-
-        grid-template-columns:1fr;
-    }
-
-    .secret-gallery{
-
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .memories-gallery{
-
-        grid-template-columns:
-            repeat(2,1fr);
-
-        gap:12px;
-    }
-
-    .capsule-card{
-
-        padding:35px 20px;
-    }
-
-    .capsule-title{
-
-        font-size:26px;
-    }
-
-    .capsule-countdown{
-
-        grid-template-columns:
-            repeat(2,1fr);
-
-        gap:8px;
-    }
-
-    .question-buttons{
-
-        min-height:150px;
-    }
-
-    .yes-button,
-    .no-button{
-
-        padding:12px 22px;
-    }
-
-}
-
-</style>
-
-</head>
-
-
-<body>
-
-
-<!-- CORAZONES -->
-
-<div class="heart">♡</div>
-<div class="heart">♡</div>
-<div class="heart">♡</div>
-<div class="heart">♡</div>
-<div class="heart">♡</div>
-
-
-<!-- =========================
-     PORTADA
-========================= -->
-
-<header class="hero">
-
-<div class="hero-content">
-
-<div class="small-title">
-Una pequeña sorpresa
-</div>
-
-<h1>
-Tewi
-</h1>
-
-<div class="date">
-23 · 05 · 2026
-</div>
-
-<p class="intro">
-
-Hay cosas que son difíciles de decir con palabras...
-así que decidí crear un pequeño lugar solamente para ti.
-
-</p>
-
-<a
-href="#historia"
-class="button"
-onclick="iniciarMusica()">
-
-Abrir mi regalo ♡
-
-</a>
-
-</div>
-
-</header>
-
-
-<!-- =========================
-     HISTORIA
-========================= -->
-
-<section id="historia">
-
-<div class="number">
-01
-</div>
-
-<h2>
-Nuestra historia
-</h2>
-
-<p class="text">
-<strong>23 de mayo de 2026</strong>
-</p>
-
-<p class="text">
-
-Quizás una fecha pueda parecer solamente un día más en el calendario.
-
-</p>
-
-<p class="text">
-
-Pero para mí representa el comienzo de algo que quiero seguir construyendo contigo.
-
-</p>
-
-
-<div class="counter-card">
-
-<div class="counter-title">
-Nuestra historia lleva...
-</div>
-
-<div class="counter">
-
-<div class="counter-box">
-
-<span
-class="counter-number"
-id="dias">
-0
-</span>
-
-<span class="counter-label">
-DÍAS
-</span>
-
-</div>
-
-
-<div class="counter-box">
-
-<span
-class="counter-number"
-id="horas">
-0
-</span>
-
-<span class="counter-label">
-HORAS
-</span>
-
-</div>
-
-
-<div class="counter-box">
-
-<span
-class="counter-number"
-id="minutos">
-0
-</span>
-
-<span class="counter-label">
-MINUTOS
-</span>
-
-</div>
-
-
-<div class="counter-box">
-
-<span
-class="counter-number"
-id="segundos">
-0
-</span>
-
-<span class="counter-label">
-SEGUNDOS
-</span>
-
-</div>
-
-</div>
-
-<div class="counter-love">
-
-Y quiero seguir sumando muchos más contigo. ♡
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     CARTA
-========================= -->
-
-<section>
-
-<div class="number">
-02
-</div>
-
-<h2>
-Algo que quiero decirte
-</h2>
-
-<p class="text">
-
-Hay cosas que simplemente no caben en una conversación.
-
-</p>
-
-
-<div class="letter-container">
-
-<button
-class="letter-button"
-onclick="abrirCarta()">
-
-🔐 Abrir mi carta ♡
-
-</button>
-
-
-<div
-class="letter"
-id="carta">
-
-<h3>
-Para ti, Tewi
-</h3>
-
-
-<p>
-
-Esta página existe por una razón muy sencilla:
-<strong>tú</strong>. ❤️
-
-</p>
-
-
-<p>
-
-Porque hay personas que llegan a nuestra vida y la cambian de una manera que no se puede explicar con palabras. Tú eres esa persona para mí. Mi lugar seguro, mi alegría, mi complicidad y ese pequeño caos bonito que hace que cada día tenga algo especial.
-
-</p>
-
-
-<p>
-
-Quiero que este espacio sea un pedacito de todo lo que siento por ti: nuestros momentos, nuestros recuerdos, nuestras locuras y cada detalle que hace que te ame un poquito más.
-
-</p>
-
-
-<p>
-
-No sé qué nos depare el futuro, pero sí sé algo:
-<strong>quiero seguir escribiendo nuestra historia contigo</strong>. 🖤
-
-</p>
-
-
-<p>
-
-Gracias por existir, por ser tú y por dejarme compartir este camino a tu lado.
-
-</p>
-
-
-<p>
-
-<strong>
-
-Te amo, hoy, mañana y en cada versión de nosotros que todavía nos queda por conocer.
-
-</strong>
-
-♾️❤️
-
-</p>
-
-
-<div class="signature">
-
-Con amor, Mony ♡
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     LADO SECRETO
-========================= -->
-
-<section class="secret">
-
-<div class="number">
-03
-</div>
-
-<h2>
-Nuestro lado secreto
-</h2>
-
-<p class="text">
-
-Porque también existen esas partes de nosotros que no necesitan explicarse a nadie más.
-
-</p>
-
-<p class="text">
-
-Este espacio será para nuestros secretos, nuestras complicidades y aquello que solamente nosotros entendemos.
-
-</p>
-
-<p class="text">
-
-🔐 Una parte de nuestra historia que solamente nosotros conocemos.
-
-</p>
-
-
-<div class="secret-gallery">
-
-<img
-src="foto 1.jpg"
-onclick="abrirFoto(this.src)">
-
-<img
-src="foto 2.jpg"
-onclick="abrirFoto(this.src)">
-
-<img
-src="foto 3.jpg"
-onclick="abrirFoto(this.src)">
-
-<img
-src="foto 4.jpg"
-onclick="abrirFoto(this.src)">
-
-<img
-src="foto 5.jpg"
-onclick="abrirFoto(this.src)">
-
-<img
-src="foto 6.jpg"
-onclick="abrirFoto(this.src)">
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     VALES
-========================= -->
-
-<section>
-
-<div class="number">
-04
-</div>
-
-<h2>
-Pequeños vales para ti
-</h2>
-
-<p class="text">
-
-Porque algunas cosas bonitas también merecen convertirse en pequeños regalos.
-
-</p>
-
-
-<div class="vouchers">
-
-
-<div class="voucher">
-
-<div class="voucher-icon">
-☕
-</div>
-
-<h3>
-Una cita
-</h3>
-
-<p>
-Una cita elegida especialmente para nosotros.
-</p>
-
-<button
-class="redeem"
-onclick="usarVale(this)">
-
-Canjear ♡
-
-</button>
-
-</div>
-
-
-<div class="voucher">
-
-<div class="voucher-icon">
-💆
-</div>
-
-<h3>
-Mimos infinitos
-</h3>
-
-<p>
-Una sesión de cariño, abrazos y consentirte mucho.
-</p>
-
-<button
-class="redeem"
-onclick="usarVale(this)">
-
-Canjear ♡
-
-</button>
-
-</div>
-
-
-<div class="voucher">
-
-<div class="voucher-icon">
-🌙
-</div>
-
-<h3>
-Una noche especial
-</h3>
-
-<p>
-Una noche solamente para nosotros, sin interrupciones.
-</p>
-
-<button
-class="redeem"
-onclick="usarVale(this)">
-
-Canjear ♡
-
-</button>
-
-</div>
-
-
-<div class="voucher">
-
-<div class="voucher-icon">
-🖤
-</div>
-
-<h3>
-Nuestro secreto
-</h3>
-
-<p>
-Un deseo reservado solamente para nosotros.
-</p>
-
-<button
-class="redeem"
-onclick="usarVale(this)">
-
-Canjear ♡
-
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     MÚSICA
-========================= -->
-
-<section class="song">
-
-<div class="number">
-05
-</div>
-
-<h2>
-Nuestra canción
-</h2>
-
-<p class="text">
-
-Porque hay canciones que terminan convirtiéndose en recuerdos.
-
-</p>
-
-
-<div class="song-card">
-
-<div class="music-symbol">
-♪ ♡
-</div>
-
-<div class="song-title">
-Me Gustas Tanto
-</div>
-
-<div class="artist">
-Andrey Serrano
-</div>
-
-
-<iframe
-class="youtube-player"
-id="youtubePlayer"
-src="https://www.youtube.com/embed/eMGMlqoHikU?enablejsapi=1&rel=0"
-title="Me Gustas Tanto - Andrey Serrano"
-allow="autoplay; encrypted-media"
-allowfullscreen>
-</iframe>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     RECUERDOS
-========================= -->
-
-<section class="memories">
-
-<div class="number">
-06
-</div>
-
-<h2>
-Nuestros recuerdos
-</h2>
-
-<p class="text memories-intro">
-
-Cada foto guarda un pequeño pedacito de nuestra historia.
-Y todavía nos quedan muchísimos recuerdos por crear.
-
-</p>
-
-
-<div class="memories-gallery">
-
-<div class="memory">
-<img src="foto 7.jpg" onclick="abrirFoto(this.src)">
-</div>
-
-<div class="memory">
-<img src="foto 8.jpg" onclick="abrirFoto(this.src)">
-</div>
-
-<div class="memory">
-<img src="foto 9.jpg" onclick="abrirFoto(this.src)">
-</div>
-
-<div class="memory">
-<img src="foto 10.jpg" onclick="abrirFoto(this.src)">
-</div>
-
-<div class="memory">
-<img src="foto 11.jpg" onclick="abrirFoto(this.src)">
-</div>
-
-<div class="memory">
-<img src="foto 12.jpg" onclick="abrirFoto(this.src)">
-</div>
-
-<div class="memory">
-<img src="foto 13.jpg" onclick="abrirFoto(this.src)">
-</div>
-
-<div class="memory">
-<img src="foto 14.jpg" onclick="abrirFoto(this.src)">
-</div>
-
-<div class="memory">
-<img src="foto 15.jpg" onclick="abrirFoto(this.src)">
-</div>
-
-<div class="memory">
-<img src="foto 16.jpg" onclick="abrirFoto(this.src)">
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     FINAL
-========================= -->
-
-<section class="final">
-
-<div class="number">
-07
-</div>
-
-<h2>
-Y esto apenas comienza...
-</h2>
-
-<p class="text">
-
-Nuestra historia todavía tiene muchas páginas por escribir.
-
-</p>
-
-<p class="text">
-
-Y espero poder llenarlas todas contigo.
-
-</p>
-
-<p class="text">
-
-<strong>
-Te amo, Tewi. ♡
-</strong>
-
-</p>
-
-</section>
-
-
-<!-- =========================
-     CÁPSULA DEL TIEMPO
-========================= -->
-
-<section class="capsule-section">
-
-<div class="number">
-08
-</div>
-
-<h2>
-Una cápsula para nosotros 🔐
-</h2>
-
-<p class="capsule-intro">
-
-Hay mensajes que no quiero darte cualquier día.
-
-Quiero guardarlos para nuestros días especiales.
-
-</p>
-
-
-<div class="capsule-card">
-
-<div class="capsule-content">
-
-
-<!-- BLOQUEADO -->
-
-<div id="capsuleLocked">
-
-<div class="capsule-lock">
-🔐
-</div>
-
-<div class="capsule-title">
-Nuestra cápsula del tiempo
-</div>
-
-<div class="capsule-status">
-Todavía está cerrada...
-</div>
-
-<p class="text">
-
-Nuestra próxima sorpresa se desbloqueará
-cuando vuelva a llegar nuestro día.
-
-</p>
-
-
-<div class="capsule-countdown">
-
-<div class="capsule-time">
-
-<span
-class="capsule-time-number"
-id="capsuleDays">
-
-0
-
-</span>
-
-<span class="capsule-time-label">
-DÍAS
-</span>
-
-</div>
-
-
-<div class="capsule-time">
-
-<span
-class="capsule-time-number"
-id="capsuleHours">
-
-0
-
-</span>
-
-<span class="capsule-time-label">
-HORAS
-</span>
-
-</div>
-
-
-<div class="capsule-time">
-
-<span
-class="capsule-time-number"
-id="capsuleMinutes">
-
-0
-
-</span>
-
-<span class="capsule-time-label">
-MINUTOS
-</span>
-
-</div>
-
-
-<div class="capsule-time">
-
-<span
-class="capsule-time-number"
-id="capsuleSeconds">
-
-0
-
-</span>
-
-<span class="capsule-time-label">
-SEGUNDOS
-</span>
-
-</div>
-
-</div>
-
-
-<div
-class="capsule-date"
-id="capsuleDateText">
-
-Se abrirá el próximo 23 ♡
-
-</div>
-
-</div>
-
-
-<!-- DESBLOQUEADO -->
-
-<div id="capsuleUnlocked"
-style="display:none;">
-
-<div class="capsule-lock">
-💌
-</div>
-
-<div class="capsule-title">
-Hoy sí...
-</div>
-
-<div class="capsule-status">
-
-Es nuestro día. Puedes abrirla. ❤️
-
-</div>
-
-
-<button
-class="open-capsule"
-id="openCapsuleButton"
-onclick="abrirCapsula()">
-
-💌 Abrir mi cápsula
-
-</button>
-
-
-<div
-class="capsule-hearts"
-id="capsuleHearts">
-
-♡ ♡ ♡
-
-</div>
-
-
-<div
-class="capsule-message"
-id="capsuleMessage">
-
-<h3>
-Para ti, Tewi ❤️
-</h3>
-
-<p>
-
-Otro día 23.
-
-Otro pequeño capítulo de nuestra historia.
-
-</p>
-
-<p>
-
-Quizás para alguien más sea solamente una fecha,
-pero para mí es un recordatorio de que seguimos
-aquí, eligiéndonos y construyendo algo que quiero
-seguir cuidando.
-
-</p>
-
-<p>
-
-Gracias por cada momento, por cada sonrisa,
-por nuestras conversaciones, nuestras locuras,
-nuestros secretos y por todos esos pequeños
-instantes que solamente nosotros entendemos.
-
-</p>
-
-<p>
-
-Si pudiera volver al día en que comenzó todo,
-te volvería a elegir.
-
-Y si me preguntaran si quiero seguir escribiendo
-esta historia contigo...
-
-la respuesta seguiría siendo la misma.
-
-<strong>
-Sí. Una y otra vez.
-</strong>
-
-</p>
-
-<p>
-
-Por este cumplemes y por todos los que todavía
-nos quedan.
-
-</p>
-
-<p>
-
-<strong>
-Te amo, Tewi. ♾️❤️
-</strong>
-
-</p>
-
-<div class="capsule-signature">
-
-Con amor,
-
-Mony ♡
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     PREGUNTA INTERACTIVA
-========================= -->
-
-<section class="question">
-
-<div class="number">
-09
-</div>
-
-<h2>
-Y ahora quiero preguntarte algo...
-</h2>
-
-<p class="question-text">
-
-Después de todo lo que hemos vivido,<br>
-
-<strong>
-¿quieres seguir escribiendo nuestra historia conmigo? ♡
-</strong>
-
-</p>
-
-
-<div class="question-buttons">
-
-<button
-class="yes-button"
-onclick="respuestaSi()">
-
-Sí, quiero ❤️
-
-</button>
-
-
-<button
-class="no-button"
-id="noButton">
-
-No
-
-</button>
-
-</div>
-
-
-<div
-class="yes-message"
-id="yesMessage">
-
-<h3>
-Sabía que dirías que sí... 🥹❤️
-</h3>
-
-<p>
-
-Entonces prepárate, porque esto apenas comienza.
-
-Todavía nos quedan muchísimos momentos,
-secretos, aventuras y recuerdos por vivir.
-
-</p>
-
-<p>
-
-<strong>
-Te elegiría una y otra vez. ♾️
-</strong>
-
-</p>
-
-</div>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-Hecho con amor por Mony ♡
-
-</footer>
-
-
-<!-- =========================
-     VISOR DE FOTOS
-========================= -->
-
-<div
-class="modal"
-id="modal"
-onclick="cerrarFoto()">
-
-<span class="close">
-×
-</span>
-
-<img
-id="modalImg"
-src=""
-alt="Recuerdo">
-
-</div>
-
-
-<script>
-
-
-/* =========================
-   CONTADOR DE RELACIÓN
-========================= */
-
-const fechaInicio =
-new Date("2026-05-23T00:00:00");
-
-
-function actualizarContador(){
-
-    const ahora =
-        new Date();
-
-    let diferencia =
-        ahora - fechaInicio;
-
-
-    if(diferencia < 0){
-
-        diferencia = 0;
-
-    }
-
-
-    const segundosTotales =
-        Math.floor(
-            diferencia / 1000
-        );
-
-
-    const dias =
-        Math.floor(
-            segundosTotales / 86400
-        );
-
-
-    const horas =
-        Math.floor(
-            (segundosTotales % 86400)
-            / 3600
-        );
-
-
-    const minutos =
-        Math.floor(
-            (segundosTotales % 3600)
-            / 60
-        );
-
-
-    const segundos =
-        segundosTotales % 60;
-
-
-    document.getElementById("dias")
-        .textContent = dias;
-
-
-    document.getElementById("horas")
-        .textContent =
-        horas.toString()
-        .padStart(2,"0");
-
-
-    document.getElementById("minutos")
-        .textContent =
-        minutos.toString()
-        .padStart(2,"0");
-
-
-    document.getElementById("segundos")
-        .textContent =
-        segundos.toString()
-        .padStart(2,"0");
-
-}
-
-
-actualizarContador();
-
-setInterval(
-    actualizarContador,
-    1000
-);
-
-
-/* =========================
-   CARTA
-========================= */
-
-function abrirCarta(){
-
-    const carta =
-        document.getElementById("carta");
-
-    carta.classList.toggle("show");
-
-}
-
-
-/* =========================
-   VALES
-========================= */
-
-function usarVale(boton){
-
-    boton.parentElement.innerHTML = `
-
-        <div class="voucher-icon">
-        ♡
-        </div>
-
-        <h3>
-        Canjeado
-        </h3>
-
-        <p class="redeemed">
-        Este vale queda guardado para nosotros.
-        </p>
-
-    `;
-
-}
-
-
-/* =========================
-   FOTOS
-========================= */
-
-function abrirFoto(src){
-
-    const modal =
-        document.getElementById("modal");
-
-    const imagen =
-        document.getElementById("modalImg");
-
-    imagen.src = src;
-
-    modal.classList.add("show");
-
-}
-
-
-function cerrarFoto(){
-
-    document
-        .getElementById("modal")
-        .classList.remove("show");
-
-}
-
-
-/* =========================
-   MÚSICA
-========================= */
-
-function iniciarMusica(){
-
-    const player =
-        document.getElementById(
-            "youtubePlayer"
-        );
-
-
-    player.contentWindow.postMessage(
-
-        '{"event":"command","func":"playVideo","args":""}',
-
-        "*"
-
-    );
+    boton.style.left = nuevaX + "px";
+    boton.style.top = nuevaY + "px";
 
 }
 
 
 /* =========================
    CÁPSULA DEL TIEMPO
+   SE ABRE CADA 23
 ========================= */
 
+function actualizarCapsulaTiempo() {
 
-/*
-   La relación comenzó:
-   23 de mayo de 2026
+    const ahora = new Date();
 
-   La cápsula se abre:
-   cada día 23
+    const dia = ahora.getDate();
 
-   Primera apertura:
-   23 de septiembre de 2026
-*/
+    const mes = ahora.getMonth() + 1;
 
+    const candado =
+        document.getElementById("candado");
 
-function obtenerProximoDia23(){
+    const estado =
+        document.getElementById("estadoCapsula");
 
-    const ahora =
-        new Date();
-
-
-    let anio =
-        ahora.getFullYear();
-
-
-    let mes =
-        ahora.getMonth();
-
-
-    let fechaObjetivo =
-        new Date(
-            anio,
-            mes,
-            23,
-            0,
-            0,
-            0
-        );
-
-
-    /*
-       Si ya pasó el día 23,
-       esperamos al próximo mes.
-    */
-
-    if(ahora >= fechaObjetivo){
-
-        mes++;
-
-        if(mes > 11){
-
-            mes = 0;
-
-            anio++;
-
-        }
-
-        fechaObjetivo =
-            new Date(
-                anio,
-                mes,
-                23,
-                0,
-                0,
-                0
-            );
-
-    }
-
-
-    return fechaObjetivo;
-
-}
-
-
-function actualizarCapsula(){
-
-    const ahora =
-        new Date();
-
-
-    let anio =
-        ahora.getFullYear();
-
-
-    let mes =
-        ahora.getMonth();
-
-
-    /*
-       Comprobamos si HOY es día 23.
-    */
-
-    if(ahora.getDate() === 23){
-
-        mostrarCapsulaDesbloqueada();
-
-        return;
-
-    }
-
-
-    /*
-       Si no es día 23,
-       permanece bloqueada.
-    */
-
-    const objetivo =
-        obtenerProximoDia23();
-
-
-    const diferencia =
-        objetivo - ahora;
-
-
-    const totalSegundos =
-        Math.max(
-            0,
-            Math.floor(
-                diferencia / 1000
-            )
-        );
-
-
-    const dias =
-        Math.floor(
-            totalSegundos / 86400
-        );
-
-
-    const horas =
-        Math.floor(
-            (totalSegundos % 86400)
-            / 3600
-        );
-
-
-    const minutos =
-        Math.floor(
-            (totalSegundos % 3600)
-            / 60
-        );
-
-
-    const segundos =
-        totalSegundos % 60;
-
-
-    document.getElementById(
-        "capsuleDays"
-    ).textContent =
-        dias;
-
-
-    document.getElementById(
-        "capsuleHours"
-    ).textContent =
-        horas.toString()
-        .padStart(2,"0");
-
-
-    document.getElementById(
-        "capsuleMinutes"
-    ).textContent =
-        minutos.toString()
-        .padStart(2,"0");
-
-
-    document.getElementById(
-        "capsuleSeconds"
-    ).textContent =
-        segundos.toString()
-        .padStart(2,"0");
-
-
-    const meses = [
-
-        "enero",
-        "febrero",
-        "marzo",
-        "abril",
-        "mayo",
-        "junio",
-        "julio",
-        "agosto",
-        "septiembre",
-        "octubre",
-        "noviembre",
-        "diciembre"
-
-    ];
-
-
-    document.getElementById(
-        "capsuleDateText"
-    ).textContent =
-        "Se abrirá el 23 de " +
-        meses[objetivo.getMonth()] +
-        " ♡";
-
-}
-
-
-function mostrarCapsulaDesbloqueada(){
-
-    document.getElementById(
-        "capsuleLocked"
-    ).style.display = "none";
-
-
-    document.getElementById(
-        "capsuleUnlocked"
-    ).style.display = "block";
-
-
-    document.getElementById(
-        "openCapsuleButton"
-    ).style.display =
-        "inline-block";
-
-}
-
-
-/*
-   Abrir la cápsula
-*/
-
-function abrirCapsula(){
+    const titulo =
+        document.getElementById("tituloCapsula");
 
     const mensaje =
-        document.getElementById(
-            "capsuleMessage"
-        );
+        document.getElementById("mensajeCapsula");
 
+    /*
+       Nuestra fecha especial:
+       día 23 de cada mes.
+    */
 
-    const corazones =
-        document.getElementById(
-            "capsuleHearts"
-        );
+    if (dia === 23) {
 
+        candado.innerHTML = "🔓";
 
-    mensaje.classList.add("show");
+        titulo.innerHTML =
+            "❤️ Nuestra cápsula está abierta ❤️";
 
-    corazones.classList.add("show");
+        estado.innerHTML =
+            "✨ Hoy es nuestra fecha especial ✨";
 
+        mensaje.innerHTML =
+            "Hoy sí puedes abrir este pequeño pedacito de nosotros. " +
+            "Porque cada día juntos merece ser recordado, " +
+            "pero el día 23 tiene algo especial. 🐾❤️ " +
+            "<br><br>" +
+            "Gracias por seguir aquí, por compartir tu vida conmigo " +
+            "y por continuar escribiendo nuestra historia. " +
+            "Te amo muchísimo. ♾️❤️";
 
-    mensaje.scrollIntoView({
+    } else {
 
-        behavior:"smooth",
+        candado.innerHTML = "🔒";
 
-        block:"center"
+        titulo.innerHTML =
+            "Un mensaje esperando por nosotros...";
 
-    });
+        estado.innerHTML =
+            "🔐 Esta cápsula permanece cerrada.";
 
-}
-
-
-/*
-   Comprobar cada segundo.
-
-   Esto permite que el día 23
-   se desbloquee automáticamente
-   sin tener que recargar la página.
-*/
-
-actualizarCapsula();
-
-setInterval(
-    actualizarCapsula,
-    1000
-);
-
-
-/* =========================
-   PREGUNTA SÍ / NO
-========================= */
-
-const noButton =
-    document.getElementById(
-        "noButton"
-    );
-
-
-function moverNo(){
-
-    const area =
-        document.querySelector(
-            ".question-buttons"
-        );
-
-
-    const anchoDisponible =
-        area.clientWidth -
-        noButton.offsetWidth;
-
-
-    const altoDisponible =
-        area.clientHeight -
-        noButton.offsetHeight;
-
-
-    const x =
-        Math.random() *
-        Math.max(0,anchoDisponible)
-        -
-        Math.max(0,anchoDisponible) / 2;
-
-
-    const y =
-        Math.random() *
-        Math.max(0,altoDisponible)
-        -
-        Math.max(0,altoDisponible) / 2;
-
-
-    noButton.style.position =
-        "absolute";
-
-
-    noButton.style.transform =
-        `translate(${x}px,${y}px)`;
-
-}
-
-
-/*
-   Computador
-*/
-
-noButton.addEventListener(
-    "mouseenter",
-    moverNo
-);
-
-
-/*
-   Celular
-*/
-
-noButton.addEventListener(
-    "touchstart",
-    function(e){
-
-        e.preventDefault();
-
-        moverNo();
+        mensaje.innerHTML =
+            "Todavía no es nuestra fecha especial. " +
+            "La cápsula se abrirá automáticamente el día 23. ❤️" +
+            "<br><br>" +
+            "Hasta entonces, este pequeño secreto queda guardado para nosotros. 🐾";
 
     }
-);
-
-
-/*
-   También por clic,
-   por si intenta atraparlo.
-*/
-
-noButton.addEventListener(
-    "click",
-    function(e){
-
-        e.preventDefault();
-
-        moverNo();
-
-    }
-);
-
-
-/* =========================
-   RESPUESTA SÍ
-========================= */
-
-function respuestaSi(){
-
-    const mensaje =
-        document.getElementById(
-            "yesMessage"
-        );
-
-
-    mensaje.classList.add("show");
-
-
-    mensaje.scrollIntoView({
-
-        behavior:"smooth",
-
-        block:"center"
-
-    });
 
 }
+
+actualizarCapsulaTiempo();
 
 </script>
 
-
 </body>
-
 </html>
-```
