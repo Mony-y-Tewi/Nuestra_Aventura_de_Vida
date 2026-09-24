@@ -343,7 +343,7 @@ function actualizarCapsula(){
     ==========================================
     */
 
-    if(ahora.getDate() === 23){
+    if(true){
 
         mostrarCapsulaDesbloqueada();
 
