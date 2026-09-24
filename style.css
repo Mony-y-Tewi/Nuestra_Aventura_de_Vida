@@ -1,0 +1,1424 @@
+</>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Georgia,"Times New Roman",serif;
+    background:#f5faf6;
+    color:#30483a;
+    line-height:1.7;
+}
+
+/* =========================
+   CORAZONES
+========================= */
+
+.heart{
+    position:fixed;
+    color:#91b79d;
+    font-size:18px;
+    opacity:.35;
+    animation:float 8s linear infinite;
+    pointer-events:none;
+    z-index:0;
+}
+
+.heart:nth-child(1){
+    left:10%;
+    animation-delay:0s;
+}
+
+.heart:nth-child(2){
+    left:30%;
+    animation-delay:2s;
+}
+
+.heart:nth-child(3){
+    left:55%;
+    animation-delay:4s;
+}
+
+.heart:nth-child(4){
+    left:75%;
+    animation-delay:1s;
+}
+
+.heart:nth-child(5){
+    left:90%;
+    animation-delay:3s;
+}
+
+@keyframes float{
+
+    0%{
+        bottom:-30px;
+        transform:translateX(0);
+    }
+
+    50%{
+        transform:translateX(20px);
+    }
+
+    100%{
+        bottom:110%;
+        transform:translateX(-20px);
+    }
+
+}
+
+/* =========================
+   PORTADA
+========================= */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:30px;
+
+    background:
+        radial-gradient(circle at top,#fff,transparent 60%),
+        linear-gradient(135deg,#eef8f1,#dbeee0);
+}
+
+.hero-content{
+    max-width:700px;
+}
+
+.small-title{
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    font-size:12px;
+
+    color:#6f927a;
+
+    margin-bottom:20px;
+}
+
+h1{
+
+    font-size:clamp(55px,12vw,110px);
+
+    font-weight:normal;
+
+    color:#345441;
+}
+
+.date{
+
+    letter-spacing:4px;
+
+    color:#789683;
+
+    margin-bottom:30px;
+}
+
+.intro{
+
+    font-size:19px;
+
+    max-width:550px;
+
+    margin:auto;
+
+    color:#53695b;
+}
+
+.button,
+.letter-button,
+.redeem,
+.photo-toggle{
+
+    display:inline-block;
+
+    border:1px solid #779783;
+
+    background:transparent;
+
+    color:#466653;
+
+    border-radius:50px;
+
+    font-family:inherit;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.button{
+
+    margin-top:35px;
+
+    padding:14px 30px;
+
+    text-decoration:none;
+}
+
+.letter-button{
+
+    padding:15px 28px;
+
+    font-size:16px;
+}
+
+.redeem{
+
+    padding:10px 20px;
+}
+
+.button:hover,
+.letter-button:hover,
+.redeem:hover,
+.photo-toggle:hover{
+
+    background:#466653;
+
+    color:white;
+}
+
+/* =========================
+   SECCIONES
+========================= */
+
+section{
+
+    max-width:850px;
+
+    margin:auto;
+
+    padding:100px 25px;
+}
+
+.number{
+
+    font-size:13px;
+
+    letter-spacing:4px;
+
+    color:#89a995;
+
+    margin-bottom:10px;
+}
+
+h2{
+
+    font-size:40px;
+
+    font-weight:normal;
+
+    color:#345441;
+
+    margin-bottom:25px;
+}
+
+.text{
+
+    font-size:18px;
+
+    color:#5c7063;
+
+    margin-bottom:18px;
+}
+
+/* =========================
+   CONTADOR
+========================= */
+
+.counter-card{
+
+    margin-top:40px;
+
+    padding:35px 25px;
+
+    background:white;
+
+    border:1px solid #d5e4d9;
+
+    border-radius:22px;
+
+    box-shadow:0 15px 40px rgba(65,91,73,.08);
+
+    text-align:center;
+}
+
+.counter-title{
+
+    color:#6f927a;
+
+    letter-spacing:2px;
+
+    margin-bottom:25px;
+}
+
+.counter{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:10px;
+}
+
+.counter-box{
+    padding:10px;
+}
+
+.counter-number{
+
+    display:block;
+
+    font-size:32px;
+
+    color:#345441;
+}
+
+.counter-label{
+
+    font-size:12px;
+
+    color:#82988a;
+
+    letter-spacing:1px;
+}
+
+.counter-love{
+
+    margin-top:25px;
+
+    color:#789683;
+
+    font-style:italic;
+}
+
+/* =========================
+   CARTA
+========================= */
+
+.letter-container{
+
+    margin-top:40px;
+
+    text-align:center;
+}
+
+.letter{
+
+    display:none;
+
+    margin-top:30px;
+
+    padding:35px;
+
+    background:white;
+
+    border:1px solid #d5e4d9;
+
+    border-radius:18px;
+
+    box-shadow:0 15px 40px rgba(65,91,73,.10);
+
+    text-align:left;
+}
+
+.letter.show{
+
+    display:block;
+
+    animation:openLetter .7s ease;
+}
+
+.letter h3{
+
+    color:#345441;
+
+    font-size:27px;
+
+    font-weight:normal;
+
+    margin-bottom:20px;
+}
+
+.letter p{
+
+    margin-bottom:18px;
+
+    color:#53695b;
+}
+
+.signature{
+
+    text-align:right;
+
+    margin-top:30px;
+
+    font-style:italic;
+
+    color:#6c8b77;
+}
+
+@keyframes openLetter{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(-15px)
+            scale(.97);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+/* =========================
+   LADO SECRETO
+========================= */
+
+.secret{
+
+    background:#30483a;
+
+    color:#eef7f0;
+
+    max-width:none;
+
+    padding-left:
+        max(25px,calc((100% - 850px)/2));
+
+    padding-right:
+        max(25px,calc((100% - 850px)/2));
+}
+
+.secret h2{
+    color:#f1f8f2;
+}
+
+.secret .number{
+    color:#a8c5b0;
+}
+
+.secret .text{
+    color:#d8e6dc;
+}
+
+/* =========================
+   CÁPSULA DE FOTOS
+========================= */
+
+.photo-capsule{
+
+    margin-top:35px;
+
+    padding:25px;
+
+    border-radius:24px;
+
+    transition:.3s;
+}
+
+.secret-capsule{
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.15);
+}
+
+.memories-capsule{
+
+    background:#fff;
+
+    border:1px solid #d5e4d9;
+
+    box-shadow:
+        0 15px 40px
+        rgba(65,91,73,.08);
+}
+
+.photo-capsule-header{
+
+    text-align:center;
+
+    margin-bottom:5px;
+}
+
+.photo-capsule-icon{
+
+    font-size:42px;
+
+    margin-bottom:10px;
+}
+
+.photo-capsule-title{
+
+    font-size:25px;
+
+    font-weight:normal;
+
+    margin-bottom:8px;
+}
+
+.secret-capsule .photo-capsule-title{
+    color:#f1f8f2;
+}
+
+.memories-capsule .photo-capsule-title{
+    color:#345441;
+}
+
+.photo-capsule-description{
+
+    font-size:15px;
+
+    margin-bottom:20px;
+}
+
+.secret-capsule .photo-capsule-description{
+    color:#cbded0;
+}
+
+.memories-capsule .photo-capsule-description{
+    color:#789683;
+}
+
+.photo-toggle{
+
+    padding:13px 25px;
+
+    font-size:15px;
+}
+
+.secret-toggle{
+
+    border-color:#a8c5b0;
+
+    color:#e9f4ec;
+}
+
+.secret-toggle:hover{
+
+    background:#eef7f0;
+
+    color:#345441;
+}
+
+.photo-gallery{
+
+    display:none;
+
+    margin-top:30px;
+
+    animation:galleryOpen .6s ease;
+}
+
+.photo-gallery.show{
+    display:grid;
+}
+
+.secret-gallery{
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:14px;
+}
+
+.memories-gallery{
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+}
+
+@keyframes galleryOpen{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(-15px)
+            scale(.98);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+/* FOTOS SECRETAS */
+
+.secret-gallery img{
+
+    width:100%;
+
+    aspect-ratio:1/1;
+
+    object-fit:cover;
+
+    border-radius:16px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+}
+
+.secret-gallery img:hover{
+
+    transform:scale(1.03);
+}
+
+/* RECUERDOS */
+
+.memory{
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+    background:white;
+
+    box-shadow:
+        0 12px 30px
+        rgba(65,91,73,.08);
+
+    cursor:pointer;
+}
+
+.memory img{
+
+    width:100%;
+
+    aspect-ratio:1/1;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.4s;
+}
+
+.memory:hover img{
+
+    transform:scale(1.06);
+}
+
+/* =========================
+   VALES
+========================= */
+
+.vouchers{
+
+    margin-top:40px;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+}
+
+.voucher{
+
+    background:white;
+
+    border:1px solid #d5e4d9;
+
+    border-radius:18px;
+
+    padding:28px 22px;
+
+    text-align:center;
+
+    box-shadow:
+        0 12px 30px
+        rgba(65,91,73,.07);
+
+    transition:.3s;
+}
+
+.voucher:hover{
+
+    transform:translateY(-4px);
+}
+
+.voucher-icon{
+
+    font-size:32px;
+
+    margin-bottom:10px;
+}
+
+.voucher h3{
+
+    color:#345441;
+
+    font-weight:normal;
+
+    font-size:22px;
+
+    margin-bottom:8px;
+}
+
+.voucher p{
+
+    color:#789683;
+
+    font-size:14px;
+
+    margin-bottom:18px;
+}
+
+.redeemed{
+
+    color:#5f806b;
+
+    font-style:italic;
+}
+
+/* =========================
+   MÚSICA
+========================= */
+
+.song{
+    text-align:center;
+}
+
+.song-card{
+
+    margin-top:35px;
+
+    padding:30px;
+
+    border:1px solid #d5e4d9;
+
+    border-radius:20px;
+
+    background:white;
+
+    box-shadow:
+        0 15px 40px
+        rgba(65,91,73,.08);
+}
+
+.music-symbol{
+
+    font-size:35px;
+
+    margin-bottom:15px;
+}
+
+.song-title{
+
+    font-size:27px;
+
+    color:#345441;
+}
+
+.artist{
+
+    color:#7a9582;
+
+    margin-bottom:25px;
+}
+
+.youtube-player{
+
+    width:100%;
+
+    max-width:700px;
+
+    aspect-ratio:16/9;
+
+    border:none;
+
+    border-radius:15px;
+
+    display:block;
+
+    margin:auto;
+}
+
+/* =========================
+   MODAL FOTOS
+========================= */
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+        rgba(20,35,27,.9);
+
+    z-index:100;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal img{
+
+    max-width:95%;
+
+    max-height:90vh;
+
+    object-fit:contain;
+
+    border-radius:12px;
+}
+
+.close{
+
+    position:absolute;
+
+    top:20px;
+
+    right:25px;
+
+    color:white;
+
+    font-size:38px;
+
+    cursor:pointer;
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.final{
+    text-align:center;
+}
+
+.final h2{
+    font-size:45px;
+}
+
+/* =========================
+   CÁPSULA DEL TIEMPO
+========================= */
+
+.capsule-section{
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #edf7f0,
+            #f8fbf8
+        );
+}
+
+.capsule-intro{
+
+    max-width:650px;
+
+    margin:0 auto 35px;
+
+    font-size:18px;
+
+    color:#5c7063;
+}
+
+.capsule-card{
+
+    max-width:650px;
+
+    margin:40px auto 0;
+
+    padding:45px 30px;
+
+    background:white;
+
+    border:1px solid #d5e4d9;
+
+    border-radius:28px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(65,91,73,.10);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.capsule-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    background:#eef7f0;
+
+    top:-100px;
+
+    left:-80px;
+
+    opacity:.8;
+}
+
+.capsule-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:140px;
+
+    height:140px;
+
+    border-radius:50%;
+
+    background:#f0f8f2;
+
+    bottom:-80px;
+
+    right:-50px;
+
+    opacity:.8;
+}
+
+.capsule-content{
+
+    position:relative;
+
+    z-index:2;
+}
+
+.capsule-lock{
+
+    font-size:65px;
+
+    margin-bottom:15px;
+
+    animation:lockPulse 2s infinite;
+}
+
+@keyframes lockPulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+
+}
+
+.capsule-title{
+
+    font-size:30px;
+
+    color:#345441;
+
+    font-weight:normal;
+
+    margin-bottom:12px;
+}
+
+.capsule-status{
+
+    color:#789683;
+
+    font-size:16px;
+
+    margin-bottom:25px;
+}
+
+.capsule-countdown{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:10px;
+
+    margin:25px 0;
+}
+
+.capsule-time{
+
+    padding:14px 5px;
+
+    background:#f5faf6;
+
+    border-radius:15px;
+
+    border:1px solid #e0ebe3;
+}
+
+.capsule-time-number{
+
+    display:block;
+
+    font-size:25px;
+
+    color:#345441;
+}
+
+.capsule-time-label{
+
+    font-size:10px;
+
+    letter-spacing:1px;
+
+    color:#82988a;
+}
+
+.capsule-date{
+
+    color:#6f927a;
+
+    font-style:italic;
+
+    margin-top:20px;
+}
+
+.open-capsule{
+
+    display:none;
+
+    border:none;
+
+    background:#466653;
+
+    color:white;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    font-family:inherit;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 8px 20px
+        rgba(70,102,83,.20);
+
+    transition:.3s;
+}
+
+.open-capsule:hover{
+
+    transform:scale(1.05);
+
+    background:#345441;
+}
+
+.capsule-message{
+
+    display:none;
+
+    margin-top:30px;
+
+    padding:30px 25px;
+
+    background:#f7fbf8;
+
+    border:1px solid #d5e4d9;
+
+    border-radius:20px;
+
+    text-align:left;
+
+    animation:capsuleOpen .8s ease;
+}
+
+.capsule-message.show{
+    display:block;
+}
+
+.capsule-message h3{
+
+    color:#345441;
+
+    font-size:26px;
+
+    font-weight:normal;
+
+    margin-bottom:18px;
+
+    text-align:center;
+}
+
+.capsule-message p{
+
+    color:#53695b;
+
+    margin-bottom:17px;
+}
+
+.capsule-signature{
+
+    text-align:right;
+
+    color:#6c8b77;
+
+    font-style:italic;
+
+    margin-top:25px;
+}
+
+@keyframes capsuleOpen{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(25px)
+            scale(.95);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+.capsule-hearts{
+
+    display:none;
+
+    font-size:25px;
+
+    margin-top:20px;
+
+    letter-spacing:10px;
+
+    animation:heartAppear 1s ease;
+}
+
+.capsule-hearts.show{
+    display:block;
+}
+
+@keyframes heartAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.5);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+    }
+
+}
+
+/* =========================
+   PREGUNTA FINAL
+========================= */
+
+.question{
+
+    text-align:center;
+
+    max-width:850px;
+}
+
+.question-text{
+
+    font-size:20px;
+
+    color:#5c7063;
+
+    margin-bottom:35px;
+}
+
+.question-buttons{
+
+    position:relative;
+
+    min-height:120px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+}
+
+.yes-button,
+.no-button{
+
+    padding:14px 30px;
+
+    border-radius:50px;
+
+    font-family:inherit;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.yes-button{
+
+    border:1px solid #779783;
+
+    background:#466653;
+
+    color:white;
+}
+
+.yes-button:hover{
+
+    transform:scale(1.06);
+}
+
+.no-button{
+
+    border:1px solid #779783;
+
+    background:transparent;
+
+    color:#466653;
+
+    position:relative;
+}
+
+.yes-message{
+
+    display:none;
+
+    margin:20px auto 0;
+
+    padding:30px;
+
+    max-width:650px;
+
+    background:white;
+
+    border:1px solid #d5e4d9;
+
+    border-radius:20px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(65,91,73,.10);
+
+    animation:aparecer .7s ease;
+}
+
+.yes-message.show{
+    display:block;
+}
+
+.yes-message h3{
+
+    color:#345441;
+
+    font-size:27px;
+
+    font-weight:normal;
+
+    margin-bottom:15px;
+}
+
+.yes-message p{
+
+    color:#53695b;
+
+    margin-bottom:15px;
+}
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    text-align:center;
+
+    padding:50px 20px;
+
+    color:#82988a;
+
+    font-size:14px;
+}
+
+/* =========================
+   MÓVIL
+========================= */
+
+@media(max-width:700px){
+
+    section{
+
+        padding:75px 22px;
+    }
+
+    h2{
+
+        font-size:34px;
+    }
+
+    .letter{
+
+        padding:25px;
+    }
+
+    .counter{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .vouchers{
+
+        grid-template-columns:1fr;
+    }
+
+    .photo-capsule{
+
+        padding:20px 15px;
+    }
+
+    .secret-gallery{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:10px;
+    }
+
+    .memories-gallery{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:12px;
+    }
+
+    .photo-capsule-title{
+
+        font-size:22px;
+    }
+
+    .capsule-card{
+
+        padding:35px 20px;
+    }
+
+    .capsule-title{
+
+        font-size:26px;
+    }
+
+    .capsule-countdown{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:8px;
+    }
+
+    .question-buttons{
+
+        min-height:150px;
+    }
+
+    .yes-button,
+    .no-button{
+
+        padding:12px 22px;
+    }
+
+}
