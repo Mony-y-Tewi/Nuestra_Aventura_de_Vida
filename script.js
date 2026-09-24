@@ -173,10 +173,6 @@ function toggleGaleria(id, boton){
    VISOR DE FOTOS
 ========================= */
 
-let albumActual = null;
-let indiceFotoActual = 0;
-
-
 function abrirFoto(src, albumId){
 
     const modal =
@@ -185,25 +181,38 @@ function abrirFoto(src, albumId){
     const imagen =
         document.getElementById("modalImg");
 
-    const album =
-        document.getElementById(albumId);
+    imagen.src = src;
 
-    const fotos =
-        album.querySelectorAll("img");
+    /*
+    Si la foto pertenece a un álbum,
+    guardamos cuál es.
+    */
 
-    albumActual = albumId;
+    if(albumId){
 
-    fotos.forEach(function(foto, indice){
+        const album =
+            document.getElementById(albumId);
 
-        if(foto.src === src){
+        if(album){
 
-            indiceFotoActual = indice;
+            const fotos =
+                album.querySelectorAll("img");
+
+            albumActual = albumId;
+
+            fotos.forEach(function(foto, indice){
+
+                if(foto.src === src){
+
+                    indiceFotoActual = indice;
+
+                }
+
+            });
 
         }
 
-    });
-
-    imagen.src = src;
+    }
 
     modal.classList.add("show");
 
