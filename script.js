@@ -268,7 +268,6 @@ function cambiarFoto(direccion){
         fotos[indiceFotoActual].src;
 
 }
-}
 function cerrarFoto(){
 
     const modal =
