@@ -172,6 +172,8 @@ function toggleGaleria(id, boton){
 /* =========================
    VISOR DE FOTOS
 ========================= */
+let albumActual = null;
+let indiceFotoActual = 0;
 
 function abrirFoto(src, albumId){
 
