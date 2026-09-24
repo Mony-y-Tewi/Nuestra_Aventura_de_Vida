@@ -104,7 +104,28 @@ function abrirCarta(){
 
 function usarVale(boton){
 
-    boton.parentElement.innerHTML = `
+    const vale =
+        boton.closest(".voucher");
+
+    const indice =
+        vale.dataset.indice;
+
+    const semana =
+        obtenerNumeroSemana();
+
+    localStorage.setItem(
+        "valeCanjeado_" + semana + "_" + indice,
+        "true"
+    );
+
+    mostrarValeCanjeado(vale);
+
+}
+
+
+function mostrarValeCanjeado(vale){
+
+    vale.innerHTML = `
 
         <div class="voucher-icon">
         ♡
@@ -121,7 +142,6 @@ function usarVale(boton){
     `;
 
 }
-
 
 /* =========================
    GALERÍAS DE FOTOS
