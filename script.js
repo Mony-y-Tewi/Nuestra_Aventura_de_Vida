@@ -185,16 +185,43 @@ function abrirFoto(src){
 
     modal.classList.add("show");
 
+    document.body.style.overflow = "hidden";
+
 }
 
 
 function cerrarFoto(){
 
-    document
-        .getElementById("modal")
-        .classList.remove("show");
+    const modal =
+        document.getElementById("modal");
+
+    modal.classList.remove("show");
+
+    document.body.style.overflow = "";
 
 }
+
+
+/*
+==========================================
+CERRAR CON LA TECLA ESC
+==========================================
+*/
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(
+            event.key === "Escape"
+        ){
+
+            cerrarFoto();
+
+        }
+
+    }
+);
 
 
 /* =========================
