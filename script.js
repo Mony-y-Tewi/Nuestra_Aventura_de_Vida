@@ -173,13 +173,35 @@ function toggleGaleria(id, boton){
    VISOR DE FOTOS
 ========================= */
 
-function abrirFoto(src){
+let albumActual = null;
+let indiceFotoActual = 0;
+
+
+function abrirFoto(src, albumId){
 
     const modal =
         document.getElementById("modal");
 
     const imagen =
         document.getElementById("modalImg");
+
+    const album =
+        document.getElementById(albumId);
+
+    const fotos =
+        album.querySelectorAll("img");
+
+    albumActual = albumId;
+
+    fotos.forEach(function(foto, indice){
+
+        if(foto.src === src){
+
+            indiceFotoActual = indice;
+
+        }
+
+    });
 
     imagen.src = src;
 
@@ -188,8 +210,6 @@ function abrirFoto(src){
     document.body.style.overflow = "hidden";
 
 }
-
-
 function cerrarFoto(){
 
     const modal =
