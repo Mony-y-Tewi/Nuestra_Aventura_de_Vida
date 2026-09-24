@@ -1090,14 +1090,28 @@ class="modal"
 id="modal"
 onclick="cerrarFoto()">
 
-<span class="close">
+<span
+class="close"
+onclick="cerrarFoto()">
 ×
 </span>
+
+<button
+class="gallery-prev"
+onclick="event.stopPropagation(); cambiarFoto(-1)">
+‹
+</button>
 
 <img
 id="modalImg"
 src=""
 alt="Recuerdo">
+
+<button
+class="gallery-next"
+onclick="event.stopPropagation(); cambiarFoto(1)">
+›
+</button>
 
 </div>
 
