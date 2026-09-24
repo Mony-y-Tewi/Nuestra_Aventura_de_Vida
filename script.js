@@ -142,6 +142,163 @@ function mostrarValeCanjeado(vale){
     `;
 
 }
+/* =========================
+   VALES SEMANALES
+========================= */
+
+const valesSemanales = [
+
+   [
+        ["💋", "Besos sin límite", "Vale por todos los besos que quieras... y algunos que no esperabas."],
+        ["🫦", "Ven aquí", "Un momento cerquita de mí, sin excusas y sin interrupciones."],
+        ["🔥", "Masaje especial", "Un masaje lento, con permiso para ponerse bastante interesante."],
+        ["😈", "Hoy mandas tú", "Tú decides qué pequeño capricho quieres que cumpla."],
+        ["👀", "Tú eliges", "Tú eliges cómo empieza nuestro momento especial."],
+        ["🌙", "Noche prohibida", "Una noche para nosotros, con muchas ganas y pocas distracciones."],
+        ["🖤", "Nuestro secreto", "Un deseo secreto que solamente nosotros dos conocemos."]
+    ],
+
+    [
+        ["💋", "Un beso peligroso", "Un beso largo... de esos que hacen olvidar qué hora es."],
+        ["😏", "Acércate", "Vale por tenerte muy, muy cerca de mí durante un buen rato."],
+        ["🔥", "Masaje con intención", "Un masaje relajante que puede terminar siendo bastante menos relajante."],
+        ["🫦", "Mimos atrevidos", "Mimos, caricias y todo lo que nos haga sonreír."],
+        ["👀", "Yo elijo", "Esta vez yo decido nuestro pequeño momento picarón."],
+        ["🌙", "Solo nosotros", "Una noche sin interrupciones, dedicada completamente a nosotros."],
+        ["😈", "Reto secreto", "Un reto atrevido que solo se revela cuando se canjea."]
+    ],
+
+    [
+        ["💋", "Besos de recompensa", "Cada vez que me hagas sonreír, te ganas un beso."],
+        ["🔥", "Una hora de mimos", "Una hora completa para consentirnos sin mirar el reloj."],
+        ["😏", "Antojo secreto", "Puedes pedirme un pequeño deseo... y veremos si me resisto."],
+        ["🫦", "Muy cerquita", "Vale por una sesión de abrazos, caricias y mucha cercanía."],
+        ["👀", "Sin preguntas", "Durante un ratito, tú decides y yo sigo el juego."],
+        ["🖤", "Deseo reservado", "Un deseo que queda guardado solamente para nosotros."],
+        ["🌙", "Después de medianoche", "Un vale especial para cuando la noche se pone interesante."]
+    ],
+
+    [
+        ["😈", "Tú mandas", "Durante nuestro momento especial, tú tienes el control."],
+        ["💋", "Beso robado", "Vale por un beso inesperado en el momento menos esperado."],
+        ["🔥", "Noche intensa", "Una noche para apagar el mundo y encender nuestro pequeño universo."],
+        ["🫦", "Caricias", "Un momento lento, cercano y lleno de cariño."],
+        ["👀", "Elige mi look", "Tú decides qué quiero ponerme para nuestra cita."],
+        ["😏", "Sorpresa picarona", "No sabrás qué es hasta que decidas canjearlo."],
+        ["🖤", "Solo tú y yo", "Un momento íntimo para desconectarnos de todo lo demás."]
+    ]
+
+];
+
+
+function obtenerNumeroSemana(){
+
+    const fecha =
+        new Date();
+
+    const inicio =
+        new Date(2026, 4, 23);
+
+    const diferencia =
+        fecha.getTime() -
+        inicio.getTime();
+
+    const semana =
+        Math.floor(
+            diferencia /
+            (1000 * 60 * 60 * 24 * 7)
+        );
+
+    return Math.max(0, semana);
+
+}
+
+
+function cargarVales(){
+
+    const contenedor =
+        document.getElementById(
+            "vouchersContainer"
+        );
+
+    if(!contenedor){
+        return;
+    }
+
+    const semana =
+        obtenerNumeroSemana();
+
+    const grupo =
+        valesSemanales[
+            semana %
+            valesSemanales.length
+        ];
+
+    contenedor.innerHTML = "";
+
+    grupo.forEach(
+        function(vale, indice){
+
+            const tarjeta =
+                document.createElement("div");
+
+            tarjeta.className =
+                "voucher";
+
+            tarjeta.dataset.indice =
+                indice;
+
+            tarjeta.innerHTML = `
+
+                <div class="voucher-icon">
+                ${vale[0]}
+                </div>
+
+                <h3>
+                ${vale[1]}
+                </h3>
+
+                <p>
+                ${vale[2]}
+                </p>
+
+                <button
+                class="redeem"
+                onclick="usarVale(this)">
+
+                Canjear ♡
+
+                </button>
+
+            `;
+
+            const canjeado =
+                localStorage.getItem(
+                    "valeCanjeado_" +
+                    semana +
+                    "_" +
+                    indice
+                );
+
+            if(canjeado === "true"){
+
+                mostrarValeCanjeado(
+                    tarjeta
+                );
+
+            }
+
+            contenedor.appendChild(
+                tarjeta
+            );
+
+        }
+    );
+
+}
+
+
+cargarVales();
 
 /* =========================
    GALERÍAS DE FOTOS
