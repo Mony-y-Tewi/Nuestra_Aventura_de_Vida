@@ -120,7 +120,7 @@ h1{
 
     font-weight:normal;
 
-    color:#345441;
+    color: red !important;
 }
 
 .date{
