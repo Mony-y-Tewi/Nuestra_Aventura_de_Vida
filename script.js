@@ -214,11 +214,15 @@ function abrirFoto(src, albumId){
 
     }
 
-    modal.classList.add("show");
+   modal.classList.add("show");
 
-    document.body.style.overflow = "hidden";
+document.body.style.overflow = "hidden";
+
+}
+
+
 function cambiarFoto(direccion){
-
+   
     if(!albumActual){
 
         return;
