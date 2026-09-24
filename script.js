@@ -293,18 +293,117 @@ function obtenerProximoDia23(){
 
 function actualizarCapsula(){
 
-    const ahora =
-        new Date();
+    const ahora = new Date();
 
+    const meses = [
+        "enero",
+        "febrero",
+        "marzo",
+        "abril",
+        "mayo",
+        "junio",
+        "julio",
+        "agosto",
+        "septiembre",
+        "octubre",
+        "noviembre",
+        "diciembre"
+    ];
+
+    const mensajesCapsula = [
+        "Enero: Que este nuevo año nos encuentre eligiéndonos una vez más, con todo lo bonito que todavía nos queda por vivir. ♡",
+
+        "Febrero: Entre tantos días, mi favorito siempre será cualquiera en el que pueda compartir algo contigo. 💕",
+
+        "Marzo: Me encanta pensar que nuestra historia todavía tiene muchísimas páginas que aún no hemos escrito. 🌿",
+
+        "Abril: Si pudiera guardar un solo sentimiento de nosotros, sería esta tranquilidad de saber que te tengo. ♡",
+
+        "Mayo: Desde nuestro comienzo hasta hoy, cada pequeño momento contigo se ha convertido en parte de mi historia favorita. 💌",
+
+        "Junio: Gracias por existir de esa manera tan tuya que hace que incluso los días normales se sientan especiales. 🌙",
+
+        "Julio: Hay recuerdos que el tiempo no borra. Los nuestros son de esos que quiero seguir acumulando contigo. ❤️",
+
+        "Agosto: No necesito que todos los días sean perfectos. Solo quiero seguir viviendo los imperfectos a tu lado. ✨",
+
+        "Septiembre: Me gusta imaginar todo lo que todavía nos falta descubrir juntas. Y me emociona que sea contigo. 🌷",
+
+        "Octubre: Si pudiera detener el tiempo en algún lugar, probablemente elegiría uno de esos momentos sencillos en los que estamos juntas. ♡",
+
+        "Noviembre: Nuestra historia no necesita ser perfecta para ser especial. Me basta con que sea nuestra. 💚",
+
+        "Diciembre: Otro año, otros recuerdos y otra razón para agradecer que nuestros caminos se hayan encontrado. 🎄♡"
+    ];
+
+
+    /*
+    ==========================================
+    CÁPSULA DEL MES
+    ==========================================
+    */
 
     if(ahora.getDate() === 23){
 
         mostrarCapsulaDesbloqueada();
 
+        const mesActual =
+            ahora.getMonth();
+
+        const claveCapsula =
+            "capsula-" +
+            ahora.getFullYear() +
+            "-" +
+            mesActual;
+
+
+        const capsuleMessage =
+            document.getElementById(
+                "capsuleMessage"
+            );
+
+
+        capsuleMessage.textContent =
+            mensajesCapsula[mesActual];
+
+
+        document.getElementById(
+            "capsuleDateText"
+        ).textContent =
+            "Cápsula de " +
+            meses[mesActual] +
+            " ♡";
+
+
+        /*
+        Guardamos que esta cápsula
+        ya fue abierta.
+        */
+
+        if(
+            localStorage.getItem(
+                claveCapsula
+            )
+        ){
+
+            document.getElementById(
+                "openCapsuleButton"
+            ).textContent =
+                "Volver a abrir ♡";
+
+        }
+
+
         return;
 
     }
 
+
+    /*
+    ==========================================
+    CUENTA REGRESIVA
+    ==========================================
+    */
 
     const objetivo =
         obtenerProximoDia23();
@@ -356,40 +455,25 @@ function actualizarCapsula(){
     document.getElementById(
         "capsuleHours"
     ).textContent =
-        horas.toString()
+        horas
+        .toString()
         .padStart(2,"0");
 
 
     document.getElementById(
         "capsuleMinutes"
     ).textContent =
-        minutos.toString()
+        minutos
+        .toString()
         .padStart(2,"0");
 
 
     document.getElementById(
         "capsuleSeconds"
     ).textContent =
-        segundos.toString()
+        segundos
+        .toString()
         .padStart(2,"0");
-
-
-    const meses = [
-
-        "enero",
-        "febrero",
-        "marzo",
-        "abril",
-        "mayo",
-        "junio",
-        "julio",
-        "agosto",
-        "septiembre",
-        "octubre",
-        "noviembre",
-        "diciembre"
-
-    ];
 
 
     document.getElementById(
@@ -402,16 +486,24 @@ function actualizarCapsula(){
 }
 
 
+/*
+==========================================
+MOSTRAR CÁPSULA
+==========================================
+*/
+
 function mostrarCapsulaDesbloqueada(){
 
     document.getElementById(
         "capsuleLocked"
-    ).style.display = "none";
+    ).style.display =
+        "none";
 
 
     document.getElementById(
         "capsuleUnlocked"
-    ).style.display = "block";
+    ).style.display =
+        "block";
 
 
     document.getElementById(
@@ -421,6 +513,12 @@ function mostrarCapsulaDesbloqueada(){
 
 }
 
+
+/*
+==========================================
+ABRIR CÁPSULA
+==========================================
+*/
 
 function abrirCapsula(){
 
@@ -436,9 +534,35 @@ function abrirCapsula(){
         );
 
 
-    mensaje.classList.add("show");
+    mensaje.classList.add(
+        "show"
+    );
 
-    corazones.classList.add("show");
+
+    corazones.classList.add(
+        "show"
+    );
+
+
+    /*
+    Guardamos la cápsula como abierta.
+    */
+
+    const ahora =
+        new Date();
+
+
+    const claveCapsula =
+        "capsula-" +
+        ahora.getFullYear() +
+        "-" +
+        ahora.getMonth();
+
+
+    localStorage.setItem(
+        claveCapsula,
+        "abierta"
+    );
 
 
     mensaje.scrollIntoView({
@@ -452,7 +576,14 @@ function abrirCapsula(){
 }
 
 
+/*
+==========================================
+INICIO
+==========================================
+*/
+
 actualizarCapsula();
+
 
 setInterval(
     actualizarCapsula,
