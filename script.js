@@ -217,7 +217,53 @@ function abrirFoto(src, albumId){
     modal.classList.add("show");
 
     document.body.style.overflow = "hidden";
+function cambiarFoto(direccion){
 
+    if(!albumActual){
+
+        return;
+
+    }
+
+    const album =
+        document.getElementById(albumActual);
+
+    if(!album){
+
+        return;
+
+    }
+
+    const fotos =
+        album.querySelectorAll("img");
+
+    if(fotos.length === 0){
+
+        return;
+
+    }
+
+    indiceFotoActual += direccion;
+
+    if(indiceFotoActual < 0){
+
+        indiceFotoActual =
+            fotos.length - 1;
+
+    }
+
+    if(indiceFotoActual >= fotos.length){
+
+        indiceFotoActual = 0;
+
+    }
+
+    document.getElementById(
+        "modalImg"
+    ).src =
+        fotos[indiceFotoActual].src;
+
+}
 }
 function cerrarFoto(){
 
