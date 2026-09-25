@@ -5,14 +5,31 @@
 const fechaInicio =
 new Date("2026-05-23T00:00:00");
 
+let contadorPausado = false;
+let tiempoPausado = 0;
+
 
 function actualizarContador(){
 
     const ahora =
         new Date();
 
-    let diferencia =
-        ahora - fechaInicio;
+    let diferencia;
+
+
+    if(contadorPausado){
+
+        diferencia = tiempoPausado;
+
+    }else{
+
+        diferencia =
+            ahora - fechaInicio;
+
+        tiempoPausado =
+            diferencia;
+
+    }
 
 
     if(diferencia < 0){
@@ -72,6 +89,43 @@ function actualizarContador(){
         .textContent =
         segundos.toString()
         .padStart(2,"0");
+
+}
+
+
+function pausarContador(){
+
+    if(!contadorPausado){
+
+        tiempoPausado =
+            new Date() - fechaInicio;
+
+        contadorPausado = true;
+
+    }
+
+    actualizarContador();
+
+}
+
+
+function reanudarContador(){
+
+    if(contadorPausado){
+
+        const ahora =
+            new Date();
+
+        fechaInicio.setTime(
+            ahora.getTime() -
+            tiempoPausado
+        );
+
+        contadorPausado = false;
+
+    }
+
+    actualizarContador();
 
 }
 
