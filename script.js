@@ -1,39 +1,20 @@
-const fechaInicio =
-new Date("2026-05-23T00:00:00");
-
-
-/*
-==========================================
-CONTROL DEL CONTADOR
-==========================================
-
-true  = contador PAUSADO
-false = contador FUNCIONANDO
-
-Solo cambia esta línea cuando quieras.
-==========================================
-*/
-
 const contadorPausado = true;
 
 
 /*
 ==========================================
-TIEMPO CONGELADO
+TIEMPO FIJO DEL CONTADOR
 ==========================================
 
-Este valor se guarda automáticamente
-cuando el contador está funcionando.
-
-Si el contador está pausado, utiliza
-el último tiempo guardado.
+125 días
+0 horas
+0 minutos
+0 segundos
 ==========================================
 */
 
 const tiempoPausado =
-    0;
-
-    );
+    125 * 86400;
 
 
 /*
@@ -44,47 +25,8 @@ ACTUALIZAR CONTADOR
 
 function actualizarContador(){
 
-    let diferencia;
-
-
-    if(contadorPausado){
-
-        if(tiempoPausado !== null){
-
-            diferencia =
-                Number(tiempoPausado);
-
-        }else{
-
-            diferencia =
-                new Date() - fechaInicio;
-
-        }
-
-    }else{
-
-        diferencia =
-            new Date() - fechaInicio;
-
-        localStorage.setItem(
-            "tiempoContadorPausado",
-            diferencia
-        );
-
-    }
-
-
-    if(diferencia < 0){
-
-        diferencia = 0;
-
-    }
-
-
     const segundosTotales =
-        Math.floor(
-            diferencia / 1000
-        );
+        tiempoPausado;
 
 
     const dias =
@@ -136,12 +78,6 @@ function actualizarContador(){
 
 
 actualizarContador();
-
-
-setInterval(
-    actualizarContador,
-    1000
-);
 
 /* =========================
    CARTA
