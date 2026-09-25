@@ -30,9 +30,9 @@ el último tiempo guardado.
 ==========================================
 */
 
-let tiempoPausado =
-    localStorage.getItem(
-        "tiempoContadorPausado"
+const tiempoPausado =
+    0;
+
     );
 
 
