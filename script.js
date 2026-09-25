@@ -1,33 +1,75 @@
-/* =========================
-   CONTADOR
-========================= */
-
 const fechaInicio =
 new Date("2026-05-23T00:00:00");
 
-let contadorPausado = false;
-let tiempoPausado = 0;
 
+/*
+==========================================
+CONTROL DEL CONTADOR
+==========================================
+
+true  = contador PAUSADO
+false = contador FUNCIONANDO
+
+Solo cambia esta línea cuando quieras.
+==========================================
+*/
+
+const contadorPausado = true;
+
+
+/*
+==========================================
+TIEMPO CONGELADO
+==========================================
+
+Este valor se guarda automáticamente
+cuando el contador está funcionando.
+
+Si el contador está pausado, utiliza
+el último tiempo guardado.
+==========================================
+*/
+
+let tiempoPausado =
+    localStorage.getItem(
+        "tiempoContadorPausado"
+    );
+
+
+/*
+==========================================
+ACTUALIZAR CONTADOR
+==========================================
+*/
 
 function actualizarContador(){
-
-    const ahora =
-        new Date();
 
     let diferencia;
 
 
     if(contadorPausado){
 
-        diferencia = tiempoPausado;
+        if(tiempoPausado !== null){
+
+            diferencia =
+                Number(tiempoPausado);
+
+        }else{
+
+            diferencia =
+                new Date() - fechaInicio;
+
+        }
 
     }else{
 
         diferencia =
-            ahora - fechaInicio;
+            new Date() - fechaInicio;
 
-        tiempoPausado =
-            diferencia;
+        localStorage.setItem(
+            "tiempoContadorPausado",
+            diferencia
+        );
 
     }
 
@@ -93,50 +135,13 @@ function actualizarContador(){
 }
 
 
-function pausarContador(){
-
-    if(!contadorPausado){
-
-        tiempoPausado =
-            new Date() - fechaInicio;
-
-        contadorPausado = true;
-
-    }
-
-    actualizarContador();
-
-}
-
-
-function reanudarContador(){
-
-    if(contadorPausado){
-
-        const ahora =
-            new Date();
-
-        fechaInicio.setTime(
-            ahora.getTime() -
-            tiempoPausado
-        );
-
-        contadorPausado = false;
-
-    }
-
-    actualizarContador();
-
-}
-
-
 actualizarContador();
+
 
 setInterval(
     actualizarContador,
     1000
 );
-
 
 /* =========================
    CARTA
